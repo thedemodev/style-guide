@@ -67,6 +67,7 @@ module.exports = [['build'], (cb) ->
 
   watch [
     './less/**/*.less'
+    './less/**/*.less.lodash'
     './icons/*.svg'
     './less/colors.json'
   ], ->

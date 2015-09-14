@@ -104,4 +104,20 @@
   height: 0.5em;
 }
 
+.icon--toggle {
+  .vertical, .horizontal {
+    transition: transform @transition-duration ease;
+    transform-origin: 50% 50%;
+  }
+}
+
+.icon--toggle.is-active {
+  .vertical {
+    transform: rotate(90deg);
+  }
+  .horizontal {
+    transform: rotate(180deg);
+  }
+}
+
 // Copyright AXA Versicherungen AG 2015
