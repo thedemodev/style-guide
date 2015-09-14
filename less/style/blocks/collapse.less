@@ -18,7 +18,9 @@
   margin: 0;
 
   list-style-type: none;
+}
 
+.collapse__tabs--tabbed {
   .respond(medium, {
     display: flex;
     flex-direction: row;
@@ -85,7 +87,9 @@
   &.is-active {
     font-weight: bold;
   }
+}
 
+.collapse__panels__item__header--tabbed {
   .respond(medium, {
     display: none;
   });
@@ -106,7 +110,9 @@
   &.is-open {
     display: block;
   }
+}
 
+.collapse__panels__item__body--tabbed {
   .respond(medium, {
     padding: 10px 0;
   });

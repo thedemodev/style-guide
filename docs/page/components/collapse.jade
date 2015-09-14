@@ -16,6 +16,8 @@ p.paragraph.
   ul.toc__anchor-navigation
     li.toc__anchor-navigation__item
       a.toc__anchor-navigation__link(href='#basic') Basic Collapse
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#tabbed') Tabbed Collapse
 
 .hr
 
@@ -32,6 +34,23 @@ p.paragraph.
     .example__border
       iframe.example__iframe(
         src=relative('/components/demos/collapse-basic.html')
+        data-iframe-resizer
+      )
+
+.hr
+
+h2#tabbed.heading.heading--secondary Tabbed Collapse
+
+p.paragraph.
+  The basic collapse component arranges content vertically on small
+  viewport, but expands into a tabbed control on larger sizes.
+
+.example
+  include ./includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/demos/collapse-tabbed.html')
         data-iframe-resizer
       )
 

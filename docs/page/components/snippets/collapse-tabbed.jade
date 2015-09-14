@@ -1,0 +1,68 @@
+---
+title: Collapse
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.collapse(data-collapse, data-single, data-open="one")
+  nav
+    ul.collapse__tabs.collapse__tabs--tabbed
+      li.collapse__tabs__item
+        a.collapse__tabs__item__link(href="#", data-trigger="one") One One
+      li.collapse__tabs__item
+        a.collapse__tabs__item__link(href="#", data-trigger="two") Two Two
+      li.collapse__tabs__item
+        a.collapse__tabs__item__link(href="#", data-trigger="three") Three Three
+  ul.collapse__panels
+    li.collapse__panels__item
+      a.collapse__panels__item__header.collapse__panels__item__header--tabbed(href="#", data-trigger="one")
+        span One
+        svg.collapse__panels__item__header__icon.icon-svg.icon--toggle(viewBox="0 0 16 16", data-trigger="one")
+          path.horizontal(d='M 1,7 15,7 15,9 1,9 z')
+          path.vertical(d='M 7,1 9,1 9,15 7,15 z')
+      .collapse__panels__item__body.collapse__panels__item__body--tabbed(data-panel="one")
+        | One One One
+        | Bacon ipsum dolor amet chicken meatball doner drumstick.
+        | Turducken landjaeger jowl shank, biltong leberkas hamburger
+        | cow porchetta sausage. Leberkas tongue pork chop,
+        | andouille venison bresaola ribeye tri-tip tail sausage.
+        | Porchetta boudin pig drumstick beef ribs shoulder.
+        | Pork leberkas ground round, ribeye jerky turkey flank
+        | tongue beef ribs meatball doner. Leberkas pork chop kielbasa
+        | short loin tri-tip turducken tail meatball rump hamburger
+        | swine capicola corned beef pork belly sausage.
+    li.collapse__panels__item
+      a.collapse__panels__item__header.collapse__panels__item__header--tabbed(href="#", data-trigger="two")
+        span Two
+        svg.collapse__panels__item__header__icon.icon-svg.icon--toggle(viewBox="0 0 16 16", data-trigger="two")
+          path.horizontal(d='M 1,7 15,7 15,9 1,9 z')
+          path.vertical(d='M 7,1 9,1 9,15 7,15 z')
+      .collapse__panels__item__body.collapse__panels__item__body--tabbed(data-panel="two")
+        | Two Two Two
+        | Bacon ipsum dolor amet chicken meatball doner drumstick.
+        | Turducken landjaeger jowl shank, biltong leberkas hamburger
+        | cow porchetta sausage. Leberkas tongue pork chop,
+        | andouille venison bresaola ribeye tri-tip tail sausage.
+        | Porchetta boudin pig drumstick beef ribs shoulder.
+        | Pork leberkas ground round, ribeye jerky turkey flank
+        | tongue beef ribs meatball doner. Leberkas pork chop kielbasa
+        | short loin tri-tip turducken tail meatball rump hamburger
+        | swine capicola corned beef pork belly sausage.
+    li.collapse__panels__item
+      a.collapse__panels__item__header.collapse__panels__item__header--tabbed(href="#", data-trigger="three")
+        span Three
+        svg.collapse__panels__item__header__icon.icon-svg.icon--toggle(viewBox="0 0 16 16", data-trigger="three")
+          path.horizontal(d='M 1,7 15,7 15,9 1,9 z')
+          path.vertical(d='M 7,1 9,1 9,15 7,15 z')
+      .collapse__panels__item__body.collapse__panels__item__body--tabbed(data-panel="three")
+        | Three Three Three
+        | Bacon ipsum dolor amet chicken meatball doner drumstick.
+        | Turducken landjaeger jowl shank, biltong leberkas hamburger
+        | cow porchetta sausage. Leberkas tongue pork chop,
+        | andouille venison bresaola ribeye tri-tip tail sausage.
+        | Porchetta boudin pig drumstick beef ribs shoulder.
+        | Pork leberkas ground round, ribeye jerky turkey flank
+        | tongue beef ribs meatball doner. Leberkas pork chop kielbasa
+        | short loin tri-tip turducken tail meatball rump hamburger
+        | swine capicola corned beef pork belly sausage.
