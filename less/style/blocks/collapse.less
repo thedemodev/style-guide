@@ -3,11 +3,7 @@
 @import '../mixins/respond';
 
 .collapse {
-  margin: 0 -10px;
-
-  .respond(medium, {
-    margin: 0;
-  });
+  margin: 0;
 }
 
 .collapse__tabs {
@@ -110,10 +106,4 @@
   &.is-open {
     display: block;
   }
-}
-
-.collapse__panels__item__body--tabbed {
-  .respond(medium, {
-    padding: 10px 0;
-  });
 }

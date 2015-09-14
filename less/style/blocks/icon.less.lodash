@@ -105,6 +105,8 @@
 }
 
 .icon--toggle {
+  pointer-events: none;
+
   .vertical, .horizontal {
     transition: transform @transition-duration ease;
     transform-origin: 50% 50%;
