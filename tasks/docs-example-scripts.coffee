@@ -10,6 +10,7 @@ errorify = require '../lib/errorify'
 module.exports = ->
     return gulp.src [
         './node_modules/jquery/dist/jquery.js'
+        './node_modules/baconjs/dist/Bacon.js'
         './node_modules/moment/min/moment-with-locales.js'
         './node_modules/svg4everybody/svg4everybody.js'
         './node_modules/iframe-resizer/src/iframeResizer.contentWindow.js'
