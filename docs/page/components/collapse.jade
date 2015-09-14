@@ -1,0 +1,38 @@
+---
+title: Collapse
+order: 4
+template: page.jade
+lunr: true
+---
+
+include ./includes/mixins.jade
+
+p.paragraph.
+  The collapse component intelligently splits content into small bits
+  and only displays the pieces the user is interested in.
+
+.toc
+  .toc__title Table of contents
+  ul.toc__anchor-navigation
+    li.toc__anchor-navigation__item
+      a.toc__anchor-navigation__link(href='#basic') Basic Collapse
+
+.hr
+
+h2#basic.heading.heading--secondary Basic Collapse
+
+p.paragraph.
+  The basic collapse component arranges content vertically on all
+  viewports. By default, it only allows one opened panel at all times.
+  This accordion-like behavior can be changed.
+
+.example
+  include ./includes/example-header.jade
+  .example__content
+    .example__border
+      iframe.example__iframe(
+        src=relative('/components/demos/collapse-basic.html')
+        data-iframe-resizer
+      )
+
+//- Copyright AXA Versicherungen AG 2015
