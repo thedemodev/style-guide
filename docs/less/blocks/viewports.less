@@ -1,0 +1,57 @@
+@import "style/mixins/grid";
+@import "style/blocks/heading";
+
+.viewports {
+  .make-row();
+
+  text-align: center;
+  background: #eee;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.viewports__title {
+  padding: 10px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+
+  .heading;
+  .heading--secondary;
+}
+
+.viewports__figure {
+  line-height: 180px;
+}
+
+.viewport__image {
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.viewports__smartphone {
+  .make-col(12);
+  .make-col(2, medium);
+
+  border-right: 1px solid #ddd;
+}
+
+.viewports__tablet {
+  .make-col(12);
+  .make-col(2, medium);
+
+  border-right: 1px solid #ddd;
+}
+
+.viewports__unknown {
+  .make-col(12);
+  .make-col(5, medium);
+
+  border-right: 1px solid #ddd;
+}
+
+.viewports__desktop {
+  .make-col(12);
+  .make-col(3, medium);
+}
+
+// Copyright AXA Versicherungen AG 2015
