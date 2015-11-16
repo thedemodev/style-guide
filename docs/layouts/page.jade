@@ -99,7 +99,7 @@ html
     meta(name="msapplication-square310x310logo", content=relative("/images/app-icon/windows/558x558.png"))
 
     title #{title} | #{config.name}
-    link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
+    //link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/docs.min.css"))
 
@@ -112,10 +112,11 @@ html
       header.header
         .header__meta
           .header__meta__content
-            .header__meta__item.header__meta__search.autocomplete.search.search--header
-              input.autocomplete__input.search__input.search--header(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
-              svg.search__icon.search--header.icon
-                use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
+            .header__meta__item.header__meta__search.autocomplete(
+              data-search,
+              data-search-index-data=relative('/searchIndex.json'),
+              data-search-base-url=relative('/')
+            )
             a.header__meta__item.header__meta__action(href="https://github.com/axa-ch/style-guide")
               +svg('github', ['button__icon', 'icon', 'button__icon--left'])
               | View on GitHub

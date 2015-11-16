@@ -12,7 +12,7 @@ notifier = require 'node-notifier'
 module.exports = (cb) ->
   browserify({
       debug: true,
-      extensions: ['.js', '.coffee']
+      extensions: ['.js', '.coffee', '.jsx']
     })
     .transform(babelify)
     .transform(coffeeify)

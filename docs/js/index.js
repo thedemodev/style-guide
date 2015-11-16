@@ -6,7 +6,7 @@ require('./example')
 require('./iframe-resizer')
 require('./left-navigation')
 require('./octocat')
-require('./search')
+require('./search/searchDataApi')()
 require('./tab')
 
 import moment from 'moment'
