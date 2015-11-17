@@ -1,19 +1,51 @@
 import Bacon from 'baconjs';
+import lunr from 'lunr';
 
 export default class SearchModel {
-    constructor(searchDataUrl) {
-        this._searchTermBus = new Bacon.Bus();
-        this.searchTerm = this._searchTermBus.toProperty();
+    constructor(options) {
+        // baseUrl
+        this.baseUrl = options.map((opts) => opts.baseUrl)
+          .skipDuplicates()
+          .toProperty();
 
-        this._selectedSuggestionBus = new Bacon.Bus();
-        this.selectedSuggestion = this._selectedSuggestionBus.toProperty();
+        // search data url
+        this._searchDataUrl = options.map((opts) => opts.searchDataUrl)
+          .skipDuplicates()
+          .toProperty();
 
-        let _searchData = this._loadSearchData(searchDataUrl);
+        // search term
+        this.searchTerm = new Bacon.Bus();
 
-        this.suggestions = this._suggestions(_searchData);
+        // TODO: selectedSuggestion
+        //this._selectedSuggestionBus = new Bacon.Bus();
+        //this.selectedSuggestion = this._selectedSuggestionBus.toProperty();
 
-        this.loading = _searchData.map((searchData) => !!searchData.loading);
-        this.error = _searchData.map((searchData) => !!searchData.error);
+        // search data
+        this._searchData = this._searchDataUrl.flatMap((searchDataUrl) => this._loadSearchData(searchDataUrl));
+
+        // search data error/loading
+        this.loading = this._searchData.map((searchData) => !!searchData.loading).toProperty(true);
+        this.error = this._searchData.map((searchData) => !!searchData.error).toProperty(false);
+
+        // suggestions
+        this.suggestions = new Bacon.Bus();
+
+        this.suggestions.plug(this._searchData.combine(this.searchTerm, (searchData, searchTerm) => {
+            if(searchData.loading || searchData.error) {
+                return [];
+            } else {
+                return searchData.lunrIndex.search(searchTerm).map((res) => ({
+                  ref: res.ref,
+                  link: searchData.pages[res.ref].link,
+                  title: searchData.pages[res.ref].title,
+                }));
+            }
+        }));
+
+        this.suggestions = this.suggestions.toProperty([]);
+
+        // bind methods
+        this.setSearchTerm = this.setSearchTerm.bind(this);
     }
 
     toProperty() {
@@ -23,46 +55,37 @@ export default class SearchModel {
             suggestions: this.suggestions,
             selectedSuggestion: this.selectedSuggestion,
             setSearchTerm: this.setSearchTerm,
+            baseUrl: this.baseUrl,
         });
     }
 
     setSearchTerm(val) {
-        this._searchTermBus.push(val);
+        this.searchTerm.push(val);
     }
 
     setSelectedSuggestion(suggestion) {
         this._selectedSuggestionBus.push(suggestion);
     }
 
-    _suggestions(_searchData) {
-
-        this.suggestions = _searchData.combine(this.searchTerm, (searchData, searchTerm) => {
-            if(searchData.loading || searchData.error) {
-                return null;
-            } else {
-                return searchData.lunrIndex.search(searchTerm);
-            }
-        })
-    }
-
     _loadSearchData(searchDataUrl) {
-        this.searchData = Bacon.fromPromise($.get(searchDataUrl), false, (dataOrError) => {
-            let hasError= dataOrError.hasOwnProperty('error');
+        return Bacon.fromPromise($.get(searchDataUrl), false, (dataOrError) => {
+            let hasError = dataOrError.hasOwnProperty('error');
 
             if(hasError) {
-                return [{
+                return {
                     error: dataOrError.error,
                     loading: false,
-                }];
+                };
             } else {
-                let lunrIndex = lunr.Index.load(dataOrError);
+                let lunrIndex = lunr.Index.load(dataOrError.lunr);
                 lunrIndex.pipeline.remove(lunr.stopWordFilter);
 
-                return [{
+                return {
                     error: false,
                     loading: false,
                     lunrIndex: lunrIndex,
-                }];
+                    pages: dataOrError.pages,
+                };
             }
         }).toProperty({
             error: false,

@@ -27,7 +27,6 @@
   },
   "browserify-shim": {
     "jquery": "global:jQuery",
-    "baconjs": "global:Bacon",
     "iframe-resizer": "global:iFrameResize",
     "moment": "global:moment"
   },
@@ -38,8 +37,8 @@
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
     "babel-preset-stage-0": "^6.1.18",
-    "babelify": "^6.1.2",
-    "baconjs": "^0.7.73",
+    "babelify": "^7.2.0",
+    "baconjs": "^0.7.77",
     "browserify": "^12.0.1",
     "browserify-shim": "^3.8.11",
     "cheet.js": "^0.3.3",

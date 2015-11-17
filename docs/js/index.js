@@ -1,15 +1,18 @@
 import $ from 'jquery'
 
+import searchDataApi from './search/searchDataApi'
+
 require('../..')
 require('./cheat')
 require('./example')
 require('./iframe-resizer')
 require('./left-navigation')
 require('./octocat')
-require('./search/searchDataApi')()
 require('./tab')
 
 import moment from 'moment'
+
+searchDataApi()
 
 moment.locale('en_GB')
 

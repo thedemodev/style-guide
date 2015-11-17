@@ -18,8 +18,8 @@ export default class Suggestion extends React.Component {
 }
 
 Suggestion.propTypes = {
-    title: React.PropTypes.obj.isRequired,
+    title: React.PropTypes.string.isRequired,
     href: React.PropTypes.string.isRequired,
     isSelected: React.PropTypes.bool,
-    tags: React.Proptypes.string,
+    tags: React.PropTypes.string,
 };
