@@ -70,6 +70,7 @@ module.exports = (cb) ->
     changelogRenderer: markedChangelogRenderer
     # basedir for layout files
     basedir: jadeBaseDir
+    branch: process.env.TRAVIS_BRANCH || 'master'
 
   # Do the markdown pages
   metalsmith.use(

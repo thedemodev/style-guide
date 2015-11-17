@@ -135,6 +135,27 @@ html
                   path(d="M0,12 L24,12", class="burger-icon__middle")
                   path(d="M0,19 L24,19", class="burger-icon__bottom")
 
+      mixin contents(content)
+        div!= content
+        .contribute
+          .contribute__image
+            img(src='', data-octocat).contribute__octocat
+          .contribute__content
+            .contribute__headline Contribute to this article
+            p.contribute__text
+              | Want to edit or suggest changes
+              | to this content? You can edit and
+              | submit changes to
+              | #{' '}
+              a(href=config.repository.url + '/tree/'+branch+'/docs' + ((link ? link : '').replace(/\.html$/, '.jade'))) this article
+              |  on GitHub.
+            p.contribute__text
+              | To suggest changes on a compoent head over to
+              a(href=config.repository.url) our GitHub repository
+              |  and file and issue or pull request.
+            p
+              a(href=config.repository.url + '/tree/'+branch+'/docs' + ((link ? link : '').replace(/\.html$/, '.jade'))).button.button--small.button--primary Edit Article on Github.
+      
       .page-content
         if section
           .row
@@ -143,12 +164,11 @@ html
             .column.column--docs-main
               if headline !== false
                 h1.heading.heading--page #{title}
-              div!= contents
-
+              +contents(contents)
         else
           if headline !== false
             h1.heading.heading--page #{title}
-          div!= contents
+          +contents(contents)
           
       footer.footer
         .footer__copyline.footer-copyline
