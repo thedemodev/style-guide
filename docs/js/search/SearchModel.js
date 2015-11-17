@@ -16,9 +16,9 @@ export default class SearchModel {
         // search term
         this.searchTerm = new Bacon.Bus();
 
-        // TODO: selectedSuggestion
-        //this._selectedSuggestionBus = new Bacon.Bus();
-        //this.selectedSuggestion = this._selectedSuggestionBus.toProperty();
+        // selectedSuggestion
+        this._selectedSuggestionBus = new Bacon.Bus();
+        this.selectedSuggestion = this._selectedSuggestionBus.toProperty(null);
 
         // search data
         this._searchData = this._searchDataUrl.flatMap((searchDataUrl) => this._loadSearchData(searchDataUrl));
@@ -46,6 +46,7 @@ export default class SearchModel {
 
         // bind methods
         this.setSearchTerm = this.setSearchTerm.bind(this);
+        this.setSelectedSuggestion = this.setSelectedSuggestion.bind(this);
     }
 
     toProperty() {

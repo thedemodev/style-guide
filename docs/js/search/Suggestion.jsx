@@ -8,7 +8,7 @@ export default class Suggestion extends React.Component {
         });
 
         return (
-            <a href={this.props.href} className={classes} >
+            <a href={this.props.href} className={classes} onMouseOver={this.props.onMouseOver}>
                 {this.props.title}
                 {this.props.tags ? (<span className="docs-search__tags">{this.props.tags}</span>) : null}
             </a>
@@ -22,4 +22,5 @@ Suggestion.propTypes = {
     href: React.PropTypes.string.isRequired,
     isSelected: React.PropTypes.bool,
     tags: React.PropTypes.string,
+    onMouseOver: React.PropTypes.func,
 };
