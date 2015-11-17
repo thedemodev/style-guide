@@ -1,16 +1,12 @@
 import React from 'react';
-import { createBaconComponent } from 'react-bacon-component';
-import Bacon from 'baconjs';
 
 import Suggestion from './Suggestion';
-
-import SearchModel from './SearchModel';
 
 const KEY_ENTER = 13
 const KEY_UP = 38
 const KEY_DOWN = 40
 
-class Search extends React.Component {
+export default class Search extends React.Component {
 
     render() {
         return (
@@ -172,25 +168,3 @@ Search.propTypes = {
     setSelectedSuggestion: React.PropTypes.func.isRequired,
     setSearchTerm: React.PropTypes.func.isRequired,
 };
-
-var SearchCombinator = createBaconComponent((propsP, contextP) => {
-  var model = new SearchModel(propsP);
-
-  var prop = Bacon.combineTemplate({
-      loading: model.loading,
-      error: model.error,
-      suggestions: model.suggestions,
-      selectedSuggestion: model.selectedSuggestion,
-      setSearchTerm: model.setSearchTerm,
-      setSelectedSuggestion: model.setSelectedSuggestion,
-      baseUrl: model.baseUrl,
-  }).toProperty();
-
-  return prop;
-}, Search);
-
-SearchCombinator.propTypes = {
-    searchDataUrl: React.PropTypes.string.isRequired,
-};
-
-export default SearchCombinator;

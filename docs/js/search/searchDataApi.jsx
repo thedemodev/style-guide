@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Search from './Search';
+import SearchCombinator from './SearchCombinator';
 
 export default function searchDataApi() {
     var elements = document.querySelectorAll('[data-search]');
@@ -11,6 +11,6 @@ export default function searchDataApi() {
         let searchDataUrl = element.getAttribute('data-search-index-data');
         let baseUrl = element.getAttribute('data-search-base-url');
 
-        ReactDOM.render(<Search searchDataUrl={searchDataUrl} baseUrl={baseUrl} />, element);
+        ReactDOM.render(<SearchCombinator searchDataUrl={searchDataUrl} baseUrl={baseUrl} />, element);
     }
 };
