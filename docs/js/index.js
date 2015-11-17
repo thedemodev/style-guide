@@ -1,4 +1,7 @@
 import $ from 'jquery'
+import Bacon from 'baconjs'
+
+$.fn.asEventStream = Bacon.$.asEventStream
 
 import searchDataApi from './search/searchDataApi'
 

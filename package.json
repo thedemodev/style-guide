@@ -26,9 +26,12 @@
     "url": "https://github.com/axa-ch/style-guide/issues"
   },
   "browserify-shim": {
-    "jquery": "global:jQuery",
+    "baconjs": "global:Bacon",
     "iframe-resizer": "global:iFrameResize",
-    "moment": "global:moment"
+    "jquery": "global:jQuery",
+    "moment": "global:moment",
+    "react": "global:React",
+    "react-dom": "global:ReactDOM"
   },
   "homepage": "http://design.axa.ch",
   "devDependencies": {
