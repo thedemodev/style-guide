@@ -38,6 +38,7 @@ export default class SearchModel {
                   ref: res.ref,
                   link: searchData.pages[res.ref].link,
                   title: searchData.pages[res.ref].title,
+                  tags: searchData.pages[res.ref].tags,
                 }));
             }
         }));
