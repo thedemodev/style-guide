@@ -2,6 +2,21 @@ import Bacon from 'baconjs';
 import lunr from 'lunr';
 
 export default class SearchModel {
+
+    static combinator(props, context) {
+      let model = new SearchModel(props);
+
+      return Bacon.combineTemplate({
+          loading: model.loading,
+          error: model.error,
+          suggestions: model.suggestions,
+          selectedSuggestion: model.selectedSuggestion,
+          setSearchTerm: model.setSearchTerm,
+          setSelectedSuggestion: model.setSelectedSuggestion,
+          baseUrl: model.baseUrl,
+      }).toProperty();
+    }
+
     constructor(options) {
         // baseUrl
         this.baseUrl = options.map((opts) => opts.baseUrl)
