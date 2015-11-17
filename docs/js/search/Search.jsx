@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Suggestion from './Suggestion';
 
@@ -6,7 +6,7 @@ const KEY_ENTER = 13
 const KEY_UP = 38
 const KEY_DOWN = 40
 
-export default class Search extends React.Component {
+export default class Search extends Component {
 
     render() {
         return (

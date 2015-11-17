@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
 
-export default class Suggestion extends React.Component {
+export default class Suggestion extends Component {
     render() {
         let classes = classNames('autocomplete__suggestions__item', {
             'autocomplete__suggestions__item--selected': this.props.isSelected,
