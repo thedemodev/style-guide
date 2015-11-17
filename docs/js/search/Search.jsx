@@ -69,7 +69,10 @@ class Search extends React.Component {
         prev = this.props.suggestions[this.props.suggestions.length - 1];
       }
 
-      this.props.setSelectedSuggestion(prev.ref);
+      if (prev) {
+        this.props.setSelectedSuggestion(prev.ref);
+      }
+
     }
 
     _selectNextSuggestion() {
@@ -90,7 +93,10 @@ class Search extends React.Component {
         next = this.props.suggestions[0];
       }
 
-      this.props.setSelectedSuggestion(next.ref);
+      if (next) {
+        this.props.setSelectedSuggestion(next.ref);
+      }
+
     }
 
     _openCurrentOrFirstSuggestion() {
