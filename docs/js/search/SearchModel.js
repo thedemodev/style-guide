@@ -34,7 +34,7 @@ export default class SearchModel {
             if(searchData.loading || searchData.error) {
                 return [];
             } else {
-                return searchData.lunrIndex.search(searchTerm).map((res) => ({
+                return searchData.lunrIndex.search(searchTerm).slice(0,5).map((res) => ({
                   ref: res.ref,
                   link: searchData.pages[res.ref].link,
                   title: searchData.pages[res.ref].title,
