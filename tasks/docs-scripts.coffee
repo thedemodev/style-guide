@@ -16,7 +16,7 @@ module.exports = (cb) ->
     })
     .transform(babelify)
     .transform(coffeeify)
-    .transform(shim)
+    .transform(shim, { global: true })
     .add('docs/js/index.js')
     .bundle()
     .on 'error', (err) ->
