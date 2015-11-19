@@ -45,6 +45,8 @@ export default class SearchModel {
             return [];
           }
 
+          // return the results from the lunr index merged with other data
+          // from the searchData
           return searchData.lunrIndex.search(searchTerm).slice(0,5).map((res) => ({
             ref: res.ref,
             link: searchData.pages[res.ref].link,
