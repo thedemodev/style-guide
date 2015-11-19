@@ -136,25 +136,28 @@ html
                   path(d="M0,19 L24,19", class="burger-icon__bottom")
 
       mixin contents(content)
+        - var githubUrl = config.repository.url + '/tree/'+branch+'/docs/page' + filepath
         div!= content
-        .contribute
-          .contribute__image
-            img(src='', data-octocat).contribute__octocat
-          .contribute__content
-            .contribute__headline Contribute to this article
-            p.contribute__text
-              | Want to edit or suggest changes
-              | to this content? You can edit and
-              | submit changes to
-              | #{' '}
-              a(href=config.repository.url + '/tree/'+branch+'/docs' + ((link ? link : '').replace(/\.html$/, '.jade'))) this article
-              |  on GitHub.
-            p.contribute__text
-              | To suggest changes on a compoent head over to
-              a(href=config.repository.url) our GitHub repository
-              |  and file and issue or pull request.
-            p
-              a(href=config.repository.url + '/tree/'+branch+'/docs' + ((link ? link : '').replace(/\.html$/, '.jade'))).button.button--small.button--primary Edit Article on Github.
+        if !hideContributeSection
+          .contribute
+            .contribute__image
+              img(src='', data-octocat).contribute__octocat
+            .contribute__content
+              .contribute__headline Contribute to this article
+              p.contribute__text
+                | Want to edit or suggest changes
+                | to this content? You can edit and
+                | submit changes to
+                | #{' '}
+                a(href=githubUrl).link this article
+                |  on GitHub.
+              p.contribute__text
+                | To suggest changes on a compoent head over to
+                | #{' '}
+                a(href=config.repository.url).link our GitHub repository
+                |  and file and issue or pull request.
+              p
+                a(href=githubUrl).button.button--small.button--primary Edit Article on Github.
       
       .page-content
         if section

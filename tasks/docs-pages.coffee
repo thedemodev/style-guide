@@ -75,6 +75,13 @@ module.exports = (cb) ->
   # Do the markdown pages
   metalsmith.use(
     branch ['**/*.md', '!_*/**/*.md']
+      .use filepath
+        absolute: true
+      .use (files, metalsmith, done) ->
+        _.forEach files, (file) =>
+          file.filepath = file.link
+          file.link = "#{file.link.slice(0, -3)}.html"
+        do done
       .use relative()
       .use markdown
         useMetadata: true
@@ -88,6 +95,7 @@ module.exports = (cb) ->
         absolute: true
       .use (files, metalsmith, done) ->
         _.forEach files, (file) =>
+          file.filepath = file.link
           file.link = "#{file.link.slice(0, -5)}.html"
         do done
       .use relative()
