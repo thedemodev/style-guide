@@ -18,41 +18,41 @@ export default class SearchModel {
     }
 
     constructor(options) {
-        // options
+        // get the options as properties to react to changes
         this.baseUrl = this._getOptionAsProperty(options, 'baseUrl');
         this._searchDataUrl = this._getOptionAsProperty(options, 'searchDataUrl');
 
-        // search term
+        // create a bus to handle searchTerm changes
         this.searchTerm = new Bacon.Bus();
 
-        // selectedSuggestion
+        // create a bus and a derived property to handle selection of a
+        // suggestion (either by keyboard up/down or by mouse over)
         this._selectedSuggestionBus = new Bacon.Bus();
         this.selectedSuggestion = this._selectedSuggestionBus.toProperty(null);
 
-        // search data
+        // create a property containing the search data loaded from the
+        // searchDataUrl
         this._searchData = this._searchDataUrl.flatMap((searchDataUrl) => this._loadSearchData(searchDataUrl));
 
-        // search data error/loading
+        // handle the loading and error state for searchData loading
         this.loading = this._searchData.map((searchData) => !!searchData.loading).toProperty(true);
         this.error = this._searchData.map((searchData) => !!searchData.error).toProperty(false);
 
+        // combine the latest seatchData and searchTerm to find
         // suggestions
-        this.suggestions = new Bacon.Bus();
+        this.suggestions = this._searchData.combine(this.searchTerm, (searchData, searchTerm) => {
+          if(searchData.loading || searchData.error) {
+            return [];
+          }
 
-        this.suggestions.plug(this._searchData.combine(this.searchTerm, (searchData, searchTerm) => {
-            if(searchData.loading || searchData.error) {
-                return [];
-            } else {
-                return searchData.lunrIndex.search(searchTerm).slice(0,5).map((res) => ({
-                  ref: res.ref,
-                  link: searchData.pages[res.ref].link,
-                  title: searchData.pages[res.ref].title,
-                  tags: searchData.pages[res.ref].tags,
-                }));
-            }
-        }));
+          return searchData.lunrIndex.search(searchTerm).slice(0,5).map((res) => ({
+            ref: res.ref,
+            link: searchData.pages[res.ref].link,
+            title: searchData.pages[res.ref].title,
+            tags: searchData.pages[res.ref].tags,
+          }));
 
-        this.suggestions = this.suggestions.toProperty([]);
+        }).changes().toProperty([]);
 
         // bind methods
         this.setSearchTerm = this.setSearchTerm.bind(this);
@@ -104,9 +104,6 @@ export default class SearchModel {
                     pages: dataOrError.pages,
                 };
             }
-        }).toProperty({
-            error: false,
-            loading: true,
         });
     }
 }
