@@ -16,10 +16,11 @@ header.header
             a.menu__link Small Business Insurance
           li.menu__item
             a.menu__link About Us
-      .header__meta__item.header__meta__search.search.search--header
-        input.search__input.search--header(type='text')
-        +svg('search', ['search__icon', 'search--header', 'icon'])
-        .search__suggestions.search--header
+      .header__meta__item.header__meta__search
+        .search.search--header
+          input.search__input.search--header(type='text')
+          +svg('search', ['search__icon', 'search--header', 'icon'])
+          .autocomplete__suggestions.search--header
       .header__meta__item.header__meta__language
         a.header__meta__language-button(data-popover="#languageMenu")
           | EN
