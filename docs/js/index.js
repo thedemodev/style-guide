@@ -8,6 +8,7 @@ require('./left-navigation')
 require('./octocat')
 require('./search')
 require('./tab')
+require('./browser-support-charts')
 
 import moment from 'moment'
 
