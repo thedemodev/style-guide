@@ -18,15 +18,9 @@ export default class SearchModel {
     }
 
     constructor(options) {
-        // baseUrl
-        this.baseUrl = options.map((opts) => opts.baseUrl)
-          .skipDuplicates()
-          .toProperty();
-
-        // search data url
-        this._searchDataUrl = options.map((opts) => opts.searchDataUrl)
-          .skipDuplicates()
-          .toProperty();
+        // options
+        this.baseUrl = this._getOptionAsProperty(options, 'baseUrl');
+        this._searchDataUrl = this._getOptionAsProperty(options, 'searchDataUrl');
 
         // search term
         this.searchTerm = new Bacon.Bus();
@@ -63,6 +57,12 @@ export default class SearchModel {
         // bind methods
         this.setSearchTerm = this.setSearchTerm.bind(this);
         this.setSelectedSuggestion = this.setSelectedSuggestion.bind(this);
+    }
+
+    _getOptionAsProperty(options, name) {
+      return options.map((opts) => opts[name])
+        .skipDuplicates()
+        .toProperty();
     }
 
     toProperty() {
