@@ -10,7 +10,8 @@ export default function searchDataApi() {
 
         let searchDataUrl = element.getAttribute('data-search-index-data');
         let baseUrl = element.getAttribute('data-search-base-url');
+        let icon = element.getAttribute('data-search-icon');
 
-        ReactDOM.render(<SearchCombinator searchDataUrl={searchDataUrl} baseUrl={baseUrl} />, element);
+        ReactDOM.render(<SearchCombinator searchDataUrl={searchDataUrl} baseUrl={baseUrl} icon={icon} />, element);
     }
 };

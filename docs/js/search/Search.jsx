@@ -18,6 +18,7 @@ export default class Search extends Component {
                   onChange={this._onSearchTermChange.bind(this)}
                   onKeyUp={this._onSearchInputKeyUp.bind(this)}
                    />
+                {this._renderIcon()}
                 <div className="autocomplete__suggestions" >
                     {this._renderError()}
                     {this._renderLoading()}
@@ -25,6 +26,20 @@ export default class Search extends Component {
                 </div>
             </div>
         )
+    }
+
+    _renderIcon() {
+      let html = {
+        __html: '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' +
+          this.props.icon +
+          '"></use>'
+      };
+
+      return (
+        <svg
+          dangerouslySetInnerHTML={html}
+          className="search__icon search--header icon-svg" />
+      )
     }
 
     _onSearchInputKeyUp(e) {
@@ -167,4 +182,5 @@ Search.propTypes = {
     selectedSuggestion: React.PropTypes.string,
     setSelectedSuggestion: React.PropTypes.func.isRequired,
     setSearchTerm: React.PropTypes.func.isRequired,
+    icon: React.PropTypes.string.isRequired,
 };
