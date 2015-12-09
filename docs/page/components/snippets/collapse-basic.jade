@@ -6,14 +6,6 @@ template: demo.jade
 include /components/includes/mixins.jade
 
 .collapse(data-collapse, data-single, data-open="one")
-  nav
-    ul.collapse__tabs
-      li.collapse__tabs__item
-        a.collapse__tabs__item__link(href="#", data-trigger="one") One One
-      li.collapse__tabs__item
-        a.collapse__tabs__item__link(href="#", data-trigger="two") Two Two
-      li.collapse__tabs__item
-        a.collapse__tabs__item__link(href="#", data-trigger="three") Three Three
   ul.collapse__panels
     li.collapse__panels__item
       a.collapse__panels__item__header(href="#", data-trigger="one")
