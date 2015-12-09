@@ -1,6 +1,5 @@
 @import 'style/variables';
 @import 'style/mixins/clearfix';
-@import 'style/grid';
 
 .color-palette__key__icon {
   fill: @color-light-blue;
@@ -39,8 +38,9 @@
 }
 
 .color-palette__color__less {
+  .make-font-small-semibold();
+
   font-family: monospace;
-  font-size: .7em;
 }
 
 .color-palette__color__copy {

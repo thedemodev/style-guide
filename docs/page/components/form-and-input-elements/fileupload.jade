@@ -27,32 +27,19 @@ h2.heading.heading--secondary#example Example
 p.paragraph.
   This is a working example of the fileupload component. Please drag a file into the dropzone.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-js.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-js.html')
+
 .hr
 
 h2.heading.heading--secondary#dropzone Dropzone
 p.paragraph.
   The dropzone is the initial state of every fileupload and should be used wherever possible.  If a file upload is not feasible, a classic file upload should be used.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-dropzone.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-dropzone.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-dropzone')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-dropzone
     .tab-panel(data-tab, data-tab-default='html')
@@ -76,15 +63,15 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Most mobile devices don’t support dragging files to an upload area. Use the native file picker as a fallback. Use the same solution for IE 9.
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Start uploading files, as soon as the user drops them on the dropzone.
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Make sure that all files are uploaded before the form is submitted.
 
@@ -95,18 +82,11 @@ p.paragraph.
   The file list contains all files that are currently being uploaded, have
   been uploaded or we're interrupted while uploading.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-list.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-list.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-list')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-list
     .tab-panel(data-tab, data-tab-default='html')
@@ -122,7 +102,7 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       In case of an error tell the user exactly what happened.
       If the user needs to change something, explain as short
@@ -138,18 +118,11 @@ p.paragraph.
 p.paragraph.
   This is the case for most mobile devices and ancient browser like IE 9.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-fallback.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-fallback.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-fallback')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-fallback
     .tab-panel(data-tab, data-tab-default='html')
@@ -171,18 +144,11 @@ p.paragraph.
   the dropzone in this case.
   In case of an error, display the message below the dropzone.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/fileupload-single.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/fileupload-single.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-single')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-single
     .tab-panel(data-tab, data-tab-default='html')

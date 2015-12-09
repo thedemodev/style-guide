@@ -1,27 +1,17 @@
 @import '../variables';
+@import '../mixins/make-container';
+@import '../mixins/make-row';
+@import '../mixins/make-column';
 @import '../mixins/respond';
-@import '../mixins/clearfix';
-@import '../blocks/icon';
 
 .header {
-  &:extend(.clearfix all);
-
-  .respond(medium, {
-    border-bottom: 5px solid @color-blue;
-    });
-
-  .respond(large, {
-  });
-}
-
-.header__brand {
-  order: 1;
-
-  margin-left: 4px;
+  border-bottom: 5px solid @color-blue;
 }
 
 .header__meta {
   display: none;
+  height: 3.5rem;
+
   background: @color-gray--lighter;
 
   .respond(large, {
@@ -29,147 +19,124 @@
   });
 }
 
-.header__meta__content {
-  .make-container(1400px, 0);
+.header__main {
+  height: 4.8125rem;
 
-  display: flex;
+  .respond(large, {
+    height: 5.875rem;
+  });
+}
 
-  &::after {
-    content: "";
-    display: block;
-    order: 2;
-    flex-grow: 1;
-  }
+.header__meta__container,
+.header__main__container {
+  .make-container();
+
+  // This is for the menu-main overlay!
+  position: relative;
+
+  max-width: @grid-breakpoint-lg;
+  height: 100%;
+}
+
+.header__meta__row,
+.header__main__row {
+  .make-row();
+
+  // This is for the menu-main overlay!
+  position: static;
+
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 .header__meta__item {
-  height: 56px;
+  .make-column();
+
+  height: 3.5rem;
+  padding: 0;
 }
 
-.header__meta__menu {
+.header__main__item {
+  .make-column();
+
+  height: 100%;
+}
+
+.header__meta__item--menu {
   order: 1;
+  flex-grow: 1;
 }
 
-.header__meta__search {
+.header__meta__item--search {
+  .make-link;
+
   order: 3;
   display: flex;
 
-  width: 315px;
-
-  color: @color-gray--darker;
+  width: 20rem;
 }
 
-.header__meta__language {
+.header__meta__item--language {
   order: 4;
   flex-shrink: 0;
 }
 
-.header__meta__action {
-  order: 5;
-
-  flex-shrink: 0;
-  padding: 0 35px;
-
-  font-size: 0.9em;
-  font-weight: bold;
-  color: @color-white;
-  text-decoration: none;
-
-  background: @color-red;
-
-  &::before {
-    //This is used so the text of .header__meta__action is vertically aligned in the middle
-    //without having to totally fuck up the markup.
-    //todo: make a mixin?
-    display: inline-block;
-    content: "";
-    height: 100%;
-    vertical-align: middle
-  }
-}
-
-.lt-ie10 {
-  .header__meta {
-    &:extend(.clearfix all);
-  }
-
-  .header__meta__menu {
-    float: left;
-  }
-
-  .header__meta__search {
-    float: right;
-  }
-
-  .header__meta__language {
-    float: right;
-  }
-
-  .header__meta__action {
-    float: right;
-  }
-}
-
-.header__meta__language-button {
-  display: inline-block;
-
-  height: 100%;
-  padding: 0 23px;
-
-  font-size: 0.9em;
-  font-weight: bold;
-  color: @color-gray--darker;
-  cursor: pointer;
-
-  &::before {
-    //This is used so the text of .header__meta__action is vertically aligned in the middle
-    //without having to totally fuck up the markup.
-    //todo: make a mixin?
-    display: inline-block;
-    content: "";
-    height: 100%;
-    vertical-align: middle
-  }
-}
-
-.header__main {
-  //box-shadow: 0 0px 0px 0px @color-white, 0 -3px 3px -3px @color-gray, 0px 0 0px 0px @color-white, 0px 0 0px 0px @color-white;
-}
-
-.header__main__content {
-  .make-container(1400px, 0);
+.header__meta__item--action {
+  .make-font-small-semibold;
+  .make-link;
 
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
 
-  &::after {
-    content: "";
-    display: block;
-    order: 2;
-    flex-grow: 1;
+  order: 5;
+  flex-shrink: 0;
+  padding: 0 @grid-gutter-width/2;
+
+  color: @color-white;
+  background: @color-red;
+
+  &:hover {
+    color: darken(@color-white, 10%);
   }
 }
 
-.header__menu {
+.header__main__item--brand.brand {
+  order: 1;
+  flex-grow: 1;
+  align-self: center;
+}
+
+.header__main__item--menu.menu-main {
+  // This is for the menu-main overlay!
+  position: static;
+
   display: none;
+  align-self: flex-end;
 
   .respond(large, {
-    display: block;
-    margin-right: 4px;
+    display: inherit;
     order: 3;
   });
 }
 
-.header__main__mobile-trigger {
+.header__main__item--mobile-action {
   order: 4;
-  align-self: stretch;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0 @grid-gutter-width/2;
 
-  padding: 0 25px;
-  fill: @color-blue;
+  color: @color-black;
   cursor: pointer;
+
+  z-index: 10000;
+
+  &:hover {
+    color: @color-blue;
+  }
 
   .respond(large, {
     display: none;
@@ -177,8 +144,7 @@
 }
 
 .header__main__mobile-icon {
-  width: 25px;
-  height: 20px;
+  display: block;
 }
 
 // Copyright AXA Versicherungen AG 2015

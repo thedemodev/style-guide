@@ -24,13 +24,16 @@ renderer.heading = (text, level) ->
     "</h#{l}>\n"
   ].join ""
 
+renderer.hr = () ->
+  "<hr class=\"hr\" />"
+
 renderer.image = (href, title, text) ->
   [
     "<img"
       " alt=\"#{text}\""
       " src=\"#{@_relative href}\""
       " title=\"#{title}\""
-      " class=\"image image--responsive\" />\n"
+      " class=\"image image--responsive image--docs\" />\n"
   ].join ""
 
 renderer.link = (href, title, text) ->

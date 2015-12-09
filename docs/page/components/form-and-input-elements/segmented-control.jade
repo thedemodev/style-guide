@@ -1,5 +1,5 @@
 ---
-title: Segmented control
+title: Segmented Control
 order: 10
 template: page.jade
 tags: Single select, selection
@@ -8,7 +8,8 @@ tags: Single select, selection
 include ../includes/mixins.jade
 
 p.paragraph.
-  A segmented control enables the user to make a single selection from just a few options.
+  A segmented control enables the user to make a single
+  selection from just a few options.
 
 .toc
   .toc__title Table of contents
@@ -27,18 +28,11 @@ h2.heading.heading--secondary#basic Basic Segmented Control
 p.paragraph.
   This element aligns different options next to each other.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/segmented-control-basic.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/segmented-control-basic.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-basic
     .tab-panel(data-tab, data-tab-default='html')
@@ -70,11 +64,11 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Default values can be set if appropriate - if in doubt, do not set defaults.
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content
       :markdown
         Do not use more than 5 options in a segmented control. A <a href="./dropdown.html" class="link">dropdown</a> can be an alternative.
@@ -86,18 +80,11 @@ h2.heading.heading--secondary#stacked Stacked Segmented Control
 p.paragraph.
   A stacked segmented control is used when text gets to long to be presented next to each other. If you are using the Segmented Control jQuery Plugin, this will be automatically handled for you.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/segmented-control-stacked.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/segmented-control-stacked.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-stacked')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-stacked
     .tab-panel(data-tab, data-tab-default='html')
@@ -119,7 +106,7 @@ h3.heading.heading--tertiary UX Checklist
 
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Do not set a default value when using a stacked segmented control.
 
@@ -130,18 +117,11 @@ h2.heading.heading--secondary#disabled Disabled Segmented Control
 p.paragraph.
   A disabled segmented control can be used to show a value that can't be modified.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/segmented-control-disabled.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/segmented-control-disabled.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-disabled')
-    svg.icon-svg.toggle__icon
+    svg.icon.toggle__icon
       use(xlink:href=relative('/images/icons.svg#source'))
     span See code
   .toggle__content#code-disabled
@@ -164,18 +144,11 @@ h2.heading.heading--secondary#backup Backup: Radio Buttons
 p.paragraph.
   If presented with problems, the user should always be able to use the browser native radio buttons as a fallback solution.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/segmented-control-fallback.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/segmented-control-fallback.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-fallback')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-fallback
     .tab-panel(data-tab, data-tab-default='html')

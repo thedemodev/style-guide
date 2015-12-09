@@ -21,11 +21,42 @@ mixin displaySideMenu(pages, isNested, isOpen)
         ) #{page.title}
           if page.children
             .menu__dropdown__icon(class={ 'is-open': isActive(page) })
-              +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon-svg'])
-              +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon-svg'])
+              +svg('arrow-right', ['menu__dropdown__icon__is-closed', 'icon'])
+              +svg('arrow-bottom', ['menu__dropdown__icon__is-open', 'icon'])
 
         if page.children
           +displaySideMenu(page.children, true, isActive(page))
+
+mixin displayMobileMenu(page)
+  li.mobile-menu__item
+    a.mobile-menu__link(
+      class={
+        'mobile-menu__link--parent': page.children,
+        'is-active': isActive(page)
+      },
+      data-link
+      href=(!page.children ? relative(page.link) : '#')
+    )
+      span.mobile-menu__text= page.title
+      if page.children
+        +svg('arrow-right', ['mobile-menu__link__parent-icon', 'icon'])
+
+    if page.children
+      ul.mobile-menu__level(data-level)
+        li.mobile-menu__item.mobile-menu__item--back
+          a.mobile-menu__link.mobile-menu__link--back(
+            href='#',
+            data-back
+          )
+            span.mobile-menu__text back
+            +svg('arrow-left', ['mobile-menu__link__back-icon', 'icon'])
+        
+        li.mobile-menu__item.mobile-menu__item--section
+          .mobile-menu__link.mobile-menu__link--section
+            span.mobile-menu__text= page.title
+        
+        each child in page.children
+          +displayMobileMenu(child)
 
 doctype html
 html
@@ -72,66 +103,45 @@ html
     link(rel="stylesheet", href=relative("/css/normalize.min.css"))
     link(rel="stylesheet", href=relative("/css/docs.min.css"))
 
-    script(src=relative('/js/docs.all.min.js'))
-    script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
-    
-    script.
-      // Set the locale for momentjs used in the datepicker
-      moment.locale('en_GB')
-          
-    script.
-      // Include the UserVoice JavaScript SDK (only needed once on a page)
-      UserVoice=window.UserVoice||[];
-      UserVoice.push(['set', {
-        accent_color: '#103184',
-        screenshot_enabled: false
-      }]);
-      (function(){
-        var uv=document.createElement('script');
-        uv.type='text/javascript';
-        uv.async=true;
-        uv.src='//widget.uservoice.com/O8ex403PfbC0GjKz3DuQ.js';
-        var s=document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(uv,s)
-      })();
-
-  body.site
-    .site__page
+  body.site(data-site)
+    .site__page(data-page)
+      .site__page__mask(data-mask)
       #notification.notifications(data-notification-info=relative('/images/icons.svg#info')
         data-notification-success=relative('/images/icons.svg#checkmark')
         data-notification-error=relative('/images/icons.svg#cross'))
-      .l-container
-        .docs-floating-action
-          a(href='#feedback', data-uv-trigger).docs-floating-action__button.button.button--floating
-            +svg('feedback', ['button__icon', 'icon-svg'])
       header.header
         .header__meta
-          .header__meta__content
-            .header__meta__item.header__meta__search.autocomplete.search.search--header
-              input.autocomplete__input.search__input.search--header(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
-              svg.search__icon.search--header.icon-svg
-                use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
-            a.header__meta__item.header__meta__action(href="https://github.com/axa-ch/style-guide")
-              +svg('github', ['button__icon', 'icon-svg', 'button__icon--left'])
-              | View on GitHub
+          .header__meta__container
+            .header__meta__row
+              .header__meta__item.header__meta__item--search.autocomplete.search.search--header
+                input.autocomplete__input.search__input.search--header(type='text', data-search, data-search-index-data=relative('/searchIndex.json'), data-search-base-url=relative('/'))
+                svg.search__icon.search--header.icon
+                  use(xmlns:xlink="http://www.w3.org/1999/xlink",xlink:href="../../images/icons.svg#search")
+              a.header__meta__item.header__meta__item--action(href="https://github.com/axa-ch/style-guide")
+                +svg('github', ['button__icon', 'icon', 'button__icon--left'])
+                | View on GitHub
         .header__main
-          .header__main__content
-            a.header__brand.brand(href=relative("/index.html"))
-              span.brand__logo
-            .header__menu
-              ul.menu.menu--main
+          .header__main__container
+            .header__main__row
+              a.header__main__item.header__main__item--brand.brand(href=relative("/index.html"))
+                span.brand__logo
+              ul.header__main__item.header__main__item--menu.menu-main
                 each page in navigation
-                  li.menu__item(class={ 'is-active': isActive(page) })
-                    a.menu__link(href=relative(page.link))= page.title
-            a.header__main__mobile-trigger(href="#")
-              +svg('burger', ['header__main__mobile-icon'], { 'data-toggle': 'site-menu', 'data-target': '.site' })
+                  li.menu-main__item(class={ 'is-active': isActive(page) })
+                    a.menu-main__link(class={ 'is-active': isActive(page) }, href=relative(page.link))= page.title
+              a.header__main__item.header__main__item--mobile-action.site__burger(data-burger, href="#")
+                svg.icon.burger-icon(data-burger)
+                  g(stroke="currentColor", stroke-width="2", fill="none", fill-rule="evenodd")
+                    path(d="M0,5 L24,5", class="burger-icon__top")
+                    path(d="M0,12 L24,12", class="burger-icon__middle")
+                    path(d="M0,19 L24,19", class="burger-icon__bottom")
 
       .page-content
         if section
-          .l-row
-            nav.l-col.l-col--medium-2
+          .row
+            nav.column.column--docs-side
               +displaySideMenu(section.children, false, true)
-            .l-col.l-col--medium-10
+            .column.column--docs-main
               if headline !== false
                 h1.heading.heading--page #{title}
               div!= contents
@@ -142,24 +152,64 @@ html
           div!= contents
           
       footer.footer
-        .footer__content
-        .footer__copyline
-          .l-container
-            ul.menu.menu--copyline
-              li.menu__item
-                a(href=relative('/changelog.html')).menu__link Changelog
-              li.menu__item
-                span.menu__link= config.copyright
+        .footer__copyline.footer-copyline
+          .footer-copyline__container
+            span.footer-copyline__notice.
+              #{config.copyright} #[+svg('doge', ['icon'])]
+            ul.footer-copyline__entries
+              li.footer-copyline__item
+                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide") GitHub
+              li.footer-copyline__item
+                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/issues") Issues & Feature Requests
+              li.footer-copyline__item
+                a.footer-copyline__link(href="https://github.com/axa-ch/style-guide/releases") Changelog
 
-    script(type='text/javascript').
-      //// Set the right mobile menu level as current
-      //var $menu = $("#menu-mobile");
-      //var $level = $menu.find("[data-link='!{link}']").closest('.menu__level');
-      //
-      //$menu.slidingMenu();
-      //$menu.slidingMenu('level', $level);
-      //
-      //// Highlight the right mobile menu link as active
-      //$menu.find("[data-link='!{link}']").addClass('is-active')
+    .site__mobile.mobile(data-mobile)
+      .row
+        .column.mobile__section
+          h1.mobile__title Web Style Guide
+
+      .row
+        nav.column.mobile-menu.mobile-menu--sliding(data-menu='sliding')
+          ul.mobile-menu__level(data-level)
+            li.mobile-menu__item
+              a.mobile-menu__link(
+                href=relative('/index.html'),
+                data-link
+              ) Home
+            each section in navigation
+              +displayMobileMenu(section)
+
+      .row
+        .column.mobile__separator
+
+      .row
+        .column.list-group
+          a.list-group__item.list-group__item--link(href="https://github.com/axa-ch/style-guide")
+            +svg('github', ['list-group__icon'])
+            span.list-group__text View on GitHub
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
+    script(src=relative('/js/style-guide-docs.js'))
+
+    script.
+      var href = '#{relative(link)}'
+      var mobile = $('[data-menu="sliding"]')
+      
+      var level = mobile
+        .find('[data-link]')
+        .filter('[href=\'' + href + '\']')
+        .closest('[data-level]')
+      
+      if (level.length > 0) {
+        mobile.slidingMenu('level', level)
+      }
+
+    script window.intercomSettings = { app_id: 'i82zr1ej' }
+    script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")
+    script (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/i82zr1ej';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
 
 //- Copyright AXA Versicherungen AG 2015

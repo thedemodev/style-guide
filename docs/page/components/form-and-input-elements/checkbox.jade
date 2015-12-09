@@ -24,18 +24,11 @@ h2.heading.heading--secondary#enhanced Basic Checkbox
 p.paragraph.
   The basic checkbox can be used for accepting terms & conditions or alike.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/checkbox-basic.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/checkbox-basic.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-basic')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-basic
     .tab-panel
@@ -56,7 +49,7 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content.
       Only set a default value if it is good for the user. In doubt, don't set a default value.
 
@@ -65,17 +58,12 @@ ul.checklist
 h2.heading.heading--secondary#group Checkbox group
 p.paragraph.
   If a user needs to select multiple options, the checkbox group can be used.
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/checkbox-group.html')
-        data-iframe-resizer
-      )
+
++example('/components/form-and-input-elements/demos/checkbox-group.html')
+
 .toggle
   .toggle__button(data-info, data-target='#code-checkbox-group')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-checkbox-group
     .tab-panel
@@ -91,7 +79,7 @@ p.paragraph.
 h3.heading.heading--tertiary UX Checklist
 ul.checklist
   li.checklist__item
-    +svg('checkmark', ['checklist__item__icon', 'icon-svg'])
+    +svg('checkmark', ['checklist__item__icon', 'icon'])
     .checklist__item__content
       :markdown
         If you have more than 10 checkboxes in one form-field,
@@ -105,18 +93,11 @@ h2.heading.heading--secondary#non-enhanced Non enhanced checkbox
 p.paragraph.
   Use the non-enhanced checkbox as a fallback only.
 
-.example
-  include ../includes/example-header.jade
-  .example__content
-    .example__border
-      iframe.example__iframe(
-        src=relative('/components/form-and-input-elements/demos/checkbox-non-enhanced.html')
-        data-iframe-resizer
-      )
++example('/components/form-and-input-elements/demos/checkbox-non-enhanced.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code-non-enhanced')
-    +svg('source', ['icon-svg', 'toggle__icon'])
+    +svg('source', ['icon', 'toggle__icon'])
     span See code
   .toggle__content#code-non-enhanced
     .tab-panel
