@@ -16,21 +16,23 @@
         .doAction('.preventDefault')
         .map((event) => this.mapEventToCommand(event))
 
-      this.commands = new Bacon.Bus()
-      this.commands.plug(clicks)
+      clicks.onValue((event) => this.toggleTrigger(event))
+      clicks.onValue((event) => this.togglePanel(event))
 
-      this.opened = this.commands
-        .scan(this.options.open, (opened, command) => this.scanCommands(opened, command))
+      for (let o of this.options.open) {
+        let e = {
+          target: o
+        }
 
-      this.opened.onValue((opened) => this.toggleTriggers(opened))
-      this.opened.onValue((opened) => this.togglePanels(opened))
+        this.toggleTrigger(e)
+        this.togglePanel(e)
+      }
     }
 
     mapEventToCommand(event) {
       let $e = $(event.target)
 
       return {
-        type: $e.hasClass('is-active') ? 'close' : 'open',
         target: $e.data('trigger')
       }
     }
@@ -44,43 +46,35 @@
         if (this.options.single) opened = [command.target]
         if (opened.indexOf(command.target) < 0) opened.push(command.target)
       }
-      //console.log(opened)
       return opened
     }
 
-    toggleTriggers(opened) {
-      this.$triggers.each((i, e) => {
-        let $e = $(e)
-        let name = $e.data('trigger')
-        e.classList.toggle('is-active', opened.indexOf(name) > -1)
+    toggleTrigger(event) {
+      let triggers = this.$triggers.filter((index, e) => {
+        return $(e).data('trigger') === event.target
+      })
+
+      triggers.each((i, e) => {
+        console.log(e)
+        e.classList.toggle('is-active')
       })
     }
 
-    togglePanels(opened) {
-      this.$panels.each((i, e) => {
-        let $e = $(e)
-        let name = $e.data('panel')
-        if (opened.indexOf(name) > -1 && !e.classList.contains('is-open')) {
-          // $e.hide()
-          // $e.css('display', 'none')
-          // setTimeout(function () { $e.slideDown(1500, function () {
-          //   console.log('opened: ', this)
-          //   $e.addClass('is-open')
-          // })}, 500)
-
-          $e.slideDown(250, function () {
-            console.log('opened: ', this)
-            $e.addClass('is-open')
-          })
-
-        } else if (opened.indexOf(name) <= -1 && e.classList.contains('is-open')) {
-          $e.slideUp(250, function () {
-            console.log('closed: ', this)
-            this.removeClass('is-open')
-          }.bind($e))
-        }
-        // e.classList.toggle('is-open', opened.indexOf(name) > -1)
+    togglePanel(event) {
+      let panel = this.$panels.filter((index, e) => {
+        return e.dataset.panel === event.target
       })
+      let $panel = $(panel)
+      if (!$panel.hasClass('is-open')) {
+        $panel.slideDown(250, function () {
+          $panel.addClass('is-open')
+        })
+      }
+      else {
+        $panel.slideUp(250, function () {
+          $panel.removeClass('is-open')
+        })
+      }
     }
   }
 
