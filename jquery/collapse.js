@@ -4,6 +4,7 @@
       this.$element = $(element)
       this.$triggers = this.$element.find('[data-trigger]')
       this.$panels = this.$element.find('[data-panel]')
+      this.$panels.css('display', 'none').removeClass('is-hidden')
       this.options = $.extend({}, { single: false, open: '' }, options)
       this.options.open = this.options.open.split(' ')
       this.init()
@@ -43,7 +44,7 @@
         if (this.options.single) opened = [command.target]
         if (opened.indexOf(command.target) < 0) opened.push(command.target)
       }
-
+      //console.log(opened)
       return opened
     }
 
@@ -59,7 +60,26 @@
       this.$panels.each((i, e) => {
         let $e = $(e)
         let name = $e.data('panel')
-        e.classList.toggle('is-open', opened.indexOf(name) > -1)
+        if (opened.indexOf(name) > -1 && !e.classList.contains('is-open')) {
+          // $e.hide()
+          // $e.css('display', 'none')
+          // setTimeout(function () { $e.slideDown(1500, function () {
+          //   console.log('opened: ', this)
+          //   $e.addClass('is-open')
+          // })}, 500)
+
+          $e.slideDown(250, function () {
+            console.log('opened: ', this)
+            $e.addClass('is-open')
+          })
+
+        } else if (opened.indexOf(name) <= -1 && e.classList.contains('is-open')) {
+          $e.slideUp(250, function () {
+            console.log('closed: ', this)
+            this.removeClass('is-open')
+          }.bind($e))
+        }
+        // e.classList.toggle('is-open', opened.indexOf(name) > -1)
       })
     }
   }

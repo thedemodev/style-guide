@@ -99,11 +99,12 @@
 }
 
 .collapse__panels__item__body {
-  display: none;
   padding: 7px 10px;
-  transition: all @transition-duration ease;
 
   &.is-open {
     display: block;
+  }
+  &.is-hidden {
+    display: none;
   }
 }
