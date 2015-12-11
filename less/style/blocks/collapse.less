@@ -1,26 +1,8 @@
 @import '../variables';
-@import '../mixins/clearfix';
 @import '../mixins/respond';
 
 .collapse {
   margin: 0;
-}
-
-.collapse__tabs {
-  &:extend(.clearfix all);
-
-  display: none;
-  padding: 0;
-  margin: 0;
-
-  list-style-type: none;
-}
-
-.collapse__tabs--tabbed {
-  .respond(medium, {
-    display: flex;
-    flex-direction: row;
-  });
 }
 
 .collapse__tabs__item {
@@ -30,29 +12,7 @@
   flex-grow: 1;
 }
 
-.collapse__tabs__item__link {
-  display: block;
-  padding: 7px 10px;
-  width: 100%;
-
-  background-color: @color-gray--light;
-  color: @color-gray--darkest;
-  text-decoration: none;
-
-  &:hover {
-    background-color: @color-gray--lighter;
-    color: @color-light-blue;
-    cursor: pointer;
-  }
-
-  &.is-active {
-    font-weight: bold;
-  }
-}
-
 .collapse__panels {
-  &:extend(.clearfix all);
-
   padding: 0;
   margin: 0;
 
@@ -65,17 +25,18 @@
 }
 
 .collapse__panels__item__header {
-  &:extend(.clearfix all);
+  display: flex;
+  padding: 7px 0px;
 
-  display: block;
-  padding: 7px 10px;
+  justify-content: space-between;
+  flex-direction: row;
 
-  background-color: @color-gray--light;
+  // background-color: @color-gray--light;
   color: @color-gray--darkest;
   text-decoration: none;
 
   &:hover {
-    background-color: @color-gray--lighter;
+    // background-color: @color-gray--lighter;
     color: @color-light-blue;
     cursor: pointer;
   }
@@ -85,15 +46,24 @@
   }
 }
 
-.collapse__panels__item__header__icon {
+.collapse__panels__item__header__text {
+  .make-font-medium-semibold();
+
+  margin-right: 60px;
+}
+
+.collapse__panels__item__header__icon.icon {
   display: block;
+  align-self: center;
+  flex-shrink: 0;
+  color: @color-blue;
+
   width: 16px;
   height: 16px;
-  float: right;
 }
 
 .collapse__panels__item__body {
-  padding: 7px 10px;
+  padding: 7px 0px;
 
   &.is-open {
     display: block;
@@ -101,4 +71,16 @@
   &.is-hidden {
     display: none;
   }
+}
+
+.collapse__panels__item__border {
+    height: 1px;
+    background: @color-gray--mid;
+    margin: 0 -10px;
+}
+
+.collapse__panels__bottom-border {
+    height: 1px;
+    background: @color-gray--mid;
+    margin: 0 -10px;
 }
