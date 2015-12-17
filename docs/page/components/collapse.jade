@@ -23,9 +23,28 @@ h2#basic.heading.heading--secondary Collapse
 
 p.paragraph.
   The basic collapse component arranges content vertically on all
-  viewports. By default, it only allows one opened panel at all times.
-  This accordion-like behavior can be changed.
+  viewports.
   
 +example('/components/demos/collapse-basic.html')
 
+.toggle
+  .toggle__button(data-info, data-target='#code-1')
+    +svg('source', ['icon', 'toggle__icon'])
+    span See code
+  .toggle__content#code-1
+    .tab-panel(data-tab, data-tab-default='html')
+      .tab-panel__header
+        .tab-panel__header__tabs
+          .tab-panel__header__tab(data-tab-toggle='html') HTML
+      .tab-panel__content
+        .tab-panel__content__tab(data-tab-content='html')
+          ul.checklist
+            li.checklist__item
+              +svg('checkmark', ['checklist__item__icon', 'icon'])
+              .checklist__item__content.
+                Place the collapse component inside a column on your grid.
+
+          .tab-panel__content__tab__fullwidth-content
+            .highlight: pre.highlight__listing.hljs: code.js
+              include:highlightcode ./snippets/collapse-basic.jade
 //- Copyright AXA Versicherungen AG 2015
