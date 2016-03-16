@@ -66,6 +66,11 @@ class BirthdayDatepickerV2 {
       this.$input.val(`${this.year}-${this.addLeadingZero(this.month)}-${this.addLeadingZero(this.day)}`)
     }
 
+    if (this.month.length == 2 && this.year.length == 4 && this.daysInMonth(this.month, this.year) < this.day) {
+      this.day = '';
+      this.$day.val('').focus()
+    }
+
   }
 
   daysInMonth(month, year) {
