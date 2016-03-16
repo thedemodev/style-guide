@@ -35,6 +35,26 @@ class BirthdayDatepickerV2 {
 
   handleChange(e, type) {
 
+    if (e.keyCode == 37 || e.keyCode == 39) {
+
+      if (e.keyCode == 37 && this.cursorPosition(this.$month) == 0) {
+        this.$day.focus()
+        return
+      }
+      if (e.keyCode == 37 && this.cursorPosition(this.$year) == 0) {
+        this.$month.focus()
+        return
+      }
+      if (e.keyCode == 39 && this.cursorPosition(this.$month) == 2) {
+        this.$year.focus()
+        return
+      }
+      if (e.keyCode == 39 && this.cursorPosition(this.$day) == 2) {
+        this.$month.focus()
+      }
+      return
+    }
+
     var currentYear = new Date().getFullYear()
 
     this.day = this.$day.val().trim().replace(/\D/g,'')
@@ -71,6 +91,22 @@ class BirthdayDatepickerV2 {
       this.$day.val('').focus()
     }
 
+  }
+
+  cursorPosition(el) {
+    var input = el.get(0);
+    if (!input) return; // No (input) element found
+    if ('selectionStart' in input) {
+      // Standard-compliant browsers
+      return input.selectionStart;
+    } else if (document.selection) {
+      // IE
+      input.focus();
+      var sel = document.selection.createRange();
+      var selLen = document.selection.createRange().text.length;
+      sel.moveStart('character', -input.value.length);
+      return sel.text.length - selLen;
+    }
   }
 
   daysInMonth(month, year) {
