@@ -35,6 +35,10 @@ class BirthdayDatepickerV2 {
 
   handleChange(e, type) {
 
+    var currentYear = new Date().getFullYear()
+
+    // Handle arrow navigation:
+
     if (e.keyCode == 37 || e.keyCode == 39) {
 
       if (e.keyCode == 37 && this.cursorPosition(this.$month) == 0) {
@@ -55,16 +59,20 @@ class BirthdayDatepickerV2 {
       return
     }
 
-    var currentYear = new Date().getFullYear()
+    // Trim values (only digits are allowed):
 
-    this.day = this.$day.val().trim().replace(/\D/g,'')
-    this.month = this.$month.val().trim().replace(/\D/g,'')
-    this.year = this.$year.val().trim().replace(/\D/g,'')
+    this.day = this.$day.val().replace(/\D/g,'')
+    this.month = this.$month.val()..replace(/\D/g,'')
+    this.year = this.$year.val().replace(/\D/g,'')
+
+    // Handle backspace (removing characters):
 
     if (e.keyCode == 8) {
       if (type == 'month' && this.month.length == 0) this.$day.focus()
       if (type == 'year' && this.year.length == 0) this.$month.focus()
     }
+
+    // Limit possible numbers to valid ones:
 
     if (this.day !== '' && this.day > 31) this.day = '';
     if (this.day !== '' && this.day < 0) this.day = '';
@@ -75,16 +83,24 @@ class BirthdayDatepickerV2 {
     if (this.year.length == 4 && this.year > currentYear - this.options.minAge) this.year = '';
     if (this.year.length == 4 && this.year < currentYear - this.options.maxAge) this.year = '';
 
+    // Add the new values to the global variables:
+
     this.$day.val(this.day)
     this.$month.val(this.month)
     this.$year.val(this.year)
 
+    // Jump automatically to the next field if enough numbers were filled in:
+
     if (type == 'day' && this.day.length == 2) this.$month.focus()
     if (type == 'month' && this.month.length == 2) this.$year.focus()
+
+    // Craete full date string in hidden field:
 
     if (this.day !== '' && this.month !== '' && this.year !== ''){
       this.$input.val(`${this.year}-${this.addLeadingZero(this.month)}-${this.addLeadingZero(this.day)}`)
     }
+
+    // As soon as we have year and month, check if day value is possible:
 
     if (this.month.length == 2 && this.year.length == 4 && this.daysInMonth(this.month, this.year) < this.day) {
       this.day = '';
