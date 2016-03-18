@@ -62,7 +62,7 @@ class BirthdayDatepickerV2 {
     // Trim values (only digits are allowed):
 
     this.day = this.$day.val().replace(/\D/g,'')
-    this.month = this.$month.val()..replace(/\D/g,'')
+    this.month = this.$month.val().replace(/\D/g,'')
     this.year = this.$year.val().replace(/\D/g,'')
 
     // Handle backspace (removing characters):
