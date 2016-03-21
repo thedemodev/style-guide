@@ -16,7 +16,7 @@ class FormGroup {
 
     var that = this
 
-    this.$element.find('input')
+    this.$element.find('input, textarea')
       .on('focus', function(){
         that.$element.addClass('focused')
       })
