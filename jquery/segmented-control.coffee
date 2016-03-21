@@ -28,6 +28,10 @@ class SegmentedControl
 
     @setRadioState()
 
+    @$element.on 'mousedown', @handleMouseDown
+
+    @$element.on 'mouseup', @handleMouseUp
+
     @$radios.on 'change', @setRadioState
 
     @$element.on 'keyup', @handleKeyUp
@@ -43,6 +47,12 @@ class SegmentedControl
 
     if @$element.outerWidth() >= @$element.parent().innerWidth()
       @$element.addClass 'segmented-control--stacked'
+
+  handleMouseDown: (e) =>
+    @$element.addClass 'no-focus'
+
+  handleMouseUp: (e) =>
+    @$element.removeClass 'no-focus'
 
   # Spacewar will activate first item if none is active
   handleKeyUp: (e) =>
