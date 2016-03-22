@@ -16,12 +16,16 @@ class FormGroup {
 
     var that = this
 
+    that.$element.find('.form__group__info').hide()
+
     this.$element.find('input, textarea')
       .on('focus', function(){
         that.$element.addClass('focused')
+        that.$element.find('.form__group__info').slideDown('fast')
       })
       .on('blur', function(){
         that.$element.removeClass('focused')
+        that.$element.find('.form__group__info').slideUp('fast')
       })
 
   }
