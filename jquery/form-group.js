@@ -14,18 +14,18 @@ class FormGroup {
 
   init() {
 
-    var that = this
+    var that = this, $info = that.$element.find('.form__group__info')
 
-    that.$element.find('.form__group__info').hide()
+    $info.hide()
 
     this.$element.find('input, textarea')
       .on('focus', function(){
         that.$element.addClass('focused')
-        that.$element.find('.form__group__info').slideDown('fast')
+        $info.slideDown('fast')
       })
       .on('blur', function(){
         that.$element.removeClass('focused')
-        that.$element.find('.form__group__info').slideUp('fast')
+        $info.slideUp('fast')
       })
 
   }
