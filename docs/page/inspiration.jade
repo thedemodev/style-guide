@@ -5,28 +5,21 @@ collection: navigation
 children: inspiration/*
 template: page.jade
 description: Get inspired in our gallery of best-pracitces from all over AXA Switzerland.
-thumbnail: /images/home/Inspiration.svg
+thumbnail: /images/home/inspiration.svg
 headline: false
-draft: true
 ---
   
 .hero
   .hero__image
-    img(src=relative('/images/inspiration/inspiration.svg') alt="animated inspiration graphic").hero__image__img
+    img.hero__image__img(
+      src=relative('/images/inspiration/inspiration.svg')
+      alt="animated inspiration graphic")
   .hero__content
     .hero__content__headline #{title}
     p.paragraph.
-      You can find inspirational pages in the list below. Now start exploring, building and being awesome.
+      Find inspirational pages in the list below.
+    p.paragraph.
+      Now start exploring, building and being awesome.
 
-.inspiration
-  each page in inspiration
-    - var link = page.link.replace(/jade$/, 'html');
-    .inspiration__item
-      a(href=relative(link)).inspiration__item__image
-        if page.thumbnail
-          img(src=relative(page.thumbnail)).inspiration__item__image__img
-      .inspiration__item__content
-        a(href=relative(link)).inspiration__item__title!= page.title
-        a(href=relative(link)).inspiration__item__description!= page.description
 
 //- Copyright AXA Versicherungen AG 2015

@@ -1,3 +1,6 @@
+$ = require 'jquery'
+lunr = require 'lunr'
+
 KEY_ENTER = 13
 KEY_UP = 38
 KEY_DOWN = 40
@@ -13,7 +16,7 @@ class Search
     @$input = $ input
 
     # create the autocomplete suggestions box
-    @$suggestions = $ '<div class="autocomplete__suggestions"></div>'
+    @$suggestions = $ '<div class="header-search__suggestions autocomplete__suggestions"></div>'
 
     @$input.after @$suggestions
 

@@ -1,75 +1,84 @@
-(($) ->
+$ = require 'jquery'
 
-  # Public class definition
-  class Checkbox
-    @DEFAULTS
+# Public class definition
+class Checkbox
+  @DEFAULTS
 
-    constructor: (element, options) ->
-      @$element = $ element
+  constructor: (element, options) ->
+    @$element = $ element
 
-      # TODO: Do not depend on css classes
-      @$checkbox = @$element.find '.checkbox__checkbox'
-      @$label = @$element.find '.checkbox__label'
+    # TODO: Do not depend on css classes
+    @$checkbox = @$element.find '.checkbox__checkbox'
+    @$label = @$element.find '.checkbox__label'
 
-      @options = $.extend {}, Checkbox.DEFAULTS, options
+    @options = $.extend {}, Checkbox.DEFAULTS, options
 
-      @init()
+    @init()
 
-    init: () ->
-      @$checkbox.attr 'tabindex', '-1'
-      @$label.attr 'tabindex', '0'
+  init: () ->
+    @$checkbox.attr 'tabindex', '-1'
+    @$label.attr 'tabindex', '0'
 
-      @$element.addClass 'checkbox--js'
+    @$element.addClass 'checkbox--js'
 
-      @setCheckboxState()
+    @setCheckboxState()
 
-      @$checkbox.on 'change', @setCheckboxState
+    @$checkbox.on 'change', @setCheckboxState
 
-      @$label.on 'keyup', @handleKeyUp
+    @$label.on 'keyup', @handleKeyUp
 
-    # Handle spacebar to toggle the checkbox
-    handleKeyUp: (e) =>
-      if e.which == 32
-        # prevent scrolling
-        e.preventDefault()
+    if typeof @options.color != 'undefined'
+      @handleCustomColorBG()
+      @$element.css {'border-color': @options.color}
+      @$element.on 'click', @handleCustomColorBG.bind(this)
 
-        @$checkbox.prop 'checked', !(@$checkbox.is ':checked')
+  handleCustomColorBG: () ->
+    if @$checkbox.is ':checked'
+      @$element.css {'background-color': @options.color, 'color': '#fff'}
+    else
+      @$element.css {'background-color': '#fff', 'color': '#000'}
 
-        # Emit a change event manually
-        @$checkbox.change()
+  # Handle spacebar to toggle the checkbox
+  handleKeyUp: (e) =>
+    if e.which == 32
+      # prevent scrolling
+      e.preventDefault()
 
-    # Updates the UI according to the checkbox state
-    setCheckboxState: () =>
-      if @$checkbox.is ':checked'
-        @$element.addClass 'is-active'
-      else
-        @$element.removeClass 'is-active'
+      @$checkbox.prop 'checked', !(@$checkbox.is ':checked')
 
-  # Plugin definition
-  Plugin = (option) ->
-    params = arguments
+      # Emit a change event manually
+      @$checkbox.change()
 
-    return this.each () ->
-      $this = $ this
-      options = $.extend({}, Checkbox.DEFAULTS, data, typeof option == 'object' && option)
-      data = $this.data('axa.checkbox')
+  # Updates the UI according to the checkbox state
+  setCheckboxState: () =>
+    if @$checkbox.is ':checked'
+      @$element.addClass 'is-active'
+    else
+      @$element.removeClass 'is-active'
 
-      if not data
-        data = new Checkbox this, options
-        $this.data 'axa.checkbox', data
+# Plugin definition
+Plugin = (option) ->
+  params = arguments
 
-  # Plugin registration
-  $.fn.checkbox = Plugin
-  $.fn.checkbox.Constructor = Checkbox
+  return this.each () ->
+    $this = $ this
+    options = $.extend({}, Checkbox.DEFAULTS, data, typeof option == 'object' && option)
+    data = $this.data('axa.checkbox')
 
-  # DATA-API
-  $(window).on 'load', () ->
-    $('[data-checkbox]').each () ->
-      $checkbox = $(this)
-      data = $checkbox.data()
+    if not data
+      data = new Checkbox this, options
+      $this.data 'axa.checkbox', data
 
-      Plugin.call($checkbox, data)
+# Plugin registration
+$.fn.checkbox = Plugin
+$.fn.checkbox.Constructor = Checkbox
 
-)(jQuery)
+# DATA-API
+$(window).on 'load', () ->
+  $('[data-checkbox]').each () ->
+    $checkbox = $(this)
+    data = $checkbox.data()
+
+    Plugin.call($checkbox, data)
 
 #! Copyright AXA Versicherungen AG 2015

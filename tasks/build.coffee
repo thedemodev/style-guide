@@ -5,12 +5,11 @@ module.exports = (cb) ->
   runSequence(
     'clean'
     'images'
-    'icons'
     'icons-copy'
-    'icons-svg'
+    'icons'
     'styles'
-    'jquery'
-    'ng'
+    'modernizr'
+    'scripts'
     'create-versions-file'
     'docs'
     cb

@@ -1,5 +1,4 @@
 @import '../variables';
-@import './icon';
 
 @import './control';
 
@@ -211,6 +210,37 @@
 }
 
 .picker__weeknumber--headline {
+
+}
+
+// Birthday Datepicker styles:
+
+.datepicker--birthday {
+  
+  display: flex;
+  max-width: none;
+  
+  flex-direction: column;
+  
+  .respond(large, {
+    flex-direction: row;
+  });
+  
+  .control--birthday {
+    display: none;
+  }
+  .birthday--day {
+    flex: 3;
+    min-width: 120px;
+  }
+  .birthday--month {
+    flex: 5;
+    min-width: 190px;
+  }
+  .birthday--year {
+    flex: 3;
+    min-width: 120px;
+  }
 
 }
 

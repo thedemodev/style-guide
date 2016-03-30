@@ -1,11 +1,25 @@
 gulp = require 'gulp'
 watch = require 'gulp-watch'
 sequence = require 'gulp-watch-sequence'
+webserver = require 'gulp-webserver'
 
 errorify = require '../lib/errorify'
 
 module.exports = [['build'], (cb) ->
-  gulp.start 'serve'
+  gulp.src(['dist/docs'])
+    .pipe(webserver({
+      host: '0.0.0.0',
+      port: process.env.PORT or 3000,
+      livereload: {
+        enable: true,
+        port: 35730
+      },
+      middleware: (req, res, next) ->
+        # make /global.html accessible on /global
+        if req.url && req.url == '/global'
+          req.url = '/global.html'
+        next()
+    }))
 
   watch [
     './docs/page/**/*'
@@ -19,10 +33,16 @@ module.exports = [['build'], (cb) ->
   .on 'error', (err) -> errorify err.message, 'docs-pages'
 
   watch [
-    './docs/js/**/*.coffee'
-    './docs/example-js/**/*.coffee'
+    './modernizr.json'
   ], ->
-    gulp.start 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
+    gulp.start 'modernizr', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
+    return
+  .on 'error', (err) -> errorify err.message, 'modernizr'
+
+  watch [
+    './docs/js/**'
+  ], ->
+    gulp.start 'docs-scripts'
     return
   .on 'error', (err) -> errorify err.message, 'docs-scripts'
 
@@ -34,6 +54,7 @@ module.exports = [['build'], (cb) ->
   .on 'error', (err) -> errorify err.message, 'docs-styles'
 
   watch [
+    './modernizr.json'
     './docs/images/**/*'
     './dist/images/**/*'
     './dist/fonts/**/*'
@@ -56,14 +77,8 @@ module.exports = [['build'], (cb) ->
 
   watch [
     './jquery/**/*'
-  ], (sequence 300).getHandler 'jquery', 'docs-scripts', 'docs-example-scripts', 'docs-inspiration-scripts'
-  .on 'error', (err) -> errorify err.message, 'jquery'
-
-  watch [
-    './ng/**/*'
-  ], ->
-    gulp.start 'ng'
-  .on 'error', (err) -> errorify err.message, 'ng'
+  ], (sequence 300).getHandler 'scripts', 'docs-scripts'
+  .on 'error', (err) -> errorify err.message, 'scripts'
 
   watch [
     './less/**/*.less'
