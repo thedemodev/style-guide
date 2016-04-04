@@ -7,6 +7,106 @@
 }
 
 .form__group {
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+  min-height: 3em;
+}
+
+.form__group input,
+.form__group label {
+  cursor: text;
+  font-size: 1.15em;
+  padding: 15px;
+  padding-top: 21px;
+  padding-bottom: 19px;
+  position: absolute;
+  transition: all 0.15s ease-in;
+  width: 98%;
+}
+
+.form__group input {
+  border: solid #999 1px;
+  box-shadow: 0 2px 0px 0px #fff;
+}
+
+.form__group label {
+  color: @color-gray--dark;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.form__group.filled label,
+.form__group.focused label {
+  font-size: 1.05em;
+  position: absolute;
+  top: -10px;
+}
+
+.form__group.focused label {
+  color: @color-light-blue;
+}
+
+.form__group.filled input,
+.form__group.focused input {
+  padding-top: 32px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
+.form__group input:focus {
+  outline: none;
+  border: 1px @color-light-blue solid;
+}
+
+.form__group__error {
+  color: @color-red;
+  font-size: 1em;
+  line-height: 1.4em;
+  margin-top: 15px;
+}
+
+.form__group .form__group__info {
+  z-index: -1;
+  opacity: 0;
+  position: relative;
+  padidng: 0;
+  color: #fff;
+  font-size: 14px;
+  background: #666;
+  width: 100%;
+  transition: all 0.15s ease-out;
+}
+
+.form__group.focused .form__group__info {
+  opacity: 1;
+  padding: 16px;
+  padding-top: 5.2em;
+  transition: all 0.15s ease-out;
+}
+
+.form__group__error {
+  color: @color-red;
+  font-size: 14px;
+  width: 100%;
+  padding-top: 5.1em;
+}
+
+.control.has-error {
+  border-color: @color-red;
+}
+
+
+
+
+/*
+
+.form__container {
+  max-width: 535px;
+  margin: 0 auto;
+}
+
+.form__group {
 
   margin-bottom: 15px;
 
@@ -104,5 +204,7 @@
 .form__footnote {
   margin: 50px 0 50px 0;
 }
+
+*/
 
 // Copyright AXA Versicherungen AG 2015

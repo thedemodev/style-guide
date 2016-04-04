@@ -10,7 +10,12 @@ template: demo.jade
 				.form__group__label__text Form label
 			.form__group__control
 				input.control.control--input(type='text')
-			.form__group__info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		.form__group(data-form-group)
+			label.form__group__label.form__group__label
+				.form__group__label__text Field with info
+			.form__group__control
+				input.control.control--input(type='text')
+			.form__group__info The fields info message.
 		.form__group(data-form-group)
 			label.form__group__label.form__group__label--invalid
 				.form__group__label__text Field with error

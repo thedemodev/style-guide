@@ -4,6 +4,10 @@ class FormGroup {
 
   constructor(element, options) {
     this.$element = $(element)
+    this.$label = this.$element.find('label')
+    this.$input = this.$element.find('.form__group__control')
+    this.$info = this.$element.find('.form__group__info')
+    this.$error = this.$element.find('.form__group__error')
 
     this.defaults = {}
 
@@ -14,19 +18,43 @@ class FormGroup {
 
   init() {
 
-    var that = this, $info = that.$element.find('.form__group__info')
+    let that = this
 
-    $info.hide()
+    // Manage input field specialities:
 
-    this.$element.find('input, textarea')
-      .on('focus', function(){
-        that.$element.addClass('focused')
-        $info.slideDown('fast')
-      })
-      .on('blur', function(){
-        that.$element.removeClass('focused')
-        $info.slideUp('fast')
-      })
+    if (this.$element.find('.control--input').length > 0) {
+
+      // Reorder elements:
+
+      this.$element
+        .html('')
+        .append(this.$input)
+        .append(this.$label)
+        .append(this.$info)
+        .append(this.$error)
+
+      // Manage extra classes:
+
+      if (this.$input.val() != '') {
+        this.$element.addClass('filled')
+      }
+
+      this.$input.find('input')
+        .on('keyup', function() {
+          if ($(this).val() != "") {
+            that.$element.addClass('filled')
+          } else {
+            that.$element.removeClass('filled')
+          }
+        })
+        .on('focus', function() {
+          that.$element.addClass('focused')
+        })
+        .on('blur', function() {
+          that.$element.removeClass('focused')
+        })
+
+    }
 
   }
 
