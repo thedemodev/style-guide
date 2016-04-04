@@ -13,6 +13,20 @@
   .checkbox__checkbox();
 }
 
+.segmented-control--js:enabled {
+  &.segmented-control--stacked {
+    .segmented-control__item {
+      &.is-active {
+        border-top-color: @color-light-blue !important;
+      }
+      &.is-active + .segmented-control__item {
+        border-left-color: @color-gray;
+        border-top-color: @color-light-blue !important;
+      }
+    }
+  }
+}
+
 .segmented-control--js {
   .invisible-font();
 
@@ -24,17 +38,11 @@
       border-right-width: 1px;
       margin-bottom: -1px;
 
-      &.is-active {
-        border-top-color: @color-light-blue !important;
-      }
-
       &.is-active + .segmented-control__item {
         border-left-color: @color-gray;
-        border-top-color: @color-light-blue !important;
       }
     }
-
-    &.segmented-control:focus .segmented-control__item {
+    &.segmented-control:not(.no-focus):focus .segmented-control__item {
       border-top-color: @color-gray !important;
       border-bottom-color: @color-gray !important;
       border-right-color: @color-light-blue;
@@ -87,8 +95,8 @@
   &.segmented-control.has-error .segmented-control__item {
     border-color: #ff0000 !important; // important is needed when the item .is-active and the control .has-error
   }
-
-  &.segmented-control:focus .segmented-control__item {
+  
+  &.segmented-control:not(.no-focus):focus .segmented-control__item {
     border-top-color: @color-light-blue !important;
     border-bottom-color: @color-light-blue !important;
 
@@ -100,7 +108,7 @@
       border-right-color: @color-light-blue !important;
     }
   }
-
+  
   .segmented-control__item {
     .undo-invisible-font();
 

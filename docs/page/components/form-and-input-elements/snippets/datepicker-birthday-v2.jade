@@ -1,0 +1,22 @@
+---
+title: Birthday-Datepicker V2
+template: demo.jade
+---
+
+include /components/includes/mixins.jade
+
+.l-container
+  .form
+    .form__group
+      label.form__group__label
+        .form__group__label__text Birthday
+      .form__group__control
+        .datepicker.datepicker--birthday-v2(data-datepicker-birthday-v2)
+          input(type='text').control.control--input.control--birthday
+          input.control.control--input.birthday--day(placeholder="TT", maxlength="2")
+          span .
+          input.control.control--input.birthday--month(placeholder="MM", maxlength="2")
+          span .
+          input.control.control--input.birthday--year(placeholder="JJJJ", maxlength="4")
+
+//- Copyright AXA Versicherungen AG 2015

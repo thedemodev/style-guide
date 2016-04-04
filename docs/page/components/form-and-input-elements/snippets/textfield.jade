@@ -3,12 +3,21 @@ title: Single-line text field
 template: demo.jade
 ---
 
-.l-container
-  .form
-    .form__group
-      label.form__group__label
-        .form__group__label__text Form label
-      .form__group__control
-        input.control.control--input(type='text')
+.form__container
+	.form
+		.form__group(data-form-group)
+			label.form__group__label
+				.form__group__label__text Form label
+			.form__group__control
+				input.control.control--input(type='text')
+			.form__group__info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		.form__group(data-form-group)
+			label.form__group__label.form__group__label--invalid
+				.form__group__label__text Field with error
+			.form__group__control
+				input.control.control--input.has-error(type='text')
+			.form__group__error The fields error message. Replaces the info text.
+
+
 
 //- Copyright AXA Versicherungen AG 2015
