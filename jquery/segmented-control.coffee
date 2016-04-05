@@ -43,17 +43,19 @@ class SegmentedControl
     $('window').on 'resize', @stackControlsIfNeeded
 
   stackControlsIfNeeded: () ->
+
     @$element.removeClass 'segmented-control--stacked'
-    console.log @allItemWith()
-    console.log @$element.parent().innerWidth()
+
     if @allItemWith() >= @$element.parent().innerWidth()
       @$element.addClass 'segmented-control--stacked'
 
   allItemWith: () ->
     width = 0
+
     @$element.find('.segmented-control__item').each (index, element) ->
       $item = $ element
       width += $item.outerWidth()
+    
     return width
 
   handleMouseDown: (e) =>
