@@ -56,8 +56,8 @@ class Autogrow
       @shadow.css 'width', @$element.width()
       @shadow.html val
 
-      newHeight = Math.max @shadow.height(), @minHeight
-
+      newHeight = Math.max @shadow.height()+35, @minHeight
+      console.log 'New height: '+newHeight
       @$element.height newHeight
 
 # Plugin definition
