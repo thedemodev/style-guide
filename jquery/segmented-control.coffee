@@ -44,9 +44,17 @@ class SegmentedControl
 
   stackControlsIfNeeded: () ->
     @$element.removeClass 'segmented-control--stacked'
-
-    if @$element.outerWidth() >= @$element.parent().innerWidth()
+    console.log @allItemWith()
+    console.log @$element.parent().innerWidth()
+    if @allItemWith() >= @$element.parent().innerWidth()
       @$element.addClass 'segmented-control--stacked'
+
+  allItemWith: () ->
+    width = 0
+    @$element.find('.segmented-control__item').each (index, element) ->
+      $item = $ element
+      width += $item.outerWidth()
+    return width
 
   handleMouseDown: (e) =>
     @$element.addClass 'no-focus'
