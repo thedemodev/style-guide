@@ -6,16 +6,16 @@
   margin: 0 auto;
 }
 
-.form__group {
+.form__group.material {
   margin-bottom: 40px;
   position: relative;
   width: 100%;
   min-height: 3em;
 }
 
-.form__group input,
-.form__group textarea,
-.form__group label {
+.form__group.material input,
+.form__group.material textarea,
+.form__group.material label {
   cursor: text;
   font-size: 1.15em;
   padding: 15px;
@@ -26,52 +26,52 @@
   width: 98%;
 }
 
-.form__group input,
-.form__group textarea {
+.form__group.material input,
+.form__group.material textarea {
   border: solid #999 1px;
   box-shadow: 0 2px 0px 0px #fff;
 }
 
-.form__group label {
+.form__group.material label {
   color: @color-gray--dark;
   z-index: 10;
   pointer-events: none;
 }
 
-.form__group.filled label,
-.form__group.focused label {
+.form__group.material.filled label,
+.form__group.material.focused label {
   font-size: 1.05em;
   position: absolute;
   top: -10px;
 }
 
-.form__group.focused label {
+.form__group.material.focused label {
   color: @color-light-blue;
 }
 
-.form__group.filled input,
-.form__group.filled textarea,
-.form__group.focused input,
-.form__group.focused textarea {
+.form__group.material.filled input,
+.form__group.material.filled textarea,
+.form__group.material.focused input,
+.form__group.material.focused textarea {
   padding-top: 32px;
   padding-bottom: 8px;
   font-weight: bold;
 }
 
-.form__group input:focus,
-.form__group textarea:focus {
+.form__group.material input:focus,
+.form__group.material textarea:focus {
   outline: none;
   border: 1px @color-light-blue solid;
 }
 
-.form__group__error {
+.form__group.material .form__group__error {
   color: @color-red;
   font-size: 1em;
   line-height: 1.4em;
   margin-top: 15px;
 }
 
-.form__group .form__group__info {
+.form__group.material .form__group__info {
   z-index: -1;
   opacity: 0;
   position: relative;
@@ -83,35 +83,26 @@
   transition: all 0.15s ease-out;
 }
 
-.form__group.focused .form__group__info {
+.form__group.material.focused .form__group__info {
   opacity: 1;
   padding: 16px;
   padding-top: 5.2em;
   transition: all 0.15s ease-out;
 }
 
-.form__group__error {
+.form__group.material .form__group__error {
   color: @color-red;
   font-size: 14px;
   width: 100%;
   padding-top: 5.1em;
 }
 
-.control.has-error {
+.form__group.material .control.has-error {
   border-color: @color-red;
 }
 
 
-
-
-/*
-
-.form__container {
-  max-width: 535px;
-  margin: 0 auto;
-}
-
-.form__group {
+.form__group.default {
 
   margin-bottom: 15px;
 
@@ -120,7 +111,7 @@
   });
 }
 
-.form__group--condensed {
+.form__group.default .form__group--condensed {
   margin-bottom: 14px;
 
   .form__group__label {
@@ -132,7 +123,7 @@
   }
 }
 
-.form__group__label {
+.form__group.default .form__group__label {
   line-height: 40px; // used for vertical-alignment
   color: @color-gray--darker;
   font-size: 1.2em;
@@ -171,45 +162,44 @@
   }
 }
 
-.form__group.focused {
+.form__group.default.focused {
   .form__group__label:not(.form__group__label--invalid) .form__group__label__text {
     color: @color-light-blue;
   }
 }
 
-.form__group__label--invalid {
+.form__group.default .form__group__label--invalid {
   .form__group__label__text {
     color: @color-red;
   }
 }
 
-.form__group__info {
+.form__group.default .form__group__info {
   color: @color-gray--dark;
   font-size: 1em;
   line-height: 1.4em;
   margin-top: 15px;
 }
 
-.form__group__error {
+.form__group.default .form__group__error {
   color: @color-red;
   font-size: 1em;
   line-height: 1.4em;
   margin-top: 15px;
 }
 
-.form__info-text {
+.form__group.default .form__info-text {
   margin-top: 10px;
 }
 
-.form__error-message {
+.form__group.default .form__error-message {
   margin: 5px 0 0 0;
   color: #ff0000;
 }
 
-.form__footnote {
+.form__group.default .form__footnote {
   margin: 50px 0 50px 0;
 }
 
-*/
 
 // Copyright AXA Versicherungen AG 2015

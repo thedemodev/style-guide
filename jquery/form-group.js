@@ -24,6 +24,8 @@ class FormGroup {
 
     if (this.$element.find('.control--input, .control--textarea').length > 0) {
 
+      this.$element.addClass('material')
+
       // Reorder elements:
 
       this.$element
@@ -54,6 +56,8 @@ class FormGroup {
           that.$element.removeClass('focused')
         })
 
+    } else {
+      this.$element.addClass('default')
     }
 
   }
