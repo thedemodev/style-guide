@@ -22,7 +22,7 @@ class FormGroup {
 
     // Manage input field specialities:
 
-    if (this.$element.find('.control--input').length > 0) {
+    if (this.$element.find('.control--input, .control--textarea').length > 0) {
 
       // Reorder elements:
 
@@ -39,7 +39,7 @@ class FormGroup {
         this.$element.addClass('filled')
       }
 
-      this.$input.find('input')
+      this.$input.find('input, textarea')
         .on('keyup', function() {
           if ($(this).val() != "") {
             that.$element.addClass('filled')

@@ -14,6 +14,7 @@
 }
 
 .form__group input,
+.form__group textarea,
 .form__group label {
   cursor: text;
   font-size: 1.15em;
@@ -25,7 +26,8 @@
   width: 98%;
 }
 
-.form__group input {
+.form__group input,
+.form__group textarea {
   border: solid #999 1px;
   box-shadow: 0 2px 0px 0px #fff;
 }
@@ -48,13 +50,16 @@
 }
 
 .form__group.filled input,
-.form__group.focused input {
+.form__group.filled textarea,
+.form__group.focused input,
+.form__group.focused textarea {
   padding-top: 32px;
   padding-bottom: 8px;
   font-weight: bold;
 }
 
-.form__group input:focus {
+.form__group input:focus,
+.form__group textarea:focus {
   outline: none;
   border: 1px @color-light-blue solid;
 }
