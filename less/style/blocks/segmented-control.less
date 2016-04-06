@@ -131,7 +131,7 @@
     }
 
     &.is-active {
-      background: @color-light-blue;
+      background: @color-white;
       color: white;
       border-top-color: @color-light-blue;
       border-bottom-color: @color-light-blue;
@@ -167,8 +167,34 @@
   position: relative;
   overflow: hidden;
   outline: none;
+  transition: color 0.3s;
 
   // animation
+  &:before {
+    visibility: visible;
+    content: '';
+    position: absolute;
+    z-index: -2;
+    transition: width 0.1s, opacity 0.1s;
+    width: 0;
+    height: 33rem;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    background: @color-white;
+    transform: translate(-50%,-50%) rotate(45deg);
+    transform: translate3d(-50%,-50%, 0) rotate(45deg);
+    backface-visibility: hidden;
+  }
+  
+  &:hover {
+    &:before {
+      background: darken(@color-white, 5%);
+      width: 120%;
+      opacity: 1;
+    }
+  }
+
   &:after {
     visibility: visible;
     content: '';
@@ -185,14 +211,15 @@
     transform: translate3d(-50%,-50%, 0) rotate(45deg);
     backface-visibility: hidden;
   }
-  
+
   &.is-active {
     &:after {
-      background: @color-blue;
+      background: @color-light-blue;
       width: 120%;
       opacity: 1;
     }
   }
+
 }
 
 
