@@ -38,6 +38,17 @@ include /components/includes/mixins.jade
           .checkbox__label
             +svg('checkmark', 'checkbox__label__icon')
             .checkbox__label__text Full width control
+    .form__group
+      label.form__group__label
+        .form__group__label__text Form label
+      .form__group__control
+        .segmented-control(data-segmented-control)
+          label.segmented-control__item
+            input.segmented-control__item__radio(type='radio', name='bar')
+            span.segmented-control__item__label Ja
+          label.segmented-control__item
+            input.segmented-control__item__radio(type='radio', name='bar')
+            span.segmented-control__item__label Nein
     .form__footnote * Form footnote
 
 //- Copyright AXA Versicherungen AG 2015
