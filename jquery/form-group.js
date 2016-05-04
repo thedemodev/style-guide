@@ -60,6 +60,10 @@ class FormGroup {
         that.$element.addClass('disabled')
       })
 
+      this.$input.find('input.has-error, textarea.has-error').each(function(){
+        that.$element.addClass('has-error')
+      })
+
       this.$input.find('input, textarea').each(function(){
         if ($(this).val() != "") {
           that.$element.addClass('filled')
