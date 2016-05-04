@@ -7,18 +7,21 @@ include /components/includes/mixins.jade
 
 .form__container
   .form
+    //- Default input
     .form__group(data-form-group)
       label.form__group__label
         .form__group__label__text Firstname*
       .form__group__control
         input(type='text').control.control--input
       .form__group__info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    //- Input with error
     .form__group(data-form-group)
       label.form__group__label.form__group__label--invalid
         .form__group__label__text Lastname*
       .form__group__control
         input(type='text').control.control--input.has-error
       .form__group__error Your name can't contain a number.
+    //- Input with placeholder
     .form__group(data-form-group)
       label.form__group__label
         .form__group__label__info-icon
@@ -31,16 +34,19 @@ include /components/includes/mixins.jade
         .form__info-text(style='display: none;', role='tooltip')#target
           .info-text
             p.paragraph Some meaningful explanation may be placed here
+    //- Prefilled input
     .form__group(data-form-group)
       label.form__group__label
         .form__group__label__text Prefilled
       .form__group__control
         input(type='text', value='My content').control.control--input
+    //- Disabled input
     .form__group(data-form-group)
       label.form__group__label
         .form__group__label__text Disabled Input
       .form__group__control
         input(type='text', disabled).control.control--input
+    //- Checkbox
     .form__group(data-form-group)
       .from__group__control.form__group__control--fullwidth
         label.checkbox(data-checkbox)
@@ -48,6 +54,7 @@ include /components/includes/mixins.jade
           .checkbox__label
             +svg('checkmark', 'checkbox__label__icon')
             .checkbox__label__text Full width control
+    //- Segemented control
     .form__group
       label.form__group__label
         .form__group__label__text Form label
