@@ -46,6 +46,18 @@ include /components/includes/mixins.jade
         .form__group__label__text Disabled Input
       .form__group__control
         input(type='text', disabled).control.control--input
+    //- Select
+    .form__group(data-form-group)
+      label.form__group__label
+        .form__group__label__text Country select
+      .form__group__control
+        .dropdown(data-dropdown)
+          .dropdown__label(data-dropdown-label)
+            +svg('arrow-bottom', 'dropdown__label__icon')
+            .dropdown__label__text(data-dropdown-text)
+          select.dropdown__select(data-dropdown-select)
+            option Schweiz
+            option Regenbogenland
     //- Checkbox
     .form__group(data-form-group)
       .from__group__control.form__group__control--fullwidth

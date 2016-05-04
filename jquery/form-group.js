@@ -22,7 +22,7 @@ class FormGroup {
 
     // Manage input field specialities:
 
-    if (this.$element.find('.control--input, .control--textarea').length > 0) {
+    if (this.$element.find('.control--input, .control--textarea, .dropdown').length > 0) {
 
       this.$element.addClass('material')
 
