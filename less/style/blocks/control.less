@@ -19,6 +19,30 @@
 
 .control--input {
   -webkit-appearance: none;
+  
+  &::-webkit-input-placeholder {
+    color: @color-white;
+    font-weight: normal;
+    transition: color 0.5s;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    color: @color-white;
+    font-weight: normal;
+    transition: color 0.5s;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: @color-white;
+    font-weight: normal;
+    transition: color 0.5s;
+  }
+
+  &:-ms-input-placeholder {  
+     color: @color-white;
+     font-weight: normal;
+     transition: color 0.5s;
+  }
 
   &.has-error {
     border-color: #ff0000;
@@ -27,6 +51,22 @@
   &:focus {
     border-color: @color-light-blue;
     outline: none;
+    
+    &::-webkit-input-placeholder {
+      color: @color-gray;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: @color-gray;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: @color-gray;
+    }
+
+    &:-ms-input-placeholder {  
+      color: @color-gray;
+    }
   }
 }
 
