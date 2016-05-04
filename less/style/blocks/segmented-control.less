@@ -129,6 +129,15 @@
     &:last-of-type {
       border-right-width: 1px;
     }
+  
+    /*
+    &:nth-child(2):last-of-type:not(.is-active) {
+      border-right-width: 1px;
+      border-right-color: @color-white;
+      box-shadow: 1px 0 0 @color-gray;
+      padding-right: 7px;
+    }
+    */
 
     &.is-active {
       background: @color-white;
@@ -177,7 +186,7 @@
     z-index: -2;
     transition: width 0.1s, opacity 0.1s;
     width: 0;
-    height: 33rem;
+    height: 20rem;
     top: 50%;
     left: 50%;
     opacity: 0;
@@ -200,9 +209,9 @@
     content: '';
     position: absolute;
     z-index: -1;
-    transition: width 0.3s, opacity 0.3s;
+    transition: width 0.1s, opacity 0.1s;
     width: 0;
-    height: 33rem;
+    height: 20rem;
     top: 50%;
     left: 50%;
     opacity: 0;
