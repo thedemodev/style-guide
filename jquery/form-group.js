@@ -56,6 +56,10 @@ class FormGroup {
           that.$element.removeClass('focused')
         })
 
+      this.$input.find('input:disabled, textarea:disabled').each(function(){
+        that.$element.addClass('disabled')
+      })
+
     } else {
       this.$element.addClass('default')
     }

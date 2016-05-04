@@ -24,6 +24,12 @@
   position: absolute;
   transition: all 0.15s ease-in;
   width: 100%;
+  
+  &:disabled {
+    border-color: @color-gray--mid;
+    color: @color-gray--mid;
+    cursor: not-allowed;
+  }
 }
 
 .form__group.material input,
@@ -31,6 +37,51 @@
   border: solid #999 1px;
   box-shadow: 0 2px 0px 0px #fff;
   max-height: none;
+  
+  &::-webkit-input-placeholder {
+    color: @color-white;
+    font-weight: normal;
+    transition: color 0.5s;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    color: @color-white;
+    font-weight: normal;
+    transition: color 0.5s;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: @color-white;
+    font-weight: normal;
+    transition: color 0.5s;
+  }
+
+  &:-ms-input-placeholder {  
+     color: @color-white;
+     font-weight: normal;
+     transition: color 0.5s;
+  }
+
+  &:focus {
+    border-color: @color-light-blue;
+    outline: none;
+    
+    &::-webkit-input-placeholder {
+      color: @color-gray;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: @color-gray;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: @color-gray;
+    }
+
+    &:-ms-input-placeholder {  
+      color: @color-gray;
+    }
+  }
 }
 
 .form__group.material label {
@@ -48,6 +99,10 @@
 
 .form__group.material.focused label {
   color: @color-light-blue;
+}
+
+.form__group.material.disabled label {
+  color: @color-gray--mid;
 }
 
 .form__group.material.filled input,
