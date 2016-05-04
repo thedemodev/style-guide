@@ -33,6 +33,11 @@ include /components/includes/mixins.jade
             p.paragraph Some meaningful explanation may be placed here
     .form__group(data-form-group)
       label.form__group__label
+        .form__group__label__text Prefilled
+      .form__group__control
+        input(type='text', value='My content').control.control--input
+    .form__group(data-form-group)
+      label.form__group__label
         .form__group__label__text Disabled Input
       .form__group__control
         input(type='text', disabled).control.control--input
