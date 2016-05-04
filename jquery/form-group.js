@@ -64,6 +64,10 @@ class FormGroup {
         that.$element.addClass('has-error')
       })
 
+      this.$input.find('.dropdown').each(function(){
+        that.$element.addClass('form__group__dropdown')
+      })
+
       this.$input.find('input, textarea').each(function(){
         if ($(this).val() != "") {
           that.$element.addClass('filled')

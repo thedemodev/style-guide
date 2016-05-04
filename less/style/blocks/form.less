@@ -15,7 +15,6 @@
 
 .form__group.material input,
 .form__group.material textarea,
-.form__group.material .dropdown__label.is-enhanced,
 .form__group.material label {
   cursor: text;
   font-size: 1.15em;
@@ -31,6 +30,18 @@
     color: @color-gray--mid;
     cursor: not-allowed;
   }
+}
+
+.form__group.material.form__group__dropdown label {
+  top: 0;
+}
+
+.form__group.material .dropdown__label.is-enhanced {
+  font-size: 1.15em;
+  padding: 15px;
+  padding-top: 21px;
+  padding-bottom: 19px;
+  border: solid #999 1px;
 }
 
 .form__group.material input,
