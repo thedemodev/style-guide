@@ -20,7 +20,7 @@ class Dropdown {
     //this.$element.attr('tabindex', '0')
     //this.$select.attr('tabindex', '-1')
 
-    this.$element.addClass('is-enhanced')
+    this.$element.addClass('is-enhanced').addClass('is-closed')
     this.$label.addClass('is-enhanced')
     this.$text.addClass('is-enhanced')
     this.$select.addClass('is-enhanced')
@@ -47,6 +47,7 @@ class Dropdown {
           that.$text.text($item.text())
 
           $dl.css('display', 'none')
+          that.$element.removeClass('is-open').addClass('is-closed')
           
         })
       }, 10)
@@ -67,6 +68,7 @@ class Dropdown {
     setTimeout(function(){
       that.$element.on('click', function(){
         $dl.css('display', 'block')
+        that.$element.removeClass('is-closed').addClass('is-open')
       })
     }, 10)
 
