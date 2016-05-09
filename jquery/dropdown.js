@@ -32,25 +32,40 @@ class Dropdown {
     this.$select.find('option').each( function(){
 
       let $item = $(this)
-      let $dt = $('<dt />').html($item.html()).appendTo($dl)
 
-      setTimeout(function(){
-        $dt.on('click', function(event){
+      if ($item.val() == '') {
 
-          if (event.stopPropagation) {
-            event.stopPropagation()
-          } else {
-            event.cancelBubble = true
-          }
-
-          that.$element.find('input').val($item.val())
+        if (that.$select.val() == ''){
           that.$text.text($item.text())
+        }
 
-          $dl.css('display', 'none')
-          that.$element.removeClass('is-open').addClass('is-closed')
-          
-        })
-      }, 10)
+      } else {
+
+        if ($item.is(':selected')){
+          that.$text.text($item.text())
+        }
+
+        let $dt = $('<dt />').html($item.html()).appendTo($dl)
+
+        setTimeout(function(){
+          $dt.on('click', function(event){
+
+            if (event.stopPropagation) {
+              event.stopPropagation()
+            } else {
+              event.cancelBubble = true
+            }
+
+            that.$element.find('input').val($item.val())
+            that.$text.text($item.text())
+
+            $dl.css('display', 'none')
+            that.$element.removeClass('is-open').addClass('is-closed')
+            
+          })
+        }, 10)
+
+      }
 
     })
 
