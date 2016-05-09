@@ -65,7 +65,9 @@ class FormGroup {
       })
 
       this.$input.find('.dropdown').each(function(){
-        that.$element.addClass('form__group__dropdown')
+        that.$element
+          .addClass('form__group__dropdown')
+          .addClass('filled')
       })
 
       this.$input.find('input, textarea').each(function(){

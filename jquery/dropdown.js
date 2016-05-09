@@ -8,21 +8,68 @@ class Dropdown {
     this.$text = this.$element.find('[data-dropdown-text]')
     this.$select = this.$element.find('[data-dropdown-select]')
 
+    this.options = [];
+
     this.init()
   }
 
   init() {
-    this.$element.attr('tabindex', '0')
-    this.$select.attr('tabindex', '-1')
+
+    var that = this
+
+    //this.$element.attr('tabindex', '0')
+    //this.$select.attr('tabindex', '-1')
 
     this.$element.addClass('is-enhanced')
     this.$label.addClass('is-enhanced')
     this.$text.addClass('is-enhanced')
     this.$select.addClass('is-enhanced')
-    this.setLabelText()
 
-    this.$element.on('keydown', (e) => this.handleKeyDown(e))
-    this.$select.on('change', () => this.setLabelText())
+    // Add extra html for material inspired selects:
+
+    let $dl = $('<dl />').appendTo(this.$element)
+
+    this.$select.find('option').each( function(){
+
+      let $item = $(this)
+      let $dt = $('<dt />').html($item.html()).appendTo($dl)
+
+      setTimeout(function(){
+        $dt.on('click', function(event){
+
+          if (event.stopPropagation) {
+            event.stopPropagation()
+          } else {
+            event.cancelBubble = true
+          }
+
+          that.$element.find('input').val($item.val())
+          that.$text.text($item.text())
+
+          $dl.css('display', 'none')
+          
+        })
+      }, 10)
+
+    })
+
+    let $input = $('<input />')
+      .val(this.$select.val())
+      .attr('name', this.$select.attr('name'))
+      .attr('type', 'hidden')
+
+    this.$select.replaceWith($input);
+
+    // Add the main events:
+
+    //this.$element.on('keydown', (e) => this.handleKeyDown(e))
+
+    setTimeout(function(){
+      that.$element.on('click', function(){
+        $dl.css('display', 'block')
+      })
+    }, 10)
+
   }
 
   handleKeyDown(e) {
@@ -31,10 +78,6 @@ class Dropdown {
     }
   }
 
-  setLabelText() {
-    let value = this.$select.find('option:selected').text()
-    this.$text.text(value)
-  }
 }
 
 function Plugin() {
