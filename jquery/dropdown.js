@@ -89,14 +89,23 @@ class Dropdown {
       that.$element.on('click', function(event){
 
         that.stopPropagation(event)
-        that.showOptions()
 
-        // Bind click handler to body so we can manage outside clicks:
+        if (that.$element.hasClass('is-closed')){
 
-        $('body').on('click', function(){
-          $(this).off('click')
+          that.showOptions()
+
+          // Bind click handler to body so we can manage outside clicks:
+
+          $('body').on('click', function(){
+            $(this).off('click')
+            that.hideOptions()
+          })
+
+        } else {
+
           that.hideOptions()
-        })
+
+        }
 
       })
     }, 10)
