@@ -108,6 +108,8 @@ class Dropdown {
     
     if (e.which == 40) { // Down arrow
 
+      e.preventDefault()
+
       if (this.$element.hasClass('is-closed')){
 
         this.showOptions()
@@ -134,6 +136,8 @@ class Dropdown {
     }
 
     if (e.which == 38) { // Up arrow
+
+      e.preventDefault()
 
       this.$dl
         .children('dt.is-selected')
