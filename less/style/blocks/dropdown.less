@@ -6,15 +6,47 @@
 @dropdown-arrow-width: 40px;
 
 .dropdown {
-  .make-link;
   position: relative;
-
-  &:focus {
-    outline: none;
-    .dropdown__label.is-enhanced {
-      border: 1px @color-light-blue solid !important;
-    }
+  cursor: pointer;
+  
+  .dropdown__label__text.is-enhanced {
+    visibility: hidden;
   }
+
+  .dropdown__label__icon {
+    visibility: hidden;
+  }
+
+}
+
+.dropdown:focus {
+    
+  outline: none;
+
+  .dropdown__label.is-enhanced {
+    border: 1px @color-light-blue solid !important;
+  }
+
+  .dropdown__label__text.is-enhanced {
+    visibility: visible;
+  }
+
+  .dropdown__label__icon {
+    visibility: visible;
+  }
+
+}
+
+.form__group.filled .dropdown {
+
+  .dropdown__label__text.is-enhanced {
+    visibility: visible;
+  }
+
+  .dropdown__label__icon {
+    visibility: visible;
+  }
+    
 }
 
 .dropdown__label {
@@ -23,21 +55,22 @@
 
 .dropdown__label.is-enhanced {
   .control;
-  color: inherit; // reset color set in .control
   display: flex;
   align-items: center;
 
-  border: 1px solid @color-gray--light;
+  border: solid #999 1px;
   padding: 0;
+  
+  font-size: 1.15em;
+  padding: 15px;
+  padding-top: 21px;
+  padding-bottom: 19px;
 }
 
 .dropdown.is-open.is-enhanced .dropdown__label.is-enhanced {
   border: 1px @color-light-blue solid;
 }
 
-.dropdown__label__text {
-  
-}
 .dropdown__label__icon {
   margin: 0 0.25rem;
 }
@@ -48,6 +81,8 @@
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 8px;
+  margin-bottom: -8px;
 }
 
 .dropdown__label__icon {

@@ -22,7 +22,18 @@ class FormGroup {
 
     // Manage input field specialities:
 
-    if (this.$element.find('.control--input, .control--textarea, .dropdown').length > 0) {
+    if (this.$element.find('.dropdown').length > 0) {
+      
+      this.$element.addClass('material')
+
+      this.$input.find('.dropdown').each(function(){
+        that.$element
+          .addClass('form__group__dropdown')
+      })
+
+    }
+
+    if (this.$element.find('.control--input, .control--textarea').length > 0) {
 
       this.$element.addClass('material')
 
@@ -62,12 +73,6 @@ class FormGroup {
 
       this.$input.find('input.has-error, textarea.has-error').each(function(){
         that.$element.addClass('has-error')
-      })
-
-      this.$input.find('.dropdown').each(function(){
-        that.$element
-          .addClass('form__group__dropdown')
-          .addClass('filled')
       })
 
       this.$input.find('input, textarea').each(function(){

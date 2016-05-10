@@ -61,6 +61,7 @@ class Dropdown {
 
             that.$element.find('input').val($item.val())
             that.$text.text($item.text())
+            that.$element.parent().parent().addClass('filled')
 
             that.hideOptions()
             
