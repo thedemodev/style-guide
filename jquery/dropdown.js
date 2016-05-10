@@ -50,11 +50,7 @@ class Dropdown {
         setTimeout(function(){
           $dt.on('click', function(event){
 
-            if (event.stopPropagation) {
-              event.stopPropagation()
-            } else {
-              event.cancelBubble = true
-            }
+            that.stopPropagation(event)
 
             that.$element.find('input').val($item.val())
             that.$text.text($item.text())
@@ -69,6 +65,8 @@ class Dropdown {
 
     })
 
+    // Replace the select with a hidden input:
+
     let $input = $('<input />')
       .val(this.$select.val())
       .attr('name', this.$select.attr('name'))
@@ -81,9 +79,21 @@ class Dropdown {
     //this.$element.on('keydown', (e) => this.handleKeyDown(e))
 
     setTimeout(function(){
-      that.$element.on('click', function(){
+      that.$element.on('click', function(event){
+
+        that.stopPropagation(event)
+
         $dl.css('display', 'block')
         that.$element.removeClass('is-closed').addClass('is-open')
+
+        // Bind click handler to body so we can manage outside clicks:
+
+        $('body').on('click', function(){
+          $(this).off('click')
+          $dl.css('display', 'none')
+          that.$element.removeClass('is-open').addClass('is-closed')
+        })
+
       })
     }, 10)
 
@@ -92,6 +102,14 @@ class Dropdown {
   handleKeyDown(e) {
     if (e.which == 32) {
       this.$select.focus()
+    }
+  }
+
+  stopPropagation(e) {
+    if (e.stopPropagation) {
+      e.stopPropagation()
+    } else {
+      e.cancelBubble = true
     }
   }
 
