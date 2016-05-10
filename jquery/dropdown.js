@@ -7,6 +7,7 @@ class Dropdown {
     this.$label = this.$element.find('[data-dropdown-label]')
     this.$text = this.$element.find('[data-dropdown-text]')
     this.$select = this.$element.find('[data-dropdown-select]')
+    this.$dl = $
 
     this.options = [];
 
@@ -27,7 +28,7 @@ class Dropdown {
 
     // Add extra html for material inspired selects:
 
-    let $dl = $('<dl />').appendTo(this.$element)
+    this.$dl = $('<dl />').appendTo(this.$element)
 
     this.$select.find('option').each( function(){
 
@@ -45,7 +46,7 @@ class Dropdown {
           that.$text.text($item.text())
         }
 
-        let $dt = $('<dt />').html($item.html()).appendTo($dl)
+        let $dt = $('<dt />').html($item.html()).appendTo(that.$dl)
 
         setTimeout(function(){
           $dt.on('click', function(event){
@@ -55,8 +56,7 @@ class Dropdown {
             that.$element.find('input').val($item.val())
             that.$text.text($item.text())
 
-            $dl.css('display', 'none')
-            that.$element.removeClass('is-open').addClass('is-closed')
+            that.hideOptions()
             
           })
         }, 10)
@@ -82,21 +82,28 @@ class Dropdown {
       that.$element.on('click', function(event){
 
         that.stopPropagation(event)
-
-        $dl.css('display', 'block')
-        that.$element.removeClass('is-closed').addClass('is-open')
+        that.showOptions()
 
         // Bind click handler to body so we can manage outside clicks:
 
         $('body').on('click', function(){
           $(this).off('click')
-          $dl.css('display', 'none')
-          that.$element.removeClass('is-open').addClass('is-closed')
+          that.hideOptions()
         })
 
       })
     }, 10)
 
+  }
+
+  showOptions() {
+    this.$dl.css('display', 'block')
+    this.$element.removeClass('is-closed').addClass('is-open')
+  }
+
+  hideOptions() {
+    this.$dl.css('display', 'none')
+    this.$element.removeClass('is-open').addClass('is-closed')
   }
 
   handleKeyDown(e) {
