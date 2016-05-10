@@ -50,6 +50,12 @@ class Dropdown {
 
             that.stopPropagation(event)
 
+            that.$dl
+              .children('dt')
+              .removeClass('is-selected')
+
+            $dt.addClass('is-selected')
+
             that.$element.find('input').val($item.val())
             that.$text.text($item.text())
 
@@ -106,6 +112,19 @@ class Dropdown {
 
   handleKeys(e) {
     
+    if (e.which == 32) { // Spacebar
+
+      e.preventDefault()
+      this.showOptions()
+
+      this.$dl
+        .children('dt')
+        .removeClass('is-selected')
+        .first()
+        .addClass('is-selected')
+
+    }
+
     if (e.which == 40) { // Down arrow
 
       e.preventDefault()
