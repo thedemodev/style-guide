@@ -43,7 +43,7 @@ class Dropdown {
           that.$text.text($item.text())
         }
 
-        let $dt = $('<dt />').html($item.html()).appendTo(that.$dl)
+        let $dt = $('<dt />').html($item.html()).attr('data-value', $item.val()).appendTo(that.$dl)
 
         setTimeout(function(){
           $dt.on('click', function(event){
@@ -73,9 +73,10 @@ class Dropdown {
 
     // Add the main events:
 
-    //this.$element.on('keydown', (e) => this.handleKeyDown(e))
-
     setTimeout(function(){
+
+      that.$element.on('keydown', (e) => that.handleKeys(e))
+
       that.$element.on('click', function(event){
 
         that.stopPropagation(event)
@@ -103,10 +104,62 @@ class Dropdown {
     this.$element.removeClass('is-open').addClass('is-closed')
   }
 
-  handleKeyDown(e) {
-    if (e.which == 32) {
-      this.$select.focus()
+  handleKeys(e) {
+    
+    if (e.which == 40) { // Down arrow
+
+      if (this.$element.hasClass('is-closed')){
+
+        this.showOptions()
+
+        this.$dl
+          .children('dt')
+          .removeClass('is-selected')
+          .first()
+          .addClass('is-selected')
+
+      } else {
+
+        this.$dl
+          .children('dt.is-selected')
+          .removeClass('is-selected')
+          .next().addClass('is-selected')
+
+        if (this.$dl.find('dt.is-selected').length == 0) {
+          this.$dl.children('dt').last().addClass('is-selected')
+        }
+
+      }
+
     }
+
+    if (e.which == 38) { // Up arrow
+
+      this.$dl
+        .children('dt.is-selected')
+        .removeClass('is-selected')
+        .prev().addClass('is-selected')
+
+      if (this.$dl.find('dt.is-selected').length == 0) {
+        this.$dl.children('dt').first().addClass('is-selected')
+      }
+
+    }
+
+    if (e.which == 13) { // Enter key
+
+      if (this.$dl.find('dt.is-selected').length > 0) {
+        this.$element.find('input').val(this.$dl.find('dt.is-selected').attr('data-value'))
+        this.$text.text(this.$dl.find('dt.is-selected').text())
+        this.hideOptions()
+      }
+
+    }
+
+    if (e.which == 27) { // Esc key
+      this.hideOptions()
+    }
+
   }
 
   stopPropagation(e) {
