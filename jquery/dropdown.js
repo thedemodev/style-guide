@@ -43,7 +43,10 @@ class Dropdown {
           that.$text.text($item.text())
         }
 
-        let $dt = $('<dt />').html($item.html()).attr('data-value', $item.val()).appendTo(that.$dl)
+        let $dt = $('<dt />')
+          .html($item.html())
+          .attr('data-value', $item.val())
+          .appendTo(that.$dl)
 
         setTimeout(function(){
           $dt.on('click', function(event){
@@ -102,17 +105,21 @@ class Dropdown {
 
   showOptions() {
     this.$dl.css('display', 'block')
-    this.$element.removeClass('is-closed').addClass('is-open')
+    this.$element
+      .removeClass('is-closed')
+      .addClass('is-open')
   }
 
   hideOptions() {
     this.$dl.css('display', 'none')
-    this.$element.removeClass('is-open').addClass('is-closed')
+    this.$element
+      .removeClass('is-open')
+      .addClass('is-closed')
   }
 
-  handleKeys(e) {
-    
-    if (e.which == 32) { // Spacebar
+  handleSpacebar(e) {
+
+    if (e.which == 32) {
 
       e.preventDefault()
       this.showOptions()
@@ -125,7 +132,11 @@ class Dropdown {
 
     }
 
-    if (e.which == 40) { // Down arrow
+  }
+
+  handleDownArrow(e) {
+
+    if (e.which == 40) {
 
       e.preventDefault()
 
@@ -147,14 +158,21 @@ class Dropdown {
           .next().addClass('is-selected')
 
         if (this.$dl.find('dt.is-selected').length == 0) {
-          this.$dl.children('dt').last().addClass('is-selected')
+          this.$dl
+            .children('dt')
+            .last()
+            .addClass('is-selected')
         }
 
       }
 
     }
 
-    if (e.which == 38) { // Up arrow
+  }
+
+  handleUpArrow(e) {
+
+    if (e.which == 38) {
 
       e.preventDefault()
 
@@ -164,10 +182,17 @@ class Dropdown {
         .prev().addClass('is-selected')
 
       if (this.$dl.find('dt.is-selected').length == 0) {
-        this.$dl.children('dt').first().addClass('is-selected')
+        this.$dl
+          .children('dt')
+          .first()
+          .addClass('is-selected')
       }
 
     }
+
+  }
+
+  handleEnterKey(e) {
 
     if (e.which == 13) { // Enter key
 
@@ -179,9 +204,23 @@ class Dropdown {
 
     }
 
+  }
+
+  handleESCKey(e) {
+
     if (e.which == 27) { // Esc key
       this.hideOptions()
     }
+
+  }
+
+  handleKeys(e) {
+    
+    this.handleSpacebar(e)
+    this.handleDownArrow(e)
+    this.handleUpArrow(e)
+    this.handleEnterKey(e)
+    this.handleESCKey(e)
 
   }
 
