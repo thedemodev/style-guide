@@ -7,8 +7,14 @@
 
 .dropdown {
   .make-link;
-
   position: relative;
+
+  &:focus {
+    outline: none;
+    .dropdown__label.is-enhanced {
+      border: 1px @color-light-blue solid !important;
+    }
+  }
 }
 
 .dropdown__label {

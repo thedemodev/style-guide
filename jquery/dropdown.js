@@ -18,10 +18,7 @@ class Dropdown {
 
     var that = this
 
-    //this.$element.attr('tabindex', '0')
-    //this.$select.attr('tabindex', '-1')
-
-    this.$element.addClass('is-enhanced').addClass('is-closed')
+    this.$element.addClass('is-enhanced').addClass('is-closed').attr('tabindex', 0)
     this.$label.addClass('is-enhanced')
     this.$text.addClass('is-enhanced')
     this.$select.addClass('is-enhanced')
