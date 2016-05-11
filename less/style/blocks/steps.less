@@ -1,5 +1,5 @@
 .steps {
-  margin: 20px;
+  margin: 15px;
 }
 
 .steps__flow {
@@ -21,10 +21,6 @@
 
   width: 100%;
   border-left: 1px @color-gray solid;
-  
-  &:last-child {
-    border-left: none;
-  }
 
   .steps__indicator {
     float: left;
@@ -53,6 +49,15 @@
     color: @color-gray;
     border: 2px @color-gray solid;
   }
+
+  &:last-child {
+    border-left: none;
+    
+    .step__bullet {
+      left: -25px;
+    }
+  }
+
 }
 
 // Copyright AXA Versicherungen AG 2015
