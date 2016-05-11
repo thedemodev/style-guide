@@ -59,6 +59,37 @@ include /components/includes/mixins.jade
             option(value='') Bitte wählen ...
             option Schweiz
             option Regenbogenland
+    //- Select
+    .form__group(data-form-group)
+      label.form__group__label
+        .form__group__label__text Select with many options
+      .form__group__control
+        .dropdown(data-dropdown)
+          .dropdown__label(data-dropdown-label)
+            +svg('arrow-bottom', 'dropdown__label__icon')
+            .dropdown__label__text(data-dropdown-text)
+          select.dropdown__select(data-dropdown-select)
+            option(value='') Bitte wählen ...
+            option Option 1
+            option Option 2
+            option Option 3
+            option Option 4
+            option Option 5
+            option Option 6
+            option Option 7
+            option Option 8
+            option Option 9
+            option Option 10
+            option Option 11
+            option Option 12
+            option Option 13
+            option Option 14
+            option Option 15
+            option Option 16
+            option Option 17
+            option Option 18
+            option Option 19
+            option Option 20
     //- Checkbox
     .form__group(data-form-group)
       .from__group__control.form__group__control--fullwidth
