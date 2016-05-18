@@ -40,7 +40,13 @@ class SegmentedControl
 
     @stackControlsIfNeeded()
 
+    @fixChromeBug()
+
     $('window').on 'resize', @stackControlsIfNeeded
+
+  fixChromeBug: () ->
+
+    @$element.find('.segmented-control__item').wrapInner("<div></div>")
 
   stackControlsIfNeeded: () ->
 

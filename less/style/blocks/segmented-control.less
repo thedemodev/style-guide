@@ -8,6 +8,17 @@
 }
 .segmented-control__item {
   .checkbox();
+  
+  &.chromebug {
+    width: 0 !important;
+    border: 0 !important;
+    cursor: default !important;
+    border-left: 1px @color-gray solid !important;
+    
+    &:before {
+      display: none;
+    }
+  }
 }
 .segmented-control__item__radio {
   .checkbox__checkbox();
@@ -70,7 +81,6 @@
   }
 
   .segmented-control__item__label {
-
     &:after {
       content: '';
 
@@ -111,18 +121,38 @@
   
   .segmented-control__item {
     .undo-invisible-font();
-    .segmented-control-animation();
+    
+    div {
+      .segmented-control-animation();
+      height: 40px;
+      padding-left: 25px;
+      padding-right: 8px;
+      
+      line-height: 40px;
+      
+      margin-right: 1px;
+      margin-left: 1px;
+    }
+
+    &.is-active {
+      div {
+        margin: 0 !important;
+        padding-left: 26px;
+        padding-right: 9px;
+        
+        &:after {
+          background: @color-light-blue;
+          width: 120%;
+          opacity: 1;
+        }
+      }
+    }
 
     display: inline-block;
 
-    height: 40px;
-    padding-left: 25px;
-    padding-right: 8px;
     border: 1px solid @color-gray;
     border-right-width: 0;
     margin-bottom: 0;
-
-    line-height: 40px;
 
     cursor: pointer;
 
@@ -183,8 +213,9 @@
     visibility: visible;
     content: '';
     position: absolute;
-    z-index: -2;
-    transition: width 0.3s, opacity 0.3s;
+    z-index: -1;
+    will-change: width, opacity;
+    transition: width 0.6s, opacity 0.6s;
     width: 0;
     height: 20rem;
     top: 50%;
@@ -209,7 +240,7 @@
     content: '';
     position: absolute;
     z-index: -1;
-    transition: width 0.3s, opacity 0.3s;
+    transition: width 0.6s, opacity 0.6s;
     width: 0;
     height: 20rem;
     top: 50%;
@@ -219,14 +250,6 @@
     transform: translate(-50%,-50%) rotate(45deg);
     transform: translate3d(-50%,-50%, 0) rotate(45deg);
     backface-visibility: hidden;
-  }
-
-  &.is-active {
-    &:after {
-      background: @color-light-blue;
-      width: 120%;
-      opacity: 1;
-    }
   }
 
 }
