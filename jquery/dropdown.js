@@ -114,6 +114,15 @@ class Dropdown {
   }
 
   showOptions() {
+
+    let that = this
+
+    // First close all open dropdowns
+
+    $('.dropdown.is-enhanced.is-open').click()
+
+    // Now open the dropdown
+
     this.$dl.css('display', 'block')
     this.$element
       .removeClass('is-closed')
