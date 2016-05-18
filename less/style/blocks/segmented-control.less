@@ -59,6 +59,9 @@
   }
 
   &.segmented-control {
+    display: inline-block;
+    border-right: 1px @color-gray solid;
+
     max-width: 100%;
     margin-top: 0; // reset inheritance of .checkbox-group
 
@@ -127,7 +130,8 @@
     cursor: pointer;
 
     &:last-of-type {
-      border-right-width: 1px;
+      padding-right: 6px !important;
+      border-right: 1px @color-gray--lighter solid !important;
     }
   
     /*
