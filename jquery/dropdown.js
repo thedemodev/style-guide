@@ -118,11 +118,17 @@ class Dropdown {
     this.$element
       .removeClass('is-closed')
       .addClass('is-open')
+    this.$element.parent().parent().find('label')
+      .removeClass('is-closed')
+      .addClass('is-open')
   }
 
   hideOptions() {
     this.$dl.css('display', 'none')
     this.$element
+      .removeClass('is-open')
+      .addClass('is-closed')
+    this.$element.parent().parent().find('label')
       .removeClass('is-open')
       .addClass('is-closed')
   }
