@@ -37,10 +37,18 @@
 
 }
 
-.form__group__label.is-open {
-  font-size: 1.05em !important;
-  position: absolute !important;
-  top: -12px !important;
+.form__group.dropdown {
+  
+  .form__group__label.is-open {
+    font-size: 1.05em !important;
+    position: absolute !important;
+    top: -12px !important;
+  }
+  
+  &.filled {
+    top: 12px;
+  }
+
 }
 
 .form__group.filled .dropdown {
@@ -53,6 +61,10 @@
     visibility: visible;
   }
     
+}
+
+.form__group__dropdown .form__group__label__text {
+  line-height: 1.5 !important;
 }
 
 .dropdown__label {
