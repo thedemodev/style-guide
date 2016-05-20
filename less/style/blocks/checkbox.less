@@ -41,7 +41,20 @@
   }
 
   .checkbox__label {
+    position: relative;
     margin-left: 0;
+    
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25px;
+      height: 25px;
+      background: transparent;
+      transition: all 0.3s ease-out;
+    }
   }
 
   .checkbox__label__icon {
@@ -53,7 +66,7 @@
     border: 1px solid @color-gray;
     fill-opacity: 0;
     fill: @color-light-blue;
-    background: white;
+    background: transparent;
     
     transition: all 0.15s ease-out;
 
@@ -64,14 +77,21 @@
   }
 
   &.is-active {
+    .checkbox__label {
+      &:before {
+        background: @color-blue;
+        transition: all 0.3s ease-out;
+      }
+    }
     .checkbox__label__icon {
       border-width: 2px;
-      border-color: @color-blue;
+      border-color: @color-white;
       border-left: none;
       border-top: none;
-      width: 13px;
-      margin-left: 8px;
-      top: -2px;
+      width: 11px;
+      height: 20px;
+      margin-left: 7px;
+      top: 0px;
       
       -webkit-transform: rotate(35deg);
       -moz-transform: rotate(35deg);

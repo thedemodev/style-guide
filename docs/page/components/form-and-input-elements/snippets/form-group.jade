@@ -10,14 +10,14 @@ include /components/includes/mixins.jade
     //- Default input
     .form__group(data-form-group)
       label.form__group__label
-        .form__group__label__text Firstname*
+        .form__group__label__text Firstname (optional)
       .form__group__control
         input(type='text').control.control--input
       .form__group__info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     //- Input with error
     .form__group(data-form-group)
       label.form__group__label.form__group__label--invalid
-        .form__group__label__text Lastname*
+        .form__group__label__text Lastname
       .form__group__control
         input(type='text').control.control--input.has-error
       .form__group__error Your name can't contain a number.
