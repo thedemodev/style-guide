@@ -1,18 +1,18 @@
 ---
-title: Review
+title: Summary
 order: 12
 template: page.jade
-tags: Review
+tags: Summary
 ---
 
 include ../includes/mixins.jade
 
 p.paragraph.
-  Review elements are displayed on the form confirmation page
+  Summary elements are displayed after submitting a form.
 
 h2.heading.heading--secondary#default Single Field
 
-+example('/components/form-and-input-elements/demos/review-single-field.html')
++example('/components/form-and-input-elements/demos/summary-single-field.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code')
@@ -27,11 +27,11 @@ h2.heading.heading--secondary#default Single Field
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/review-single-field.jade
+              include:highlightcode ./snippets/summary-single-field.jade
 
 h2.heading.heading--secondary#default Multiple Fields
 
-+example('/components/form-and-input-elements/demos/review-multiple-fields.html')
++example('/components/form-and-input-elements/demos/summary-multiple-fields.html')
 
 .toggle
   .toggle__button(data-info, data-target='#code')
@@ -46,6 +46,6 @@ h2.heading.heading--secondary#default Multiple Fields
         .tab-panel__content__tab(data-tab-content='html')
           .tab-panel__content__tab__fullwidth-content
             .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/review-multiple-fields.jade
+              include:highlightcode ./snippets/summary-multiple-fields.jade
 
 //- Copyright AXA Versicherungen AG 2015
