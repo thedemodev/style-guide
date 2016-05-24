@@ -47,6 +47,10 @@ include /components/includes/mixins.jade
     .form__group(data-form-group)
       label.form__group__label
         .form__group__label__text Country select
+        .form__group__label__info-icon
+          a.info-icon(data-info, area-describedby='#target', data-target='#target', href='#', role='button')
+            +svg('info', 'info-icon__svg')
+            +svg('close', ['info-icon__svg', 'info-icon__svg--close'])
       .form__group__control
         .dropdown(data-dropdown)
           .dropdown__label(data-dropdown-label)
@@ -56,6 +60,7 @@ include /components/includes/mixins.jade
             option(value='') Bitte wählen ...
             option Schweiz
             option Regenbogenland
+      .form__group__info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     //- Select
     .form__group(data-form-group)
       label.form__group__label

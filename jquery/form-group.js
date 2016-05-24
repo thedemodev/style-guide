@@ -31,6 +31,10 @@ class FormGroup {
           .addClass('form__group__dropdown')
       })
 
+      if (this.$element.find('.form__group__label__info-icon').length > 0) {
+        this.$element.addClass('has-icon')
+      }
+
     }
 
     if (this.$element.find('.control--input, .control--textarea').length > 0) {
