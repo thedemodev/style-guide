@@ -83,6 +83,9 @@ class FormGroup {
         if ($(this).val() != "") {
           that.$element.addClass('filled')
         }
+        if ($(this).is('textarea')) {
+          that.$element.addClass('is-textarea')
+        }
       })
 
       if (this.$element.find('.control--input').length > 0 && this.$element.find('.form__group__label__info-icon').length > 0) {

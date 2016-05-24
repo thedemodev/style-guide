@@ -37,6 +37,11 @@ include /components/includes/mixins.jade
         .form__group__label__text Prefilled
       .form__group__control
         input(type='text', value='My content').control.control--input
+    .form__group(data-form-group)
+      label.form__group__label
+        .form__group__label__text Multiline
+      .form__group__control
+        textarea.control.control--textarea(type='text',data-autogrow='autogrow')
     //- Disabled input
     .form__group(data-form-group)
       label.form__group__label

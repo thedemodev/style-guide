@@ -33,7 +33,9 @@ class Autogrow
       event.data.update(event)
 
     $(window).resize @update
+
   update: (event) ->
+
     times: (string, number) ->
       r = ''
       while num -= 1
@@ -41,6 +43,7 @@ class Autogrow
       return r
 
     if @element
+
       val = @element.value.replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/&/g, '&amp;')
@@ -56,9 +59,11 @@ class Autogrow
       @shadow.css 'width', @$element.width()
       @shadow.html val
 
-      newHeight = Math.max @shadow.height()+35, @minHeight
-      console.log 'New height: '+newHeight
+      newHeight = Math.max @shadow.height()+15, @minHeight
+      console.log newHeight
       @$element.height newHeight
+
+      @$element.parent().parent().height(newHeight + 45)
 
 # Plugin definition
 Plugin = (option) ->
