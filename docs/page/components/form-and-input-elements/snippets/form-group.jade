@@ -40,6 +40,10 @@ include /components/includes/mixins.jade
     .form__group(data-form-group)
       label.form__group__label
         .form__group__label__text Multiline
+        .form__group__label__info-icon
+          a.info-icon(data-info, area-describedby='#target', data-target='#target', href='#', role='button')
+            +svg('info', 'info-icon__svg')
+            +svg('close', ['info-icon__svg', 'info-icon__svg--close'])
       .form__group__control
         textarea.control.control--textarea(type='text',data-autogrow='autogrow')
     //- Disabled input
