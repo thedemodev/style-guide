@@ -81,6 +81,10 @@ class FormGroup {
         }
       })
 
+      if (this.$element.find('.control--input').length > 0 && this.$element.find('.form__group__label__info-icon').length > 0) {
+        this.$input.find('input').addClass('has-icon')
+      }
+
     } else {
       this.$element.addClass('default')
     }
