@@ -171,8 +171,24 @@
   border-color: @color-red;
 }
 
-.form__group.material .info-icon {
-  display: none;
+.form__group.material .form__group__label {
+
+  .form__group__label__info-icon {
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+
+    width: @info-icon-diameter;
+
+    .info-icon__svg {
+      width: 22px;
+      height: 22px;
+    }
+
+  }
+
 }
 
 
