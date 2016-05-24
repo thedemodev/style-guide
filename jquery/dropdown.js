@@ -34,7 +34,8 @@ class Dropdown {
       if ($item.val() == '') {
 
         if (that.$select.val() == ''){
-          that.$text.text($item.text())
+          //that.$text.text($item.text())
+          that.$text.html('&nbsp;')
         }
 
       } else {

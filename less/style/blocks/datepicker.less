@@ -249,9 +249,24 @@
 .datepicker--birthday-v2 {
 
   max-width: none;
+  margin-bottom: 20px;
   
+  border: solid #999 1px;
+  box-shadow: 0 2px 0 0 #fff;
+
   .control--birthday {
     display: none;
+  }
+
+  .birthday--day, .birthday--month, .birthday--year {
+    padding: 21px 15px 19px 15px;
+    border: none;
+    cursor: text;
+    font-size: 1.15em;
+    
+    &:focus {
+      outline: none;
+    }
   }
 
   .birthday--day {
