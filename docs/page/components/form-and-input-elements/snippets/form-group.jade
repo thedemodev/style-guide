@@ -11,6 +11,10 @@ include /components/includes/mixins.jade
     .form__group(data-form-group)
       label.form__group__label
         .form__group__label__text Firstname (optional)
+        .form__group__label__info-icon
+          a.info-icon(data-info, area-describedby='#target', data-target='#target', href='#', role='button')
+            +svg('info', 'info-icon__svg')
+            +svg('close', ['info-icon__svg', 'info-icon__svg--close'])
       .form__group__control
         input(type='text').control.control--input
       .form__group__info Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -24,16 +28,9 @@ include /components/includes/mixins.jade
     //- Input with placeholder
     .form__group(data-form-group)
       label.form__group__label
-        .form__group__label__info-icon
-          a.info-icon(data-info, area-describedby='#target', data-target='#target', href='#', role='button')
-            +svg('info', 'info-icon__svg')
-            +svg('close', ['info-icon__svg', 'info-icon__svg--close'])
-        .form__group__label__info-icon-text-wrapper Field with placeholder
+        .form__group__label__text Field with placeholder
       .form__group__control
         input(type='text', placeholder='My placeholder').control.control--input
-        .form__info-text(style='display: none;', role='tooltip')#target
-          .info-text
-            p.paragraph Some meaningful explanation may be placed here
     //- Prefilled input
     .form__group(data-form-group)
       label.form__group__label
