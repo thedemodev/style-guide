@@ -113,6 +113,21 @@ include /components/includes/mixins.jade
           input.control.control--input.birthday--month(placeholder="MM", maxlength="2")
           span .
           input.control.control--input.birthday--year(placeholder="JJJJ", maxlength="4")
+    //- Regular Datepicker
+    .form__group(data-form-group)
+      label.form__group__label
+        .form__group__label__text Datepicker
+      .form__group__control
+        .datepicker#myDatepicker(
+          data-datepicker-watch="#myDatepickerInput",
+          data-datepicker-display-week,
+          data-datepicker-icon-prev=relative('/images/icons.svg#arrow-left'),
+          data-datepicker-icon-next=relative('/images/icons.svg#arrow-right')
+        )
+          .datepicker__trigger(data-datepicker="#myDatepicker")
+            +svg('calendar', 'datepicker__trigger__icon')
+          .datepicker__input
+            input(type='text').control.control--input#myDatepickerInput
     //- Checkbox
     .form__group(data-form-group)
       .from__group__control.form__group__control--fullwidth
@@ -122,7 +137,7 @@ include /components/includes/mixins.jade
             +svg('checkmark', 'checkbox__label__icon')
             .checkbox__label__text Full width control
     //- Segemented control
-    .form__group
+    .form__group(data-form-group)
       label.form__group__label
         .form__group__label__text Form label
       .form__group__control
@@ -133,7 +148,7 @@ include /components/includes/mixins.jade
           label.segmented-control__item
             input.segmented-control__item__radio(type='radio', name='bar')
             span.segmented-control__item__label Nein
-    .form__group
+    .form__group(data-form-group)
       label.form__group__label
         .form__group__label__text Form label
       .form__group__control
@@ -147,7 +162,7 @@ include /components/includes/mixins.jade
           label.segmented-control__item
             input.segmented-control__item__radio(type='radio', name='bar')
             span.segmented-control__item__label Vielleicht
-    .form__group
+    .form__group(data-form-group)
       label.form__group__label
         .form__group__label__text Form label
       .form__group__control

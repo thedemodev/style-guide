@@ -37,6 +37,10 @@ class BirthdayDatepickerV2 {
 
     var currentYear = new Date().getFullYear()
 
+    this.$element.on('click', function() {
+      this.$day.focus()
+    }.bind(this))
+
     // Handle arrow navigation:
 
     if (e.keyCode == 37 || e.keyCode == 39) {
