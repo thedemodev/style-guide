@@ -259,6 +259,10 @@
   }
 
   .birthday--day, .birthday--month, .birthday--year {
+
+    opacity: 0;
+    transition: opacity 0.5s;
+
     padding: 32px 15px 11px 15px;
     border: none;
     cursor: text;
@@ -304,16 +308,42 @@
   }
 
   span {
+
+    opacity: 0;
+    transition: opacity 0.5s;
+
     width: 10px;
     display: inline-block;
     text-align: center;
     font-weight: bold;
+
   }
 
 }
 
-.form__group.focused .datepicker--birthday-v2 {
-   border-color: @color-light-blue;
+.form__group.material-datepicker.focused {
+
+  .datepicker--birthday-v2 {
+     border-color: @color-light-blue;
+
+    .birthday--day, .birthday--month, .birthday--year {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+
+    span {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+  }
+
+  label {
+    font-size: 1.05em;
+    top: 11px;
+    left: 15px;
+    transition: all 0.5s;
+  }
+
 }
 
 .form__group.material-datepicker {
@@ -324,10 +354,11 @@
     color: @color-gray--dark;
     z-index: 10;
     pointer-events: none;
-    font-size: 1.05em;
     position: absolute;
-    top: 11px;
+    top: 22px;
     left: 15px;
+    font-size: 1.15em;
+    transition: all 0.5s;
   }
 
   &.focused label {
