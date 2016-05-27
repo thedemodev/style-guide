@@ -195,7 +195,7 @@ class Datepicker
 
       @picker.on 'select', ((date) ->
         @$input.val(date)
-        @$input.parent().parent().parent().parent().addClass('filled')
+        @$input.parents('.form__group').addClass('filled')
         @$input.trigger 'change'
       ).bind(this)
 
