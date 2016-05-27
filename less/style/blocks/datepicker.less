@@ -216,16 +216,16 @@
 // Birthday Datepicker styles:
 
 .datepicker--birthday {
-  
+
   display: flex;
   max-width: none;
-  
+
   flex-direction: column;
-  
+
   .respond(large, {
     flex-direction: row;
   });
-  
+
   .control--birthday {
     display: none;
   }
@@ -250,7 +250,7 @@
 
   max-width: none;
   margin-bottom: 20px;
-  
+
   border: solid #999 1px;
   box-shadow: 0 2px 0 0 #fff;
 
@@ -259,11 +259,32 @@
   }
 
   .birthday--day, .birthday--month, .birthday--year {
-    padding: 21px 15px 19px 15px;
+    padding: 30px 15px 10px 15px;
     border: none;
     cursor: text;
     font-size: 1.15em;
-    
+    font-weight: 700;
+
+    &::-webkit-input-placeholder {
+      color: @color-gray;
+      font-weight: 200;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: @color-gray;
+      font-weight: 200;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: @color-gray;
+      font-weight: 200;
+    }
+
+    &:-ms-input-placeholder {
+      color: @color-gray;
+      font-weight: 200;
+    }
+
     &:focus {
       outline: none;
     }
@@ -287,6 +308,30 @@
     display: inline-block;
     text-align: center;
     font-weight: bold;
+  }
+
+}
+
+.form__group.focused .datepicker--birthday-v2 {
+   border-color: @color-light-blue;
+}
+
+.form__group.material-datepicker {
+
+  position: relative;
+
+  label {
+    color: @color-gray--dark;
+    z-index: 10;
+    pointer-events: none;
+    font-size: 1.05em;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+
+  &.focused label {
+    color: @color-light-blue;
   }
 
 }

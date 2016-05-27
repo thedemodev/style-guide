@@ -12,7 +12,7 @@ class FormGroup {
     this.defaults = {}
 
     this.options = $.extend({}, this.defaults, options)
-    
+
     this.init()
   }
 
@@ -22,8 +22,33 @@ class FormGroup {
 
     // Manage input field specialities:
 
+    if (this.$element.find('.datepicker--birthday-v2').length > 0) {
+
+      this.$element.addClass('material-datepicker')
+      this.$label.detach().appendTo(this.$element)
+
+      this.$element.find('input').each(function() {
+
+        $(this).on('focus blur', function() {
+
+          that.$element.removeClass('focused')
+
+          that.$element.find('input').each(function() {
+            if ($(this).is(':focus')) {
+              that.$element.addClass('focused')
+            }
+          })
+
+        })
+
+      })
+
+      return
+
+    }
+
     if (this.$element.find('.dropdown').length > 0) {
-      
+
       this.$element.addClass('material')
 
       this.$input.find('.dropdown').each(function(){
