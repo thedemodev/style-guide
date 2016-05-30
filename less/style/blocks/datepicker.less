@@ -327,10 +327,9 @@
 
 }
 
-.form__group.material-datepicker.focused {
+.form__group.material-datepicker.focused, .form__group.material-datepicker.filled {
 
   .datepicker--birthday-v2 {
-     border-color: @color-light-blue;
 
     .birthday--day, .birthday--month, .birthday--year {
       opacity: 1;
@@ -350,6 +349,13 @@
     transition: all 0.5s;
   }
 
+}
+
+.form__group.material-datepicker.focused {
+
+  .datepicker--birthday-v2 {
+     border-color: @color-light-blue;
+  }
 }
 
 .form__group.material-datepicker {

@@ -111,6 +111,14 @@ class BirthdayDatepickerV2 {
       this.$day.val('').focus()
     }
 
+    // If there is anything filled into the fields, add class filled to form group:
+
+    if (this.day !== '' || this.month !== '' || this.year !== '') {
+      this.$element.parents('.form__group').addClass('filled')
+    } else {
+      this.$element.parents('.form__group').removeClass('filled')
+    }
+
   }
 
   cursorPosition(el) {
