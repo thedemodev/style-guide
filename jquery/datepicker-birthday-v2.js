@@ -37,6 +37,10 @@ class BirthdayDatepickerV2 {
       }
     }.bind(this))
 
+    this.$element.find('span').on('click', function() {
+      $(this).prev().focus()
+    })
+
   }
 
   handleChange(e, type) {
