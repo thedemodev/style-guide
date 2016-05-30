@@ -31,15 +31,15 @@ class BirthdayDatepickerV2 {
     this.$month.on('keyup', (e) => this.handleChange(e, 'month') )
     this.$year.on('keyup', (e) => this.handleChange(e, 'year') )
 
+    this.$element.on('click', function() {
+      this.$day.focus()
+    }.bind(this))
+
   }
 
   handleChange(e, type) {
 
     var currentYear = new Date().getFullYear()
-
-    this.$element.on('click', function() {
-      this.$day.focus()
-    }.bind(this))
 
     // Handle arrow navigation:
 
