@@ -32,6 +32,22 @@ class Autogrow {
 
     this.$element.on('change keyup keydown', this, event => event.data.update(event));
 
+    let interval = null;
+
+    this.$element
+      .on('focus', function() {
+
+        interval = setInterval(function(){
+          this.update();
+        }.bind(this), 0);
+
+      }.bind(this))
+      .on('blur', function(){
+
+        clearInterval(interval);
+
+      });
+
     this.update();
 
     return $(window).resize(this.update);
@@ -67,8 +83,8 @@ class Autogrow {
       this.shadow.html(val);
 
       let newHeight = Math.max(this.shadow.height()+15, this.minHeight);
-      console.log(newHeight);
-      this.$element.height(newHeight);
+
+      this.$element.height(newHeight)
 
       return this.$element.parent().parent().height(newHeight + 45);
     }

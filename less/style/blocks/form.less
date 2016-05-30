@@ -11,11 +11,11 @@
   position: relative;
   width: 100%;
   min-height: 3em;
-  
+
   &.is-textarea {
     overflow: hidden;
     margin-bottom: 20px;
-    
+
     textarea {
       overflow: hidden;
     }
@@ -31,14 +31,18 @@
   padding-top: 21px;
   padding-bottom: 19px;
   position: absolute;
-  transition: all 0.15s ease-in;
+  transition: padding 0.15s ease-in;
   width: 100%;
-  
+
   &:disabled {
     border-color: @color-gray--mid;
     color: @color-gray--mid;
     cursor: not-allowed;
   }
+}
+
+.form__group.material textarea {
+
 }
 
 .form__group.material input.has-icon {
@@ -59,7 +63,7 @@
   border: solid #999 1px;
   box-shadow: 0 2px 0px 0px #fff;
   max-height: none;
-  
+
   &::-webkit-input-placeholder {
     color: @color-white;
     font-weight: normal;
@@ -78,7 +82,7 @@
     transition: color 0.5s;
   }
 
-  &:-ms-input-placeholder {  
+  &:-ms-input-placeholder {
      color: @color-white;
      font-weight: normal;
      transition: color 0.5s;
@@ -87,7 +91,7 @@
   &:focus {
     border-color: @color-light-blue;
     outline: none;
-    
+
     &::-webkit-input-placeholder {
       color: @color-gray;
     }
@@ -100,7 +104,7 @@
       color: @color-gray;
     }
 
-    &:-ms-input-placeholder {  
+    &:-ms-input-placeholder {
       color: @color-gray;
     }
   }
