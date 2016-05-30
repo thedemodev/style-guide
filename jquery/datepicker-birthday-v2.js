@@ -32,7 +32,9 @@ class BirthdayDatepickerV2 {
     this.$year.on('keyup', (e) => this.handleChange(e, 'year') )
 
     this.$element.on('click', function() {
-      this.$day.focus()
+      if (!this.$element.parents('.form__group').hasClass('filled')) {
+        this.$day.focus()
+      }
     }.bind(this))
 
   }
