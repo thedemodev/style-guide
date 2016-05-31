@@ -5,18 +5,18 @@
 
 .segmented-control {
   .checkbox-group();
-  
+
   margin-bottom: 12px;
 }
 .segmented-control__item {
   .checkbox();
-  
+
   &.chromebug {
     width: 0 !important;
     border: 0 !important;
     cursor: default !important;
     border-left: 1px @color-gray solid !important;
-    
+
     &:before {
       display: none;
     }
@@ -107,7 +107,7 @@
   &.segmented-control.has-error .segmented-control__item {
     border-color: #ff0000 !important; // important is needed when the item .is-active and the control .has-error
   }
-  
+
   &.segmented-control:not(.no-focus):focus .segmented-control__item {
     border-top-color: @color-light-blue !important;
     border-bottom-color: @color-light-blue !important;
@@ -120,18 +120,18 @@
       border-right-color: @color-light-blue !important;
     }
   }
-  
+
   .segmented-control__item {
     .undo-invisible-font();
-    
+
     div {
       .segmented-control-animation();
       height: 40px;
       padding-left: 25px;
       padding-right: 8px;
-      
+
       line-height: 40px;
-      
+
       margin-right: 1px;
       margin-left: 1px;
     }
@@ -146,7 +146,7 @@
         margin: 0 !important;
         padding-left: 26px;
         padding-right: 9px;
-        
+
         &:after {
           background: @color-light-blue;
           width: 120%;
@@ -166,7 +166,7 @@
     &:last-of-type {
       border-right-width: 1px;
     }
-  
+
     /*
     &:nth-child(2):last-of-type:not(.is-active) {
       border-right-width: 1px;
@@ -233,7 +233,7 @@
     transform: translate3d(-50%,-50%, 0) rotate(45deg);
     backface-visibility: hidden;
   }
-  
+
   &:hover {
     &:before {
       background: darken(@color-white, 5%);
