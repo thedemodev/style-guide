@@ -2,19 +2,19 @@
 @import '../blocks/info-icon';
 
 .form__container {
-  max-width: 535px;
+  max-width: @material-form-container-max-width;
   margin: 0 auto;
 }
 
 .form__group.material {
-  margin-bottom: 40px;
+  margin-bottom: @material-group-bottom-margin;
   position: relative;
   width: 100%;
   min-height: 3em;
 
   &.is-textarea {
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: @material-group-bottom-margin-textarea;
 
     textarea {
       overflow: hidden;
@@ -26,17 +26,18 @@
 .form__group.material textarea,
 .form__group.material label {
   cursor: text;
-  font-size: 1.15em;
-  padding: 15px;
-  padding-top: 21px;
-  padding-bottom: 19px;
+  font-size: @material-label-font-size-closed;
+  padding-top: @material-label-padding-top-closed;
+  padding-right: @material-label-padding-right-closed;
+  padding-bottom: @material-label-padding-bottom-closed;
+  padding-left: @material-label-padding-left-closed;
   position: absolute;
   transition: padding 0.15s ease-in;
   width: 100%;
 
   &:disabled {
-    border-color: @color-gray--mid;
-    color: @color-gray--mid;
+    border-color: @material-border-color-disabled;
+    color: @material-label-color-disabled;
     cursor: not-allowed;
   }
 }
@@ -55,89 +56,89 @@
 
 .form__group.material.form__group__dropdown label.is-open {
   top: -10px;
-  font-size: 1.05em !important;
+  font-size: @material-label-font-size-open !important;
 }
 
 .form__group.material input,
 .form__group.material textarea {
-  border: solid #999 1px;
+  border: solid @material-border-color-inactive 1px;
   box-shadow: 0 2px 0px 0px #fff;
   max-height: none;
 
   &::-webkit-input-placeholder {
-    color: @color-white;
-    font-weight: normal;
+    color: transparent;
+    font-weight: @material-placeholder-font-weight;
     transition: color 0.5s;
   }
 
   &:-moz-placeholder { /* Firefox 18- */
-    color: @color-white;
-    font-weight: normal;
+    color: transparent;
+    font-weight: @material-placeholder-font-weight;
     transition: color 0.5s;
   }
 
   &::-moz-placeholder {  /* Firefox 19+ */
-    color: @color-white;
-    font-weight: normal;
+    color: transparent;
+    font-weight: @material-placeholder-font-weight;
     transition: color 0.5s;
   }
 
   &:-ms-input-placeholder {
-     color: @color-white;
-     font-weight: normal;
+     color: transparent;
+     font-weight: @material-placeholder-font-weight;
      transition: color 0.5s;
   }
 
   &:focus {
-    border-color: @color-light-blue;
+    border-color: @meterial-border-color-active;
     outline: none;
 
     &::-webkit-input-placeholder {
-      color: @color-gray;
+      color: @material-placeholder-color;
     }
 
     &:-moz-placeholder { /* Firefox 18- */
-      color: @color-gray;
+      color: @material-placeholder-color;
     }
 
     &::-moz-placeholder {  /* Firefox 19+ */
-      color: @color-gray;
+      color: @material-placeholder-color;
     }
 
     &:-ms-input-placeholder {
-      color: @color-gray;
+      color: @material-placeholder-color;
     }
   }
 }
 
 .form__group.material label {
-  color: @color-gray--dark;
+  color: @material-label-color-default;
   z-index: 10;
   pointer-events: none;
 }
 
 .form__group.material.filled label,
 .form__group.material.focused label {
-  font-size: 1.05em;
+  font-size: @material-label-font-size-open;
   position: absolute;
-  top: -10px;
+  top: @material-label-open-label-offset-top;
 }
 
 .form__group.material.focused label {
-  color: @color-light-blue;
+  color: @material-label-color-active;
 }
 
 .form__group.material.disabled label {
-  color: @color-gray--mid;
+  color: @material-label-color-disabled;
 }
 
 .form__group.material.filled input,
 .form__group.material.filled textarea,
 .form__group.material.focused input,
 .form__group.material.focused textarea {
-  padding-top: 32px;
-  padding-bottom: 8px;
-  font-weight: bold;
+  padding-top: @material-field-padding-top;
+  padding-bottom: @material-field-padding-bottom;
+  font-weight: @material-field-font-weight;
 }
 
 .form__group.material input:focus,
@@ -183,11 +184,11 @@
 }
 
 .form__group.material.has-error label {
-  color: @color-red;
+  color: @material-label-color-error;
 }
 
 .form__group.material .control.has-error {
-  border-color: @color-red;
+  border-color: @material-border-color-error;
 }
 
 .form__group.material .form__group__label {

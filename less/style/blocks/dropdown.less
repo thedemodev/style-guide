@@ -8,7 +8,7 @@
 .dropdown {
   position: relative;
   cursor: pointer;
-  
+
   .dropdown__label__text.is-enhanced {
     visibility: hidden;
   }
@@ -16,16 +16,16 @@
 }
 
 .dropdown:focus {
-    
+
   outline: none;
 
   .dropdown__label.is-enhanced {
-    border: 1px @color-light-blue solid !important;
+    border: 1px @meterial-border-color-active solid !important;
   }
 
   .dropdown__label__text.is-enhanced {
     visibility: visible;
-    color: @color-gray--dark;
+    color: @material-label-color-default;
     transition: color 0.3s;
     transition-delay: 0.3s;
   }
@@ -33,15 +33,15 @@
 }
 
 .form__group.dropdown {
-  
+
   .form__group__label.is-open {
-    font-size: 1.05em !important;
+    font-size: @material-label-font-size-open !important;
     position: absolute !important;
-    top: -12px !important;
+    top: @material-label-open-label-offset-top - 2px !important;
   }
-  
+
   &.filled {
-    top: 12px !important;
+    top: @material-label-open-label-offset-top - 2px !important;
   }
 
 }
@@ -53,7 +53,7 @@
     color: @color-black;
     transition: color 0.3s;
   }
-    
+
 }
 
 .form__group__dropdown .form__group__label__text {
@@ -69,17 +69,19 @@
   display: flex;
   align-items: center;
 
-  border: solid #999 1px;
+  border: solid @material-border-color-inactive 1px;
   padding: 0;
-  
-  font-size: 1.15em;
-  padding: 15px;
-  padding-top: 21px;
-  padding-bottom: 19px;
+
+  font-size: @material-label-font-size-closed;
+
+  padding-top: @material-label-padding-top-closed;
+  padding-right: @material-label-padding-right-closed;
+  padding-bottom: @material-label-padding-bottom-closed;
+  padding-left: @material-label-padding-left-closed;
 }
 
 .dropdown.is-open.is-enhanced .dropdown__label.is-enhanced {
-  border: 1px @color-light-blue solid;
+  border: 1px @meterial-border-color-active solid;
 }
 
 .dropdown__label__icon {
@@ -122,7 +124,7 @@
 .dropdown.is-open .dropdown__label__icon {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg); 
+  -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -131,7 +133,7 @@
 }
 
 .dropdown.is-enhanced {
-  
+
   dl {
     display: none;
     position: absolute;

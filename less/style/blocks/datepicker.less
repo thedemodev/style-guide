@@ -259,9 +259,9 @@
 .datepicker--birthday-v2 {
 
   max-width: none;
-  margin-bottom: 20px;
+  margin-bottom: @material-group-bottom-margin - 20px;
 
-  border: solid #999 1px;
+  border: solid @material-border-color-inactive 1px;
   box-shadow: 0 2px 0 0 #fff;
 
   .control--birthday {
@@ -276,26 +276,26 @@
     padding: 32px 15px 11px 15px;
     border: none;
     cursor: text;
-    font-size: 1.15em;
+    font-size: @material-label-font-size-closed;
     font-weight: 700;
 
     &::-webkit-input-placeholder {
-      color: @color-gray;
+      color: @material-placeholder-color;
       font-weight: 200;
     }
 
     &:-moz-placeholder { /* Firefox 18- */
-      color: @color-gray;
+      color: @material-placeholder-color;
       font-weight: 200;
     }
 
     &::-moz-placeholder {  /* Firefox 19+ */
-      color: @color-gray;
+      color: @material-placeholder-color;
       font-weight: 200;
     }
 
     &:-ms-input-placeholder {
-      color: @color-gray;
+      color: @material-placeholder-color;
       font-weight: 200;
     }
 
@@ -347,7 +347,7 @@
   }
 
   label {
-    font-size: 1.05em;
+    font-size: @material-label-font-size-open;
     top: 11px;
     left: 15px;
     transition: all 0.5s;
@@ -367,18 +367,18 @@
   position: relative;
 
   label {
-    color: @color-gray--dark;
+    color: @material-label-color-default;
     z-index: 10;
     pointer-events: none;
     position: absolute;
     top: 22px;
     left: 15px;
-    font-size: 1.15em;
+    font-size: @material-label-font-size-closed;
     transition: all 0.5s;
   }
 
   &.focused label {
-    color: @color-light-blue;
+    color: @material-label-color-active;
   }
 
 }
