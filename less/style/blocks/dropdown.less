@@ -104,6 +104,7 @@
 .dropdown__label__icon {
   order: 2;
   flex-shrink: 0;
+  z-index: 100;
 
   width: 1.25rem;
   height: 1.25rem;
@@ -138,7 +139,7 @@
   dl {
     display: none;
     position: absolute;
-    top: 49px;
+    top: 25px;
     left: 0;
     width: 100%;
     background: @color-white;
@@ -152,13 +153,14 @@
 
   dt {
     cursor: pointer;
-    color: @color-light-blue;
-    font-size: 19px;
+    color: @color-black;
+    font-size: 18px;
     font-weight: 600;
     padding: 6px 15px 5px 15px;
 
     &:hover, &.is-selected {
-      background: @color-gray--lighter;
+      background: @color-light-blue;
+      color: @color-white;
     }
   }
 
