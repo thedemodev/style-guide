@@ -9,9 +9,11 @@
   display: table-cell;
 
   height: 32px;
-  width: 31px;
+  width: 32px;
+  line-height: 32px;
+  border-radius: 32px;
+
   padding: 0;
-  border: 3px solid @color-gray--dark;
 
   text-align: center;
   vertical-align: middle;
@@ -71,15 +73,16 @@
 .picker {
   display: none;
   position: absolute;
-  right: 63px;
-  top: -5px;
+
+  top: -100px;
+  right: 80px;
 
   width: 260px;
   border-collapse: collapse;
   margin-top: 6px;
   z-index: @z-index-datepicker;
 
-  background: @color-gray--dark;
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.1);
 
   &.is-active {
     display: block;
@@ -91,8 +94,9 @@
 }
 
 .picker__header {
-  padding: 10px 10px 0 10px;
+  padding: 20px 20px 20px 20px;
   color: white;
+  background: @color-light-blue;
 }
 
 .picker__headline {
@@ -147,6 +151,9 @@
 
 .picker__content {
   padding: 10px 17px 18px 17px;
+  background: @color-white;
+  border: 1px @color-gray--predarkest solid;
+  border-top: none;
 }
 
 .picker__month {
@@ -165,7 +172,7 @@
 .picker__day {
   .make-picker-cell();
 
-  color: @color-light-blue;
+  color: @color-black;
   background: white;
 
   cursor: pointer;
@@ -185,7 +192,7 @@
   font-size: 0.9285em;
 
   background: transparent;
-  color: white;
+  color: @color-gray--dark;
 
   cursor: default;
 
@@ -196,8 +203,7 @@
 
 .picker__day--prev-month,
 .picker__day--next-month {
-  background: @color-gray;
-  color: white;
+  color: @color-gray;
 }
 
 .picker__day--disabled {
@@ -215,7 +221,7 @@
 .picker__weeknumber {
   .make-picker-cell();
   background: transparent;
-  color: white;
+  color: @color-gray--lighter;
   font-size: .8em;
 }
 
