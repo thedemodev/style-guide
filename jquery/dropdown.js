@@ -65,7 +65,7 @@ class Dropdown {
             that.$element.parent().parent().addClass('filled')
 
             that.hideOptions()
-            
+
           })
         }, 10)
 
@@ -131,6 +131,9 @@ class Dropdown {
     this.$element.parent().parent().find('label')
       .removeClass('is-closed')
       .addClass('is-open')
+    this.$element.parents('.form__group')
+      .removeClass('is-closed')
+      .addClass('is-open')
   }
 
   hideOptions() {
@@ -139,6 +142,9 @@ class Dropdown {
       .removeClass('is-open')
       .addClass('is-closed')
     this.$element.parent().parent().find('label')
+      .removeClass('is-open')
+      .addClass('is-closed')
+    this.$element.parents('.form__group')
       .removeClass('is-open')
       .addClass('is-closed')
   }
@@ -241,7 +247,7 @@ class Dropdown {
   }
 
   handleKeys(e) {
-    
+
     this.handleSpacebar(e)
     this.handleDownArrow(e)
     this.handleUpArrow(e)
