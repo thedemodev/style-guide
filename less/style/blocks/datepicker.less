@@ -96,7 +96,24 @@
 .picker__header {
   padding: 20px 20px 20px 20px;
   color: white;
-  background: @color-light-blue;
+  background: @color-gray--mid;
+
+  &.active {
+    background: @color-light-blue;
+  }
+}
+
+.picker__selection {
+  margin: 0 30px;
+
+  line-height: 31px;
+  font-size: 1.1428em;
+  text-align: center;
+}
+
+.picker__selection__month {
+  display: inline;
+  font-weight: bold;
 }
 
 .picker__headline {

@@ -29,20 +29,29 @@ class Picker extends Emitter
 
     @$header = append '<div class="picker__header" ></div>', @$element
 
-    @$prev = append '<div class="picker__prev"></div>', @$header
+    @$selection = append '<div class="picker__selection" ></div>', @$header
+    @$selection__day = append '<span class="picker__selection__day" ></span>', @$selection
+    append '<span> </span>', @$selection
+    @$selection__month = append '<span class="picker__selection__month" ></span>', @$selection
+    append '<br />', @$selection
+    @$selection__year = append '<span class="picker__selection__year" ></span>', @$selection
+
+
+    @$content = append '<div class="picker__content" ></div>', @$element
+
+    @$prev = append '<div class="picker__prev"></div>', @$content
     @$prev.append @createIcon('prev')
     @$prev.on 'click', @onPrevClick.bind(this)
 
-    @$next = append '<div class="picker__next"></div>', @$header
+    @$next = append '<div class="picker__next"></div>', @$content
     @$next.append @createIcon('next')
     @$next.on 'click', @onNextClick.bind(this)
 
-    @$headline = append '<div class="picker__headline" ></div>', @$header
+    @$headline = append '<div class="picker__headline" ></div>', @$content
     @$headline__month = append '<span class="picker__headline__month" ></span>', @$headline
     append '<span> </span>', @$headline
     @$headline__year = append '<span></span>', @$headline
 
-    @$content = append '<div class="picker__content" ></div>', @$element
 
     @$month = append '<div class="picker__month" ></div>', @$content
 
@@ -61,6 +70,17 @@ class Picker extends Emitter
   updateDisplay: ->
     @$headline__month.text @date.format('MMMM')
     @$headline__year.text @date.format('YYYY')
+
+    if @selectedDate?
+      @$selection__day.text @selectedDate.format('D')
+      @$selection__month.text @selectedDate.format('MMMM')
+      @$selection__year.text @selectedDate.format('YYYY')
+      @$header.addClass 'active'
+    else
+      @$selection__day.text @date.format('D')
+      @$selection__month.text @date.format('MMMM')
+      @$selection__year.text @date.format('YYYY')
+      @$header.removeClass 'active'
 
     @$month.empty()
     @$month.append @$weekHeadline
