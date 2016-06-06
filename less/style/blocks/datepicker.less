@@ -116,6 +116,11 @@
   font-weight: bold;
 }
 
+.picker__selection__day {
+  display: inline;
+  font-weight: bold;
+}
+
 .picker__headline {
   margin: 0 30px;
 
@@ -125,6 +130,11 @@
 }
 
 .picker__headline__month {
+  display: inline;
+  font-weight: bold;
+}
+
+.picker__headline__year {
   display: inline;
   font-weight: bold;
 }
@@ -194,11 +204,16 @@
 
   cursor: pointer;
 
+  &:nth-last-child(2) {
+    border-left: 1px @color-gray--mid solid;
+  }
+
   &:hover,
   &.is-active {
     background: @color-light-blue;
     color: white;
   }
+
 }
 
 .picker__day--today {

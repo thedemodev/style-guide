@@ -50,7 +50,7 @@ class Picker extends Emitter
     @$headline = append '<div class="picker__headline" ></div>', @$content
     @$headline__month = append '<span class="picker__headline__month" ></span>', @$headline
     append '<span> </span>', @$headline
-    @$headline__year = append '<span></span>', @$headline
+    @$headline__year = append '<span class="picker__headline__year" ></span>', @$headline
 
 
     @$month = append '<div class="picker__month" ></div>', @$content
