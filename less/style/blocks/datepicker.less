@@ -77,7 +77,7 @@
   top: -100px;
   right: 80px;
 
-  width: 260px;
+  width: 280px;
   border-collapse: collapse;
   margin-top: 6px;
   z-index: @z-index-datepicker;
@@ -87,10 +87,6 @@
   &.is-active {
     display: block;
   }
-}
-
-.picker--with-weeknumber {
-  width: 265px;
 }
 
 .picker__header {
@@ -106,23 +102,28 @@
 .picker__selection {
   margin: 0 30px;
 
-  line-height: 31px;
+  line-height: 100%;
   font-size: 1.1428em;
   text-align: center;
 }
 
 .picker__selection__month {
   display: inline;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .picker__selection__day {
   display: inline;
-  font-weight: bold;
+  font-weight: 600;
+}
+
+.picker__selection__year {
+  font-size: 14px;
+  line-height: 100%;
 }
 
 .picker__headline {
-  margin: 0 30px;
+  margin: 8px 30px;
 
   line-height: 31px;
   font-size: 1.1428em;
@@ -131,22 +132,20 @@
 
 .picker__headline__month {
   display: inline;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .picker__headline__year {
   display: inline;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .picker__prev,
 .picker__next {
   display: block;
 
-  width: 30px;
-  height: 30px;
-
-  text-align: center;
+  width: 40px;
+  height: 50px;
 
   cursor: pointer;
 
@@ -168,12 +167,14 @@
 
 .picker__prev {
   float: left;
-  padding-top: 6px;
+  padding-top: 14px;
+  text-align: right;
 }
 
 .picker__next {
   float: right;
-  padding-top: 6px;
+  padding-top: 14px;
+  text-align: left;
 }
 
 .picker__content {
@@ -221,7 +222,7 @@
 }
 
 .picker__day--headline {
-  font-size: 0.9285em;
+  font-size: 14px;
 
   background: transparent;
   color: @color-gray--dark;
