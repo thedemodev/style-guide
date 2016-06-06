@@ -28,6 +28,8 @@ class Autogrow {
       'word-wrap': 'break-word'
     });
 
+    this.infoHeight = 0;
+
     this.shadow.appendTo(document.body);
 
     this.$element.on('change keyup keydown', this, event => event.data.update(event));
@@ -75,6 +77,8 @@ class Autogrow {
         .replace(/\s{2,}/g,space => times('&nbsp;', space.length - 1) + ' '
         );
 
+      let $formgroup = this.$element.parent().parent();
+
       if ((event != null) && (event.data != null) && event.data.event === 'keydown' && event.keyCode === 13) {
         val += '<br />';
       }
@@ -86,7 +90,21 @@ class Autogrow {
 
       this.$element.height(newHeight)
 
-      return this.$element.parent().parent().height(newHeight + 45);
+      if ($formgroup.hasClass('focused')) {
+
+        if (this.infoHeight == 0) {
+          this.infoHeight = this.$element.find('.form__group__info').height();
+        }
+
+        $formgroup.height(newHeight + this.infoHeight + 128);
+        this.$element.find('.form__group__info').css('padding-top', (80 + (newHeight - 128)) + 'px')
+
+      } else {
+        $formgroup.height(newHeight + this.infoHeight + 48);
+        this.$element.find('.form__group__info').css('padding-top', (80 + (newHeight - 128)) + 'px')
+      }
+
+      return true
     }
   }
 }
