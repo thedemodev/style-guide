@@ -90,19 +90,8 @@ class Autogrow {
 
       this.$element.height(newHeight)
 
-      if ($formgroup.hasClass('focused')) {
-
-        if (this.infoHeight == 0) {
-          this.infoHeight = this.$element.find('.form__group__info').height();
-        }
-
-        $formgroup.height(newHeight + this.infoHeight + 128);
-        this.$element.find('.form__group__info').css('padding-top', (80 + (newHeight - 128)) + 'px')
-
-      } else {
-        $formgroup.height(newHeight + this.infoHeight + 48);
-        this.$element.find('.form__group__info').css('padding-top', (80 + (newHeight - 128)) + 'px')
-      }
+      $formgroup.height(newHeight + this.infoHeight + 48);
+      this.$element.find('.form__group__info').css('padding-top', (80 + (newHeight - 128)) + 'px')
 
       return true
     }
