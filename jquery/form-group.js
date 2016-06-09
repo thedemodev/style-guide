@@ -124,6 +124,12 @@ class FormGroup {
         this.$input.find('input').addClass('has-icon')
       }
 
+      // Bind info icon:
+
+      this.$element.find('a.info-icon').on('click', function(e) {
+        this.$element.find('.form__group__info').toggleClass('is-open')
+      }.bind(this))
+
     } else {
       this.$element.addClass('default')
     }
