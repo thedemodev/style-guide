@@ -60,6 +60,10 @@ class FormGroup {
         this.$element.addClass('has-icon')
       }
 
+      let $icon = this.$element.find('.form__group__label__info-icon').clone()
+      this.$element.find('.form__group__label__info-icon').remove()
+      this.$element.prepend($icon)
+
     }
 
     if (this.$element.find('.control--input, .control--textarea').length > 0) {
@@ -74,6 +78,9 @@ class FormGroup {
         .append(this.$label)
         .append(this.$info)
         .append(this.$error)
+
+      let $icon = this.$element.find('.form__group__label__info-icon').clone().remove()
+      this.$element.prepend($icon)
 
       // Manage extra classes:
 

@@ -208,14 +208,14 @@
   border-color: @material-border-color-active;
 }
 
-.form__group.material .form__group__label {
+.form__group.material {
 
   .form__group__label__info-icon {
 
     position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
+    top: 21px;
+    right: 21px;
+    z-index: 10;
 
     width: @material-form-group-info-icon-diameter;
 
@@ -224,20 +224,9 @@
       height: @material-form-group-info-icon-diameter;
     }
 
-    a {
-      cursor: pointer;
-    }
-
   }
 
 }
-
-.form__group.material.focused, .form__group.material.filled {
-  .form__group__label .form__group__label__info-icon {
-    top: 30px;
-  }
-}
-
 
 .form__group.default {
 
