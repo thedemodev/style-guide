@@ -92,7 +92,7 @@
   }
 
   &:focus {
-    border-color: @meterial-border-color-active;
+    border-color: @material-border-color-active;
     outline: none;
 
     &::-webkit-input-placeholder {
@@ -198,6 +198,10 @@
 
 .form__group.material .control.has-error {
   border-color: @material-border-color-error;
+}
+
+.form__group.material.focused .control.has-error {
+  border-color: @material-border-color-active;
 }
 
 .form__group.material .form__group__label {
