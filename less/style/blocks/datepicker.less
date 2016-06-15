@@ -187,6 +187,18 @@
   background: @color-white;
   border: 1px @color-gray--predarkest solid;
   border-top: none;
+
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '';
+    right: @picker-cell-size * 2 + @picker-cell-spacing * 4 + @picker-side-margin;
+    bottom: @picker-side-margin + @picker-cell-spacing + 6px;
+    width: 1px;
+    height: @picker-cell-size * 6;
+    border-left: 1px @color-gray--mid solid;
+  }
 }
 
 .picker__month {
@@ -211,10 +223,6 @@
   background: white;
 
   cursor: pointer;
-
-  &:nth-last-child(2) {
-    border-left: 1px @color-gray--mid solid;
-  }
 
   &:hover,
   &.is-active {
