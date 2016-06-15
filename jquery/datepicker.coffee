@@ -154,6 +154,9 @@ class Picker extends Emitter
     if date.format('DD.MM.YYYY') == @moment().format('DD.MM.YYYY')
       $day.addClass('picker__day--today')
 
+    if date.isoWeekday() == 6
+      $day.addClass('picker__day--saturday')
+
     self = this
 
     $day.text date.get 'date'
