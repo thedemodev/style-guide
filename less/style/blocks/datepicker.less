@@ -7,7 +7,8 @@
 
 @picker-cell-size: 32px;
 @picker-side-margin: 16px;
-@picker-width: 7 * @picker-cell-size + (2 * @picker-side-margin);
+@picker-cell-spacing: 2px;
+@picker-width: 7 * @picker-cell-size + (2 * @picker-side-margin) + (7 * 2 * @picker-cell-spacing);
 
 .make-picker-cell() {
   display: table-cell;
@@ -191,6 +192,8 @@
 .picker__month {
   display: table;
   width: 100%;
+  border-collapse: separate;
+  border-spacing: @picker-cell-spacing;
 }
 
 .picker__weeks {
