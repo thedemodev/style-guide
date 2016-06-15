@@ -5,13 +5,17 @@
 // TODO: Instead of viewport we should consider usage of a --js which will be
 // added when js is available and it is a non-touch device
 
+@picker-cell-size: 32px;
+@picker-side-margin: 16px;
+@picker-width: 7 * @picker-cell-size + (2 * @picker-side-margin);
+
 .make-picker-cell() {
   display: table-cell;
 
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  border-radius: 32px;
+  height: @picker-cell-size;
+  width: @picker-cell-size;
+  line-height: @picker-cell-size;
+  border-radius: @picker-cell-size;
 
   padding: 0;
 
@@ -77,7 +81,7 @@
   top: -100px;
   right: 80px;
 
-  width: 280px;
+  width: @picker-width;
   border-collapse: collapse;
   margin-top: 6px;
   z-index: @z-index-datepicker;
@@ -178,7 +182,7 @@
 }
 
 .picker__content {
-  padding: 10px 17px 18px 17px;
+  padding: 10px @picker-side-margin 18px @picker-side-margin;
   background: @color-white;
   border: 1px @color-gray--predarkest solid;
   border-top: none;
