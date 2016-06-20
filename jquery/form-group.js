@@ -62,6 +62,7 @@ class FormGroup {
 
       let $icon = this.$element.find('.form__group__label__info-icon').clone()
       this.$element.find('.form__group__label__info-icon').remove()
+
       this.$element.prepend($icon)
 
     }
@@ -79,7 +80,9 @@ class FormGroup {
         .append(this.$info)
         .append(this.$error)
 
-      let $icon = this.$element.find('.form__group__label__info-icon').clone().remove()
+      let $icon = this.$element.find('.form__group__label__info-icon').clone()
+      this.$element.find('.form__group__label__info-icon').remove()
+
       this.$element.prepend($icon)
 
       // Manage extra classes:
