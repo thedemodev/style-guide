@@ -1,20 +1,20 @@
-import $ from 'jquery';
+import $ from 'jquery'
 
 // Public class definition
 class Autogrow {
 
   constructor(element, options) {
-    this.element = element;
-    this.$element = $(element);
-    this.options = $.extend({}, options);
+    this.element = element
+    this.$element = $(element)
+    this.options = $.extend({}, options)
 
-    this.init();
+    this.init()
   }
 
   init() {
     this.minHeight = this.$element.height();
 
-    this.shadow = $('<div></div>');
+    this.shadow = $('<div></div>')
     this.shadow.css({
       position: 'absolute',
       top: -10000,
@@ -39,18 +39,23 @@ class Autogrow {
     this.$element
       .on('focus', function() {
 
-        interval = setInterval(function(){
-          this.update();
-        }.bind(this), 0);
+        interval = setInterval(function() {
+          this.update()
+        }.bind(this), 0)
 
       }.bind(this))
       .on('blur', function(){
 
-        clearInterval(interval);
+        clearInterval(interval)
 
       });
 
-    this.update();
+    this.update()
+
+    this.$element.parents('.form__group').find('.info-icon').on('click', function() {
+      this.update()
+      console.log('info icon click')
+    }.bind(this))
 
     return $(window).resize(this.update);
   }
@@ -65,7 +70,7 @@ class Autogrow {
         }
         return r;
       }
-    });
+    })
 
     if (this.element) {
 
@@ -74,34 +79,31 @@ class Autogrow {
         .replace(/&/g, '&amp;')
         .replace(/\n$/, '<br/>&nbsp;')
         .replace(/\n/g, '<br/>')
-        .replace(/\s{2,}/g,space => times('&nbsp;', space.length - 1) + ' '
-        );
+        .replace(/\s{2,}/g,space => times('&nbsp;', space.length - 1) + ' ')
 
-      let $formgroup = this.$element.parent().parent();
+      let $formgroup = this.$element.parents('.form__group')
 
       if ((event != null) && (event.data != null) && event.data.event === 'keydown' && event.keyCode === 13) {
-        val += '<br />';
+        val += '<br />'
       }
 
-      this.shadow.css('width', this.$element.width());
-      this.shadow.html(val);
+      this.shadow.css('width', this.$element.width())
+      this.shadow.html(val)
 
-      let newHeight = Math.max(this.shadow.height()+15, this.minHeight);
+      let newHeight = Math.max(this.shadow.height()+15, this.minHeight)
 
       this.$element.height(newHeight)
 
-      let infoPaddingTop = 64;
-      let groupHeight = newHeight + 32 + 16;
+      let infoPaddingTop = 64
+      let groupHeight = newHeight + 32 + 16
 
       if ($formgroup.find('.form__group__info').hasClass('is-open')) {
-        infoPaddingTop = newHeight + 58;
-        groupHeight = newHeight + this.infoHeight + $formgroup.find('.form__group__info').height() + 64 + 16;
+        infoPaddingTop = newHeight + 58
+        groupHeight = newHeight + this.infoHeight + $formgroup.find('.form__group__info').height() + 64 + 16
       }
 
       $formgroup.find('.form__group__info').css('padding-top', infoPaddingTop)
-      $formgroup.height(groupHeight);
-
-      console.log(infoPaddingTop, groupHeight)
+      $formgroup.height(groupHeight)
 
       return true
     }
@@ -110,29 +112,29 @@ class Autogrow {
 
 // Plugin definition
 let Plugin = function(option) {
-  let params = arguments;
+  let params = arguments
 
   return this.each(function() {
-    let $this = $(this);
-    let data = $this.data('axa.autogrow');
+    let $this = $(this)
+    let data = $this.data('axa.autogrow')
 
     if (!data) {
-      data = new Autogrow(this);
-      return $this.data('axa.autogrow', data);
+      data = new Autogrow(this)
+      return $this.data('axa.autogrow', data)
     }
-  });
-};
+  })
+}
 
 // Plugin registration
-$.fn.autogrow = Plugin;
-$.fn.autogrow.Constructor = Autogrow;
+$.fn.autogrow = Plugin
+$.fn.autogrow.Constructor = Autogrow
 
 // DATA-API
 $(window).on('load', () =>
   $('[data-autogrow="autogrow"]').each(function() {
-    let $autogrow = $(this);
-    return Plugin.call($autogrow);
+    let $autogrow = $(this)
+    return Plugin.call($autogrow)
   })
-);
+)
 
 //! Copyright AXA Versicherungen AG 2015
