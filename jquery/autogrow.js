@@ -90,8 +90,18 @@ class Autogrow {
 
       this.$element.height(newHeight)
 
-      $formgroup.height(newHeight + this.infoHeight + 48);
-      this.$element.find('.form__group__info').css('padding-top', (80 + (newHeight - 128)) + 'px')
+      let infoPaddingTop = 64;
+      let groupHeight = newHeight + 32 + 16;
+
+      if ($formgroup.find('.form__group__info').hasClass('is-open')) {
+        infoPaddingTop = newHeight + 58;
+        groupHeight = newHeight + this.infoHeight + $formgroup.find('.form__group__info').height() + 64 + 16;
+      }
+
+      $formgroup.find('.form__group__info').css('padding-top', infoPaddingTop)
+      $formgroup.height(groupHeight);
+
+      console.log(infoPaddingTop, groupHeight)
 
       return true
     }
