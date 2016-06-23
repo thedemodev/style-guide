@@ -192,8 +192,18 @@
   }
 
   .segmented-control__item {
-    border: 1px solid @color-gray !important;
     color: @color-gray;
+    cursor: auto;
+    pointer-events: none;
+
+    div {
+      &:before {
+        content: none;
+      }
+      &:after {
+        content: none;
+      }
+    }
   }
 
   .segmented-control__item.is-active {
