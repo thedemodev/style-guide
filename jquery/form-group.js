@@ -65,6 +65,12 @@ class FormGroup {
 
       this.$element.prepend($icon)
 
+      // Bind info icon:
+
+      this.$element.find('a.info-icon').on('click', function(e) {
+        this.$element.find('.form__group__info').toggleClass('is-open')
+      }.bind(this))
+
     }
 
     if (this.$element.find('.control--input, .control--textarea').length > 0) {

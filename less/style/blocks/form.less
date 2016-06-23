@@ -210,6 +210,10 @@
 
 }
 
+.form__group.material.form__group__dropdown .form__group__info.is-open {
+  padding-top: 16px;
+}
+
 .form__group.material.is-textarea .form__group__info.is-open {
   padding-top: (2 * @material-form-input-height) + 16px;
 }
@@ -344,7 +348,7 @@
   }
 }
 
-.form__group.default .form__group__info {
+.form__group.default:not('.material') .form__group__info {
 
   margin-top: 15px;
 
