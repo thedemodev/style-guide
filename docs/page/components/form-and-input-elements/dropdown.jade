@@ -16,10 +16,6 @@ p.paragraph.
     li.toc__anchor-navigation__item
       a(href='#enhanced').toc__anchor-navigation__link Regular Dropdown
     li.toc__anchor-navigation__item
-      a(href='#large').toc__anchor-navigation__link Large Dropdown
-    li.toc__anchor-navigation__item
-      a(href='#condensed').toc__anchor-navigation__link Condensed Dropdown
-    li.toc__anchor-navigation__item
       a(href='#non-enhanced').toc__anchor-navigation__link Backup: Non enhanced dropdown
 
 .hr
@@ -51,7 +47,6 @@ p.paragraph.
             Our jQuery plugin adds the
             <code>dropdown--js</code> modifier and handles
             keyboard events.
-
           p.paragraph.
             Activate the functionality with the data-* API as used
             in the HTML examples.
@@ -69,53 +64,6 @@ ul.checklist
     .checklist__item__content.
       On mobile devices, use native dropdown pickers.
 
-.hr
-
-h2.heading.heading--secondary#large Large Dropdown
-
-+example('/components/form-and-input-elements/demos/dropdown-large.html')
-
-.toggle
-  .toggle__button(data-info, data-target='#code-large')
-    +svg('source', ['icon', 'toggle__icon'])
-    span See code
-  .toggle__content#code-large
-    .tab-panel(data-tab, data-tab-default='html')
-      .tab-panel__header
-        .tab-panel__header__tabs
-          .tab-panel__header__tab(data-tab-toggle='html') HTML
-      .tab-panel__content
-        .tab-panel__content__tab(data-tab-content='html')
-          :markdown
-            To create a condensed dropdown element add the
-            `condensed` modifier to a regular dropdown.
-          .tab-panel__content__tab__fullwidth-content
-            .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/dropdown-large.jade
-
-.hr
-
-h2.heading.heading--secondary#condensed Condensed Dropdown
-
-+example('/components/form-and-input-elements/demos/dropdown-condensed.html')
-
-.toggle
-  .toggle__button(data-info, data-target='#code-condensed')
-    +svg('source', ['icon', 'toggle__icon'])
-    span See code
-  .toggle__content#code-condensed
-    .tab-panel(data-tab, data-tab-default='html')
-      .tab-panel__header
-        .tab-panel__header__tabs
-          .tab-panel__header__tab(data-tab-toggle='html') HTML
-      .tab-panel__content
-        .tab-panel__content__tab(data-tab-content='html')
-          :markdown
-            To create a condensed dropdown element add the
-            `condensed` modifier to a regular dropdown.
-          .tab-panel__content__tab__fullwidth-content
-            .highlight: pre.highlight__listing.hljs: code.js
-              include:highlightcode ./snippets/dropdown-condensed.jade
 .hr
 
 h2.heading.heading--secondary#non-enhanced Non enhanced dropdown
