@@ -90,6 +90,8 @@ class Dropdown {
 
       that.$element.on('click', function(event){
 
+        console.log('dropdown clicked, stopped propagation');
+
         that.stopPropagation(event)
 
         if (that.$element.hasClass('is-closed')){
