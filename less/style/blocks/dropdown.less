@@ -35,9 +35,12 @@
 .form__group.dropdown {
 
   .form__group__label.is-open {
-    font-size: @material-label-font-size-open !important;
+
     position: absolute !important;
     top: @material-label-open-label-offset-top - 2px !important;
+
+    font-size: @material-label-font-size-open !important;
+
   }
 
   &.filled {
@@ -73,20 +76,22 @@
 }
 
 .dropdown__label.is-enhanced {
+
   .control;
+
   display: flex;
   align-items: center;
 
-  border: solid @material-border-color-inactive 1px;
-  color: @material-label-color-default;
-  padding: 0;
-
-  font-size: @material-label-font-size-closed;
 
   padding-top: @material-label-padding-top-closed;
   padding-right: @material-label-padding-right-closed;
   padding-bottom: @material-label-padding-bottom-closed;
   padding-left: @material-label-padding-left-closed;
+  border: solid @material-border-color-inactive 1px;
+
+  font-size: @material-label-font-size-closed;
+  color: @material-label-color-default;
+
 }
 
 .dropdown.is-open.is-enhanced .dropdown__label.is-enhanced {
@@ -98,39 +103,53 @@
 }
 
 .dropdown__label__text {
+
   order: 1;
   flex-grow: 1;
   max-width: 100%;
   overflow: hidden;
-  text-overflow: ellipsis;
+
   margin-top: 12px;
   margin-bottom: -12px;
+
   color: @color-white;
   font-weight: 600;
+  text-overflow: ellipsis;
+
 }
 
 .dropdown__label__icon {
+
   order: 2;
   flex-shrink: 0;
+
   width: 1.25rem;
   height: 1.25rem;
+
 }
 
 .form__group.material.has-icon {
+
   .dropdown__label__icon {
     margin-right: 37px;
   }
+
   .form__group__label .form__group__label__info-icon {
+
     top: 14px;
     right: 12px;
+
     svg {
       width: @material-form-group-info-icon-diameter;
       height: @material-form-group-info-icon-diameter;
     }
+
   }
+
   .form__group__label.is-open .form__group__label__info-icon {
     top: 25px;
   }
+
 }
 
 .dropdown.is-open .dropdown__label__icon {
@@ -147,31 +166,38 @@
 .dropdown.is-enhanced {
 
   dl {
+
     display: none;
     position: absolute;
     top: 30px;
     left: 0;
     width: 100%;
+    z-index: 20;
+    max-height: 280px;
+    overflow: auto;
+
     background: @color-white;
     border: 1px @color-light-blue solid;
     border-top: none;
-    z-index: 20;
     padding-bottom: 5px;
-    max-height: 280px;
-    overflow: auto;
+
   }
 
   dt {
-    cursor: pointer;
+
+    padding: 6px 15px 5px 15px;
+
     color: @color-black;
     font-size: 18px;
     font-weight: 600;
-    padding: 6px 15px 5px 15px;
+
+    cursor: pointer;
 
     &:hover, &.is-selected {
       background: @color-light-blue;
       color: @color-white;
     }
+
   }
 
 }
