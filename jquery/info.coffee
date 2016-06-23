@@ -13,6 +13,7 @@ class Info
     @$target = $ selector
 
     @$element.on 'click', @, (event) ->
+      event.preventDefault()
       event.data.toggle event
 
   toggle: () ->
