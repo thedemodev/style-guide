@@ -55,7 +55,7 @@ class Picker extends Emitter
 
     @$month = append '<div class="picker__month" ></div>', @$content
 
-    # TODO: i18n
+    # TODO: i18n -> http://momentjs.com/docs/#/i18n/
     weekdays = moment.localeData()._weekdaysMin
 
     @$weekHeadline = append '<div class="picker__week picker__week--headline"><div class="picker__day picker__day--headline">'+weekdays[1]+'</div><div class="picker__day picker__day--headline">'+weekdays[2]+'</div><div class="picker__day picker__day--headline">'+weekdays[3]+'</div><div class="picker__day picker__day--headline">'+weekdays[4]+'</div><div class="picker__day picker__day--headline">'+weekdays[5]+'</div><div class="picker__day picker__day--headline">'+weekdays[6]+'</div><div class="picker__day picker__day--headline">'+weekdays[0]+'</div></div>', @$month
