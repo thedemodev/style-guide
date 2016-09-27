@@ -1,6 +1,5 @@
 import path from 'path'
 import webpack from 'webpack'
-import HappyPack from 'happypack'
 import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 import SvgStore from 'webpack-svgstore-plugin'
