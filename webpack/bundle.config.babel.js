@@ -24,7 +24,6 @@ export default {
   },
   resolve: {
     modulesDirectories: [
-      'less',
       'node_modules',
     ],
     extensions: ['', '.js', '.jsx'],
@@ -35,8 +34,13 @@ export default {
       exclude: /node_modules/,
       loader: `happypack/loader?id=${getEnvId('jsx')}`,
     }, {
-      test: /\.less/,
-      loader: ExtractTextPlugin.extract('style', `happypack/loader?id=${getEnvId('less')}`),
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract('style', [
+        `happypack/loader?id=${getEnvId('sass')}`,
+        'css?importLoaders=2&sourceMap',
+        'postcss-loader',
+        'sass',
+      ]),
     }],
     noParse: [
       'jquery',
@@ -54,11 +58,20 @@ export default {
   },
   plugins: [
     createHappyPlugin('jsx', ['babel?cacheDirectory=true']),
+<<<<<<< HEAD
     createHappyPlugin('less', [
       'css?importLoaders=2&sourceMap',
       'custom-postcss',
       'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
     ]),
+=======
+    // @todo: enable HappyPack for sass as soon as https://github.com/amireh/happypack/issues/14#issuecomment-208254692 is fixed
+    // createHappyPlugin('scss', [
+    //   'css?importLoaders=2&sourceMap',
+    //   'postcss-loader',
+    //   'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+    // ]),
+>>>>>>> develop
     new CleanPlugin([
       path.resolve(__dirname, '../dist/bundles'),
     ], {
