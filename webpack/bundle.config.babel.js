@@ -58,20 +58,11 @@ export default {
   },
   plugins: [
     createHappyPlugin('jsx', ['babel?cacheDirectory=true']),
-<<<<<<< HEAD
-    createHappyPlugin('less', [
+    createHappyPlugin('scss', [
       'css?importLoaders=2&sourceMap',
       'custom-postcss',
-      'less?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+      'scss?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
     ]),
-=======
-    // @todo: enable HappyPack for sass as soon as https://github.com/amireh/happypack/issues/14#issuecomment-208254692 is fixed
-    // createHappyPlugin('scss', [
-    //   'css?importLoaders=2&sourceMap',
-    //   'postcss-loader',
-    //   'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
-    // ]),
->>>>>>> develop
     new CleanPlugin([
       path.resolve(__dirname, '../dist/bundles'),
     ], {
