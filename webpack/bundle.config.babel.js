@@ -35,12 +35,7 @@ export default {
       loader: `happypack/loader?id=${getEnvId('jsx')}`,
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', [
-        `happypack/loader?id=${getEnvId('sass')}`,
-        'css?importLoaders=2&sourceMap',
-        'postcss-loader',
-        'sass',
-      ]),
+      loader: ExtractTextPlugin.extract('style', `happypack/loader?id=${getEnvId('sass')}`),
     }],
     noParse: [
       'jquery',
@@ -58,10 +53,10 @@ export default {
   },
   plugins: [
     createHappyPlugin('jsx', ['babel?cacheDirectory=true']),
-    createHappyPlugin('scss', [
+    createHappyPlugin('sass', [
       'css?importLoaders=2&sourceMap',
       'custom-postcss',
-      'scss?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+      'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
     ]),
     new CleanPlugin([
       path.resolve(__dirname, '../dist/bundles'),
