@@ -1,22 +1,9 @@
 @import '../mixins/respond';
 @import '../variables';
-
 @import './control';
 
 // TODO: Instead of viewport we should consider usage of a --js which will be
 // added when js is available and it is a non-touch device
-
-@mixin make-picker-cell {
-  display: table-cell;
-
-  height: 32px;
-  width: 31px;
-  padding: 0;
-  border: 3px solid $color-gray--dark;
-
-  text-align: center;
-  vertical-align: middle;
-}
 
 .example {
   overflow: visible !important;
@@ -80,12 +67,10 @@
 .picker {
   display: none;
   position: absolute;
-
-  width: 260px;
+  width: 280px;
   border-collapse: collapse;
   margin-top: 6px;
   z-index: $z-index-datepicker;
-
   background: $color-gray--dark;
 
   &.is-active {
@@ -93,88 +78,116 @@
   }
 }
 
-.picker--with-weeknumber {
-  width: 290px;
-}
-
 .picker__header {
   padding: 10px 10px 0 10px;
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
 .picker__headline {
-  margin: 0 30px;
-
   line-height: 31px;
   font-size: 1.1428em;
   text-align: center;
-}
+  padding: 0px 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-gray--light;
+  }
 
-.picker__headline__month {
-  display: inline;
-  font-weight: bold;
 }
 
 .picker__prev,
 .picker__next {
-  display: block;
-
-  width: 30px;
-  height: 30px;
-
-  text-align: center;
-
-  cursor: pointer;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
 
   &:hover {
     .picker__icon--next,
     .picker__icon--prev {
-      fill: $color-gray--light;
+      border-color: $color-gray--light;
     }
   }
 }
 
-.picker__icon--next,
+.picker__icon--next {
+  width: 10px;
+  height: 10px;
+  border: solid white;
+  border-width: 1px 1px 0 0;
+  transform: rotate(45deg);
+  margin: 10px 0 0 16px;
+}
+
 .picker__icon--prev {
-  display: inline-block;
-  width: 11px;
-  height: 17px;
-  fill: white;
-}
-
-.picker__prev {
-  float: left;
-  padding-top: 6px;
-}
-
-.picker__next {
-  float: right;
-  padding-top: 6px;
+  width: 10px;
+  height: 10px;
+  border: solid white;
+  border-width: 1px 1px 0 0;
+  transform: rotate(-135deg);
+  margin: 10px 0 0 5px;
 }
 
 .picker__content {
-  padding: 10px 17px 18px 17px;
+  box-sizing: content-box;
+  padding: 4px;
 }
 
-.picker__month {
-  display: table;
-  width: 100%;
-}
-
-.picker__weeks {
-  display: table-row-group;
-}
-
-.picker__week {
-  display: table-row;
+.picker__months, .picker__years, .picker__days {
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
 }
 
 .picker__day {
-  @include make-picker-cell();
-
+  line-height: 1.375;
+  box-sizing: border-box;
+  border: 1px solid $color-gray--dark;
+  width: (100% / 7);
   color: $color-light-blue;
   background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
+  &:hover,
+  &.is-active {
+    background: $color-light-blue;
+    color: white;
+  }
+}
+
+.picker__year {
+  box-sizing: border-box;
+  border: 1px solid $color-gray--dark;
+  width: (100% / 4);
+  color: $color-light-blue;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover,
+  &.is-active {
+    background: $color-light-blue;
+    color: white;
+  }
+}
+
+.picker__month {
+  box-sizing: border-box;
+  border: 1px solid $color-gray--dark;
+  width: (100% / 3);
+  color: $color-light-blue;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 
   &:hover,
@@ -190,10 +203,8 @@
 
 .picker__day--headline {
   font-size: 0.9285em;
-
   background: transparent;
   color: white;
-
   cursor: default;
 
   &:hover {
@@ -210,24 +221,12 @@
 .picker__day--disabled {
   background: $color-gray--dark;
   color: white;
-
   cursor: default;
 
   &:hover {
     background: $color-gray--dark;
     color: white;
   }
-}
-
-.picker__weeknumber {
-  @include make-picker-cell();
-  background: transparent;
-  color: white;
-  font-size: .8em;
-}
-
-.picker__weeknumber--headline {
-
 }
 
 // Birthday Datepicker styles:
