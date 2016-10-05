@@ -73,10 +73,11 @@
   h3 {
     margin-bottom: 6px;
   }
-}
 
-.menu-main__panel.is-open {
-  display: block;
+  .menu-main__item:hover &,
+  &.is-open {
+    display: block;
+  }
 }
 
 // Copyright AXA Versicherungen AG 2015
