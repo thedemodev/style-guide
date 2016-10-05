@@ -1,10 +1,4 @@
 import path from 'path'
-import webpack from 'webpack'
-import HappyPack from 'happypack'
-import pseudoelements from 'postcss-pseudoelements'
-import autoprefixer from 'autoprefixer'
-import cssmqpacker from 'css-mqpacker'
-import csswring from 'csswring'
 import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
@@ -41,13 +35,7 @@ export default {
       loader: `happypack/loader?id=${getEnvId('jsx')}`,
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', [
-        'css?importLoaders=2&sourceMap',
-        'postcss-loader',
-        'sass',
-      ]),
-      // @todo: enable HappyPack for sass as soon as https://github.com/amireh/happypack/issues/14#issuecomment-208254692 is fixed
-      // loader: ExtractTextPlugin.extract('style', `happypack/loader?id=${getEnvId('sass')}`),
+      loader: ExtractTextPlugin.extract('style', `happypack/loader?id=${getEnvId('sass')}`),
     }],
     noParse: [
       'jquery',
@@ -65,12 +53,11 @@ export default {
   },
   plugins: [
     createHappyPlugin('jsx', ['babel?cacheDirectory=true']),
-    // @todo: enable HappyPack for sass as soon as https://github.com/amireh/happypack/issues/14#issuecomment-208254692 is fixed
-    // createHappyPlugin('scss', [
-    //   'css?importLoaders=2&sourceMap',
-    //   'postcss-loader',
-    //   'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
-    // ]),
+    createHappyPlugin('sass', [
+      'css?importLoaders=2&sourceMap',
+      'custom-postcss',
+      'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+    ]),
     new CleanPlugin([
       path.resolve(__dirname, '../dist/bundles'),
     ], {
@@ -86,10 +73,9 @@ export default {
       prefix: '',
     }),
   ],
-  postcss: () => [
-    pseudoelements,
-    autoprefixer,
-    cssmqpacker({ sort: true }),
-    csswring,
-  ],
+  resolveLoader: {
+    alias: { // custom-postcss is used because there is no way to pass it to happypack otherwise
+      'custom-postcss': path.join(__dirname, './custom-postcss.js'),
+    },
+  },
 }
