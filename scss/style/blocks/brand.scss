@@ -10,9 +10,11 @@
 
 .brand__image {
   height: 37px;
+  width: 158px;
 
   @include respond(large) {
     height: 54px;
+    width: 230px;
   }
 }
 
