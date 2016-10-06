@@ -83,6 +83,10 @@
   justify-content: flex-start;
   height: 2rem;
   text-transform: uppercase;
+
+  .is-open & {
+    zoom: 1;
+  }
 }
 
 .meta-language2__menu__item--nopad-first {
