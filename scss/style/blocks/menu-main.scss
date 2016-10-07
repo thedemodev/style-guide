@@ -65,19 +65,20 @@
 
   display: none;
   padding: 0.5rem 1.5rem 2rem;
-  margin-top: 5px;
 
   background-color: white;
+  border-top: 5px solid $color-blue;
   border-bottom: 5px solid $color-blue;
   box-shadow: 25px 0 34px -12px rgba(0,0,0,0.25), -25px 0 34px -12px rgba(0,0,0,0.25), 0 25px 34px -12px rgba(0,0,0,0.25);
 
   h3 {
     margin-bottom: 6px;
   }
-}
 
-.menu-main__panel.is-open {
-  display: block;
+  .menu-main__item:hover &,
+  &.is-open {
+    display: block;
+  }
 }
 
 // Copyright AXA Versicherungen AG 2015
