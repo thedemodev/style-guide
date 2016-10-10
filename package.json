@@ -164,6 +164,7 @@
     "webpack-hot-middleware": "^2.12.2",
     "webpack-module-hot-accept": "^1.0.4",
     "webpack-svgstore-plugin": "^3.0.4",
+    "webpack-uglify-parallel": "^0.1.2",
     "zeroclipboard": "^2.2.0"
   }
 }
