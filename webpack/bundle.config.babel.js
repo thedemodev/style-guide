@@ -1,7 +1,9 @@
+import os from 'os'
 import path from 'path'
 import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
+import UglifyJsParallelPlugin from 'webpack-uglify-parallel'
 
 import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
 
@@ -76,6 +78,9 @@ export default {
         plugins: [{ removeTitle: true }],
       },
       prefix: '',
+    }),
+    new UglifyJsParallelPlugin({
+      workers: os.cpus().length,
     }),
   ],
   resolveLoader: {
