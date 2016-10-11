@@ -20,8 +20,8 @@ export default {
   },
   output: {
     path: path.resolve(__dirname, '../dist/bundles'),
-    filename: '[name].js',
-    chunkFilename: '[name]-[chunkhash].js',
+    filename: '[name].min.js',
+    chunkFilename: '[name]-[chunkhash].min.js',
     publicPath: '/dist/',
   },
   resolve: {
@@ -70,7 +70,7 @@ export default {
     ], {
       root: path.resolve(__dirname, '..'),
     }),
-    new ExtractTextPlugin('[name].css', {
+    new ExtractTextPlugin('[name].min.css', {
       allChunks: true,
     }),
     new SvgStore({

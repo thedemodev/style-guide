@@ -297,8 +297,8 @@ html
     script(src=relative('/js/style-guide-docs.js'))
 
     if process.env.NODE_ENV === 'production'
-      script(src=relative('/dist/docs.js'))
-      link(rel="stylesheet", href=relative("/dist/docs.css"))
+      script(src=relative('/dist/docs.min.js'))
+      link(rel="stylesheet", href=relative("/dist/docs.min.css"))
     else
       script(src='/dist/bundle.js')
     
