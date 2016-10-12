@@ -1,7 +1,9 @@
+import os from 'os'
 import path from 'path'
 import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
+import UglifyJsParallelPlugin from 'webpack-uglify-parallel'
 
 import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
 
@@ -18,8 +20,8 @@ export default {
   },
   output: {
     path: path.resolve(__dirname, '../dist/bundles'),
-    filename: '[name].js',
-    chunkFilename: '[name]-[chunkhash].js',
+    filename: '[name].min.js',
+    chunkFilename: '[name]-[chunkhash].min.js',
     publicPath: '/dist/',
   },
   resolve: {
@@ -68,7 +70,7 @@ export default {
     ], {
       root: path.resolve(__dirname, '..'),
     }),
-    new ExtractTextPlugin('[name].css', {
+    new ExtractTextPlugin('[name].min.css', {
       allChunks: true,
     }),
     new SvgStore({
@@ -76,6 +78,9 @@ export default {
         plugins: [{ removeTitle: true }],
       },
       prefix: '',
+    }),
+    new UglifyJsParallelPlugin({
+      workers: os.cpus().length,
     }),
   ],
   resolveLoader: {

@@ -22,8 +22,8 @@ html
     script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js")
 
     if process.env.NODE_ENV === 'production'
-      script(src=relative('/dist/docs.js'))
-      link(rel="stylesheet", href=relative("/dist/docs.css"))
+      script(src=relative('/dist/docs.min.js'))
+      link(rel="stylesheet", href=relative("/dist/docs.min.css"))
     else
       script(src='/dist/bundle.js')
 
