@@ -300,10 +300,12 @@ html
     +inject('js')
     
     script(type='text/javascript').
-      var $menu = $('#menu-mobile');
-      var $activeLevel = $('#active-level');
+      $(function() {
+        var $menu = $('#menu-mobile');
+        var $activeLevel = $('#active-level');
 
-      $menu.slidingMenu();
-      $menu.slidingMenu('level', $activeLevel);
+        $menu.slidingMenu();
+        $menu.slidingMenu('level', $activeLevel);
+      })
 
 //- Copyright AXA Versicherungen AG 2015
