@@ -11,6 +11,8 @@ html
         
     title #{title} | Demo | #{config.name}
     link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
+    include ./inject.dev.pug
+    include ./inject.prod.css.pug
 
   body
     .example!= contents
@@ -21,10 +23,6 @@ html
     script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js")
 
-    if process.env.NODE_ENV === 'production'
-      script(src=relative('/dist/docs.min.js'))
-      link(rel="stylesheet", href=relative("/dist/docs.min.css"))
-    else
-      script(src='/dist/bundle.js')
+    +include('js')
 
 //- Copyright AXA Versicherungen AG 2015
