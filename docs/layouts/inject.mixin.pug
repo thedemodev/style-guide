@@ -1,0 +1,9 @@
+mixin inject(type)
+  if process.env.NODE_ENV === 'production'
+    if type === 'js'
+      script(src=relative('/dist/docs.min.js'))
+    if type === 'css'
+      link(rel="stylesheet", href=relative("/dist/docs.min.css"))
+  else
+    if type === 'css'
+      script(src=relative('/dist/docs.js'))

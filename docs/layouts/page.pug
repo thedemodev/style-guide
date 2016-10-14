@@ -1,4 +1,5 @@
 include ../mixins.pug
+include ./inject.mixin.pug
 
 doctype html
 html
@@ -98,24 +99,22 @@ html
     script(src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.80/Bacon.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js")
 
-    if process.env.NODE_ENV === 'production'
-      script(src=relative('/dist/docs.min.js'))
-      link(rel="stylesheet", href=relative("/dist/docs.min.css"))
-    else
-      script(src='/dist/bundle.js')
+    +inject('js')
 
     script.
-      var href = '#{relative(link)}'
-      var mobile = $('[data-menu="sliding"]')
+      $(function() {
+        var href = '#{relative(link)}'
+        var mobile = $('[data-menu="sliding"]')
 
-      var level = mobile
-        .find('[data-link]')
-        .filter('[href=\'' + href + '\']')
-        .closest('[data-level]')
+        var level = mobile
+          .find('[data-link]')
+          .filter('[href=\'' + href + '\']')
+          .closest('[data-level]')
 
-      if (level.length > 0) {
-        mobile.slidingMenu('level', level)
-      }
+        if (level.length > 0) {
+          mobile.slidingMenu('level', level)
+        }
+      })
 
     script window.intercomSettings = { app_id: 'i82zr1ej' }
     script(src="//www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}")

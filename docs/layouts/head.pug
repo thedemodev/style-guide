@@ -1,4 +1,5 @@
 include ../mixins.pug
+include ./inject.mixin.pug
 
 head
   meta(charset="utf-8")
@@ -35,3 +36,5 @@ head
 
   title #{title} | #{config.name}
   link(rel="stylesheet", href="//fast.fonts.net/cssapi/1da4c08a-73a4-4e34-8997-1c1eeb1a8cca.css")
+
+  +inject('css')
