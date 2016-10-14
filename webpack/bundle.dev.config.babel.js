@@ -2,7 +2,9 @@ import path from 'path'
 import webpack from 'webpack'
 import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
+import WriteFilePlugin from 'write-file-webpack-plugin';
 
 import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
 
@@ -37,7 +39,13 @@ export default {
       loader: `happypack/loader?id=${getEnvId('jsx')}`,
     }, {
       test: /\.scss$/,
-      loader: `happypack/loader?id=${getEnvId('sass')}`,
+      // loader: `happypack/loader?id=${getEnvId('sass')}`,
+      loader: ExtractTextPlugin.extract('style', [
+        'css?importLoaders=2&sourceMap',
+        'postcss-loader',
+        // 'custom-postcss',
+        'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+      ]),
     }],
     noParse: [
       'jquery',
@@ -58,12 +66,18 @@ export default {
       'babel?cacheDirectory=true',
       'webpack-module-hot-accept',
     ]),
-    createHappyPlugin('sass', [
-      'style',
-      'css?importLoaders=2&sourceMap',
-      'postcss-loader',
-      'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
-    ]),
+    // createHappyPlugin('sass', [
+    //   'style',
+    //   'css?importLoaders=2&sourceMap',
+    //   'postcss-loader',
+    //   'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+    // ]),
+    // Force write to disk for browser-sync css hot reloading
+    new WriteFilePlugin({ test: /\.css$/ }),
+    new ExtractTextPlugin('[name].css', {
+      publicPath: '/dist/',
+      allChunks: true,
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
