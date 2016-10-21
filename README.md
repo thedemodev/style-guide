@@ -23,10 +23,10 @@ $ npm install @axa-ch/style-guide
 
 After that, include the styles from the `dist` folder into your less file:
 
-```less
-// app.less
-@import 'less/normalize';
-@import 'less/style';
+```scss
+// app.scss
+@import 'scss/normalize';
+@import 'scss/style';
 ```
 
 Or just consume the precompiled css files, also from the `dist` folder:
