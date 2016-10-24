@@ -59,7 +59,7 @@ layout: page.pug
   In order for it to align consitently with the other components, we'll first
   have to integrate a container.
   
-  ```less
+  ```scss
   .component {
    background-color: sandybrown;
   }
@@ -78,7 +78,7 @@ layout: page.pug
   columns without putting them into a row. This is what the new styles
   look like:
   
-  ```less
+  ```scss
   .component__row {
     .make-row();
   }
@@ -95,7 +95,7 @@ layout: page.pug
   row. In order for the component to look as in the image, we need to
   set other span values for everything above the mobile viewport.
   
-  ```less
+  ```scss
   .component__first-column {
     .make-column();
     .make-column-span(12);

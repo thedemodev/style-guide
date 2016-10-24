@@ -68,23 +68,17 @@ multilingual country in an international group.
 > Be aware that your server has to deliver the HTML
 > encoded in the character set specified.
 
-# Less compiler
+# Sass compiler
 
-Whenever you get in touch with Less we recommend
-using the [official Less compiler](http://lesscss.org")
+Whenever you get in touch with Sass we recommend
+using the [official LibSass compiler](http://sass-lang.com/libsass")
 (or plugins using this compiler).
-This compiler is proved to work with the Less specification
+This compiler is proved to work with the Sass specification
 and this Developer Toolkit is based on it.
-
-> Sometimes Less might not be enough.
-> If you need further templating logic in Less files
-> we recommend using Lo-Dash or something similar.
-> Have a look at our `icons.less.lodash` file for
-> a real world example.
 
 # What JavaScript libraries does the Web Style Guide need?
 To stay independent from any client or server side UI logic, we always develop
-the HTML markup and LESS/CSS styles first, for any component. You can use
+the HTML markup and SCSS/CSS styles first, for any component. You can use
 the static markup and styles to create your application and write
 all the behavior using your preferred frameworks and libraries.
 

@@ -48,7 +48,7 @@ aside.callout
 dl
   dt css
   dd.
-    The precompiled CSS assets for `style.less` and `normalize.less`.
+    The precompiled CSS assets for `style.scss` and `normalize.scss`.
     We recommend using the LESS assets to maintain configurability
     (see customization section below).
 
@@ -68,9 +68,9 @@ dl
   dd.
     Compiled (from CoffeeScript) and optionally minified jQuery plugins.
 
-  dt less
+  dt scss
   dd.
-    The raw LESS files you can use to compile your custom CSS assets.
+    The raw Sass files you can use to compile your custom CSS assets.
 
 :markdown-it
   <div class="l-row" >
@@ -78,7 +78,7 @@ dl
       <h3 class="heading heading--tertiary" >npm package</h3>
       <pre class="highlight"><code class="highlight__listing hljs ">axa-web-design-guide/
   ├── dist/
-  │   ├── less/
+  │   ├── scss/
   │   ├── js/
   │   ├── images/
   │   ├── fonts/
@@ -92,7 +92,7 @@ dl
     <div class="l-half" >
       <h3 class="heading heading--tertiary" >direct download & bower package</h3>
       <pre class="highlight"><code class="highlight__listing hljs ">axa-web-design-guide/
-  ├── less/
+  ├── scss/
   ├── js/
   ├── images/
   ├── fonts/
@@ -143,9 +143,9 @@ dl
   <!--- [Search Engine Optimisation (SEO)](/fundamentals/code/seo.html)-->
   <!--- [Social metadata](/fundamentals/code/social-metadata.html)-->
 
-  # LESS/CSS
+  # SCSS/CSS
 
-  You can either use the CSS files provided in the packages or compile the LESS
+  You can either use the CSS files provided in the packages or compile the Sass
   assets on your own.
 
   ## Using the CSS files
@@ -160,20 +160,20 @@ dl
   When using the CSS files make sure that the assets referenced from the
   CSS files (e.g. images at `../images`) are available.
 
-  ## Compiling the LESS files on your own
+  ## Compiling the Sass files on your own
 
-  Compiling the LESS files is the recommended approach since you gain
+  Compiling the Sass files is the recommended approach since you gain
   control over paths and what to include or not.
 
   - Inculde the blocks you need and omit those you don't need
-  - Customize LESS variables
+  - Customize Sass variables
   - Use custom post processing
 
-  ### Basic LESS template
+  ### Basic Sass template
 
   <p class="callout" >
     The following examples assume that you have added the
-    `less/` folder of the Web Style Guide to the LESS compilers
+    `scss/` folder of the Web Style Guide to the Sass compilers
     paths.
   </p>
 
@@ -182,7 +182,7 @@ dl
   `normalize` and `basics` are the only `@import`s required. Add other
   `@import`s as needed.
   
-  ```less
+  ```scss
   // required
   @import 'normalize';
   @import 'style/basics';
@@ -200,14 +200,14 @@ dl
   This approach may be used for prototyping but it is not recommended
   in a productive setup since it will add a lot of CSS markup you don't need.
 
-  ```less
+  ```scss
   @import 'normalize';
   @import 'style';
   ```
 
-  ### LESS variables
+  ### Sass variables
 
-  Have a look at the well commented `less/variables.less` file to see what
+  Have a look at the well commented `scss/variables.scss` file to see what
   variables you can override.
 
   ### Post processing
