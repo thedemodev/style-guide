@@ -1,4 +1,4 @@
-.invisible-input {
+@mixin invisible-input() {
   position: absolute;
 
   width: 0px;
