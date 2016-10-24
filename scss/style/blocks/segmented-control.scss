@@ -85,7 +85,7 @@
   }
 
   .segmented-control__item__radio {
-    @extend .invisible-input;
+    @include invisible-input();
   }
 
   &.segmented-control.has-error .segmented-control__item {

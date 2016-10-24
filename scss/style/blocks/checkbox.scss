@@ -36,7 +36,7 @@
 .checkbox--js {
 
   .checkbox__checkbox {
-    @extend .invisible-input;
+    @include invisible-input();
   }
 
   .checkbox__label {
