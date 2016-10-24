@@ -1,8 +1,8 @@
 @import '../mixins/respond';
 @import '../variables';
 
-$info-icon-diameter: 20px;
-$info-icon-diameter--medium: 28px;
+$info-icon-diameter: 20px !default;
+$info-icon-diameter--medium: 28px !default;
 
 .info-icon {
 
