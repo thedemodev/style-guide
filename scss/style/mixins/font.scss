@@ -14,7 +14,7 @@ $font-heading-primary--line-height--medium: 1.4;
  * Mobile: 28px (1.75rem), bold, 1.6
  * Desktop: 48px (3rem), bold, 1.4
  */
-.make-font-heading-primary {
+@mixin make-font-heading-primary() {
   font-size: $font-heading-primary--size;
   font-weight: $font-heading-primary--weight;
   line-height: $font-heading-primary--line-height;
@@ -23,6 +23,10 @@ $font-heading-primary--line-height--medium: 1.4;
     font-size: $font-heading-primary--size--medium;
     line-height: $font-heading-primary--line-height--medium;
   }
+}
+
+.make-font-heading-primary {
+  @include make-font-heading-primary();
 }
 
 $font-heading-secondary--size: 1.5rem; // 24px
@@ -38,7 +42,7 @@ $font-heading-secondary--line-height--medium: 1.4;
  * Mobile: 24px (1.5rem), bold, 1.6
  * Desktop: 32px (2rem), bold, 1.4
  */
-.make-font-heading-secondary {
+@mixin make-font-heading-secondary() {
   font-size: $font-heading-secondary--size;
   font-weight: $font-heading-secondary--weight;
   line-height: $font-heading-secondary--line-height;
@@ -47,6 +51,10 @@ $font-heading-secondary--line-height--medium: 1.4;
     font-size: $font-heading-secondary--size--medium;
     line-height: $font-heading-secondary--line-height--medium;
   }
+}
+
+.make-font-heading-secondary {
+  @include make-font-heading-secondary();
 }
 
 $font-heading-tertiary--size: 1.25rem; // 20px
@@ -62,7 +70,7 @@ $font-heading-tertiary--line-height--medium: 1.6;
  * Mobile: 20px (1.25rem), bold, 1.6
  * Desktop: 24px (1.5rem), bold, 1.4
  */
-.make-font-heading-tertiary {
+@mixin make-font-heading-tertiary() {
   font-size: $font-heading-tertiary--size; //22px
   font-weight: $font-heading-tertiary--weight;
   line-height: $font-heading-tertiary--line-height;
@@ -71,6 +79,10 @@ $font-heading-tertiary--line-height--medium: 1.6;
     font-size: $font-heading-tertiary--size--medium; //24px
     line-height: $font-heading-tertiary--line-height--medium;
   }
+}
+
+.make-font-heading-tertiary {
+  @include make-font-heading-tertiary();
 }
 
 $font-large--size: 1.0625rem; // 17px
@@ -86,7 +98,7 @@ $font-large--line-height--medium: 1.8; // make the font "feel" 19px as in design
  * Mobile: 17px (1.0625rem), normal, 1.6
  * Desktop: 17px (1.0625rem), normal, 1.6 (Should actually be 19px, but 19px doesn't render nicely)
  */
-.make-font-large {
+@mixin make-font-large() {
   font-size: $font-large--size;
   font-weight: $font-large--weight;
   line-height: $font-large--line-height;
@@ -95,6 +107,10 @@ $font-large--line-height--medium: 1.8; // make the font "feel" 19px as in design
     font-size: $font-large--size--medium;
     line-height: $font-large--line-height--medium;
   }
+}
+
+.make-font-large {
+  @include make-font-large();
 }
 
 $font-large-semibold--size: 1.0625rem; // 17px
@@ -110,7 +126,7 @@ $font-large-semibold--line-height--medium: 1.8; // make the font "feel" 19px as 
  * Mobile: 17px (1rem), semibold (600), 1.6
  * Desktop: 17px (1.1875rem), semibold (600), 1.6 (Should actually be 19px, but 19px doesn't render nicely)
  */
-.make-font-large-semibold {
+@mixin make-font-large-semibold() {
   font-size: $font-large-semibold--size;
   font-weight: $font-large-semibold--weight;
   line-height: $font-large-semibold--line-height;
@@ -119,6 +135,10 @@ $font-large-semibold--line-height--medium: 1.8; // make the font "feel" 19px as 
     font-size: $font-large-semibold--size--medium;
     line-height: $font-large-semibold--line-height--medium;
   }
+}
+
+.make-font-large-semibold {
+  @include make-font-large-semibold();
 }
 
 $font-medium--size: 0.875rem; // 14px
@@ -133,7 +153,7 @@ $font-medium--size--medium: 1rem; // 16px
  * Mobile: 14px (0.875rem), normal, 1.6
  * Desktop: 16px (1rem), normal, 1.6
  */
-.make-font-medium {
+@mixin make-font-medium() {
   font-size: $font-medium--size; //14px
   font-weight: $font-medium--weight;
   line-height: $font-medium--line-height;
@@ -141,6 +161,10 @@ $font-medium--size--medium: 1rem; // 16px
   @include respond(medium) {
     font-size: $font-medium--size--medium; //16px
   }
+}
+
+.make-font-medium {
+  @include make-font-medium();
 }
 
 $font-medium-semibold--size: 0.875rem; //14px
@@ -155,7 +179,7 @@ $font-medium-semibold--size--medium: 1rem; //16px
  * Mobile: 14px (0.875rem), semibold (600), 1.6
  * Desktop: 16px (1rem), semibold (600), 1.6
  */
-.make-font-medium-semibold {
+@mixin make-font-medium-semibold() {
   font-size: $font-medium-semibold--size; //14px
   font-weight: $font-medium-semibold--weight;
   line-height: $font-medium-semibold--line-height;
@@ -163,6 +187,10 @@ $font-medium-semibold--size--medium: 1rem; //16px
   @include respond(medium) {
     font-size: $font-medium-semibold--size--medium; //16px
   }
+}
+
+.make-font-medium-semibold {
+  @include make-font-medium-semibold();
 }
 
 $font-small-semibold--size: 0.875rem; //14px
@@ -175,8 +203,12 @@ $font-small-semibold--line-height: 1.6;
  * Mobile: n/a
  * Desktop: 14px (0.875rem), semibold (600), 1.6
  */
-.make-font-small-semibold {
+@mixin make-font-small-semibold() {
   font-size: $font-small-semibold--size; //14px;
   font-weight: $font-small-semibold--weight;
   line-height: $font-small-semibold--line-height;
+}
+
+.make-font-small-semibold {
+  @include make-font-small-semibold();
 }
