@@ -266,6 +266,7 @@ class Datepicker {
 
   onChangeMobileTrigger() {
     this.$input.val(this.$triggerMobile.val())
+    this.$input.trigger('change')
   }
 
   setLocale(locale) {
