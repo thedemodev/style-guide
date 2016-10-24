@@ -2,20 +2,20 @@
 // # Grid
 // #############################
 
-$respond-medium-min-width: 768px;
-$respond-large-min-width: 980px;
-$respond-large-max-width: 1400px;
+$respond-medium-min-width: 768px !default;
+$respond-large-min-width: 980px !default;
+$respond-large-max-width: 1400px !default;
 
-$grid-breakpoint-sm: 0;
-$grid-breakpoint-md: 48rem;
-$grid-breakpoint-lg: 90rem;
+$grid-breakpoint-sm: 0 !default;
+$grid-breakpoint-md: 48rem !default;
+$grid-breakpoint-lg: 90rem !default;
 
 // #############################
 // # Icon font
 // #############################
 
-$icon-font-path: '../fonts';
-$icon-font-name: 'style-guide-font';
+$icon-font-path: '../fonts' !default;
+$icon-font-name: 'style-guide-font' !default;
 
 // #############################
 // # Colors
