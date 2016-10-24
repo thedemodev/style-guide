@@ -59,7 +59,9 @@
   height: 100% !important;
   width: 100% !important;
   opacity: 0 !important;
+  line-height: 0;
   background: transparent !important;
+  background: rgba(0,0,0,0) !important;
 }
 
 // Birthday Datepicker styles:
