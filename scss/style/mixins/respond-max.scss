@@ -1,13 +1,16 @@
 // TODO: where is this needed? Anti mobile first
 @import '../variables';
+@import '../functions/max-width';
 
 @mixin respond-max($condition) {
   $media: "";
 
-  @if $condition == small {
-    $media: "min-width: #{$respond-medium-min-width}";
-  } @else if $condition == medium {
-    $media: "min-width: #{$respond-large-min-width}";
+  @if $condition == medium {
+    $media: "max-width: #{max-width($respond-large-min-width)}";
+  } @else if $condition == small {
+    $media: "max-width: #{max-width($respond-medium-min-width)}";
+  } @else {
+    $media: "max-width: #{$condition}";
   }
 
   @media ($media) {
