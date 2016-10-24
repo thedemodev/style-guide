@@ -41,7 +41,9 @@
 @import './style/blocks/dropdown';
 @import './style/blocks/dropdown-2';
 @import './style/blocks/dropzone';
+@import './style/blocks/dropzone-fallback';
 @import './style/blocks/ellipsis';
+@import './style/blocks/example';
 @import './style/blocks/example-header';
 @import './style/blocks/fieldset';
 @import './style/blocks/file-upload-multi';
@@ -80,6 +82,7 @@
 @import './style/blocks/notifications';
 @import './style/blocks/paragraph';
 @import './style/blocks/page-content';
+@import './style/blocks/picker';
 @import './style/blocks/popover';
 @import './style/blocks/prolist';
 @import './style/blocks/progress-container';
