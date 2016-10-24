@@ -121,11 +121,11 @@ $button-sm-icon-size: 14px !default;
 $button-sm-font-size: 14px !default;
 
 $button-primary-bg: $color-blue !default;
-$button-primary-color: white !default;
+$button-primary-color: $color-white !default;
 $button-primary-highlight-bg: lighten($color-blue, 5%) !default;
 
 $button-secondary-bg: $color-gray--dark !default;
-$button-secondary-color: white !default;
+$button-secondary-color: $color-white !default;
 $button-secondary-highlight-bg: lighten($color-gray--dark, 5%) !default;
 
 $button-more-height: 48px !default;
