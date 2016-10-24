@@ -68,93 +68,93 @@ $color-tbd-25: #babfd3;
 // # Buttons
 // #############################
 
-$font-size: 16px;
-$font-size-small: 0.875em;
-$font-size-large: 1.125em;
-$font-weight-medium: 600;
-$line-height: 1.375;
-$font-color: $color-gray--darkest;
+$font-size: 16px !default;
+$font-size-small: 0.875em !default;
+$font-size-large: 1.125em !default;
+$font-weight-medium: 600 !default;
+$line-height: 1.375 !default;
+$font-color: $color-gray--darkest !default;
 
 // #############################
 // # Transitions
 // #############################
 
-$transition-duration: 0.5s;
-$transition-fn-fancy: cubic-bezier(0, 0, 0.57, 0.95);
-$transition-duration-fast: 250ms;
+$transition-duration: 0.5s !default;
+$transition-fn-fancy: cubic-bezier(0, 0, 0.57, 0.95) !default;
+$transition-duration-fast: 250ms !default;
 
 // #############################
 // # Grid
 // #############################
 
-$grid-gutter-width: 3rem;
+$grid-gutter-width: 3rem !default;
 
 // #############################
 // # Focus
 // #############################
 
-$focus-border-width: 1px;
+$focus-border-width: 1px !default;
 
 // #############################
 // # Controls
 // #############################
 
-$control-height-condensed: 30px;
+$control-height-condensed: 30px !default;
 
 // #############################
 // # Buttons
 // #############################
 
-$button-height: 50px;
-$button-height--medium: 50px;
-$button-pad-lr: 30px;
-$button-pad-lr--medium: 40px;
-$button-icon-size: 16px;
-$button-font-size: 16px;
-$button-font-size--medium: 18px;
-$button-border-width: 2px;
+$button-height: 50px !default;
+$button-height--medium: 50px !default;
+$button-pad-lr: 30px !default;
+$button-pad-lr--medium: 40px !default;
+$button-icon-size: 16px !default;
+$button-font-size: 16px !default;
+$button-font-size--medium: 18px !default;
+$button-border-width: 2px !default;
 
-$button-sm-height: 30px;
-$button-sm-height--medium: 30px;
-$button-sm-pad-lr: 15px;
-$button-sm-icon-size: 14px;
-$button-sm-font-size: 14px;
+$button-sm-height: 30px !default;
+$button-sm-height--medium: 30px !default;
+$button-sm-pad-lr: 15px !default;
+$button-sm-icon-size: 14px !default;
+$button-sm-font-size: 14px !default;
 
-$button-primary-bg: $color-blue;
-$button-primary-color: white;
-$button-primary-highlight-bg: lighten($color-blue, 5%);
+$button-primary-bg: $color-blue !default;
+$button-primary-color: white !default;
+$button-primary-highlight-bg: lighten($color-blue, 5%) !default;
 
-$button-secondary-bg: $color-gray--dark;
-$button-secondary-color: white;
-$button-secondary-highlight-bg: lighten($color-gray--dark, 5%);
+$button-secondary-bg: $color-gray--dark !default;
+$button-secondary-color: white !default;
+$button-secondary-highlight-bg: lighten($color-gray--dark, 5%) !default;
 
-$button-more-height: 48px;
+$button-more-height: 48px !default;
 
-$button-ghost-height: 48px;
-$button-ghost-font-size: 14px;
-$button-ghost-font-size--medium: 16px;
+$button-ghost-height: 48px !default;
+$button-ghost-font-size: 14px !default;
+$button-ghost-font-size--medium: 16px !default;
 
 // #############################
 // # z-index
 // #############################
 
-$z-index-progress-step: 15;
-$z-index-meta-language: 20;
-$z-index-progress-step-bullet: 16;
-$z-index-dropdown: 30;
-$z-index-dropdown-select: 31;
-$z-index-datepicker: 32;
-$z-index-autocomplete: 33;
-$z-index-button__badge: 9800;
-$z-index-popover: 9900;
-$z-index-notifications: 9950;
-$z-index-site-mobile-nav: 9961;
-$z-index-site-page-masked: 9960;
-$z-index-example-header: 9970;
-$z-index-backdrop: 9980;
-$z-index-burger-icon: 9981;
-$z-index-backdrop-content: 9982;
-$z-index-modal-wrapper: 9998;
-$z-index-modal: 9999;
+$z-index-progress-step: 15 !default;
+$z-index-meta-language: 20 !default;
+$z-index-progress-step-bullet: 16 !default;
+$z-index-dropdown: 30 !default;
+$z-index-dropdown-select: 31 !default;
+$z-index-datepicker: 32 !default;
+$z-index-autocomplete: 33 !default;
+$z-index-button__badge: 9800 !default;
+$z-index-popover: 9900 !default;
+$z-index-notifications: 9950 !default;
+$z-index-site-mobile-nav: 9961 !default;
+$z-index-site-page-masked: 9960 !default;
+$z-index-example-header: 9970 !default;
+$z-index-backdrop: 9980 !default;
+$z-index-burger-icon: 9981 !default;
+$z-index-backdrop-content: 9982 !default;
+$z-index-modal-wrapper: 9998 !default;
+$z-index-modal: 9999 !default;
 
 // Copyright AXA Versicherungen AG 2015
