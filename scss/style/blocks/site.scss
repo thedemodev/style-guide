@@ -2,8 +2,8 @@
 @import '../mixins/font';
 @import '../mixins/respond';
 
-$mobile-nav-width: 80%;
-$mobile-nav-width-fixed: 300px;
+$mobile-nav-width: 80% !default;
+$mobile-nav-width-fixed: 300px !default;
 
 .site {
   overflow-x: hidden;

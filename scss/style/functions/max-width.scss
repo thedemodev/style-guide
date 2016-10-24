@@ -1,0 +1,9 @@
+@function max-width($value) {
+  @if (unit($value) == 'px') {
+    $value: $value - 1px;
+  } @else if(unit($value) == 'rem') {
+    $value: $value - 0.01rem;
+  }
+
+  @return $value
+}
