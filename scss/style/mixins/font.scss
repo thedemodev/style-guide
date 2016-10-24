@@ -1,12 +1,12 @@
 @import "../variables";
 @import "./respond";
 
-$font-heading-primary--size: 1.75rem; // 28px
-$font-heading-primary--weight: bold;
-$font-heading-primary--line-height: 1.6;
+$font-heading-primary--size: 1.75rem !default; // 28px
+$font-heading-primary--weight: bold !default;
+$font-heading-primary--line-height: 1.6 !default;
 
-$font-heading-primary--size--medium: 3rem; // 48px
-$font-heading-primary--line-height--medium: 1.4;
+$font-heading-primary--size--medium: 3rem !default; // 48px
+$font-heading-primary--line-height--medium: 1.4 !default;
 
 /**
  * Primary Heading (H1 in PDF)
@@ -29,12 +29,12 @@ $font-heading-primary--line-height--medium: 1.4;
   @include make-font-heading-primary();
 }
 
-$font-heading-secondary--size: 1.5rem; // 24px
-$font-heading-secondary--weight: bold;
-$font-heading-secondary--line-height: 1.6;
+$font-heading-secondary--size: 1.5rem !default; // 24px
+$font-heading-secondary--weight: bold !default;
+$font-heading-secondary--line-height: 1.6 !default;
 
-$font-heading-secondary--size--medium: 2rem; // 32px
-$font-heading-secondary--line-height--medium: 1.4;
+$font-heading-secondary--size--medium: 2rem !default; // 32px
+$font-heading-secondary--line-height--medium: 1.4 !default;
 
 /**
  * Secondary Heading (H2 in PDF)
@@ -57,12 +57,12 @@ $font-heading-secondary--line-height--medium: 1.4;
   @include make-font-heading-secondary();
 }
 
-$font-heading-tertiary--size: 1.25rem; // 20px
-$font-heading-tertiary--weight: bold;
-$font-heading-tertiary--line-height: 1.4;
+$font-heading-tertiary--size: 1.25rem !default; // 20px
+$font-heading-tertiary--weight: bold !default;
+$font-heading-tertiary--line-height: 1.4 !default;
 
-$font-heading-tertiary--size--medium: 1.5rem; // 24px
-$font-heading-tertiary--line-height--medium: 1.6;
+$font-heading-tertiary--size--medium: 1.5rem !default; // 24px
+$font-heading-tertiary--line-height--medium: 1.6 !default;
 
 /**
  * Tertiary Heading (H3 in PDF)
@@ -85,12 +85,12 @@ $font-heading-tertiary--line-height--medium: 1.6;
   @include make-font-heading-tertiary();
 }
 
-$font-large--size: 1.0625rem; // 17px
-$font-large--weight: normal;
-$font-large--line-height: 1.6;
+$font-large--size: 1.0625rem !default; // 17px
+$font-large--weight: normal !default;
+$font-large--line-height: 1.6 !default;
 
-$font-large--size--medium: 1.0625rem; // 17px
-$font-large--line-height--medium: 1.8; // make the font "feel" 19px as in design
+$font-large--size--medium: 1.0625rem !default; // 17px
+$font-large--line-height--medium: 1.8 !default; // make the font "feel" 19px as in design
 
 /**
  * Large Font (H4 in PDF)
@@ -113,12 +113,12 @@ $font-large--line-height--medium: 1.8; // make the font "feel" 19px as in design
   @include make-font-large();
 }
 
-$font-large-semibold--size: 1.0625rem; // 17px
-$font-large-semibold--weight: $font-weight-medium;
-$font-large-semibold--line-height: 1.6;
+$font-large-semibold--size: 1.0625rem !default; // 17px
+$font-large-semibold--weight: $font-weight-medium !default;
+$font-large-semibold--line-height: 1.6 !default;
 
-$font-large-semibold--size--medium: 1.0625rem; // 17px
-$font-large-semibold--line-height--medium: 1.8; // make the font "feel" 19px as in design
+$font-large-semibold--size--medium: 1.0625rem !default; // 17px
+$font-large-semibold--line-height--medium: 1.8 !default; // make the font "feel" 19px as in design
 
 /**
  * Large Semibold Font (H5 in PDF)
@@ -141,11 +141,11 @@ $font-large-semibold--line-height--medium: 1.8; // make the font "feel" 19px as 
   @include make-font-large-semibold();
 }
 
-$font-medium--size: 0.875rem; // 14px
-$font-medium--weight: normal;
-$font-medium--line-height: 1.6;
+$font-medium--size: 0.875rem !default; // 14px
+$font-medium--weight: normal !default;
+$font-medium--line-height: 1.6 !default;
 
-$font-medium--size--medium: 1rem; // 16px
+$font-medium--size--medium: 1rem !default; // 16px
 
 /**
  * Medium Font (H6 in PDF)
@@ -167,11 +167,11 @@ $font-medium--size--medium: 1rem; // 16px
   @include make-font-medium();
 }
 
-$font-medium-semibold--size: 0.875rem; //14px
-$font-medium-semibold--weight: $font-weight-medium;
-$font-medium-semibold--line-height: 1.6;
+$font-medium-semibold--size: 0.875rem !default; //14px
+$font-medium-semibold--weight: $font-weight-medium !default;
+$font-medium-semibold--line-height: 1.6 !default;
 
-$font-medium-semibold--size--medium: 1rem; //16px
+$font-medium-semibold--size--medium: 1rem !default; //16px
 
 /**
  * Medium Semibold Font (H7 in PDF)
@@ -193,9 +193,9 @@ $font-medium-semibold--size--medium: 1rem; //16px
   @include make-font-medium-semibold();
 }
 
-$font-small-semibold--size: 0.875rem; //14px
-$font-small-semibold--weight: $font-weight-medium;
-$font-small-semibold--line-height: 1.6;
+$font-small-semibold--size: 0.875rem !default; //14px
+$font-small-semibold--weight: $font-weight-medium !default;
+$font-small-semibold--line-height: 1.6 !default;
 
 /**
  * Small Semibold Font (H8 in PDF)
