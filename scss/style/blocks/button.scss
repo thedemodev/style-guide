@@ -147,7 +147,7 @@
   @include make-button-color(
     $bg-color: transparent,
     $color: $color-white,
-    $highlight-bg-color: fade($color-black, 50%)
+    $highlight-bg-color: rgba($color-black, 0.5)
   );
 
   @include make-button-size(
