@@ -16,23 +16,23 @@
   .column--offset-#{$i} {
     @include make-column-offset($size: $i);
   }
-  .column--md-#{$i} {
-    @include respond(medium) {
+
+  @include respond(medium) {
+    .column--md-#{$i} {
       @include make-column-span($size: $i);
     }
-  }
-  .column--md-offset-#{$i} {
-    @include respond(medium) {
+
+    .column--md-offset-#{$i} {
       @include make-column-offset($size: $i);
     }
   }
-  .column--lg-#{$i} {
-    @include respond(large) {
+
+  @include respond(large) {
+    .column--lg-#{$i} {
       @include make-column-span($size: $i);
     }
-  }
-  .column--lg-offset-#{$i} {
-    @include respond(large) {
+
+    .column--lg-offset-#{$i} {
       @include make-column-offset($size: $i);
     }
   }
