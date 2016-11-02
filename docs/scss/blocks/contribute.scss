@@ -7,7 +7,7 @@
   padding: 20px;
   background: $color-gray--lighter;
 
-  @extend .clearfix;
+  @include clearfix();
 
   @include respond(medium) {
     display: table;

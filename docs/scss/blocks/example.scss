@@ -14,7 +14,7 @@ $z-index-example-border-brackets: 49;
 }
 
 .example__header {
-  @extend .clearfix;
+  @include clearfix();
 }
 
 .example__device-selection {
