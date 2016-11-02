@@ -38,7 +38,7 @@
 }
 
 .color-palette__color__less {
-  @extend .make-font-small-semibold;
+  @include make-font-small-semibold();
 
   font-family: monospace;
 }
