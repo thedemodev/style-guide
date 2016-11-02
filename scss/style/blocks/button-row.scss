@@ -3,7 +3,7 @@
 @import '../mixins/respond';
 
 .button-row {
-  @extend .clearfix;
+  @include clearfix();
   margin-bottom: 80px;
 
   @include respond(medium) {

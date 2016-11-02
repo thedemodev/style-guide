@@ -37,7 +37,7 @@
   @include make-column;
   @include make-column-span(12);
 
-  @extend .clearfix;
+  @include clearfix();
 
   margin-bottom: 6px;
 

@@ -38,7 +38,7 @@
 }
 
 .bubble__title {
-  @extend .clearfix;
+  @include clearfix();
 }
 
 .bubble__title__text {
