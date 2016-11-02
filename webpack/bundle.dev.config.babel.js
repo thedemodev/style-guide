@@ -44,7 +44,7 @@ export default {
         'css?importLoaders=2&sourceMap',
         'postcss-loader',
         // 'custom-postcss',
-        'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+        'sass-loader-once?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
       ]),
     }],
     noParse: [

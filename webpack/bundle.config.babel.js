@@ -41,7 +41,7 @@ export default {
       loader: ExtractTextPlugin.extract('style', [
         'css?importLoaders=2&sourceMap',
         'custom-postcss',
-        'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
+        'sass-loader-once?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
       ]),
     }],
     noParse: [
