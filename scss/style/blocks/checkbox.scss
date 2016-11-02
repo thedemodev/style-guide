@@ -89,7 +89,7 @@
 
 .checkbox-group.has-error .checkbox--js .checkbox__label__icon,
 .checkbox--js {
-  border-color: #ff0000;
+  border-color: $color-red-error;
 }
 
 // Changes on the button variant:
