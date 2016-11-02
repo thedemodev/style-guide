@@ -22,10 +22,10 @@
     line-height: 1.4;
     text-align: center;
     background-color: $color-gray--lighter;
-    border: 1px solid #fff;
+    border: 1px solid $color-white;
 
     &:hover {
-      color: #fff;
+      color: $color-white;
       background-color: $color-blue;
     }
   }
