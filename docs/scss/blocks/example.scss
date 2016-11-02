@@ -30,7 +30,7 @@ $z-index-example-border-brackets: 49;
   width: 50px;
   height: 40px;
   margin: 0 0 0 3px;
-  background: #dfdfdf;
+  background: $color-gray-alto--darker;
   cursor: pointer;
   text-align: center;
 
@@ -60,7 +60,7 @@ $z-index-example-border-brackets: 49;
 
 .example__content {
   padding: 40px 0;
-  background: #dfdfdf;
+  background: $color-gray-alto--darker;
   text-align: center;
 
   @include respond(medium) {

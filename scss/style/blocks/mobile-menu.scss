@@ -112,21 +112,21 @@
 
   // Level 1
 .mobile-menu--collapsing .mobile-menu__level .mobile-menu__link {
-  background: $color-tbd-9;
+  background: $color-blue-astronaut;
 }
 
 .mobile-menu--collapsing .mobile-menu__level .mobile-menu__link.is-active {
-  background: $color-tbd-10;
+  background: $color-blue-black-pearl;
 }
 
   // Level 2
 .mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__link {
   padding-left: 35px;
-  background-color: $color-tbd-9;
+  background-color: $color-blue-astronaut;
 }
 
 .mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__link.is-active {
-  background-color: $color-tbd-11;
+  background-color: $color-blue-bunting;
 }
 
   // Level 3
@@ -135,14 +135,14 @@
   padding-top: 10px;
   padding-bottom: 9px;
   border-top: none;
-  border-bottom: 1px solid $color-tbd-13;
+  border-bottom: 1px solid $color-blue-blue-bayoux;
 
-  background-color: $color-tbd-12;
-  color: $color-tbd-9;
+  background-color: $color-blue-link-water;
+  color: $color-blue-astronaut;
 }
 
 .mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__level .mobile-menu__link.is-active {
-  background-color: $color-tbd-12;
+  background-color: $color-blue-link-water;
 }
 
 .mobile-menu--collapsing .mobile-menu__level {

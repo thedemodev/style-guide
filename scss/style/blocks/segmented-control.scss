@@ -89,7 +89,7 @@
   }
 
   &.segmented-control.has-error .segmented-control__item {
-    border-color: #ff0000 !important; // important is needed when the item .is-active and the control .has-error
+    border-color: $color-red-error !important; // important is needed when the item .is-active and the control .has-error
   }
 
   &.segmented-control:focus .segmented-control__item {

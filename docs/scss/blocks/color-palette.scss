@@ -10,7 +10,7 @@
 }
 
 .color-palette__color {
-  border: 1px solid #dadada;
+  border: 1px solid $color-gray--mid;
   border-radius: 3px;
   overflow: hidden;
   margin: 20px 0;
@@ -18,7 +18,7 @@
 
 .color-palette__color__content {
   background: white;
-  border-top: 1px solid #dadada;
+  border-top: 1px solid $color-gray--mid;
   padding: 15px 10px;
   text-align: center;
   min-height: 85px;
