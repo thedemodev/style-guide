@@ -10,7 +10,7 @@ $prolist_item_icon_size: 1.625rem;
 }
 
 .prolist__heading {
-  @extend .make-font-heading-tertiary;
+  @include make-font-heading-tertiary();
 
   margin: 0;
 }
@@ -42,7 +42,7 @@ $prolist_item_icon_size: 1.625rem;
 }
 
 .prolist__item__content {
-  @extend .make-font-large;
+  @include make-font-large();
 
   margin: 0;
   margin-left: 2.25rem;

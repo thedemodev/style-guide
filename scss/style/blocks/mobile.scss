@@ -22,7 +22,7 @@
 }
 
 .mobile__title {
-  @extend .make-font-large-semibold;
+  @include make-font-large-semibold();
 
   display: flex;
 

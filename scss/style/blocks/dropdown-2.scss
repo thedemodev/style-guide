@@ -112,7 +112,7 @@ $dropdown-icon-size--condensed: 1rem; // 16px
 }
 
 .dropdown-2__select--large {
-  @extend .make-font-large;
+  @include make-font-large();
   line-height: $dropdown-height--large; /* not ideal, firefox is buggy here - see fix at the bottom */
   height: $dropdown-height--large;
   text-indent: $dropdown-indent--large;	/* not ideal, firefox is buggy here - see fix at the bottom */

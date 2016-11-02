@@ -27,7 +27,7 @@
 }
 
 .footer-copyline__notice {
-  @extend .make-font-medium-semibold;
+  @include make-font-medium-semibold();
 
   display: flex;
   height: 40px;
@@ -70,7 +70,7 @@
 }
 
 .footer-copyline__link {
-  @extend .make-font-medium-semibold;
+  @include make-font-medium-semibold();
 
   display: flex;
   height: 40px;

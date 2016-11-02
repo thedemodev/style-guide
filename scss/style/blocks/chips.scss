@@ -47,7 +47,7 @@
 }
 
 .chips__chip__text {
-  @extend .make-font-medium;
+  @include make-font-medium();
 
   flex-grow: 1;
   padding-left: 1rem;

@@ -71,7 +71,7 @@
 }
 
 .icon-teaser__item__title {
-  @extend .make-font-medium-semibold;
+  @include make-font-medium-semibold();
 
   padding: 1.5rem 0 1rem 0;
 
@@ -79,7 +79,7 @@
 }
 
 .icon-teaser__item__text {
-  @extend .make-font-heading-tertiary;
+  @include make-font-heading-tertiary();
 
   flex-grow: 1;
   text-align: center;
@@ -89,7 +89,7 @@
 }
 
 .icon-teaser__item__action {
-  @extend .make-font-medium-semibold;
+  @include make-font-medium-semibold();
   @include make-link();
 
   display: flex;
