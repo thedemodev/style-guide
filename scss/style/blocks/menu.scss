@@ -5,7 +5,7 @@
 @import '../mixins/word-break';
 
 .menu {
-  @extend .clearfix;
+  @include clearfix();
 
   padding: 0;
   margin: 0;

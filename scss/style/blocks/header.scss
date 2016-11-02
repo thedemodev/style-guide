@@ -83,7 +83,7 @@
 }
 
 .header__meta__item--action {
-  @extend .make-font-small-semibold;
+  @include make-font-small-semibold();
   @include make-link;
 
   display: flex;

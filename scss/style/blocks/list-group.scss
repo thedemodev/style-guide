@@ -9,7 +9,7 @@
 }
 
 .list-group__item {
-  @extend .make-font-large;
+  @include make-font-large();
 
   display: flex;
   align-items: center;

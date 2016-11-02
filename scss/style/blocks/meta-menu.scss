@@ -12,7 +12,7 @@
 }
 
 .meta-menu__item {
-  @extend .make-font-small-semibold;
+  @include make-font-small-semibold();
 
   height: 100%;
   border-right: 1px solid $color-gray--mid;

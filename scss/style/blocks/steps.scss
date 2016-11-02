@@ -6,13 +6,13 @@ $steps-bullet-diameter: 32px !default;
 .steps {}
 
 .steps__heading {
-  @extend .make-font-heading-tertiary;
+  @include make-font-heading-tertiary();
 
   margin: 0;
 }
 
 .steps__info {
-  @extend .make-font-large;
+  @include make-font-large();
 
   margin: 0;
   margin-bottom: 1rem;
@@ -65,11 +65,11 @@ $steps-bullet-diameter: 32px !default;
 
 .steps__title {
   margin: 0 0 -8px;
-  @extend .make-font-heading-tertiary;
+  @include make-font-heading-tertiary();
 }
 
 .steps__description {
-  @extend .make-font-large;
+  @include make-font-large();
 }
 
 // Copyright AXA Versicherungen AG 2015

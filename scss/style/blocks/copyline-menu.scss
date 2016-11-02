@@ -3,7 +3,7 @@
 @import '../mixins/respond';
 
 .copyline-menu {
-  @extend .clearfix;
+  @include clearfix();
 
   margin: 0 -12.5px;
   padding: 0;

@@ -7,7 +7,7 @@
 }
 
 .footer-social__headline {
-  @extend .make-font-heading-tertiary;
+  @include make-font-heading-tertiary();
 
   padding: 48px 0;
   padding-bottom: 24px;

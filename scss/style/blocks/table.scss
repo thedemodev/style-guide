@@ -3,7 +3,7 @@
 @import '../mixins/respond';
 
 @mixin make-ie9-block($display) {
-  @extend .clearfix;
+  @include clearfix();
 
   display: block;
   float: left;
@@ -38,7 +38,7 @@
 }
 
 .table {
-  @extend .clearfix;
+  @include clearfix();
 
   display: block;
   width: 100%;

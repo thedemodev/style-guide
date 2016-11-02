@@ -49,7 +49,7 @@
 }
 
 .mobile-menu__link {
-  @extend .make-font-large;
+  @include make-font-large();
   line-height: 1.3;
 
   display: flex;

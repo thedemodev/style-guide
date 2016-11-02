@@ -10,7 +10,7 @@
 }
 
 .header-search__input {
-  @extend .make-font-large;
+  @include make-font-large();
   @include control;
   @include control--input;
 

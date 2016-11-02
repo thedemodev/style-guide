@@ -23,7 +23,7 @@
 }
 
 .fieldset__button {
-  @extend .clearfix;
+  @include clearfix();
 }
 
 .fieldset__button__button {

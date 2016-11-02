@@ -12,7 +12,7 @@
 .meta-language2__button {
   @include make-column();
   @include make-link();
-  @extend .make-font-small-semibold;
+  @include make-font-small-semibold();
 
   display: flex;
   align-items: center;
@@ -76,7 +76,7 @@
 .meta-language2__menu__item {
   @include make-column();
   @include make-link();
-  @extend .make-font-small-semibold;
+  @include make-font-small-semibold();
 
   display: flex;
   align-items: center;

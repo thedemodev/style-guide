@@ -6,12 +6,12 @@
 }
 
 .tab-panel__header {
-  @extend .clearfix;
+  @include clearfix();
   margin: 0 0 2px 0;
 }
 
 .tab-panel__header__tabs {
-  @extend .clearfix;
+  @include clearfix();
   float: right;
 }
 

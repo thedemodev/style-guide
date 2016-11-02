@@ -8,7 +8,7 @@
 // added when js is available and it is a non-touch device
 
 .datepicker {
-  @extend .clearfix;
+  @include clearfix();
 
   @include respond(medium) {
     @include control--short();

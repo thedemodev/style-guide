@@ -6,17 +6,17 @@
 }
 
 .summary__heading {
-  @extend .make-font-heading-tertiary;
+  @include make-font-heading-tertiary();
   margin: 0;
 }
 
 .summary__label {
-  @extend .make-font-large;
+  @include make-font-large();
   margin: 1rem 0 0;
 }
 
 .summary__content {
-  @extend .make-font-large-semibold;
+  @include make-font-large-semibold();
 
   margin: 0 0 0.5rem;
 }
@@ -35,7 +35,7 @@
 }
 
 .summary__edit {
-  @extend .make-font-large-semibold;
+  @include make-font-large-semibold();
 }
 
 // Copyright AXA Versicherungen AG 2015

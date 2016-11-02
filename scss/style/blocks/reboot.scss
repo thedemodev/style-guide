@@ -6,17 +6,17 @@ a {
 }
 
 h1 {
-  @extend .make-font-heading-primary;
+  @include make-font-heading-primary();
 }
 
 h2 {
-  @extend .make-font-heading-secondary;
+  @include make-font-heading-secondary();
 }
 
 h3 {
-  @extend .make-font-heading-tertiary;
+  @include make-font-heading-tertiary();
 }
 
 p {
-  @extend .make-font-large;
+  @include make-font-large();
 }

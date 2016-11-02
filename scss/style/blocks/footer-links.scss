@@ -7,7 +7,7 @@
 }
 
 .footer-links__headline {
-  @extend .make-font-heading-tertiary;
+  @include make-font-heading-tertiary();
 
   padding: 48px 0;
   padding-bottom: 24px;
@@ -43,7 +43,7 @@
 }
 
 .footer-links__link {
-  @extend .make-font-large;
+  @include make-font-large();
 
   display: flex;
   align-items: center;
@@ -69,7 +69,7 @@
 }
 
 .footer-links__text {
-  @extend .make-font-medium-semibold;
+  @include make-font-medium-semibold();
   flex-grow: 1;
 }
 

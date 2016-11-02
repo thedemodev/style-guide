@@ -3,7 +3,7 @@
 @import '../../../scss/style/mixins/respond';
 
 .hero {
-  @extend .clearfix;
+  @include clearfix();
 
   max-width: 800px;
 }
