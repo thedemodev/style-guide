@@ -156,7 +156,6 @@
     "sass-loader-once": "0.0.2",
     "strip-loader": "^0.1.2",
     "style-loader": "^0.13.1",
-    "sync-files": "^1.0.3",
     "sync-glob": "^1.0.2",
     "through2": "^2.0.1",
     "vinyl-buffer": "^1.0.0",
