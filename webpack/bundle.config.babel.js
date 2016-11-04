@@ -3,7 +3,7 @@ import path from 'path'
 import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
-import UglifyJsParallelPlugin from 'webpack-uglify-parallel'
+import ParallelUglifyPlugin from 'webpack-parallel-uglify-plugin'
 
 import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
 
@@ -79,8 +79,13 @@ export default {
       },
       prefix: '',
     }),
-    new UglifyJsParallelPlugin({
-      workers: os.cpus().length,
+    new ParallelUglifyPlugin({
+      cacheDir: path.resolve(__dirname, 'tmp/uglify'),
+      uglifyJS: {
+        compress: {
+          warnings: false,
+        },
+      },
     }),
   ],
   resolveLoader: {
