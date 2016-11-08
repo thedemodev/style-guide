@@ -1,0 +1,46 @@
+---
+title: Forms
+order: 0
+layout: page.pug
+tags:  form, input, accessiblity, accessible, form, formgroup, formfield, info, error, aria, validation
+---
+
+include ../../mixins.pug
+
+p See
+  a(href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA") https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+
+p.paragraph.
+  Building forms is a hard topic. Making them accessible is even bigger.
+
+ul
+  li DO use `fieldset` to group input elements if there are more than one distinct set of fields
+     ol
+       li Is there more than one distinct set of fields in total, in the same form or context? Yes? Use &lt;fieldset&gt;s. No? Don’t use &lt;fieldset&gt;s.
+       li Does a set actually only have one field in it? Yes? You don’t need a &lt;fieldset&gt;. No? Use a &lt;fieldset&gt; if (1) applies.
+       li Can you think of a &lt;legend&gt; that would make sense or aid comprehension if used with each of the &lt;fieldset&gt;’s field labels? Yes? Use a &lt;fieldset&gt;. No? Don’t use a &lt;fieldset&gt;.
+  li DO use placeholders as <strong>hints</strong>
+  li DO NOT rely on placeholders as labels
+  li DO add a "show password" option for secret input fields
+  li DO NOT require the user to enter something twice
+  li DO reduce the fields to a minimum
+  li DO disable the submit button during async actions (form submission)
+  li DO add HTML 5 validation attributes
+  li DO use aria-required in conjunction with the required attribute for browser support reasons
+  li DO use the aria-invalid attribute to mark invalid fields
+  li DO use aria-role="alert" on the global form error message
+  li DO linke the field with the corresponding error message using the aria-describedby attribute
+  li DO debounce form validation checks (therefore the user will not be bloated with error messages/alerts on every keypress)
+  li BE CAREFUL in setting the focus on invalid form fields to not cause a keyboard trap
+  li DO use aria-describedby to add information for a form field
+
+p TODO:
+
+ul
+  li Icon for error messages
+  li Error message near the submit button
+  li De-activate submit during async action
+  li Having a aria-describedby for an info text may be overriden with a aria-describedby for error messages
+  li Sould alerts be used for field specific error messages?
+
++example('/components/form-and-input-elements/demos/form-accessible.html')
