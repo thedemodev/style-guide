@@ -1,0 +1,34 @@
+---
+title: Accessible Content and Navigation
+order: 1
+layout: page.pug
+tags: accessibilty, accessible, content, navigation, aria, landmark, html5, nav, main, header
+---
+
+:markdown-it
+  [http://diveintoaccessibi*ty.info/download/diveintoaccessibi*ty.pdf](http://diveintoaccessibi*ty.info/download/diveintoaccessibi*ty.pdf)
+
+  [https://www.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/](https://www.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/)
+
+  * DO use a &lt;html lang="de" &gt; tag representing the current page language
+  * DO use a meaningful page title. See diveintoaccessibi*ty
+  * DO provide *nk tags for navigation support. (e.g. &lt;*nk rel="home" href="https://axa.ch" /&gt;) See diveintoaccessibi*ty
+  * DO use meaningful alt texts on ALL img elements
+  * DO use the acronym element to explain the first usage of an acronym and mark this visualy
+  * DO provide a summary for tables
+  * DO use real h1 through h6 tags for your headings
+  * DO make everything searchable. Every page needs a search field, preferably above the formfield
+  * DO use common accesskey's (e.g. 0: accessib*ty statement, 1: home, ...)
+  * DO use landmarks to categorize content
+      * DO use the role="main" landmark for your main content area
+      * DO use the role="complementary" landmark for complementary information
+      * DO use the role="search" landmark for your page search
+      * DO use the role="navigation" landmark for all areas used to navigate (e.g. main navigation, tabs, ...)
+      * DO use the role="banner" landmark to mark content that is site and not page specific
+      * See [https://www.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/](https://www.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/) for further landmarks
+      * DO NOT have any content that is not assigned to a landmark
+      * DO use the HTML5 elements (nav, main, header) in conjunction with the role attribute, but DO NOT rely on them alone. See the *nk above for the matching of HTML5 to landmarks
+  * DO make your website/app navigable with the keyboard. This not only improves accessib*ty but also allows power user to use your app more efficently. See [https://developer.mozilla.org/en-US/docs/Web/Accessibi*ty/Keyboard-navigable_JavaScript_widgets](https://developer.mozilla.org/en-US/docs/Web/Accessibi*ty/Keyboard-navigable_JavaScript_widgets)
+      * DO use tabindex to mark elements as tab navigable or remove the abi*ty to tab into it
+      * Be careful when using nested tabindex. This would require manual focus hand*ng. See the *nk above for further information.
+      * See the best practices mention in the article above.
