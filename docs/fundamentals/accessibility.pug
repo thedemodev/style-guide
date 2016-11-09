@@ -1,12 +1,13 @@
 ---
 title: Accessibility
 order: 4
-children: fundamentals/accessibility/*
 layout: page.pug
 tags: accessibility, barrierefreiheit
 ---
 
 :markdown-it
+  # Accessibility
+
   There are around one million impaired people in Switzerland.
   Persons with disabilities include those who have long-term physical,
   mental, intellectual or sensory impairments which in interaction
@@ -14,7 +15,126 @@ tags: accessibility, barrierefreiheit
   in society on an equal basis with others.
   (UN Convention on the Rights of Persons with Disabilities, Art. 1, Abs.2).
 
-  As AXA Switzerland we identified WCAG 2.0 (AA) as an appropriate standard
+  The AXA Group UX Gilde identified WCAG 2.0 (AA) as an appropriate standard
   for B2C websites and applications.
-  Complete information about the standard and how follow
-  the standard can be found on the [w3c website](http://www.w3.org/TR/WCAG20/).
+  Complete information about the standard can be found on the
+  [w3c website](http://www.w3.org/TR/WCAG20/).
+
+  In the following chapters we summarized these accessibility patterns
+  to get you started more quickly. For an in-depth understanding we recommend
+  to research on your own. See also the References chapter for more literature
+  on this topic.
+
+  ## References
+
+  * [WCAG 2.0 (w3c)](http://www.w3.org/TR/WCAG20/)
+  * [diveintoaccessibility](http://diveintoaccessibility.info/download/diveintoaccessibility.pdf)
+  * [using wai aria landmarks](https://www.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/)
+
+
+  ## HTML document structure
+
+  Setup your HTML document properly using the HTML 5 DOCTYPE `<!DOCTYPE html>`.
+
+  ### head
+
+  Include the following tags in your HTML `<head>` section:
+
+  ```
+  <html lang="en" >
+  <!-- Exchange en with whatever language the page is display in -->
+  ```
+
+  A proper lang tag will allow screen readers to use proper pronunciation.
+
+  ```
+  <title>page title</title>
+  ```
+
+  Do use a meaningful page title to make navigation easier.
+
+  See chapter "Constructing meaningful page titles" in diveintoaccessibility.
+
+  ```
+  <link rel="home" href="your.home/page.html" />
+  <link rel="alternate" hreflang="de" href="your.home/page-in-de.html" />
+  ...
+  ```
+
+  Use link tags in every applicable type. This will allow a structured page
+  navigation.
+
+  See [Link types on the Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)
+  for further information.
+
+  ### body
+
+  Order the content in your HTML markup for screen readers. This means your HTML
+  markup should follow content structure and must no be re-ordered for
+  styling purposes.
+
+  ## Images
+
+  Use meaningful `alt` texts in your `<img />` tags that explain the
+  visualisation.
+
+  ## Mouse and keyboard
+
+  All your functionalities should be accessible not only by mouse but also by
+  keyboard. This will not only improve accessibility but also allows power users
+  to use your website/-app more productively.
+
+  * DO use tabindex to mark elements as tab navigable or remove the ability to tab into it
+  * Be careful when using nested tabindex. This would require manual focus handling. See the link above for further information.
+  * Refer to the [best practices published on the Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets).
+
+  Provide the common accesskeys (e.g. 0 for accessiblity statement or 1 for
+  home). See [Accesskeys on access-for-all.ch](http://www.access-for-all.ch/ch/barrierefreiheit/barrierefreies-webdesign/tools-fuer-barrierefreies-webdesign/accesskeys.html)
+
+  ## Acronyms
+
+  Use the `<acronym title="description">acronym</acronym> tag to explain
+  acronyms on their first usage on a page.
+
+  Mak sure this is visible to the user (e.g. dotted underlines).
+
+  ## Tables
+
+  Tables shoud always have a summary to be able to understand the general
+  context quickly.
+
+  Use proper table header tags (`<th>heading</th>`) and do not abuse
+  the `td` tag for headings.
+
+  ## Headings
+
+  Use the heading tags (`h1` through `h6`) to structure content. There should
+  be one `h1` tag only.
+
+  ## Search
+
+  Make everything searchable. Every page needs a search field, preferably above
+  the fold.
+
+  ## Colors
+
+  DO NOT rely on colors only to respect colorblindness. For example add an icon
+  to error messages that clearly identifies it as an error regardless of its
+  text color.
+
+  ## Landmarks
+
+  Use landmarks to categorize content
+
+  * DO use the role="main" landmark for your main content area
+  * DO use the role="complementary" landmark for complementary information
+  * DO use the role="search" landmark for your page search
+  * DO use the role="navigation" landmark for all areas used to navigate (e.g. main navigation, tabs, ...)
+  * DO use the role="banner" landmark to mark content that is site and not page specific
+  * See [https://www.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/](https://www.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/) for further landmarks
+  * DO NOT have any content that is not assigned to a landmark
+  * DO use the HTML5 elements (nav, main, header) in conjunction with the role attribute, but DO NOT rely on them alone. See the link above for the matching of HTML5 to landmarks
+
+  ## Forms
+
+  See [Components / Form & Input Elements / Forms](../../components/form-and-input-elements/forms.html)
