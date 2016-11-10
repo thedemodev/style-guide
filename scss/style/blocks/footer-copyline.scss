@@ -47,6 +47,11 @@
 
     // Keeps the distance from the entries
     margin-left: 18px;
+
+    // Keeps it at the right position only if no element is in use
+    :first-child:last-child {
+      margin-left: auto;
+    }
   }
 }
 
