@@ -81,6 +81,9 @@ export default {
     }),
     new UglifyJsParallelPlugin({
       workers: os.cpus().length,
+      compress: {
+        warnings: false,
+      },
     }),
   ],
   resolveLoader: {
