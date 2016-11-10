@@ -1,9 +1,12 @@
-/* global window */
+/* global window, document */
 
 import $ from 'jquery'
+import Bacon from 'baconjs'
 import registerPlugin from './register-plugin'
 import resizeStream from './resize-stream'
 import orientationchangeStream from './orientationchange-stream'
+
+const restackStream = Bacon.$.asEventStream.call($(document), 'axa.segment-control:restack')
 
 // Public class definition
 class SegmentedControl {
@@ -50,7 +53,7 @@ class SegmentedControl {
 
     this.stackControlsIfNeeded()
 
-    const reorientStream = resizeStream.merge(orientationchangeStream)
+    const reorientStream = resizeStream.merge(orientationchangeStream).merge(restackStream)
 
     this.disposeReorient = reorientStream.debounce(100)
       .onValue(this.stackControlsIfNeeded)
