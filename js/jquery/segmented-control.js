@@ -67,7 +67,7 @@ class SegmentedControl {
     const availableWidth = $element.parent().innerWidth()
     const usedWidth = $element[0].scrollWidth
 
-    if (usedWidth >= availableWidth) {
+    if (usedWidth && availableWidth && usedWidth >= availableWidth) {
       $element.addClass('segmented-control--stacked')
     }
   }
