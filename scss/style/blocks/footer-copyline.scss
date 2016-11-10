@@ -49,7 +49,7 @@
     margin-left: 18px;
 
     // Keeps it at the right position only if no element is in use
-    :first-child:last-child {
+    &:first-child:last-child {
       margin-left: auto;
     }
   }
