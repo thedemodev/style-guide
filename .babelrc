@@ -3,8 +3,7 @@
     "transform-object-assign",
     "transform-class-properties",
     "transform-es2015-destructuring",
-    "transform-object-rest-spread",
-    "react-hot-loader/babel"
+    "transform-object-rest-spread"
   ],
   "presets": [
     "es2015",
