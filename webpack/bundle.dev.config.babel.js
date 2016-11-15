@@ -63,7 +63,7 @@ export default {
   },
   plugins: [
     createHappyPlugin('jsx', [
-      'react-hot',
+      'react-hot-loader/webpack',
       'babel?cacheDirectory=true',
       'webpack-module-hot-accept',
     ]),
