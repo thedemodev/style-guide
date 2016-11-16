@@ -4,9 +4,9 @@ import pseudoelements from 'postcss-pseudoelements'
 import autoprefixer from 'autoprefixer'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
-import WriteFilePlugin from 'write-file-webpack-plugin';
+import WriteFilePlugin from 'write-file-webpack-plugin'
 
-import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
+import createHappyPlugin from '../lib/createHappyPlugin'
 
 export default {
   cache: true,
@@ -36,10 +36,10 @@ export default {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: `happypack/loader?id=${getEnvId('jsx')}`,
+      loader: 'happypack/loader?id=jsx',
     }, {
       test: /\.scss$/,
-      // loader: `happypack/loader?id=${getEnvId('sass')}`,
+      // loader: 'happypack/loader?id=sass',
       loader: ExtractTextPlugin.extract('style', [
         'css?importLoaders=2&sourceMap',
         'postcss-loader',
