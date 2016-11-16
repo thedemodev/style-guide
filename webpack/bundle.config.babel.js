@@ -1,5 +1,6 @@
 import os from 'os'
 import path from 'path'
+import webpack from 'webpack'
 import CleanPlugin from 'clean-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
@@ -78,6 +79,11 @@ export default {
         plugins: [{ removeTitle: true }],
       },
       prefix: '',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
     }),
     new UglifyJsParallelPlugin({
       workers: os.cpus().length,
