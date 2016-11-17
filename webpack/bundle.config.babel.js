@@ -6,12 +6,14 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
 import UglifyJsParallelPlugin from 'webpack-uglify-parallel'
 
-import createHappyPlugin, { getEnvId } from '../lib/createHappyPlugin'
+import createHappyPlugin from '../lib/createHappyPlugin'
+
+const cwd = process.cwd()
 
 export default {
   cache: true,
   devtool: 'source-map',
-  context: path.resolve(__dirname, '..'),
+  context: cwd,
   progress: true,
   entry: {
     docs: './docs/js/index-with-styles.js',
@@ -20,7 +22,7 @@ export default {
     react: ['./js/react/index.js'],
   },
   output: {
-    path: path.resolve(__dirname, '../dist/bundles'),
+    path: path.resolve(cwd, 'dist/bundles'),
     filename: '[name].min.js',
     chunkFilename: '[name]-[chunkhash].min.js',
     publicPath: '/dist/',
@@ -35,10 +37,10 @@ export default {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: `happypack/loader?id=${getEnvId('jsx')}`,
+      loader: 'happypack/loader?id=jsx',
     }, {
       test: /\.scss$/,
-      // loader: ExtractTextPlugin.extract('style', `happypack/loader?id=${getEnvId('sass')}`),
+      // loader: ExtractTextPlugin.extract('style', 'happypack/loader?id=sass'),
       loader: ExtractTextPlugin.extract('style', [
         'css?importLoaders=2&sourceMap',
         'custom-postcss',
@@ -67,9 +69,9 @@ export default {
     //   'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
     // ]),
     new CleanPlugin([
-      path.resolve(__dirname, '../dist/bundles'),
+      path.resolve(cwd, 'dist/bundles'),
     ], {
-      root: path.resolve(__dirname, '..'),
+      root: cwd,
     }),
     new ExtractTextPlugin('[name].min.css', {
       allChunks: true,
