@@ -8,10 +8,12 @@ import UglifyJsParallelPlugin from 'webpack-uglify-parallel'
 
 import createHappyPlugin from '../lib/createHappyPlugin'
 
+const cwd = process.cwd()
+
 export default {
   cache: true,
   devtool: 'source-map',
-  context: path.resolve(__dirname, '..'),
+  context: cwd,
   progress: true,
   entry: {
     docs: './docs/js/index-with-styles.js',
@@ -20,7 +22,7 @@ export default {
     react: ['./js/react/index.js'],
   },
   output: {
-    path: path.resolve(__dirname, '../dist/bundles'),
+    path: path.resolve(cwd, 'dist/bundles'),
     filename: '[name].min.js',
     chunkFilename: '[name]-[chunkhash].min.js',
     publicPath: '/dist/',
@@ -67,9 +69,9 @@ export default {
     //   'sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true',
     // ]),
     new CleanPlugin([
-      path.resolve(__dirname, '../dist/bundles'),
+      path.resolve(cwd, 'dist/bundles'),
     ], {
-      root: path.resolve(__dirname, '..'),
+      root: cwd,
     }),
     new ExtractTextPlugin('[name].min.css', {
       allChunks: true,

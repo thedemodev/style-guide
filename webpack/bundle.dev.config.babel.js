@@ -8,10 +8,12 @@ import WriteFilePlugin from 'write-file-webpack-plugin'
 
 import createHappyPlugin from '../lib/createHappyPlugin'
 
+const cwd = process.cwd()
+
 export default {
   cache: true,
   devtool: 'source-map',
-  context: path.resolve(__dirname, '..'),
+  context: cwd,
   progress: true,
   entry: {
     docs: [
@@ -21,7 +23,7 @@ export default {
     ],
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(cwd, 'dist'),
     filename: '[name].js',
     chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/dist/',
