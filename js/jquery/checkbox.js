@@ -24,8 +24,6 @@ class Checkbox {
     this.$checkbox.attr('tabindex', '-1')
     this.$label.attr('tabindex', '0')
 
-    this.$element.addClass('checkbox--js')
-
     this.setCheckboxState()
 
     this.$checkbox.off('change.axa.checkbock')
