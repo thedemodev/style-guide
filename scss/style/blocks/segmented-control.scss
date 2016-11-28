@@ -15,7 +15,7 @@
   @extend .checkbox__checkbox;
 }
 
-.segmented-control--js {
+.js .segmented-control {
   @include invisible-font();
   display: inline-block;
 
@@ -139,7 +139,7 @@
   }
 }
 
-.segmented-control--js[disabled] {
+.js .segmented-control[disabled] {
   &.segmented-control:focus .segmented-control__item {
     border: 1px solid $color-gray !important;
   }
