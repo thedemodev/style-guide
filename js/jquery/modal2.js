@@ -208,7 +208,7 @@ class Modal2 {
       this.$body.addClass(this.options.classes.body)
     }
 
-    const preventDefault = this.options.onBeforeOpen(this, insert.bind(this))
+    const preventDefault = this.options.onBeforeOpen(this, this.insert)
 
     if (preventDefault === false) {
       return
@@ -217,27 +217,28 @@ class Modal2 {
     const href = this.element.href || this.options.href
 
     if (href) {
-      this.load(href, insert.bind(this))
+      this.load(href, this.insert)
     } else {
-      insert.call(this, this.options.html || $(this.options['']).clone())
+      this.insert(this.options.html || $(this.options['']).clone())
+    }
+  }
+
+  @autobind
+  insert(html) {
+    if (html) {
+      this.$content.append(html)
     }
 
-    function insert(html) {
-      if (html) {
-        this.$content.append(html)
-      }
+    this.$modal.addClass(this.options.classes.open)
+    this.$html.append(this.$modal)
 
-      this.$modal.addClass(this.options.classes.open)
-      this.$html.append(this.$modal)
-
-      if (this.options.autofocus) {
-        this.$content.focus()
-      }
-
-      this.bind()
-
-      this.options.onAfterOpen(this)
+    if (this.options.autofocus) {
+      this.$content.focus()
     }
+
+    this.bind()
+
+    this.options.onAfterOpen(this)
   }
 
   load(url, callback) {
