@@ -1,5 +1,6 @@
 /* global window, document */
 
+import { autobind } from 'core-decorators'
 import $ from 'jquery'
 import Bacon from 'baconjs'
 import registerPlugin from './register-plugin'
@@ -120,9 +121,6 @@ class Modal2 {
     this.options = options
     this.$html = $(document.documentElement)
     this.$body = $(document.body)
-
-    this.close = this.close.bind(this)
-    this.restrictFocus = this.restrictFocus.bind(this)
 
     this.init()
     this.isOpen = false
@@ -262,6 +260,7 @@ class Modal2 {
     })
   }
 
+  @autobind
   restrictFocus(event) {
     if (!$.contains(this.$modal[0], event.target)) {
       event.stopPropagation()
@@ -269,6 +268,7 @@ class Modal2 {
     }
   }
 
+  @autobind
   close() {
     if (!this.isOpen) return
     this.isOpen = false

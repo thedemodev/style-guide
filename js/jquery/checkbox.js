@@ -1,5 +1,6 @@
 /* global window */
 
+import { autobind } from 'core-decorators'
 import $ from 'jquery'
 import registerPlugin from './register-plugin'
 
@@ -8,9 +9,6 @@ class Checkbox {
   static DEFAULTS
 
   constructor(element, options) {
-    this.handleKeyUp = this.handleKeyUp.bind(this)
-    this.setCheckboxState = this.setCheckboxState.bind(this)
-    this.handleCustomColorBG = this.handleCustomColorBG.bind(this)
     this.$element = $(element)
 
     // TODO: Do not depend on css classes
@@ -44,6 +42,7 @@ class Checkbox {
     }
   }
 
+  @autobind
   handleCustomColorBG() {
     if (this.$checkbox.is(':checked')) {
       this.$element.css({
@@ -59,6 +58,7 @@ class Checkbox {
   }
 
   // Handle spacebar to toggle the checkbox
+  @autobind
   handleKeyUp(e) {
     if (e.which === 32) {
       // prevent scrolling
@@ -72,6 +72,7 @@ class Checkbox {
   }
 
   // Updates the UI according to the checkbox state
+  @autobind
   setCheckboxState() {
     if (this.$checkbox.is(':checked')) {
       this.$element.addClass('is-active')
