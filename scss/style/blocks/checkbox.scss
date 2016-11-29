@@ -64,6 +64,10 @@
   .is-active & {
     fill-opacity: 1;
   }
+
+  .checkbox-group.has-error & {
+    border-color: $color-red-error;
+  }
 }
 
 .checkbox__label__text {
@@ -76,13 +80,6 @@
       padding-top: 2px;
       margin-left: 35px;
     }
-  }
-}
-
-.checkbox-group.has-error .checkbox__label__icon,
-.checkbox {
-  .js & {
-    border-color: $color-red-error;
   }
 }
 
