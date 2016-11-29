@@ -23,69 +23,63 @@
   margin: 4px 0 0 0;
 
   vertical-align: middle;
+
+  .js & {
+    @include invisible-input();
+  }
 }
 
 .checkbox__label {
   margin-left: 18px;
+
+  .js & {
+    margin-left: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .checkbox__label__icon {
   display: none;
-}
-
-.checkbox {
 
   .js & {
+    display: block;
+    position: absolute;
+    padding: 3px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color-gray;
+    fill-opacity: 0;
+    fill: $color-light-blue;
+    background: white;
 
-    .checkbox__checkbox {
-      @include invisible-input();
+    @include respond(medium) {
+      width: 25px;
+      height: 25px;
     }
+  }
 
-    .checkbox__label {
-      margin-left: 0;
-    }
+  &.is-active {
+    fill-opacity: 1;
+  }
 
-    .checkbox__label__icon {
-      display: block;
-      position: absolute;
-      padding: 3px;
-      width: 30px;
-      height: 30px;
-      border: 1px solid $color-gray;
-      fill-opacity: 0;
-      fill: $color-light-blue;
-      background: white;
+  .checkbox__label:focus & {
+    border-color: $color-blue;
+  }
+}
 
-      @include respond(medium) {
-        width: 25px;
-        height: 25px;
-      }
-    }
+.checkbox__label__text {
+  .js & {
+    padding-top: 5px;
+    margin-left: 40px;
 
-    &.is-active {
-      .checkbox__label__icon {
-        fill-opacity: 1;
-      }
-    }
+    line-height: 1.5; // TODO: use more global definition
 
-    .checkbox__label__text {
-      padding-top: 5px;
-      margin-left: 40px;
-
-      line-height: 1.5; // TODO: use more global definition
-
-      @include respond(medium) {
-        padding-top: 2px;
-        margin-left: 35px;
-      }
-    }
-
-    .checkbox__label:focus {
-      outline: none;
-
-      .checkbox__label__icon {
-        border-color: $color-blue;
-      }
+    @include respond(medium) {
+      padding-top: 2px;
+      margin-left: 35px;
     }
   }
 }
