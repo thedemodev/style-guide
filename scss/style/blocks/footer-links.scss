@@ -70,6 +70,7 @@
 
 .footer-links__text {
   @include make-font-medium-semibold();
+
   flex-grow: 1;
 }
 

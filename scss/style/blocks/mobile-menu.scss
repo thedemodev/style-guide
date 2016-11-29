@@ -30,6 +30,7 @@
   padding-bottom: 1px;
 
   transition: left $transition-duration $transition-fn-fancy, visibility $transition-duration;
+
   &.is-previous {
   }
 
@@ -50,6 +51,7 @@
 
 .mobile-menu__link {
   @include make-font-large();
+
   line-height: 1.3;
 
   display: flex;
@@ -76,6 +78,7 @@
   flex-grow: 1;
   order: 2;
   pointer-events: none;
+
   @include word-break();
 }
 
@@ -110,7 +113,7 @@
   }
 }
 
-  // Level 1
+// Level 1
 .mobile-menu--collapsing .mobile-menu__level .mobile-menu__link {
   background: $color-blue-astronaut;
 }
@@ -119,7 +122,7 @@
   background: $color-blue-black-pearl;
 }
 
-  // Level 2
+// Level 2
 .mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__link {
   padding-left: 35px;
   background-color: $color-blue-astronaut;
@@ -129,7 +132,7 @@
   background-color: $color-blue-bunting;
 }
 
-  // Level 3
+// Level 3
 .mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__level .mobile-menu__link {
   height: 41px;
   padding-top: 10px;

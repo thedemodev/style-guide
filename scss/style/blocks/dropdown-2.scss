@@ -20,6 +20,7 @@ $dropdown-icon-size--condensed: 1rem; // 16px
 
 .dropdown-2 {
   @include make-link();
+
   display: block;
   border: $dropdown-border-width solid $color-gray--light;
   background: $color-gray--lighter;
@@ -40,14 +41,18 @@ $dropdown-icon-size--condensed: 1rem; // 16px
 
 .dropdown-2__select {
   @include make-link();
+
   display: block;
   -webkit-appearance: none;
   appearance: none;
+
   /* overflow is indented to fix browser who don't support hiding the native arrow */
   width: 120%;
+
   /* important: fake it to have 0 width */
   float: left;
   margin-right: -120%;
+
   /* don't use background nor border - the parent deals with that */
   background: transparent;
   border: none;
@@ -113,6 +118,7 @@ $dropdown-icon-size--condensed: 1rem; // 16px
 
 .dropdown-2__select--large {
   @include make-font-large();
+
   line-height: $dropdown-height--large; /* not ideal, firefox is buggy here - see fix at the bottom */
   height: $dropdown-height--large;
   text-indent: $dropdown-indent--large;	/* not ideal, firefox is buggy here - see fix at the bottom */

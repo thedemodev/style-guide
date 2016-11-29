@@ -7,11 +7,13 @@
 
 .summary__heading {
   @include make-font-heading-tertiary();
+
   margin: 0;
 }
 
 .summary__label {
   @include make-font-large();
+
   margin: 1rem 0 0;
 }
 

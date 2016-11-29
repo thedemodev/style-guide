@@ -7,11 +7,13 @@
 
 .tab-panel__header {
   @include clearfix();
+
   margin: 0 0 2px 0;
 }
 
 .tab-panel__header__tabs {
   @include clearfix();
+
   float: right;
 }
 

@@ -65,6 +65,7 @@ $steps-bullet-diameter: 32px !default;
 
 .steps__title {
   margin: 0 0 -8px;
+
   @include make-font-heading-tertiary();
 }
 

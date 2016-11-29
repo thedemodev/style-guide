@@ -24,7 +24,6 @@
 }
 
 .table--clickable {
-
   .table__row:hover {
     background: $color-gray--mid;
     cursor: pointer;
@@ -34,7 +33,6 @@
     color: $color-light-blue;
     cursor: pointer;
   }
-
 }
 
 .table {
@@ -46,7 +44,6 @@
   @include respond(medium) {
     display: table;
   }
-
 }
 
 .table__header {
@@ -133,7 +130,6 @@
     padding: 12px 10px;
     border-top: 1px solid $color-gray--mid;
   }
-
 }
 
 .table__row__item--multirow {
@@ -152,13 +148,13 @@
       display: none;
     }
   }
+}
 
-  &__label {
-    display: inline-block;
+.table__row__item__content__label {
+  display: inline-block;
 
-    @include respond(medium) {
-      display: none;
-    }
+  @include respond(medium) {
+    display: none;
   }
 }
 
@@ -173,6 +169,7 @@
 
 .table__row__item--headline {
   @include make-ie9-block(table-cell);
+
   @include respond(medium) {
     width: auto;
   }

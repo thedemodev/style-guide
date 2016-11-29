@@ -37,6 +37,7 @@
 
   /* fix collapsing margins */
   float: left;
+
   @include clearfix();
 }
 

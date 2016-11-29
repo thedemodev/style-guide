@@ -1,7 +1,6 @@
 @import '../variables';
-﻿
-.backdrop {
-}
+
+.backdrop {}
 
 .backdrop__shadow {
   position: fixed;
@@ -11,7 +10,7 @@
   left: 0;
   z-index: $z-index-backdrop;
 
-  padding: 0 0;
+  padding: 0;
   overflow: auto;
 
   opacity: .75;
@@ -31,7 +30,7 @@
   left: 0;
   z-index: $z-index-backdrop-content;
 
-  padding: 0 0;
+  padding: 0;
   overflow: auto;
 }
 

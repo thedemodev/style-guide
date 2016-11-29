@@ -4,6 +4,7 @@
 
 .button-row {
   @include clearfix();
+
   margin-bottom: 80px;
 
   @include respond(medium) {
@@ -15,7 +16,6 @@
 
 .button-row__button {
   display: block;
-
   margin-top: 20px;
 
   // prevent style collision

@@ -19,7 +19,7 @@
   height: 23px;
   line-height: 23px;
   overflow: hidden;
-  
+
   @include respond(medium) {
     border-left: 1px $color-white solid;
     height: 40px;
@@ -30,7 +30,6 @@
     height: 59px;
     line-height: 59px;
   }
-
 }
 
 .progress-bar__long .progress-bar__step {
@@ -59,20 +58,19 @@
   margin-left: 50%;
   margin-right: 50%;
   text-align: center;
-  
+
   display: none;
-  
+
   @include respond(medium) {
     display: inline;
     font-size: 24px;
   }
 
- @include respond(large) {
+  @include respond(large) {
     margin-left: 30px;
     margin-right: 10px;
     font-size: 36px;
   }
-
 }
 
 .progress-bar__long .progress-bar__step__nr {
@@ -81,13 +79,12 @@
 
 .progress-bar__step__label {
   vertical-align: middle;
-  
+
   display: none;
-  
+
   @include respond(large) {
     display: inline;
   }
-
 }
 
 .progress-bar__long .progress-bar__step__label {

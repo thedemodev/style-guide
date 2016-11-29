@@ -32,6 +32,7 @@ $dropdown-arrow-width: 40px;
 
 .dropdown__label__text {
   @include ellipsis();
+
   order: 1;
   flex-grow: 1;
   max-width: 100%;

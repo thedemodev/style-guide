@@ -7,7 +7,6 @@
 
 .autocomplete__suggestions {
   position: absolute;
-
   width: 100%;
   z-index: $z-index-autocomplete;
 }
@@ -19,9 +18,7 @@
 
 .autocomplete__suggestions__item {
   padding: 10px 15px;
-
   background-color: $color-gray--mid;
-
   cursor: pointer;
 
   &:hover {

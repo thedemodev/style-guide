@@ -20,9 +20,9 @@
   -webkit-appearance: none;
 
   @include respond(medium) {
-      padding-right: 4px;
-      padding-bottom: 4px;
-    }
+    padding-right: 4px;
+    padding-bottom: 4px;
+  }
 
   &.has-error {
     border-color: $color-red;

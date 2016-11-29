@@ -65,6 +65,7 @@
 
 .header__main__item {
   @include make-column();
+
   height: 100%;
 }
 

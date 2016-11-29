@@ -66,6 +66,7 @@
 
 .footer-worldwide__text {
   @include make-font-medium-semibold();
+
   flex-grow: 1;
 
   @include respond(large) {

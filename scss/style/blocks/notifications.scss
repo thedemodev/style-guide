@@ -4,7 +4,7 @@
 @mixin make-notification__item-colors($color, $icon-color: white) {
   border-color: $color;
 
-  .notifications__item__icon-container{
+  .notifications__item__icon-container {
     background: $color;
     color: $icon-color;
   }
