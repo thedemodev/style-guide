@@ -1,5 +1,6 @@
 /* global window */
 
+import { autobind } from 'core-decorators'
 import $ from 'jquery'
 import lunr from 'lunr'
 
@@ -36,9 +37,9 @@ class Search {
     // load the search data / index
     this.searchData = getSearchData(this.$input.data('search-index-data'))
 
-    this.searchData.done(this.initIndex.bind(this))
+    this.searchData.done(this.initIndex)
 
-    this.searchData.fail(this.fail.bind(this))
+    this.searchData.fail(this.fail)
 
     // register keyboard events
     this.$input.on('keyup', e => {
@@ -93,6 +94,7 @@ class Search {
     }
   }
 
+  @autobind
   fail() {
     this.error = true
 
@@ -100,6 +102,7 @@ class Search {
     this.updateDisplay()
   }
 
+  @autobind
   initIndex(data) {
     this.searchData = data
     this.lunrIdx = lunr.Index.load(this.searchData.lunr)
