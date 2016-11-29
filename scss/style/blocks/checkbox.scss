@@ -7,9 +7,7 @@
   @include clearfix();
 
   display: block;
-
   margin-bottom: 15px;
-
   cursor: pointer;
 
   &:last-of-type {
@@ -19,9 +17,7 @@
 
 .checkbox__checkbox {
   float: left;
-
   margin: 4px 0 0 0;
-
   vertical-align: middle;
 
   .js & {
@@ -32,17 +28,21 @@
 .checkbox__label {
   margin-left: 18px;
 
-  .js & {
-    margin-left: 0;
-  }
-
   &:focus {
     outline: none;
+  }
+
+  .js & {
+    margin-left: 0;
   }
 }
 
 .checkbox__label__icon {
   display: none;
+
+  .checkbox__label:focus & {
+    border-color: $color-blue;
+  }
 
   .js & {
     display: block;
@@ -64,17 +64,12 @@
   &.is-active {
     fill-opacity: 1;
   }
-
-  .checkbox__label:focus & {
-    border-color: $color-blue;
-  }
 }
 
 .checkbox__label__text {
   .js & {
     padding-top: 5px;
     margin-left: 40px;
-
     line-height: 1.5; // TODO: use more global definition
 
     @include respond(medium) {
@@ -108,16 +103,6 @@
   transition: padding-bottom 0.15s, border-bottom 0.15s;
   user-select: none;
 
-  &.is-active {
-    color: $color-white;
-    background-color: $color-blue;
-  }
-
-  &:not(.is-active):hover {
-    padding-bottom: 3px;
-    border-bottom-width: 3px;
-  }
-
   .js & {
     .checkbox__label__icon {
       display: none;
@@ -126,6 +111,16 @@
     .checkbox__label__text {
       margin-left: 0;
     }
+  }
+
+  &.is-active {
+    color: $color-white;
+    background-color: $color-blue;
+  }
+
+  &:not(.is-active):hover {
+    padding-bottom: 3px;
+    border-bottom-width: 3px;
   }
 }
 
