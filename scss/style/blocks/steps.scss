@@ -1,6 +1,8 @@
 @import '../variables';
 @import '../mixins/font';
 
+/** @define steps */
+
 $steps-bullet-diameter: 32px !default;
 
 .steps {}

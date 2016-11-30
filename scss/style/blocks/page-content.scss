@@ -1,6 +1,8 @@
 @import '../variables';
 @import '../mixins/make-container';
 
+/** @define page-content */
+
 .page-content {
   @include make-container;
 

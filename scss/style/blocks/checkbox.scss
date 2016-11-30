@@ -3,6 +3,8 @@
 @import '../mixins/respond';
 @import '../mixins/invisible-input';
 
+/** @define checkbox */
+
 .checkbox {
   @include clearfix();
 

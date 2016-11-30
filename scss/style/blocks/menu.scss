@@ -4,6 +4,8 @@
 @import '../mixins/respond';
 @import '../mixins/word-break';
 
+/** @define menu */
+
 .menu {
   @include clearfix();
 

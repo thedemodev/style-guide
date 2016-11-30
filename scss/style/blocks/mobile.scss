@@ -6,6 +6,8 @@
 @import '../mixins/make-link';
 @import '../mixins/unstyle-list';
 
+/** @define mobile */
+
 .mobile {
   @include make-container();
 

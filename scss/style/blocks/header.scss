@@ -6,6 +6,8 @@
 @import '../mixins/make-column';
 @import '../mixins/respond';
 
+/** @define header */
+
 .header {
   border-bottom: 5px solid $color-blue;
 }

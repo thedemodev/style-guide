@@ -1,6 +1,8 @@
 @import '../mixins/font';
 @import '../variables';
 
+/** @define paragraph */
+
 .paragraph {
   @include make-font-medium();
 

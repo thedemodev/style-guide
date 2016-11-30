@@ -3,6 +3,8 @@
 @import '../mixins/make-link';
 @import './control';
 
+/** @define header-search */
+
 .header-search {
   @include make-link;
 

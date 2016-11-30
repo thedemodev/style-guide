@@ -2,6 +2,8 @@
 @import '../mixins/respond';
 @import '../mixins/invisible-font';
 
+/** @define brand */
+
 .brand {
   display: flex;
   padding: 20px $grid-gutter-width/2;

@@ -2,6 +2,8 @@
 @import '../mixins/clearfix';
 @import '../mixins/respond';
 
+/** @define fieldset */
+
 .fieldset {
   padding-bottom: 0;
   border-bottom: 1px dotted $color-blue;

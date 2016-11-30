@@ -1,6 +1,8 @@
 @import '../variables';
 @import '../mixins/respond';
 
+/** @define mobile-actions */
+
 .mobile-actions {
   display: flex;
 }

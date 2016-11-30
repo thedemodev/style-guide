@@ -1,5 +1,7 @@
 @import '../mixins/ellipsis';
 
+/** @define ellipsis */
+
 .ellipsis {
   @include ellipsis();
 }

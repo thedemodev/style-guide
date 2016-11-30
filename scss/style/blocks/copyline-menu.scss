@@ -2,6 +2,8 @@
 @import '../mixins/clearfix';
 @import '../mixins/respond';
 
+/** @define copyline-menu */
+
 .copyline-menu {
   @include clearfix();
 

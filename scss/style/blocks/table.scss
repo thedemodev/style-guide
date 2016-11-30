@@ -2,6 +2,8 @@
 @import '../mixins/clearfix';
 @import '../mixins/respond';
 
+/** @define table */
+
 @mixin make-ie9-block($display) {
   @include clearfix();
 

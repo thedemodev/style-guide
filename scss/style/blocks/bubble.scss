@@ -3,6 +3,8 @@
 @import '../mixins/respond';
 @import '../mixins/invisible-font';
 
+/** @define bubble */
+
 .bubble {
   position: relative;
   max-width: 640px;

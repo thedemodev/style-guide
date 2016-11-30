@@ -5,6 +5,8 @@
 @import '../blocks/checkbox';
 @import '../variables';
 
+/** @define segmented-control */
+
 .segmented-control {
   @extend .checkbox-group;
 

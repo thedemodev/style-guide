@@ -2,6 +2,8 @@
 @import '../mixins/make-container';
 @import '../mixins/unstyle-list';
 
+/** @define footer-copyline */
+
 .footer-copyline {
   background-color: $color-gray--lighter;
 }

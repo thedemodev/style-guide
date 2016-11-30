@@ -4,6 +4,8 @@
 @import '../mixins/respond';
 @import '../mixins/unstyle-list';
 
+/** @define meta-menu */
+
 .meta-menu {
   @include unstyle-list;
 

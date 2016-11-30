@@ -9,6 +9,8 @@
 @import '../variables';
 @import './icon';
 
+/** @define icon-teaser */
+
 .icon-teaser {
   @include make-container();
 

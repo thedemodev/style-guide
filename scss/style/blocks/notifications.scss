@@ -1,6 +1,8 @@
 @import '../variables';
 @import '../mixins/respond';
 
+/** @define notifications */
+
 @mixin make-notification__item-colors($color, $icon-color: white) {
   border-color: $color;
 

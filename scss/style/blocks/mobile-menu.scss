@@ -6,6 +6,8 @@
 @import '../mixins/unstyle-list';
 @import '../mixins/word-break';
 
+/** @define mobile-menu */
+
 .mobile-menu {
   @include unstyle-list();
 

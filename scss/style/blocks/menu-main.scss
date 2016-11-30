@@ -1,6 +1,8 @@
 @import '../variables';
 @import '../mixins/respond';
 
+/** @define menu-main */
+
 .menu-main {
   display: flex;
   align-items: flex-end;

@@ -1,6 +1,8 @@
 @import "../variables";
 @import '../mixins/respond';
 
+/** @define modal */
+
 $modal-padding: 15px;
 
 @mixin make-center {

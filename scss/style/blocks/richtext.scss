@@ -1,5 +1,7 @@
 @import '../mixins/richtext';
 
+/** @define richtext */
+
 .richtext {
   @include richtext-lift-successor(ul);
   @include richtext-lift-successor(h3);
