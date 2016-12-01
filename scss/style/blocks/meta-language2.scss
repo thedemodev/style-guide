@@ -52,7 +52,7 @@
   background-color: $color-gray--lighter;
   opacity: 0;
   pointer-events: none;
-  z-index: 10;
+  z-index: $z-index-meta-language2__menu;
 }
 
 .meta-language2__menu.is-open {

@@ -36,7 +36,7 @@
 
 .picker__header {
   padding: 10px 10px 0 10px;
-  color: white;
+  color: $color-white;
 }
 
 .picker__headline {
@@ -76,7 +76,7 @@
   display: inline-block;
   width: 11px;
   height: 17px;
-  fill: white;
+  fill: $color-white;
 }
 
 .picker__prev {
@@ -110,14 +110,14 @@
   @include make-picker-cell();
 
   color: $color-light-blue;
-  background: white;
+  background: $color-white;
 
   cursor: pointer;
 
   &:hover,
   &.is-active {
     background: $color-light-blue;
-    color: white;
+    color: $color-white;
   }
 }
 
@@ -129,7 +129,7 @@
   font-size: 0.9285em;
 
   background: transparent;
-  color: white;
+  color: $color-white;
 
   cursor: default;
 
@@ -141,18 +141,18 @@
 .picker__day--prev-month,
 .picker__day--next-month {
   background: $color-gray;
-  color: white;
+  color: $color-white;
 }
 
 .picker__day--disabled {
   background: $color-gray--dark;
-  color: white;
+  color: $color-white;
 
   cursor: default;
 
   &:hover {
     background: $color-gray--dark;
-    color: white;
+    color: $color-white;
   }
 }
 
@@ -160,7 +160,7 @@
   @include make-picker-cell();
 
   background: transparent;
-  color: white;
+  color: $color-white;
   font-size: 0.8em;
 }
 

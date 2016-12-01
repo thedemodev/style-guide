@@ -14,7 +14,7 @@
   line-height: 36px;
 
   background: $color-gray--lighter;
-  color: black;
+  color: $color-black;
   border-radius: 0;
 }
 
@@ -51,7 +51,7 @@
 @mixin control--condensed {
   height: $control-height-condensed;
   line-height: $control-height-condensed;
-  font-size: 14px;
+  font-size: $control-font-size-condensed;
 }
 
 .control--condensed {

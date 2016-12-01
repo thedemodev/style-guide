@@ -63,12 +63,12 @@
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: $z-index-menu-main__panel;
 
   display: none;
   padding: 0.5rem 1.5rem 2rem;
 
-  background-color: white;
+  background-color: $color-white;
   border-top: 5px solid $color-blue;
   border-bottom: 5px solid $color-blue;
   box-shadow: 25px 0 34px -12px rgba($color-black, 0.25), -25px 0 34px -12px rgba($color-black, 0.25), 0 25px 34px -12px rgba($color-black, 0.25);

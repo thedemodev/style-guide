@@ -55,7 +55,7 @@
     border: 1px solid $color-gray;
     fill-opacity: 0;
     fill: $color-light-blue;
-    background: white;
+    background: $color-white;
 
     @include respond(medium) {
       width: 25px;

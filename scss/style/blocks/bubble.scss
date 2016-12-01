@@ -21,7 +21,7 @@
     height: 30px;
     width: 30px;
     border-left: 30px solid $color-light-blue;
-    border-bottom: 30px solid white;
+    border-bottom: 30px solid $color-white;
   }
 }
 
@@ -36,7 +36,7 @@
 .bubble__content {
   margin-right: 220px;
   padding: 30px;
-  color: white;
+  color: $color-white;
 }
 
 .bubble__title {
@@ -44,7 +44,7 @@
 }
 
 .bubble__title__text {
-  border-bottom: 4px solid white;
+  border-bottom: 4px solid $color-white;
   padding: 0 50px 5px 1px;
   float: left;
 }

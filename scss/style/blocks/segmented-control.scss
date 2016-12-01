@@ -45,7 +45,7 @@
         color: $color-gray;
 
         &.is-active {
-          color: white;
+          color: $color-white;
           background-color: $color-gray;
         }
       }
@@ -78,7 +78,7 @@
 
   &.is-active {
     background: $color-light-blue;
-    color: white;
+    color: $color-white;
     border-top-color: $color-light-blue;
     border-bottom-color: $color-light-blue;
     border-left-color: $color-light-blue;

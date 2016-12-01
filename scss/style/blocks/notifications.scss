@@ -3,7 +3,7 @@
 
 /** @define notifications */
 
-@mixin make-notification__item-colors($color, $icon-color: white) {
+@mixin make-notification__item-colors($color, $icon-color: $color-white) {
   border-color: $color;
 
   .notifications__item__icon-container {
@@ -25,7 +25,7 @@
   min-height: 60px;
   margin: 20px;
   //padding: 20px 30px 20px 60px;
-  background: white;
+  background: $color-white;
   border: 1px solid transparent;
   box-shadow: 0 0 5px rgba($color-black, 0.2);
   animation: notifications__item--fade-in 0.5s;

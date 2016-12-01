@@ -33,7 +33,7 @@ $modal-padding: 15px;
   padding: $modal-padding;
 
   overflow: auto;
-  background: white;
+  background: $color-white;
 
   @include respond(medium) {
     position: static;
@@ -50,7 +50,7 @@ $modal-padding: 15px;
   width: 100%;
   min-height: 100%;
 
-  background: white;
+  background: $color-white;
 
   @include respond(medium) {
     @include make-center();
@@ -83,7 +83,7 @@ $modal-padding: 15px;
     height: 115px;
     padding: 0;
 
-    background: white;
+    background: $color-white;
   }
 }
 
@@ -98,10 +98,10 @@ $modal-padding: 15px;
   text-align: center;
   line-height: 40px;
 
-  color: white;
+  color: $color-white;
 
   &:hover {
-    color: white;
+    color: $color-white;
     cursor: pointer;
   }
 
@@ -157,7 +157,7 @@ $modal-padding: 15px;
     padding: 0;
     border-top: none;
 
-    background: white;
+    background: $color-white;
   }
 }
 

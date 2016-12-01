@@ -41,7 +41,7 @@
 .heading--modal {
   margin: 0;
   font-size: 18px;
-  color: white;
+  color: $color-white;
 
   @include respond(medium) {
     padding: 0 $grid-gutter-width/2 18px;
@@ -52,7 +52,7 @@
     font-weight: 700;
 
     color: $color-black;
-    background: white;
+    background: $color-white;
   }
 }
 

@@ -20,7 +20,7 @@ $dialog-padding: 15px;
 }
 
 .dialog__header {
-  color: white;
+  color: $color-white;
   background: $color-blue;
   margin-top: 0;
   padding: 0 15px;
@@ -41,7 +41,7 @@ $dialog-padding: 15px;
   padding: 10px 0;
 
   @include respond(medium) {
-    padding: 0 $grid-gutter-width/2 18px;
+    padding: 0 ($grid-gutter-width / 2) 18px;
     margin-top: 54px;
 
     line-height: 1.15;

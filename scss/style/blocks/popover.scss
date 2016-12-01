@@ -78,7 +78,7 @@
 
 .popover__box__header__headline {
   font-size: 18px;
-  color: white;
+  color: $color-white;
 
   @include respond(medium) {
     color: $color-light-blue;

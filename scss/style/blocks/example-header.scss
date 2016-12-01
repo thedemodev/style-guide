@@ -13,7 +13,7 @@ $example-header__sticky-height--medium: 70px !default;
 }
 
 .example-header__text {
-  color: white;
+  color: $color-white;
   padding: 20px 0;
 
   @include respond(medium) {
@@ -60,11 +60,11 @@ $example-header__sticky-height--medium: 70px !default;
 }
 
 .example-header__link {
-  color: white;
+  color: $color-white;
   text-decoration: underline;
 
   &:hover {
-    color: white;
+    color: $color-white;
   }
 }
 
@@ -79,7 +79,7 @@ $example-header__sticky-height--medium: 70px !default;
   line-height: $example-header__sticky-height;
   font-size: 0;
 
-  color: white;
+  color: $color-white;
 
   @include respond(medium) {
     height: $example-header__sticky-height--medium;
@@ -88,7 +88,7 @@ $example-header__sticky-height--medium: 70px !default;
   }
 
   &:hover {
-    color: white;
+    color: $color-white;
   }
 
   &:before {
@@ -113,7 +113,7 @@ $example-header__sticky-height--medium: 70px !default;
   font-size: 20px;
   line-height: $example-header__sticky-height;
 
-  color: white;
+  color: $color-white;
 
   @include respond(medium) {
     line-height: $example-header__sticky-height--medium;
