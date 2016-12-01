@@ -3,7 +3,8 @@
   "plugins": [
     "stylelint-order",
     "stylelint-scss",
-    "stylelint-selector-bem-pattern"
+    "stylelint-selector-bem-pattern",
+    "stylelint-declaration-use-variable"
   ],
   "rules": {
     "order/declaration-block-property-groups-structure": [
@@ -170,6 +171,7 @@
         "initial": "\\.{componentName}(:?__[a-z0-9]+(:?-[a-z0-9]+)*)*(:?--[a-z0-9]+(:?-[a-z0-9]+)*)?(?:\\.(:?is|has)-[a-z0-9]+(:?-[a-z0-9]+)*)*$"
       }
     },
+    "sh-waqar/declaration-use-variable": [["/color/", "z-index", "font-size"]],
     "scss/at-extend-no-missing-placeholder": true,
     "scss/at-function-pattern": "[a-z]+(:?-[a-z]+)*",
     "scss/at-import-no-partial-leading-underscore": true,
