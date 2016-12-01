@@ -29,7 +29,7 @@
 }
 
 .progress-container__label {
-  padding: 0 $grid-gutter-width/2;
+  padding: 0 ($grid-gutter-width / 2);
 
   font-size: 17px;
   text-align: center;

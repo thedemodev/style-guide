@@ -78,7 +78,7 @@ $dropdown-arrow-width: 40px;
 
 .js .dropdown__label--large {
   height: 3rem;
-  padding: 0 $grid-gutter-width/2 - 0.25rem;
+  padding: 0 ($grid-gutter-width / 2) - 0.25rem;
 }
 
 .dropdown__label__icon--large {

@@ -32,7 +32,7 @@
   display: block;
 
   height: 100%;
-  padding: 8px $grid-gutter-width/2;
+  padding: 8px ($grid-gutter-width / 2);
 
   border-bottom: 5px solid transparent;
   text-decoration: none;

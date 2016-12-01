@@ -114,7 +114,7 @@ $dropdown-icon-size--condensed: 1rem; // 16px
     }
 
     /* Fix Firefox doubles text-indent value */
-    text-indent: $dropdown-indent/2;
+    text-indent: ($dropdown-indent / 2);
   }
 }
 
@@ -132,7 +132,7 @@ $dropdown-icon-size--condensed: 1rem; // 16px
 
   @include target(moz) {
     /* Fix Firefox doubles text-indent value */
-    text-indent: $dropdown-indent--large/2;
+    text-indent: ($dropdown-indent--large / 2);
   }
 }
 
@@ -149,7 +149,7 @@ $dropdown-icon-size--condensed: 1rem; // 16px
 
   @include target(moz) {
     /* Fix Firefox doubles text-indent value */
-    text-indent: $dropdown-indent--condensed/2;
+    text-indent: ($dropdown-indent--condensed / 2);
   }
 }
 
@@ -178,7 +178,7 @@ $dropdown-icon-size--condensed: 1rem; // 16px
   display: block;
   position: relative;
   top: 50%;
-  margin-top: -$dropdown-icon-size/2;
+  margin-top: -($dropdown-icon-size / 2);
   width: $dropdown-icon-size;
   height: $dropdown-icon-size;
 }
@@ -186,11 +186,11 @@ $dropdown-icon-size--condensed: 1rem; // 16px
 .dropdown-2__icon--large {
   width: $dropdown-icon-size--large;
   height: $dropdown-icon-size--large;
-  margin-top: -$dropdown-icon-size--large/2;
+  margin-top: -($dropdown-icon-size--large / 2);
 }
 
 .dropdown-2__icon--condensed {
   width: $dropdown-icon-size--condensed;
   height: $dropdown-icon-size--condensed;
-  margin-top: -$dropdown-icon-size--condensed/2;
+  margin-top: -($dropdown-icon-size--condensed / 2);
 }

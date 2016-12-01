@@ -44,7 +44,7 @@
   color: $color-white;
 
   @include respond(medium) {
-    padding: 0 $grid-gutter-width/2 18px;
+    padding: 0 ($grid-gutter-width / 2) 18px;
     margin-top: 54px;
 
     line-height: 1.15;

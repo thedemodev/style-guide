@@ -95,7 +95,7 @@
 
   order: 5;
   flex-shrink: 0;
-  padding: 0 $grid-gutter-width/2;
+  padding: 0 ($grid-gutter-width / 2);
 
   color: $color-white;
   background: $color-red;
