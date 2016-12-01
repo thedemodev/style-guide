@@ -10,7 +10,7 @@
 .tab-panel__header {
   @include clearfix();
 
-  margin: 0 0 2px 0;
+  margin: 0 0 2px;
 }
 
 .tab-panel__header__tabs {
@@ -23,7 +23,7 @@
   float: left;
 
   height: 32px;
-  padding: 4px 25px 6px 25px;
+  padding: 4px 25px 6px;
   border: 1px solid $color-gray--dark;
   margin: 0 0 0 3px;
 
@@ -32,7 +32,7 @@
   &:hover,
   &.is-active {
     //remove border top, left and right and add 1px to padding
-    padding: 5px 26px 6px 26px;
+    padding: 5px 26px 6px;
     border: none;
     border-bottom: 6px solid $color-light-blue--light;
 

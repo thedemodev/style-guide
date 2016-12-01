@@ -10,7 +10,7 @@
 .heading--page {
   @include make-font-heading-primary();
 
-  margin: 0 0 40px 0;
+  margin: 0 0 40px;
 
   color: $color-blue;
 }
@@ -33,7 +33,7 @@
 .heading--tertiary {
   @include make-font-heading-tertiary();
 
-  margin: 50px 0 20px 0;
+  margin: 50px 0 20px;
 
   color: $color-black;
 }
@@ -73,14 +73,14 @@
 }
 
 .heading--summary {
-  margin: 21px 0 6px 0;
+  margin: 21px 0 6px;
 
   font-size: 1em;
   line-height: 1.5;
   font-weight: bold;
 
   @include respond(medium) {
-    margin: 22px 0 1px 0;
+    margin: 22px 0 1px;
   }
 }
 
