@@ -23,10 +23,10 @@
 .meta-menu__item.is-active {
   background: $color-white;
   box-shadow:
-    -4px 0px 3px -3px $color-gray--mid,
-    3px 0px 3px -3px $color-gray--mid,
-    0 0px 0px 0 $color-white,
-    0 0px 0px 0 $color-white;
+    -4px 0 3px -3px $color-gray--mid,
+    3px 0 3px -3px $color-gray--mid,
+    0 0 0 0 $color-white,
+    0 0 0 0 $color-white;
 }
 
 .meta-menu__link {

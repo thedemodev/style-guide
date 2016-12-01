@@ -27,7 +27,7 @@
   //padding: 20px 30px 20px 60px;
   background: white;
   border: 1px solid transparent;
-  box-shadow: 0 0 5px rgba($color-black, .2);
+  box-shadow: 0 0 5px rgba($color-black, 0.2);
   animation: notifications__item--fade-in 0.5s;
   transition: opacity 0.5s ease, height 0.5s ease, margin 0.5s ease, top 0.5s ease;
   position: relative; // used for animations
