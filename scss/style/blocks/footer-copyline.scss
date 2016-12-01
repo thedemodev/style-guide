@@ -58,7 +58,7 @@
 }
 
 .footer-copyline__entries {
-  @include unstyle-list;
+  @include unstyle-list();
 
   display: flex;
   margin: 0 -10px;

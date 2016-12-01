@@ -10,7 +10,7 @@
 }
 
 .form__group {
-  @include make-row;
+  @include make-row();
 
   margin-bottom: 15px;
 
@@ -36,7 +36,7 @@
 }
 
 .form__group__label {
-  @include make-column;
+  @include make-column();
   @include make-column-span(12);
 
   @include clearfix();
@@ -82,7 +82,7 @@
 }
 
 .form__group__control {
-  @include make-column;
+  @include make-column();
   @include make-column-span(12);
 
   @include respond(medium) {
@@ -95,7 +95,7 @@
 }
 
 .form__group__control--fullwidth {
-  @include make-column;
+  @include make-column();
 
   @include respond(medium) {
     @include make-column-span(12);

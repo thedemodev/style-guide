@@ -19,7 +19,7 @@
 }
 
 .control {
-  @include control;
+  @include control();
 }
 
 @mixin control--input {
@@ -37,7 +37,7 @@
 }
 
 .control--input {
-  @include control--input;
+  @include control--input();
 }
 
 @mixin control--short {
@@ -45,7 +45,7 @@
 }
 
 .control--short {
-  @include control--short;
+  @include control--short();
 }
 
 @mixin control--condensed {
@@ -55,7 +55,7 @@
 }
 
 .control--condensed {
-  @include control--condensed;
+  @include control--condensed();
 }
 
 .control--textarea {

@@ -9,7 +9,7 @@
 $dropdown-arrow-width: 40px;
 
 .dropdown {
-  @include make-link;
+  @include make-link();
 
   position: relative;
 }
@@ -18,7 +18,7 @@ $dropdown-arrow-width: 40px;
   display: none;
 
   .js & {
-    @include control;
+    @include control();
     color: inherit; // reset color set in .control
     display: flex;
     align-items: center;
@@ -87,7 +87,7 @@ $dropdown-arrow-width: 40px;
 }
 
 .js .dropdown__label--condensed {
-  @include control--condensed;
+  @include control--condensed();
 }
 
 .dropdown__label__icon--condensed {

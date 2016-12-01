@@ -24,7 +24,7 @@
 }
 
 .footer-worldwide__entities {
-  @include unstyle-list;
+  @include unstyle-list();
 
   margin: 0 -30px;
 

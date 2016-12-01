@@ -6,7 +6,7 @@
 /** @define mobile-languages */
 
 .mobile-languages {
-  @include unstyle-list;
+  @include unstyle-list();
 
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
 
 .mobile-languages__link {
   @include make-font-large();
-  @include make-link;
+  @include make-link();
 
   display: flex;
   width: 4rem;

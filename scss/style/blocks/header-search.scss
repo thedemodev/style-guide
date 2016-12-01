@@ -6,15 +6,15 @@
 /** @define header-search */
 
 .header-search {
-  @include make-link;
+  @include make-link();
 
   display: flex;
 }
 
 .header-search__input {
   @include make-font-large();
-  @include control;
-  @include control--input;
+  @include control();
+  @include control--input();
 
   height: 100%;
   width: 17rem;

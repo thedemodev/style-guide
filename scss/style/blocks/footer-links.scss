@@ -21,7 +21,7 @@
 }
 
 .footer-links__menu {
-  @include unstyle-list;
+  @include unstyle-list();
 
   margin: 0 -30px;
 

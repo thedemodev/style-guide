@@ -87,7 +87,7 @@
 
 .header__meta__item--action {
   @include make-font-small-semibold();
-  @include make-link;
+  @include make-link();
 
   display: flex;
   align-items: center;
