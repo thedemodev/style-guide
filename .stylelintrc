@@ -57,6 +57,30 @@
         "emptyLineBefore": "always",
         "order": "strict",
         "properties": [
+          "flex-flow",
+          "flex-direction",
+          "flex-wrap",
+          "justify-content",
+          "align-items",
+          "align-content"
+        ]
+      },
+      {
+        "emptyLineBefore": "always",
+        "order": "strict",
+        "properties": [
+          "order",
+          "flex",
+          "flex-grow",
+          "flex-shrink",
+          "flex-basis",
+          "align-self"
+        ]
+      },
+      {
+        "emptyLineBefore": "always",
+        "order": "strict",
+        "properties": [
           "font",
           "font-family",
           "font-size",
