@@ -171,7 +171,7 @@
         "initial": "\\.{componentName}(:?__[a-z0-9]+(:?-[a-z0-9]+)*)*(:?--[a-z0-9]+(:?-[a-z0-9]+)*)?(?:\\.(:?is|has)-[a-z0-9]+(:?-[a-z0-9]+)*)*$"
       }
     },
-    "sh-waqar/declaration-use-variable": [["/color/", "z-index", "font-size"]],
+    "sh-waqar/declaration-use-variable": [["/color/", "fill", "stroke", "z-index", "font-size"]],
     "scss/at-extend-no-missing-placeholder": true,
     "scss/at-function-pattern": "[a-z]+(:?-[a-z]+)*",
     "scss/at-import-no-partial-leading-underscore": true,
