@@ -1,5 +1,6 @@
 /* global window, document */
 
+import autobind from 'core-decorators/lib/autobind'
 import $ from 'jquery'
 import Bacon from 'baconjs'
 import registerPlugin from './register-plugin'
@@ -121,9 +122,6 @@ class Modal2 {
     this.$html = $(document.documentElement)
     this.$body = $(document.body)
 
-    this.close = this.close.bind(this)
-    this.restrictFocus = this.restrictFocus.bind(this)
-
     this.init()
     this.isOpen = false
   }
@@ -210,7 +208,7 @@ class Modal2 {
       this.$body.addClass(this.options.classes.body)
     }
 
-    const preventDefault = this.options.onBeforeOpen(this, insert.bind(this))
+    const preventDefault = this.options.onBeforeOpen(this, this.insert)
 
     if (preventDefault === false) {
       return
@@ -219,27 +217,28 @@ class Modal2 {
     const href = this.element.href || this.options.href
 
     if (href) {
-      this.load(href, insert.bind(this))
+      this.load(href, this.insert)
     } else {
-      insert.call(this, this.options.html || $(this.options['']).clone())
+      this.insert(this.options.html || $(this.options['']).clone())
+    }
+  }
+
+  @autobind
+  insert(html) {
+    if (html) {
+      this.$content.append(html)
     }
 
-    function insert(html) {
-      if (html) {
-        this.$content.append(html)
-      }
+    this.$modal.addClass(this.options.classes.open)
+    this.$html.append(this.$modal)
 
-      this.$modal.addClass(this.options.classes.open)
-      this.$html.append(this.$modal)
-
-      if (this.options.autofocus) {
-        this.$content.focus()
-      }
-
-      this.bind()
-
-      this.options.onAfterOpen(this)
+    if (this.options.autofocus) {
+      this.$content.focus()
     }
+
+    this.bind()
+
+    this.options.onAfterOpen(this)
   }
 
   load(url, callback) {
@@ -262,6 +261,7 @@ class Modal2 {
     })
   }
 
+  @autobind
   restrictFocus(event) {
     if (!$.contains(this.$modal[0], event.target)) {
       event.stopPropagation()
@@ -269,6 +269,7 @@ class Modal2 {
     }
   }
 
+  @autobind
   close() {
     if (!this.isOpen) return
     this.isOpen = false

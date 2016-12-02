@@ -1,5 +1,6 @@
 /* global window, document */
 
+import autobind from 'core-decorators/lib/autobind'
 import $ from 'jquery'
 import Bacon from 'baconjs'
 import registerPlugin from './register-plugin'
@@ -13,11 +14,6 @@ class SegmentedControl {
   static DEFAULTS
 
   constructor(element, options) {
-    this.handleKeyUp = this.handleKeyUp.bind(this)
-    this.handleKeyDown = this.handleKeyDown.bind(this)
-    this.setRadioState = this.setRadioState.bind(this)
-    this.stackControlsIfNeeded = this.stackControlsIfNeeded.bind(this)
-
     this.$element = $(element)
     const disabled = this.$element.is('[disabled=disabled]')
 
@@ -59,6 +55,7 @@ class SegmentedControl {
       .onValue(this.stackControlsIfNeeded)
   }
 
+  @autobind
   stackControlsIfNeeded() {
     const $element = this.$element
 
@@ -73,6 +70,7 @@ class SegmentedControl {
   }
 
   // Spacewar will activate first item if none is active
+  @autobind
   handleKeyUp(e) {
     if (e.which === 32) {
       e.preventDefault()
@@ -86,6 +84,7 @@ class SegmentedControl {
   }
 
   // Arrows will activate the next/previous radio
+  @autobind
   handleKeyDown(e) {
     let $checked
 
@@ -143,6 +142,7 @@ class SegmentedControl {
     }
   }
 
+  @autobind
   setRadioState() {
     this.$radios.each((index, element) => {
       const $radio = $(element)

@@ -1,12 +1,12 @@
 /* global window, document */
 
+import autobind from 'core-decorators/lib/autobind'
 import $ from 'jquery'
 import registerPlugin from './register-plugin'
 
 // Public class definition
 class Popover {
   constructor(element, options) {
-    this.position = this.position.bind(this)
     this.element = element
     this.$element = $(element)
     this.options = {
@@ -33,6 +33,7 @@ class Popover {
     event.data.$target.toggleClass('is-active')
   }
 
+  @autobind
   position() {
     const $box = this.$target.find('.popover__box')
     const $tail = this.$target.find('.popover__tail')

@@ -1,5 +1,6 @@
 /* global document */
 
+import autobind from 'core-decorators/lib/autobind'
 import $ from 'jquery'
 import registerPlugin from './register-plugin'
 import icon from './icon'
@@ -109,10 +110,11 @@ class Dialog {
       closeEnabled: false,
       html: this.dialog,
       mode: 'fullscreen',
-      onBeforeClose: this.close.bind(this),
+      onBeforeClose: this.close,
     })
   }
 
+  @autobind
   close() {
     if (!this.isOpen) return
     this.isOpen = false

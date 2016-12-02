@@ -1,10 +1,11 @@
+import autobind from 'core-decorators/lib/autobind'
+
 class Emitter {
   constructor() {
-    this.on = this.on.bind(this)
-    this.emit = this.emit.bind(this)
     this.events = {}
   }
 
+  @autobind
   on(eventName, cb) {
     // lazy pollute events map
     if (!(eventName in this.events)) {
@@ -13,6 +14,7 @@ class Emitter {
     this.events[eventName].push(cb)
   }
 
+  @autobind
   emit(eventName, ...args) {
     if (eventName in this.events) {
       this.events[eventName].map((fx) =>

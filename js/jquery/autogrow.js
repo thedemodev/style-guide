@@ -1,5 +1,6 @@
 /* global window, document */
 
+import autobind from 'core-decorators/lib/autobind'
 import $ from 'jquery'
 import registerPlugin from './register-plugin'
 
@@ -9,8 +10,6 @@ class Autogrow {
     this.element = element
     this.$element = $(element)
     this.options = $.extend({}, options)
-
-    this.update = this.update.bind(this)
 
     this.init()
   }
@@ -38,6 +37,8 @@ class Autogrow {
 
     $(window).resize(this.update)
   }
+
+  @autobind
   update(event) {
     if (this.element) {
       let val = this.element.value.replace(/</g, '&lt')

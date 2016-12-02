@@ -1,5 +1,6 @@
 /* global window, document */
 
+import autobind from 'core-decorators/lib/autobind'
 import $ from 'jquery'
 import moment from 'moment'
 import registerPlugin from './register-plugin'
@@ -33,11 +34,11 @@ class Picker extends Emitter {
 
     this.$prev = append('<div class="picker__prev"></div>', this.$header)
     this.$prev.append(this.createIcon('prev'))
-    this.$prev.on('click', this.onPrevClick.bind(this))
+    this.$prev.on('click', this.onPrevClick)
 
     this.$next = append('<div class="picker__next"></div>', this.$header)
     this.$next.append(this.createIcon('next'))
-    this.$next.on('click', this.onNextClick.bind(this))
+    this.$next.on('click', this.onNextClick)
 
     this.$headline = append('<div class="picker__headline" ></div>', this.$header)
     this.$headline__month = append('<span class="picker__headline__month" ></span>', this.$headline)
@@ -188,6 +189,7 @@ class Picker extends Emitter {
     this.updateDisplay()
   }
 
+  @autobind
   onPrevClick(e) {
     e.preventDefault()
 
@@ -195,6 +197,7 @@ class Picker extends Emitter {
     this.updateDisplay()
   }
 
+  @autobind
   onNextClick(e) {
     e.preventDefault()
 
@@ -211,8 +214,6 @@ class Datepicker {
   }
 
   constructor(element, options) {
-    this.onChange = this.onChange.bind(this)
-    this.onChangeMobileTrigger = this.onChangeMobileTrigger.bind(this)
     this.options = options
     this.moment = options.moment
     this.setLocale(options.locale)
@@ -252,6 +253,7 @@ class Datepicker {
     }
   }
 
+  @autobind
   onChange() {
     if (isMobile) {
       this.$triggerMobile.val(this.$input.val())
@@ -264,6 +266,7 @@ class Datepicker {
     }
   }
 
+  @autobind
   onChangeMobileTrigger() {
     this.$input.val(this.$triggerMobile.val())
     this.$input.trigger('change')
