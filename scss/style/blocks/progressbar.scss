@@ -4,6 +4,7 @@
 
 .progressbar {
   position: relative;
+
   margin-left: 10px;
 }
 
@@ -14,6 +15,7 @@
 
 .progressbar__progress-background {
   height: 20px;
+
   background-color: $color-gray;
 }
 
@@ -32,30 +34,30 @@
   width: 100%;
   padding-right: 65px;
   margin-left: 4px;
-
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
   overflow: hidden;
+
   color: $color-white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.progressbar__percentage, .progressbar__error {
+.progressbar__percentage,
+.progressbar__error {
   position: absolute;
-  float: right;
   right: 0;
 
+  float: right;
   width: 55px;
   padding: 0 10px 0 0;
 
-  text-align: right;
   font-weight: bold;
-
   color: $color-light-blue;
+  text-align: right;
 }
 
 .progressbar__progress-error {
   height: 20px;
+
   background-color: $color-red;
 }
 

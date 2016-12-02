@@ -4,26 +4,26 @@
 
 @mixin make-picker-cell {
   display: table-cell;
-
-  height: 32px;
   width: 31px;
+  height: 32px;
   padding: 0;
-  border: 3px solid $color-gray--dark;
 
   text-align: center;
   vertical-align: middle;
+
+  border: 3px solid $color-gray--dark;
 }
 
 .picker {
-  display: none;
   position: absolute;
-
-  width: 260px;
-  border-collapse: collapse;
-  margin-top: 6px;
   z-index: $z-index-datepicker;
 
+  display: none;
+  width: 260px;
+  margin-top: 6px;
+
   background: $color-gray--dark;
+  border-collapse: collapse;
 
   &.is-active {
     display: block;
@@ -36,19 +36,21 @@
 
 .picker__header {
   padding: 10px 10px 0;
+
   color: $color-white;
 }
 
 .picker__headline {
   margin: 0 30px;
 
-  line-height: 31px;
   font-size: 1.1428em;
+  line-height: 31px;
   text-align: center;
 }
 
 .picker__headline__month {
   display: inline;
+
   font-weight: bold;
 }
 
@@ -60,7 +62,6 @@
   height: 30px;
 
   text-align: center;
-
   cursor: pointer;
 
   &:hover {
@@ -76,6 +77,7 @@
   display: inline-block;
   width: 11px;
   height: 17px;
+
   fill: $color-white;
 }
 
@@ -110,14 +112,15 @@
   @include make-picker-cell();
 
   color: $color-light-blue;
-  background: $color-white;
-
   cursor: pointer;
+
+  background: $color-white;
 
   &:hover,
   &.is-active {
-    background: $color-light-blue;
     color: $color-white;
+
+    background: $color-light-blue;
   }
 }
 
@@ -127,11 +130,10 @@
 
 .picker__day--headline {
   font-size: 0.9285em;
+  color: $color-white;
+  cursor: default;
 
   background: transparent;
-  color: $color-white;
-
-  cursor: default;
 
   &:hover {
     background: transparent;
@@ -140,32 +142,34 @@
 
 .picker__day--prev-month,
 .picker__day--next-month {
-  background: $color-gray;
   color: $color-white;
+
+  background: $color-gray;
 }
 
 .picker__day--disabled {
-  background: $color-gray--dark;
   color: $color-white;
-
   cursor: default;
 
+  background: $color-gray--dark;
+
   &:hover {
-    background: $color-gray--dark;
     color: $color-white;
+
+    background: $color-gray--dark;
   }
 }
 
 .picker__weeknumber {
   @include make-picker-cell();
 
-  background: transparent;
-  color: $color-white;
   font-size: 0.8em;
+  color: $color-white;
+
+  background: transparent;
 }
 
 .picker__weeknumber--headline {
-
 }
 
 // Copyright AXA Versicherungen AG 2015

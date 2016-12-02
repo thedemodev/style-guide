@@ -5,64 +5,63 @@
 
 .menu-main {
   display: flex;
-  align-items: flex-end;
-
   padding: 0;
   margin: 0;
 
-  list-style-type: none;
+  align-items: flex-end;
 
   font-size: 1.1em;
   font-weight: $font-weight-medium;
+  list-style-type: none;
 }
 
 .menu-main__item {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .menu-main__link.is-active,
 .menu-main__link:hover {
-  border-color: $color-blue;
   color: $color-blue;
   cursor: pointer;
+
+  border-color: $color-blue;
 }
 
 .menu-main__link {
   display: block;
-
   height: 100%;
-  padding: 8px ($grid-gutter-width / 2);
+  padding: 8px ($grid-gutter-width / 2) 1rem;
+
+  line-height: 1.2;
+  color: $color-gray--darker;
+  text-align: center;
+  text-decoration: none;
 
   border-bottom: 5px solid transparent;
-  text-decoration: none;
-  text-align: center;
-  line-height: 1.2;
-  padding-bottom: 1rem;
-
-  color: $color-gray--darker;
 }
 
 .menu-main__link__home {
+  display: inline-block;
   width: 16px;
   height: 44px;
+
   fill: currentColor;
-  display: inline-block;
 }
 
 .menu-main__content {
-  display: none;
-
   position: absolute;
   top: 155px;
-  left: 0;
   right: 0;
+  left: 0;
+
+  display: none;
 }
 
 .menu-main__panel {
   position: absolute;
-  left: 0;
   right: 0;
+  left: 0;
   z-index: $z-index-menu-main__panel;
 
   display: none;

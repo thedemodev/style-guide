@@ -6,7 +6,6 @@
 
 .list-group {
   display: block;
-
   padding: 0;
 }
 
@@ -14,11 +13,11 @@
   @include make-font-large();
 
   display: flex;
-  align-items: center;
-
   min-height: 3.5rem;
-  margin-bottom: -1px;
   padding: 0 ($grid-gutter-width / 2 - 0.25rem);
+  margin-bottom: -1px;
+
+  align-items: center;
 
   border-top: 1px solid $color-gray--light;
   border-bottom: 1px solid $color-gray--light;

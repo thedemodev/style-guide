@@ -3,9 +3,10 @@
 /** @define checklist */
 
 .checklist {
-  list-style-type: none;
-  margin: 25px 0 35px;
   padding: 0;
+  margin: 25px 0 35px;
+
+  list-style-type: none;
 }
 
 .checklist__item {
@@ -15,7 +16,6 @@
 .checklist__item__icon {
   display: inline-block;
   float: left;
-
   width: 40px;
   margin-top: 2px;
 

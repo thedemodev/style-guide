@@ -3,25 +3,27 @@
 /** @define toc */
 
 .toc {
-
 }
 
 .toc__title {
+  margin: 30px 0 10px;
+
   // TODO: font-size -1px
   color: $color-blue;
-  margin: 30px 0 10px;
 }
 
 .toc__anchor-navigation {
-  margin: 0;
   padding: 0;
-  border-left: 6px solid $color-blue;
+  margin: 0;
+
   list-style-type: none;
+
+  border-left: 6px solid $color-blue;
 }
 
 .toc__anchor-navigation__item {
-  margin: 0 0 14px 15px;
   padding: 0;
+  margin: 0 0 14px 15px;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -33,10 +35,9 @@
   text-decoration: none;
 
   &:hover {
-    color: $color-light-blue--light;
     font-weight: $font-weight-medium;
+    color: $color-light-blue--light;
   }
-
 }
 
 // Copyright AXA Versicherungen AG 2015

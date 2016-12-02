@@ -11,8 +11,7 @@
 .footer-social__headline {
   @include make-font-heading-tertiary();
 
-  padding: 48px 0;
-  padding-bottom: 24px;
+  padding: 48px 0 24px;
   margin: 0;
 
   @include respond(large) {

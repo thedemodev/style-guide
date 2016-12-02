@@ -1,13 +1,12 @@
 @import '../variables';
 
 /** @define multi-upload */
-/** @define file-list */
-/** @define file-error */
-/** @define file-uploaded */
 
 .multi-upload__remarks {
   margin: 10px 0;
 }
+
+/** @define file-list */
 
 .file-list {
   margin-top: 10px;
@@ -15,33 +14,36 @@
 
 .file-list__file {
   padding: 15px 10px;
-  border-width: 1px;
-  border-bottom-width: 0;
 
-  border-color: $color-gray;
-  border-style: solid;
+  border: 1px solid $color-gray;
+  border-bottom-width: 0;
 
   &:last-of-type {
     border-bottom-width: 1px;
   }
 }
 
+/** @define file-error */
+
 .file-error__message {
   margin: 10px 10px 0;
+
   color: $color-red-error;
 }
+
+/** @define file-uploaded */
 
 .file-uploaded {
 }
 
 .file-uploaded__title {
-  margin-left: 10px;
-  margin-right: 158px;
   margin-top: -1px;
-
+  margin-right: 158px;
+  margin-left: 10px;
   overflow: hidden;
-  white-space: nowrap;
+
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .file-uploaded__actions {

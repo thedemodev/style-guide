@@ -38,8 +38,8 @@
   // This is for the menu-main overlay!
   position: relative;
 
-  max-width: $grid-breakpoint-lg;
   height: 100%;
+  max-width: $grid-breakpoint-lg;
 }
 
 .header__meta__row,
@@ -49,9 +49,10 @@
   // This is for the menu-main overlay!
   position: static;
 
+  height: 100%;
+
   flex-wrap: nowrap;
   justify-content: flex-end;
-  height: 100%;
 }
 
 .header__main__row {
@@ -90,14 +91,16 @@
   @include make-link();
 
   display: flex;
-  align-items: center;
+  padding: 0 ($grid-gutter-width / 2);
+
   justify-content: center;
+  align-items: center;
 
   order: 5;
   flex-shrink: 0;
-  padding: 0 ($grid-gutter-width / 2);
 
   color: $color-white;
+
   background: $color-red;
 
   &:hover {
@@ -115,17 +118,20 @@
   position: static;
 
   display: none;
+
   align-self: flex-end;
 
   @include respond(large) {
     display: inherit;
+
     order: 3;
   }
 }
 
 .header__main__item--mobile-actions.mobile-actions {
-  order: 4;
   padding: 0;
+
+  order: 4;
 
   @include respond(large) {
     display: none;

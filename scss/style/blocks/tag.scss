@@ -9,13 +9,13 @@
 
   font-size: 85%;
   line-height: 1;
+  color: $color-white;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
 
-  color: $color-white;
-  border-radius: 0.25em;
   background-color: $color-blue-gray;
+  border-radius: 0.25em;
 }
 
 .tag--primary {

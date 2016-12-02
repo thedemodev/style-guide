@@ -9,19 +9,23 @@
 
 .autocomplete__suggestions {
   position: absolute;
-  width: 100%;
   z-index: $z-index-autocomplete;
+
+  width: 100%;
 }
 
 @mixin autocomplete__suggestions__item--selected {
-  background-color: $color-light-blue;
   color: $color-white;
+
+  background-color: $color-light-blue;
 }
 
 .autocomplete__suggestions__item {
   padding: 10px 15px;
-  background-color: $color-gray--mid;
+
   cursor: pointer;
+
+  background-color: $color-gray--mid;
 
   &:hover {
     @include autocomplete__suggestions__item--selected();

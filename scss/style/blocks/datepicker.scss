@@ -1,7 +1,6 @@
 @import '../variables';
 @import '../mixins/clearfix';
 @import '../mixins/respond';
-
 @import './control';
 
 /** @define datepicker */
@@ -31,39 +30,44 @@
 }
 
 .datepicker__trigger {
-  cursor: pointer;
+  position: relative;
 
   display: block;
-  position: relative;
   float: right;
-
   width: 40px;
   height: 40px;
   padding: 0 10px;
+
+  cursor: pointer;
 
   background: $color-blue-gray--light;
 }
 
 .datepicker__trigger__icon {
+  display: inline-block;
   width: 20px;
   height: 40px;
+
   fill: $color-light-blue;
-  display: inline-block;
+
   vertical-align: middle;
 }
 
 .datepicker__trigger__mobile {
   position: absolute !important;
   top: 0 !important;
-  left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  height: 100% !important;
+  left: 0 !important;
+
   width: 100% !important;
+  height: 100% !important;
   opacity: 0 !important;
+
   line-height: 0;
+
   background: transparent !important;
-  background: rgba($color-black,0) !important;
+  background: rgba($color-black, 0) !important;
 }
 
 // Birthday Datepicker styles:
@@ -82,16 +86,19 @@
     flex-direction: row;
 
     .birthday--day {
-      flex: 3;
       min-width: 120px;
+
+      flex: 3;
     }
     .birthday--month {
-      flex: 5;
       min-width: 190px;
+
+      flex: 5;
     }
     .birthday--year {
-      flex: 3;
       min-width: 120px;
+
+      flex: 3;
     }
   }
 }

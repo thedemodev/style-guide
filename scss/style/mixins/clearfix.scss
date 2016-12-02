@@ -6,15 +6,14 @@
   zoom: 1;
 
   &::after {
-    content: " ";
-
     display: block;
+    height: 0;
     clear: both;
     visibility: hidden;
 
-    height: 0;
-
     font-size: 0;
+
+    content: " ";
   }
 }
 

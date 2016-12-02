@@ -5,6 +5,5 @@
 .richtext {
   @include richtext-lift-successor(ul);
   @include richtext-lift-successor(h3);
-
   @include richtext-styled-list();
 }

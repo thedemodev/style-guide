@@ -22,17 +22,18 @@
 }
 
 @mixin make-button-color($bg-color, $color, $highlight-bg-color: $bg-color, $highlight-color: $color) {
+  color: $color;
   text-decoration: none;
 
   background: $bg-color;
-  color: $color;
 
   &:hover,
   &:focus {
-    background: $highlight-bg-color;
     color: $highlight-color;
 
-    & .button__icon {
+    background: $highlight-bg-color;
+
+    .button__icon {
       color: $highlight-color;
     }
   }

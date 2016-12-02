@@ -6,9 +6,10 @@
 $prolist_item_icon_size: 1.625rem;
 
 .prolist {
-  list-style-type: none;
-  margin: 1.5rem 0 2rem;
   padding: 0;
+  margin: 1.5rem 0 2rem;
+
+  list-style-type: none;
 }
 
 .prolist__heading {
@@ -23,20 +24,20 @@ $prolist_item_icon_size: 1.625rem;
 
 .prolist__item__icon {
   float: left;
-
   width: $prolist_item_icon_size;
   height: $prolist_item_icon_size;
   padding: 2px;
-  border-radius: $prolist_item_icon_size;
-  background: $color-white;
-  color: $color-gray;
-  border: 2px $color-gray solid;
-
-  fill: $color-gray;
-  stroke: $color-gray;
 
   // $todo: these font-size, line-height values should be coded in a central place as variables, that we can reuse it here.
   margin-top: ((1rem * 1.8) - $prolist_item_icon_size) / 2;
+
+  color: $color-gray;
+  fill: $color-gray;
+  stroke: $color-gray;
+
+  background: $color-white;
+  border: 2px $color-gray solid;
+  border-radius: $prolist_item_icon_size;
 
   @include respond(medium) {
     margin-top: ((1.0625rem * 1.8) - $prolist_item_icon_size) / 2;

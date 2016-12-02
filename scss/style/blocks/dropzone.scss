@@ -9,6 +9,7 @@
 
 .dropzone__container {
   height: 80px;
+
   border: 2px dashed $color-gray;
 }
 
@@ -24,8 +25,8 @@
 }
 
 .dropzone__icon {
-  height: 2.25em;
   width: 2.25em;
+  height: 2.25em;
   margin-top: 20px;
   margin-bottom: 20px;
 
@@ -39,8 +40,9 @@
 
 .dropzone__text {
   display: table-cell;
-  vertical-align: middle;
+
   color: $color-gray--dark;
+  vertical-align: middle;
 }
 
 .dropzone__text__upload-link {

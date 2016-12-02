@@ -16,11 +16,13 @@
   overflow: auto;
 
   opacity: 0.75;
+
   background: $color-black;
 }
 
 .backdrop__shadow--light {
   opacity: 0.95;
+
   background: $color-white;
 }
 
@@ -38,8 +40,9 @@
 
 .backdrop__content--centered {
   display: flex;
-  align-items: center;
+
   justify-content: center;
+  align-items: center;
 }
 
 // Copyright AXA Versicherungen AG 2015

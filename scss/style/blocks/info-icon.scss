@@ -8,11 +8,13 @@ $info-icon-diameter--medium: 28px !default;
 
 .info-icon {
   display: block;
+
   line-height: 0;
 
   &:hover,
   &:focus {
     cursor: pointer;
+
     outline: none;
 
     .info-icon__svg {
