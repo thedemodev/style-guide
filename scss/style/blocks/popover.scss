@@ -29,14 +29,14 @@
 
 .popover__tail {
   position: absolute;
-  display:none;
+  display: none;
   z-index: $z-index-popover;
 
   border: 20px solid transparent;
   margin: -20px;
 
   background: transparent;
-  pointer-events:none;
+  pointer-events: none;
 
   @include respond(medium) {
     display: block;
