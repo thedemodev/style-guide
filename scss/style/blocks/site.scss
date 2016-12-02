@@ -53,8 +53,8 @@ $mobile-nav-width-fixed: 300px !default;
   cursor: pointer;
   pointer-events: none;
 
-  transition:   opacity $transition-duration $transition-fn-fancy,
-                height 0 $transition-duration $transition-fn-fancy;
+  transition: opacity $transition-duration $transition-fn-fancy,
+    height 0 $transition-duration $transition-fn-fancy;
 }
 
 .site__page__mask.is-visible {
@@ -98,13 +98,13 @@ $mobile-nav-width-fixed: 300px !default;
 
 .site__burger {
   transition: color $transition-duration $transition-fn-fancy;
-}
 
-.site__burger.is-open {
-  color: $color-white;
+  &.is-open {
+    color: $color-white;
 
-  &:hover {
-    color: darken($color-white, 10%);
+    &:hover {
+      color: darken($color-white, 10%);
+    }
   }
 }
 

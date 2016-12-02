@@ -9,7 +9,7 @@
   font-size: $font-size;
   line-height: $line-height;
 
-  & .button__icon {
+  .button__icon {
     display: inline;
 
     font-size: $icon-size;
@@ -41,7 +41,7 @@
     outline: none;
   }
 
-  & .button__icon {
+  .button__icon {
     color: $color;
   }
 }
