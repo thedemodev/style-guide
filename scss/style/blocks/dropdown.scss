@@ -14,15 +14,15 @@ $dropdown-arrow-width: 40px;
 
 .dropdown__label {
   display: none;
-}
 
-.dropdown__label.is-enhanced {
-  @include control;
-  color: inherit; // reset color set in .control
-  display: flex;
-  align-items: center;
+  .js & {
+    @include control;
+    color: inherit; // reset color set in .control
+    display: flex;
+    align-items: center;
 
-  border: 1px solid $color-gray--light;
+    border: 1px solid $color-gray--light;
+  }
 }
 
 .dropdown__label__text,
@@ -47,33 +47,33 @@ $dropdown-arrow-width: 40px;
 
 .dropdown__select {
   width: 100%;
-}
 
-.dropdown__select.is-enhanced {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  padding-top: 0;
-  padding-bottom: 0;
+  .js & {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
 
-  display: block;
+    display: block;
 
-  line-height: 3.5rem;
+    line-height: 3.5rem;
 
-  opacity: 0;
-  filter: alpha(opacity=0);
-  border: none;
-  z-index: $z-index-dropdown-select;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    border: none;
+    z-index: $z-index-dropdown-select;
+  }
 }
 
 .dropdown--large {
   @include make-font-large();
 }
 
-.dropdown__label--large.is-enhanced {
+.js .dropdown__label--large {
   height: 3rem;
   padding: 0 $grid-gutter-width/2 - 0.25rem;
 }
@@ -83,7 +83,7 @@ $dropdown-arrow-width: 40px;
   height: 1.5rem;
 }
 
-.dropdown__label--condensed.is-enhanced {
+.js .dropdown__label--condensed {
   @include control--condensed;
 }
 

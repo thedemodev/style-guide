@@ -38,8 +38,6 @@ class SegmentedControl {
     this.$radios.prop('tabindex', '-1')
     this.$element.prop('tabindex', '0')
 
-    this.$element.addClass('segmented-control--js')
-
     this.setRadioState()
 
     this.$radios.on('change', this.setRadioState)

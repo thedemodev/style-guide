@@ -7,9 +7,7 @@
   @include clearfix();
 
   display: block;
-
   margin-bottom: 15px;
-
   cursor: pointer;
 
   &:last-of-type {
@@ -19,31 +17,34 @@
 
 .checkbox__checkbox {
   float: left;
-
   margin: 4px 0 0 0;
-
   vertical-align: middle;
+
+  .js & {
+    @include invisible-input();
+  }
 }
 
 .checkbox__label {
   margin-left: 18px;
+
+  &:focus {
+    outline: none;
+  }
+
+  .js & {
+    margin-left: 0;
+  }
 }
 
 .checkbox__label__icon {
   display: none;
-}
 
-.checkbox--js {
-
-  .checkbox__checkbox {
-    @include invisible-input();
+  .checkbox__label:focus & {
+    border-color: $color-blue;
   }
 
-  .checkbox__label {
-    margin-left: 0;
-  }
-
-  .checkbox__label__icon {
+  .js & {
     display: block;
     position: absolute;
     padding: 3px;
@@ -60,16 +61,19 @@
     }
   }
 
-  &.is-active {
-    .checkbox__label__icon {
-      fill-opacity: 1;
-    }
+  .is-active & {
+    fill-opacity: 1;
   }
 
-  .checkbox__label__text {
+  .checkbox-group.has-error & {
+    border-color: $color-red-error;
+  }
+}
+
+.checkbox__label__text {
+  .js & {
     padding-top: 5px;
     margin-left: 40px;
-
     line-height: 1.5; // TODO: use more global definition
 
     @include respond(medium) {
@@ -77,19 +81,6 @@
       margin-left: 35px;
     }
   }
-
-  .checkbox__label:focus {
-    outline: none;
-
-    .checkbox__label__icon {
-      border-color: $color-blue;
-    }
-  }
-}
-
-.checkbox-group.has-error .checkbox--js .checkbox__label__icon,
-.checkbox--js {
-  border-color: $color-red-error;
 }
 
 // Changes on the button variant:
@@ -108,24 +99,26 @@
   padding: 6px 20px 6px;
   transition: padding-bottom 0.15s, border-bottom 0.15s;
   user-select: none;
-}
 
-.checkbox--button.is-active {
-  color: $color-white;
-  background-color: $color-blue;
-}
+  .js & {
+    .checkbox__label__icon {
+      display: none;
+    }
 
-.checkbox--button:not(.is-active):hover {
-  padding-bottom: 3px;
-  border-bottom-width: 3px;
-}
+    .checkbox__label__text {
+      margin-left: 0;
+    }
+  }
 
-.checkbox--button.checkbox--js .checkbox__label__icon {
-  display: none;
-}
+  &.is-active {
+    color: $color-white;
+    background-color: $color-blue;
+  }
 
-.checkbox--button.checkbox--js .checkbox__label__text {
-  margin-left: 0;
+  &:not(.is-active):hover {
+    padding-bottom: 3px;
+    border-bottom-width: 3px;
+  }
 }
 
 

@@ -16,10 +16,6 @@ class Dropdown {
     this.$element.attr('tabindex', '0')
     this.$select.attr('tabindex', '-1')
 
-    this.$element.addClass('is-enhanced')
-    this.$label.addClass('is-enhanced')
-    this.$text.addClass('is-enhanced')
-    this.$select.addClass('is-enhanced')
     this.setLabelText()
 
     this.$element.on('keydown', (e) => this.handleKeyDown(e))

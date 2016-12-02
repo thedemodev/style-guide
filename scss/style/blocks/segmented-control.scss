@@ -7,54 +7,10 @@
 
 .segmented-control {
   @extend .checkbox-group;
-}
-.segmented-control__item {
-  @extend .checkbox;
-}
-.segmented-control__item__radio {
-  @extend .checkbox__checkbox;
-}
 
-.segmented-control--js {
-  @include invisible-font();
-  display: inline-block;
-
-  &.segmented-control--stacked {
-    .segmented-control__item {
-      @include ellipsis();
-      display: block;
-
-      width: 100%;
-      border-right-width: 1px;
-      margin-bottom: -1px;
-
-      &.is-active {
-        border-top-color: $color-light-blue !important;
-      }
-
-      &.is-active + .segmented-control__item {
-        border-left-color: $color-gray;
-        border-top-color: $color-light-blue !important;
-      }
-    }
-
-    &.segmented-control:focus .segmented-control__item {
-      border-top-color: $color-gray !important;
-      border-bottom-color: $color-gray !important;
-      border-right-color: $color-light-blue;
-      border-left-color: $color-light-blue;
-
-      &:first-of-type {
-        border-top-color: $color-light-blue !important;
-      }
-
-      &:last-of-type {
-        border-bottom-color: $color-light-blue !important;
-      }
-    }
-  }
-
-  &.segmented-control {
+  .js & {
+    @include invisible-font();
+    display: inline-block;
     max-width: 100%;
     margin-top: 0; // reset inheritance of .checkbox-group
 
@@ -62,50 +18,43 @@
 
     &:focus {
       outline: none;
-    }
-  }
 
-  .segmented-control__item__label {
+      .segmented-control__item {
+        border-top-color: $color-light-blue !important;
+        border-bottom-color: $color-light-blue !important;
 
-    &:after {
-      content: '';
+        &:first-of-type {
+          border-left-color: $color-light-blue !important;
+        }
 
-      display: inline-block;
-
-      width: 14px;
-      min-height: 1px;
-      margin-left: 5px;
-    }
-  }
-
-  .segmented-control__item.is-active .segmented-control__item__label {
-    // TODO
-    //@extend .icon-after();
-    //@extend .icon-after--checkmark();
-  }
-
-  .segmented-control__item__radio {
-    @include invisible-input();
-  }
-
-  &.segmented-control.has-error .segmented-control__item {
-    border-color: $color-red-error !important; // important is needed when the item .is-active and the control .has-error
-  }
-
-  &.segmented-control:focus .segmented-control__item {
-    border-top-color: $color-light-blue !important;
-    border-bottom-color: $color-light-blue !important;
-
-    &:first-of-type {
-      border-left-color: $color-light-blue !important;
+        &:last-of-type {
+          border-right-color: $color-light-blue !important;
+        }
+      }
     }
 
-    &:last-of-type {
-      border-right-color: $color-light-blue !important;
+    &[disabled] {
+      &:focus .segmented-control__item {
+        border: 1px solid $color-gray !important;
+      }
+
+      .segmented-control__item {
+        border: 1px solid $color-gray !important;
+        color: $color-gray;
+
+        &.is-active {
+          color: white;
+          background-color: $color-gray;
+        }
+      }
     }
   }
+}
 
-  .segmented-control__item {
+.segmented-control__item {
+  @extend .checkbox;
+
+  .js & {
     @include undo-invisible-font();
 
     display: inline-block;
@@ -123,35 +72,78 @@
     &:last-of-type {
       border-right-width: 1px;
     }
+  }
 
-    &.is-active {
-      background: $color-light-blue;
-      color: white;
-      border-top-color: $color-light-blue;
-      border-bottom-color: $color-light-blue;
-      border-left-color: $color-light-blue;
-      border-right-color: $color-light-blue;
-    }
+  &.is-active {
+    background: $color-light-blue;
+    color: white;
+    border-top-color: $color-light-blue;
+    border-bottom-color: $color-light-blue;
+    border-left-color: $color-light-blue;
+    border-right-color: $color-light-blue;
 
-    &.is-active + .segmented-control__item {
+    + .segmented-control__item {
       border-left-color: $color-light-blue;
     }
+  }
+
+  .segmented-control.has-error & {
+    border-color: $color-red-error;
   }
 }
 
-.segmented-control--js[disabled] {
-  &.segmented-control:focus .segmented-control__item {
-    border: 1px solid $color-gray !important;
-  }
+.segmented-control__item__radio {
+  @extend .checkbox__checkbox;
 
+  .js & {
+    @include invisible-input();
+  }
+}
+
+.segmented-control__item__label {
+  .js &:after {
+    content: '';
+
+    display: inline-block;
+
+    width: 14px;
+    min-height: 1px;
+    margin-left: 5px;
+  }
+}
+
+.segmented-control--stacked {
   .segmented-control__item {
-    border: 1px solid $color-gray !important;
-    color: $color-gray;
+    @include ellipsis();
+    display: block;
+
+    width: 100%;
+    border-right-width: 1px;
+    margin-bottom: -1px;
+
+    &.is-active {
+      border-top-color: $color-light-blue !important;
+
+      + .segmented-control__item {
+        border-left-color: $color-gray;
+        border-top-color: $color-light-blue !important;
+      }
+    }
   }
 
-  .segmented-control__item.is-active {
-    color: white;
-    background-color: $color-gray;
+  &:focus .segmented-control__item {
+    border-top-color: $color-gray !important;
+    border-bottom-color: $color-gray !important;
+    border-right-color: $color-light-blue;
+    border-left-color: $color-light-blue;
+
+    &:first-of-type {
+      border-top-color: $color-light-blue !important;
+    }
+
+    &:last-of-type {
+      border-bottom-color: $color-light-blue !important;
+    }
   }
 }
 
