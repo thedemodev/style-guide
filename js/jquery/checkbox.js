@@ -1,6 +1,6 @@
 /* global window */
 
-import { autobind } from 'core-decorators'
+import autobind from 'core-decorators/lib/autobind'
 import $ from 'jquery'
 import registerPlugin from './register-plugin'
 

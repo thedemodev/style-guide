@@ -1,4 +1,4 @@
-import { autobind } from 'core-decorators'
+import autobind from 'core-decorators/lib/autobind'
 
 class Emitter {
   constructor() {

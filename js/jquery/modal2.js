@@ -1,6 +1,6 @@
 /* global window, document */
 
-import { autobind } from 'core-decorators'
+import autobind from 'core-decorators/lib/autobind'
 import $ from 'jquery'
 import Bacon from 'baconjs'
 import registerPlugin from './register-plugin'
