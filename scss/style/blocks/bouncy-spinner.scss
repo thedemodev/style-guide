@@ -69,6 +69,7 @@
   text-align: center;
 }
 
+/* stylelint-disable */
 @keyframes bouncy {
   0%  { transform: translateY(9px)  rotate(0deg); border-bottom-right-radius: 3px; }
   6%  { transform: translateY(9px)  rotate(22.5deg); }
@@ -93,5 +94,6 @@
   0%, 100% { transform: scale(1, 1); }
   25%, 75% { transform: scale(1.2, 1); }
 }
+/* stylelint-enable */
 
 // Copyright AXA Versicherungen AG 2015
