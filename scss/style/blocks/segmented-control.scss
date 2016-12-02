@@ -53,22 +53,25 @@
 
 .segmented-control__item {
   @extend .checkbox;
-  @include undo-invisible-font();
 
-  display: inline-block;
+  .js & {
+    @include undo-invisible-font();
 
-  height: 40px;
-  padding-left: 25px;
-  padding-right: 8px;
-  border: 1px solid $color-gray;
-  border-right-width: 0;
+    display: inline-block;
 
-  line-height: 40px;
+    height: 40px;
+    padding-left: 25px;
+    padding-right: 8px;
+    border: 1px solid $color-gray;
+    border-right-width: 0;
 
-  cursor: pointer;
+    line-height: 40px;
 
-  &:last-of-type {
-    border-right-width: 1px;
+    cursor: pointer;
+
+    &:last-of-type {
+      border-right-width: 1px;
+    }
   }
 
   &.is-active {
@@ -91,11 +94,14 @@
 
 .segmented-control__item__radio {
   @extend .checkbox__checkbox;
-  @include invisible-input();
+
+  .js & {
+    @include invisible-input();
+  }
 }
 
 .segmented-control__item__label {
-  &:after {
+  .js &:after {
     content: '';
 
     display: inline-block;
