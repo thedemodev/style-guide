@@ -91,7 +91,7 @@ $example-header__sticky-height--medium: 70px !default;
     color: $color-white;
   }
 
-  &:before {
+  &::before {
     padding-right: 10px;
     margin-top: -2px;
 

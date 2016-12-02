@@ -103,7 +103,7 @@
 }
 
 .segmented-control__item__label {
-  .js &:after {
+  .js &::after {
     content: '';
 
     display: inline-block;
