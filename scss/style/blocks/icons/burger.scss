@@ -6,9 +6,9 @@
 .burger-icon__top,
 .burger-icon__middle,
 .burger-icon__bottom {
-  transition: all $transition-duration ease;
-  transform-origin: 50% 50%;
   opacity: 1;
+  transform-origin: 50% 50%;
+  transition: all $transition-duration ease;
 }
 
 .burger-icon.is-open .burger-icon__top {

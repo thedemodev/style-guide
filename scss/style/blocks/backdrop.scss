@@ -15,15 +15,13 @@
   padding: 0;
   overflow: auto;
 
-  opacity: 0.75;
-
   background: $color-black;
+  opacity: 0.75;
 }
 
 .backdrop__shadow--light {
-  opacity: 0.95;
-
   background: $color-white;
+  opacity: 0.95;
 }
 
 .backdrop__content {

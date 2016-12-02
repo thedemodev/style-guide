@@ -44,8 +44,8 @@
   height: 5px;
 
   background: $color-black;
-  opacity: 0.1;
   border-radius: 50%;
+  opacity: 0.1;
   animation: shadow 0.5s linear infinite;
 }
 
@@ -60,6 +60,7 @@
 .bouncy-spinner__logo.is-disabled,
 .bouncy-spinner__shadow.is-disabled {
   display: none;
+
   animation: none;
 }
 

@@ -37,8 +37,8 @@
   box-shadow: 0 0 5px rgba($color-black, 0.2);
   opacity: 1;
 
-  animation: notifications__item--fade-in 0.5s;
   transition: opacity 0.5s ease, height 0.5s ease, margin 0.5s ease, top 0.5s ease;
+  animation: notifications__item--fade-in 0.5s;
 
   @include make-notification__item-colors($color-light-blue);
 }

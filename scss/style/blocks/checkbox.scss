@@ -56,11 +56,11 @@
     height: 30px;
     padding: 3px;
 
-    background: $color-white;
-    border: 1px solid $color-gray;
-
     fill-opacity: 0;
     fill: $color-light-blue;
+
+    background: $color-white;
+    border: 1px solid $color-gray;
 
     @include respond(medium) {
       width: 25px;

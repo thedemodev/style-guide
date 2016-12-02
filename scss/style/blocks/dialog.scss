@@ -29,6 +29,7 @@ $dialog-padding: 15px;
 
   @include respond(medium) {
     margin-top: auto;
+
     background: $color-white;
   }
 }
