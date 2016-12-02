@@ -25,6 +25,7 @@
         "order": "strict",
         "properties": [
           "display",
+          "box-sizing",
           "float",
           "width",
           "height",
@@ -95,6 +96,8 @@
           "letter-spacing",
           "word-spacing",
           "color",
+          "fill",
+          "stroke",
           "text-align",
           "text-decoration",
           "text-indent",
@@ -104,6 +107,7 @@
           "text-shadow",
           "text-transform",
           "word-break",
+          "overflow-wrap",
           "word-wrap",
           "white-space",
           "vertical-align",
@@ -158,10 +162,15 @@
           "border-radius-bottomright",
           "border-radius-bottomleft",
           "border-radius-topleft",
+          "box-shadow",
           "content",
           "quotes",
           "outline",
-          "outline-offset"
+          "outline-offset",
+          "opacity",
+          "transform",
+          "transition",
+          "animation"
         ]
       }
     ],
@@ -193,6 +202,7 @@
     "scss/operator-no-newline-before": true,
     "scss/operator-no-unspaced": true,
     "scss/selector-no-redundant-nesting-selector": true,
+    "declaration-empty-line-before": null,
     "block-no-empty": null
   }
 }
