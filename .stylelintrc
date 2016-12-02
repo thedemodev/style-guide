@@ -179,9 +179,10 @@
       }
     ],
     "plugin/selector-bem-pattern": {
-      "componentName": "[a-z0-9]+(:?-[a-z0-9]+)*",
+      "componentName": "[a-z0-9]+(?:-[a-z0-9]+)*",
       "componentSelectors": {
-        "initial": "\\.{componentName}(:?__[a-z0-9]+(:?-[a-z0-9]+)*)*(:?--[a-z0-9]+(:?-[a-z0-9]+)*)?(?:\\.(:?is|has)-[a-z0-9]+(:?-[a-z0-9]+)*)*$"
+        "xinitial": "^(?:\\.js\\s*)?\\.{componentName}(?:__[a-z0-9]+(?:-[a-z0-9]+)*)*(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?(?:\\s*\\.(?:is|has)-[a-z0-9]+(?:-[a-z0-9]+)*)*$",
+        "initial": "^(?:\\.(?:no-)?js\\s*)?(?:\\.(?:is|has)-[a-z0-9]+(?:-[a-z0-9]+)*\\s)*\\.[a-z0-9]+(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)*(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?(?:\\s*\\.[a-z0-9]+(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)*)*(?:\\s*\\.(?:is|has)-[a-z0-9]+(?:-[a-z0-9]+)*)*$"
       }
     },
     "sh-waqar/declaration-use-variable": [["/color/", "fill", "stroke", "z-index", "font-size"]],
