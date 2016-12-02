@@ -67,6 +67,7 @@
   //                    autogrow textareas from growing indefinitely)
   min-width: 100%;
   max-width: 100%;
+
   // TODO: May use border instead of padding because the padding is ignored when
   //       the textarea scrolls vertically in chrome.
   //       Con: The resive handle looks ugly when using borders.
