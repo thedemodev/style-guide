@@ -1,4 +1,8 @@
 {
+  "ignoreFiles": [
+    "scss/style.scss",
+    "scss/normalize.scss"
+  ],
   "extends": "stylelint-config-standard",
   "plugins": [
     "stylelint-order",
