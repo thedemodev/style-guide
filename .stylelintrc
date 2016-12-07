@@ -8,7 +8,7 @@
     "stylelint-order",
     "stylelint-scss",
     "stylelint-selector-bem-pattern",
-    "stylelint-declaration-use-variable"
+    "stylelint-declaration-strict-value"
   ],
   "rules": {
     "order/declaration-block-property-groups-structure": [
@@ -187,7 +187,9 @@
         "xcombined": "^\\.{componentName}(?:__{componentName})*(?:--{componentName})?|\\.(?:is|has)-{componentName}$"
       }
     },
-    "sh-waqar/declaration-use-variable": [["/color/", "fill", "stroke", "z-index", "font-size"]],
+    "scale-unlimited/declaration-strict-value": [["/color/", "fill", "stroke", "z-index", "font-size"], {
+      "ignoreKeywords": ["transparent", "currentColor"]
+    }],
     "scss/at-extend-no-missing-placeholder": true,
     "scss/at-function-pattern": "[a-z]+(:?-[a-z]+)*",
     "scss/at-import-no-partial-leading-underscore": true,
