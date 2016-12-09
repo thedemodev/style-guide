@@ -216,9 +216,13 @@
         "blockless-after-same-name-blockless",
         "first-nested"
       ],
-      "ignore": ["after-comment", "blockless-group"]
+      "ignore": ["after-comment", "blockless-group"],
+      "ignoreAtRules": ["if", "else"]
     } ],
     "declaration-empty-line-before": null,
+    "block-closing-brace-newline-after": ["always", {
+      "ignoreAtRules": ["if", "else"]
+    }],
     "block-no-empty": null
   }
 }
