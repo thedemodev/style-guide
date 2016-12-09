@@ -1,10 +1,13 @@
 @import '../variables';
+@import '../mixins/unstyle-list';
 
 .multi-upload__remarks {
   margin: 10px 0;
 }
 
 .file-list {
+  @include unstyle-list();
+
   margin-top: 10px;
 }
 
@@ -42,7 +45,6 @@
 
 .file-uploaded__actions {
   float: right;
-  width: 158px;
   margin-top: -3px;
 }
 
