@@ -211,6 +211,13 @@
     "scss/operator-no-newline-before": true,
     "scss/operator-no-unspaced": true,
     "scss/selector-no-redundant-nesting-selector": true,
+    "at-rule-empty-line-before": [ "always", {
+      "except": [
+        "blockless-after-same-name-blockless",
+        "first-nested"
+      ],
+      "ignore": ["after-comment", "blockless-group"]
+    } ],
     "declaration-empty-line-before": null,
     "block-no-empty": null
   }
