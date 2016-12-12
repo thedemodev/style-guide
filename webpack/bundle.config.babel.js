@@ -58,7 +58,7 @@ export default {
       'zeroclipboard',
       // 'iframe-resizer',
       'lunr',
-      'slick-carousel',
+      // 'slick-carousel',
     ].map((module) => new RegExp(require.resolve(module))),
   },
   plugins: [
