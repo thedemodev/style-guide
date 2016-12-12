@@ -21,7 +21,7 @@ but the preferred one is to add it as an npm dependency:
 $ npm install @axa-ch/style-guide
 ```
 
-After that, include the styles from the `dist` folder into your less file:
+After that, include the styles from the `dist` folder into your scss file:
 
 ```scss
 // app.scss
@@ -142,7 +142,7 @@ We stick to the following naming conventions for branches:
 Rule number one: Consistency is key; So when you contribute follow the code style
 patterns you see in the code you're changing.
 
-For LESS code, we stick to the guidelines formulated by [@mdo](https://twitter.com/mdo).
+For SCSS code, we stick to the guidelines formulated by [@mdo](https://twitter.com/mdo).
 Take a look at http://codeguide.co/#css.
 
 ## Who's behind it?
