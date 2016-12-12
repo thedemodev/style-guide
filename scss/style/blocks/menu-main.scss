@@ -20,14 +20,6 @@
   margin: 0;
 }
 
-.menu-main__link.is-active,
-.menu-main__link:hover {
-  color: $color-blue;
-  cursor: pointer;
-
-  border-color: $color-blue;
-}
-
 .menu-main__link {
   display: block;
   height: 100%;
@@ -39,6 +31,14 @@
   text-decoration: none;
 
   border-bottom: 5px solid transparent;
+
+  &.is-active,
+  &:hover {
+    color: $color-blue;
+    cursor: pointer;
+
+    border-color: $color-blue;
+  }
 }
 
 .menu-main__link__home {
