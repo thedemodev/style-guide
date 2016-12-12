@@ -87,12 +87,14 @@ $dropdown-icon-size--condensed: 1rem; // 16px
   }
 
   /* fix firefox focus stuff */
+  /* stylelint-disable plugin/selector-bem-pattern */
   &::-moz-focus-inner,
   & option::-moz-focus-inner {
     border: none;
     box-shadow: none !important;
     outline: none !important;
   }
+  /* stylelint-enable */
 
   /* fix ugly blue screen at focused option value in IE */
   &:focus::-ms-value {

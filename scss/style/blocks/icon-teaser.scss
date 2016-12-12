@@ -146,6 +146,7 @@
     display: none;
   }
 
+  /* stylelint-disable plugin/selector-bem-pattern */
   li {
     height: 100%;
     padding: 0;
@@ -155,6 +156,7 @@
 
     list-style-type: none;
   }
+  /* stylelint-enable */
 }
 
 .icon-teaser__link {
@@ -176,10 +178,12 @@
   outline: none;
   transition: all 0.25s ease;
 
+  /* stylelint-disable plugin/selector-bem-pattern */
   &:hover,
   .slick-active & {
     color: $color-blue;
 
     border-color: $color-blue;
   }
+  /* stylelint-enable */
 }
