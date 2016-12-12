@@ -19,21 +19,6 @@
   }
 }
 
-.form__group--condensed {
-  margin-bottom: 14px;
-
-  .form__group__label {
-    margin-bottom: 0;
-
-    font-size: 0.9285em;
-    color: $color-gray--darker;
-
-    @include respond(medium) {
-      font-size: 1em;
-    }
-  }
-}
-
 .form__group__label {
   @include make-column();
   @include make-column-span(12);
@@ -49,34 +34,49 @@
   @include respond(large) {
     @include make-column-span(5);
   }
+}
 
-  .form__group__label__text {
-    display: inline-block;
+.form__group__label__text {
+  display: inline-block;
 
-    line-height: 1.5; // reset
-    vertical-align: middle;
+  line-height: 1.5; // reset
+  vertical-align: middle;
+}
+
+.form__group__label__info-icon {
+  float: right;
+
+  width: $info-icon-diameter;
+
+  @include respond(medium) {
+    width: $info-icon-diameter--medium;
+    margin-top: 5px;
   }
+}
 
-  .form__group__label__info-icon {
-    float: right;
+.form__group__label__info-icon-text-wrapper {
+  display: block;
 
-    width: $info-icon-diameter;
+  margin-right: $info-icon-diameter + 10px;
+
+  @include respond(medium) {
+    margin-right: $info-icon-diameter--medium + 20px;
+
+    line-height: 40px;
+  }
+}
+
+.form__group--condensed {
+  margin-bottom: 14px;
+
+  .form__group__label {
+    margin-bottom: 0;
+
+    font-size: 0.9285em;
+    color: $color-gray--darker;
 
     @include respond(medium) {
-      width: $info-icon-diameter--medium;
-      margin-top: 5px;
-    }
-  }
-
-  .form__group__label__info-icon-text-wrapper {
-    display: block;
-
-    margin-right: $info-icon-diameter + 10px;
-
-    @include respond(medium) {
-      margin-right: $info-icon-diameter--medium + 20px;
-
-      line-height: 40px;
+      font-size: 1em;
     }
   }
 }

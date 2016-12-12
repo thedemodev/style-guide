@@ -118,41 +118,47 @@
   }
 }
 
-// Level 1
-.mobile-menu--collapsing .mobile-menu__level .mobile-menu__link {
-  background: $color-blue-astronaut;
-}
+.mobile-menu--collapsing {
+  // Level 1
+  .mobile-menu__level {
+    .mobile-menu__link {
+      background: $color-blue-astronaut;
 
-.mobile-menu--collapsing .mobile-menu__level .mobile-menu__link.is-active {
-  background: $color-blue-black-pearl;
-}
+      &.is-active {
+        background: $color-blue-black-pearl;
+      }
+    }
 
-// Level 2
-.mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__link {
-  padding-left: 35px;
+    // Level 2
+    .mobile-menu__level {
+      .mobile-menu__link {
+        padding-left: 35px;
 
-  background-color: $color-blue-astronaut;
-}
+        background-color: $color-blue-astronaut;
 
-.mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__link.is-active {
-  background-color: $color-blue-bunting;
-}
+        &.is-active {
+          background-color: $color-blue-bunting;
+        }
+      }
 
-// Level 3
-.mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__level .mobile-menu__link {
-  height: 41px;
-  padding-top: 10px;
-  padding-bottom: 9px;
+      // Level 3
+      .mobile-menu__level .mobile-menu__link {
+        height: 41px;
+        padding-top: 10px;
+        padding-bottom: 9px;
 
-  color: $color-blue-astronaut;
+        color: $color-blue-astronaut;
 
-  background-color: $color-blue-link-water;
-  border-top: none;
-  border-bottom: 1px solid $color-blue-blue-bayoux;
-}
+        background-color: $color-blue-link-water;
+        border-top: none;
+        border-bottom: 1px solid $color-blue-blue-bayoux;
 
-.mobile-menu--collapsing .mobile-menu__level .mobile-menu__level .mobile-menu__level .mobile-menu__link.is-active {
-  background-color: $color-blue-link-water;
+        &.is-active {
+          background-color: $color-blue-link-water;
+        }
+      }
+    }
+  }
 }
 
 .mobile-menu--collapsing .mobile-menu__level {
@@ -167,12 +173,12 @@
 
   // Watch out: prevent delayed closing with a bezier
   transition: max-height $transition-duration cubic-bezier(0, 1.05, 0, 1), visibility $transition-duration;
-}
 
-.mobile-menu--collapsing .mobile-menu__level.is-open {
-  // Watch out: work around, since no transition to `height: auto` is possible
-  max-height: 3999px;
-  visibility: visible;
+  &.is-open {
+    // Watch out: work around, since no transition to `height: auto` is possible
+    max-height: 3999px;
+    visibility: visible;
+  }
 }
 
 .mobile-menu--collapsing .mobile-menu__item {

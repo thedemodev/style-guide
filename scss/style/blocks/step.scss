@@ -8,6 +8,8 @@
 
   &::before {
     position: absolute;
+    top: 9px;
+    left: -50%;
     z-index: $z-index-progress-step;
 
     display: block;
@@ -19,23 +21,18 @@
     content: ' ';
 
     @include respond(medium) {
+      top: 16px;
+
       height: 8px;
     }
   }
 
-  &::before {
-    top: 9px;
-    left: -50%;
-
-    @include respond(medium) {
-      top: 16px;
+  &.is-active {
+    ::before,
+    & .step__bullet {
+      background-color: $color-light-blue;
     }
   }
-}
-
-.step.is-active::before,
-.step.is-active .step__bullet {
-  background-color: $color-light-blue;
 }
 
 .step--clickable.is-active .step__bullet:hover {

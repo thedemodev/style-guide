@@ -142,10 +142,6 @@
 
   background-color: $color-white;
 
-  @include respond(large) {
-    display: none;
-  }
-
   /* stylelint-disable plugin/selector-bem-pattern */
   li {
     height: 100%;
@@ -157,6 +153,10 @@
     list-style-type: none;
   }
   /* stylelint-enable */
+
+  @include respond(large) {
+    display: none;
+  }
 }
 
 .icon-teaser__link {

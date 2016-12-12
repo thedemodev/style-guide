@@ -57,16 +57,16 @@
   border-top: 1px solid $color-gray--light;
   border-bottom: 1px solid $color-gray--light;
 
+  &:hover {
+    color: $color-blue;
+  }
+
   @include respond(large) {
     height: 32px;
     padding: 0;
 
     border: none;
   }
-}
-
-.footer-links__link:hover {
-  color: $color-blue;
 }
 
 .footer-links__text {

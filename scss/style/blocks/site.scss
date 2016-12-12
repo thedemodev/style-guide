@@ -11,13 +11,13 @@ $mobile-nav-width-fixed: 300px !default;
   overflow-x: hidden;
 
   background-color: $color-white;
-}
 
-.site.is-mobile-nav-open {
-  overflow-y: hidden;
+  &.is-mobile-nav-open {
+    overflow-y: hidden;
 
-  @include respond(large) {
-    overflow-y: inherit;
+    @include respond(large) {
+      overflow-y: inherit;
+    }
   }
 }
 
@@ -31,13 +31,13 @@ $mobile-nav-width-fixed: 300px !default;
     transform $transition-duration $transition-fn-fancy,
     padding-left $transition-duration $transition-fn-fancy,
     padding-right $transition-duration $transition-fn-fancy;
-}
 
-.site__page.is-pushed {
-  transform: translateX(-$mobile-nav-width);
+  &.is-pushed {
+    transform: translateX(-$mobile-nav-width);
 
-  @include respond(large) {
-    transform: translateX(0);
+    @include respond(large) {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -60,23 +60,23 @@ $mobile-nav-width-fixed: 300px !default;
   transition:
     opacity $transition-duration $transition-fn-fancy,
     height 0 $transition-duration $transition-fn-fancy;
-}
 
-.site__page__mask.is-visible {
-  height: 100%;
+  &.is-visible {
+    height: 100%;
 
-  pointer-events: all;
+    pointer-events: all;
 
-  opacity: 0.5;
+    opacity: 0.5;
 
-  transition: opacity $transition-duration $transition-fn-fancy;
+    transition: opacity $transition-duration $transition-fn-fancy;
 
-  @include respond(large) {
-    height: 0;
+    @include respond(large) {
+      height: 0;
 
-    pointer-events: none;
+      pointer-events: none;
 
-    opacity: 0;
+      opacity: 0;
+    }
   }
 }
 
@@ -94,13 +94,13 @@ $mobile-nav-width-fixed: 300px !default;
 
   transform: translateX(100%);
   transition: transform $transition-duration $transition-fn-fancy;
-}
 
-.site__mobile.is-visible {
-  transform: translateX(0);
+  &.is-visible {
+    transform: translateX(0);
 
-  @include respond(large) {
-    transform: translateX(100%);
+    @include respond(large) {
+      transform: translateX(100%);
+    }
   }
 }
 
@@ -145,7 +145,7 @@ $mobile-nav-width-fixed: 300px !default;
 
 .site--desktop,
 .site--fixed {
-  .site.is-mobile-nav-open {
+  &.site.is-mobile-nav-open {
     @include respond(large) {
       overflow-y: hidden;
     }

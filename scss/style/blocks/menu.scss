@@ -76,18 +76,6 @@
     height: 0.7rem;
     margin-left: 8px;
 
-    .menu__dropdown__icon__is-closed {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .menu__dropdown__icon__is-open {
-      display: none;
-      width: 100%;
-      height: 100%;
-    }
-
     &.is-open {
       .menu__dropdown__icon__is-closed {
         display: none;
@@ -97,6 +85,18 @@
         display: block;
       }
     }
+  }
+
+  .menu__dropdown__icon__is-closed {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu__dropdown__icon__is-open {
+    display: none;
+    width: 100%;
+    height: 100%;
   }
 }
 
