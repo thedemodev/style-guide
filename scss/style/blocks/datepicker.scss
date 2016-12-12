@@ -85,22 +85,24 @@
   @include respond(large) {
     flex-direction: row;
 
-    .birthday--day {
-      min-width: 120px;
+    @at-root {
+      .birthday--day {
+        min-width: 120px;
 
-      flex: 3;
-    }
+        flex: 3;
+      }
 
-    .birthday--month {
-      min-width: 190px;
+      .birthday--month {
+        min-width: 190px;
 
-      flex: 5;
-    }
+        flex: 5;
+      }
 
-    .birthday--year {
-      min-width: 120px;
+      .birthday--year {
+        min-width: 120px;
 
-      flex: 3;
+        flex: 3;
+      }
     }
   }
 }
