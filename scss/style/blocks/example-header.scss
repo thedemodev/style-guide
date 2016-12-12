@@ -51,16 +51,6 @@ $example-header__sticky-height--medium: 70px !default;
   }
 }
 
-.example-mobile-nav {
-  padding-bottom: $example-header__sticky-height;
-  margin-top: $example-header__sticky-height;
-
-  @include respond(medium) {
-    padding-bottom: $example-header__sticky-height--medium;
-    margin-top: $example-header__sticky-height--medium;
-  }
-}
-
 .example-header__link {
   color: $color-white;
   text-decoration: underline;
