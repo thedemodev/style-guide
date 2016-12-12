@@ -141,7 +141,7 @@
 
     &.is-active,
     &:hover {
-      a {
+      .menu__link {
         color: $color-blue;
       }
     }
