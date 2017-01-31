@@ -40,13 +40,15 @@
     "dev": {
       "command": "concurrently --kill-others \"npm run all:watch\" \"npm run docs:build:delayed\" --names all:watch,docs:build --prefix-colors cyan,magenta --prefix [{name}]",
       "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "development",
+        "FORCE_COLOR": true
       }
     },
     "build": {
       "command": "npm run bundles:build && concurrently \"npm run docs:build:copy:all:before\" \"npm run js:transpile\" --names docs,js:transpile --prefix-colors cyan,magenta --prefix [{name}]",
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "FORCE_COLOR": true
       }
     }
   },
@@ -134,12 +136,13 @@
     "metalsmith-drafts": "0.0.1",
     "metalsmith-filepath": "^1.0.1",
     "metalsmith-ignore": "^0.1.2",
+    "metalsmith-incremental": "^0.1.1",
     "metalsmith-layouts": "^1.6.5",
     "metalsmith-lunr": "git+https://github.com/sventschui/metalsmith-lunr",
     "metalsmith-markdown": "git+https://github.com/axa-ch/metalsmith-markdown",
     "metalsmith-pug": "^1.1.0",
     "metalsmith-relative": "^1.0.3",
-    "metalsmith-watch": "^1.0.3",
+    "metalsmith-timer": "0.0.2",
     "minimatch": "^3.0.3",
     "mkdirp": "^0.5.1",
     "multimatch": "^2.1.0",
