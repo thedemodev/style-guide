@@ -142,7 +142,6 @@
     "metalsmith-pug": "^1.1.0",
     "metalsmith-relative": "^1.0.3",
     "metalsmith-timer": "0.0.2",
-    "metalsmith-watch": "^1.0.3",
     "minimatch": "^3.0.3",
     "mkdirp": "^0.5.1",
     "multimatch": "^2.1.0",
