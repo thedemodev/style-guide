@@ -135,7 +135,7 @@
     "metalsmith-drafts": "0.0.1",
     "metalsmith-filepath": "^1.0.1",
     "metalsmith-ignore": "^0.1.2",
-    "metalsmith-incremental": "git+https://github.com/axa-ch/metalsmith-incremental#experimental/optimize-api",
+    "metalsmith-incremental": "^0.1.0",
     "metalsmith-layouts": "^1.6.5",
     "metalsmith-lunr": "git+https://github.com/sventschui/metalsmith-lunr",
     "metalsmith-markdown": "git+https://github.com/axa-ch/metalsmith-markdown",
