@@ -3,6 +3,8 @@
 @import '../mixins/respond';
 @import '../mixins/unstyle-list';
 
+/** @define footer-worldwide */
+
 .footer-worldwide {
 }
 
@@ -10,19 +12,17 @@
   @include make-font-heading-tertiary();
 
   display: none;
-
   padding: 48px 0;
   margin: 0;
 
   @include respond(large) {
     display: block;
-
     padding: 32px 0;
   }
 }
 
 .footer-worldwide__entities {
-  @include unstyle-list;
+  @include unstyle-list();
 
   margin: 0 -30px;
 
@@ -41,14 +41,15 @@
   @include make-font-large();
 
   display: flex;
+  height: 56px;
+  padding: 0 30px;
+
   align-items: center;
 
-  padding: 0 30px;
-  height: 56px;
-
-  background-color: $color-blue;
   color: $color-white;
   text-decoration: none;
+
+  background-color: $color-blue;
 
   &:hover {
     color: $color-gray--mid;
@@ -56,8 +57,8 @@
 
   @include respond(large) {
     display: inline-block;
-    padding: 0;
     height: auto;
+    padding: 0;
 
     background: none;
     border: none;
@@ -66,6 +67,7 @@
 
 .footer-worldwide__text {
   @include make-font-medium-semibold();
+
   flex-grow: 1;
 
   @include respond(large) {
@@ -74,8 +76,8 @@
 }
 
 .footer-worldwide__icon {
-  height: 24px;
   width: 24px;
+  height: 24px;
   margin-left: 20px;
 
   @include respond(large) {

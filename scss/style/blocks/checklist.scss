@@ -1,19 +1,21 @@
 @import '../variables';
 
+/** @define checklist */
+
 .checklist {
-  list-style-type: none;
-  margin: 25px 0 35px 0;
   padding: 0;
+  margin: 25px 0 35px;
+
+  list-style-type: none;
 }
 
 .checklist__item {
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
 }
 
 .checklist__item__icon {
   display: inline-block;
   float: left;
-
   width: 40px;
   margin-top: 2px;
 

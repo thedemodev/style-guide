@@ -1,6 +1,8 @@
 @import "../variables";
 @import '../mixins/respond';
 
+/** @define modal */
+
 $modal-padding: 15px;
 
 @mixin make-center {
@@ -11,7 +13,7 @@ $modal-padding: 15px;
 .modal {
   display: none;
 
-  &.is-active  {
+  &.is-active {
     display: block;
   }
 }
@@ -29,9 +31,9 @@ $modal-padding: 15px;
   z-index: $z-index-modal;
 
   padding: $modal-padding;
-
   overflow: auto;
-  background: white;
+
+  background: $color-white;
 
   @include respond(medium) {
     position: static;
@@ -40,7 +42,7 @@ $modal-padding: 15px;
     bottom: auto;
     left: auto;
 
-    padding: 0 $grid-gutter-width/2;
+    padding: 0 ($grid-gutter-width / 2);
   }
 }
 
@@ -48,15 +50,12 @@ $modal-padding: 15px;
   width: 100%;
   min-height: 100%;
 
-  background: white;
+  background: $color-white;
 
   @include respond(medium) {
     @include make-center();
 
-    padding-top: 115px;
-    padding-bottom: 85px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 115px 30px 85px;
   }
 }
 
@@ -77,29 +76,27 @@ $modal-padding: 15px;
     right: auto;
     left: auto;
 
-    max-width: 720px;
     height: 115px;
+    max-width: 720px;
     padding: 0;
 
-    background: white;
+    background: $color-white;
   }
 }
 
 .modal__close {
   display: block;
   float: right;
-
-  height: 40px;
   width: 40px;
+  height: 40px;
 
   font-size: 14px;
-  text-align: center;
   line-height: 40px;
-
-  color: white;
+  color: $color-white;
+  text-align: center;
 
   &:hover {
-    color: white;
+    color: $color-white;
     cursor: pointer;
   }
 
@@ -107,7 +104,6 @@ $modal-padding: 15px;
     margin-top: 20px;
 
     font-size: 21px;
-
     color: $color-gray--darker;
 
     &:hover {
@@ -121,11 +117,13 @@ $modal-padding: 15px;
 }
 
 .modal__heading {
-  padding: 9px 0 5px 0;
+  padding: 9px 0 5px;
   margin-right: 44px;
-  white-space: nowrap;
+
   overflow: hidden;
+
   text-overflow: ellipsis;
+  white-space: nowrap;
 
   @include respond(medium) {
     padding: 0;
@@ -142,7 +140,7 @@ $modal-padding: 15px;
 
   width: 100%;
   height: 68px;
-  padding: 10px 0 15px 0;
+  padding: 10px 0 15px;
 
   background: $color-gray--lighter;
 
@@ -150,12 +148,12 @@ $modal-padding: 15px;
     right: auto;
     left: auto;
 
-    max-width: 720px;
     height: 85px;
+    max-width: 720px;
     padding: 0;
-    border-top: none;
 
-    background: white;
+    background: $color-white;
+    border-top: none;
   }
 }
 

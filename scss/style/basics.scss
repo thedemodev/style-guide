@@ -6,15 +6,17 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 // Set basic typography
 body {
-  color: $font-color;
   font-family: "ITC Franklin Gothic W01", Arial, sans-serif;
   line-height: $line-height;
+  color: $font-color;
 }
 
 // Copyright AXA Versicherungen AG 2015

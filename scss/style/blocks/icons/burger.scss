@@ -1,26 +1,30 @@
 @import '../../variables';
 
+/** @define burger-icon */
+
 .burger-icon {
 }
 
 .burger-icon__top,
 .burger-icon__middle,
 .burger-icon__bottom {
-  transition: all $transition-duration ease;
-  transform-origin: 50% 50%;
   opacity: 1;
+  transform-origin: 50% 50%;
+  transition: all $transition-duration ease;
 }
 
-.burger-icon.is-open .burger-icon__top {
-  transform: translateY(7px) rotate(-45deg);
-}
+.burger-icon.is-open {
+  .burger-icon__top {
+    transform: translateY(7px) rotate(-45deg);
+  }
 
-.burger-icon.is-open .burger-icon__middle {
-  opacity: 0;
-}
+  .burger-icon__middle {
+    opacity: 0;
+  }
 
-.burger-icon.is-open .burger-icon__bottom {
-  transform: translateY(-7px) rotate(45deg);
+  .burger-icon__bottom {
+    transform: translateY(-7px) rotate(45deg);
+  }
 }
 
 // Copyright AXA Versicherungen AG 2015

@@ -5,6 +5,8 @@
 @import '../mixins/make-column-span';
 @import '../mixins/respond';
 
+/** @define footer */
+
 .footer {
 }
 
@@ -22,7 +24,9 @@
   @include make-row();
 }
 
-.footer__social, .footer__links, .footer__worldwide {
+.footer__social,
+.footer__links,
+.footer__worldwide {
   @include make-column();
   @include make-column-span(12);
 

@@ -2,11 +2,13 @@
 @import '../mixins/clearfix';
 @import '../mixins/respond';
 
-.fieldset {
+/** @define fieldset */
 
+.fieldset {
   padding-bottom: 0;
-  border-bottom: 1px dotted $color-blue;
   margin-bottom: 40px;
+
+  border-bottom: 1px dotted $color-blue;
 
   &:last-of-type {
     margin-bottom: 50px;

@@ -1,6 +1,8 @@
 @import '../variables';
 @import '../mixins/font';
 
+/** @define steps */
+
 $steps-bullet-diameter: 32px !default;
 
 .steps {}
@@ -19,19 +21,23 @@ $steps-bullet-diameter: 32px !default;
 }
 
 .steps__flow {
-  counter-reset: steps;
   padding: 0;
   margin: 0;
+
   list-style: none;
+
+  counter-reset: steps;
 }
 
 .steps__step {
   position: relative;
+
   width: auto;
-  border-left: 1px $color-gray solid;
   padding: 0;
   margin: 0;
   margin-left: $steps-bullet-diameter / 2;
+
+  border-left: 1px $color-gray solid;
 
   &:last-child {
     border-left: none;
@@ -40,31 +46,36 @@ $steps-bullet-diameter: 32px !default;
 
 .steps__indicator {
   position: absolute;
+  left: $steps-bullet-diameter / -2;
+
   width: $steps-bullet-diameter;
   height: $steps-bullet-diameter;
-  border-radius: $steps-bullet-diameter;
-  left: $steps-bullet-diameter / -2;
-  line-height: $steps-bullet-diameter - 2px;
+
   font-size: 18px;
   font-weight: 600;
-  text-align: center;
-  background: $color-white;
+  line-height: $steps-bullet-diameter - 2px;
   color: $color-gray;
+  text-align: center;
+
+  background: $color-white;
   border: 2px $color-gray solid;
+  border-radius: $steps-bullet-diameter;
 
   &::before {
     counter-increment: steps;
+
     content: counter(steps);
   }
 }
 
 .steps__content {
-  margin-left: 31px;
   padding-bottom: 20px;
+  margin-left: 31px;
 }
 
 .steps__title {
   margin: 0 0 -8px;
+
   @include make-font-heading-tertiary();
 }
 

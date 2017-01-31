@@ -1,5 +1,7 @@
 @import "../variables";
 
+/** @define link */
+
 @mixin link {
   color: $color-blue;
   text-decoration: underline;
@@ -11,7 +13,7 @@
 }
 
 .link {
-  @include link;
+  @include link();
 }
 
 // Copyright AXA Versicherungen AG 2015

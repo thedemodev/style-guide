@@ -1,16 +1,18 @@
 @import '../variables';
 @import '../mixins/respond';
 
+/** @define progress-container */
+
 .progress-container {
   padding-bottom: 17px;
   margin-top: 40px;
-
   overflow: visible;
+
   background: $color-gray--lighter;
 
   @include respond(medium) {
-    margin-top: 60px;
     padding-bottom: 24px;
+    margin-top: 60px;
   }
 }
 
@@ -22,17 +24,17 @@
 
   @include respond(medium) {
     top: -20px;
+
     margin-bottom: 5px;
   }
 }
 
 .progress-container__label {
-  padding: 0 $grid-gutter-width/2;
+  padding: 0 ($grid-gutter-width / 2);
 
   font-size: 17px;
-  text-align: center;
-
   color: $color-light-blue;
+  text-align: center;
 
   @include respond(medium) {
     font-size: 24px;

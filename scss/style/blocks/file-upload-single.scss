@@ -1,15 +1,15 @@
 @import '../variables';
 
+/** @define single-upload */
+
 .single-upload__remarks {
   margin: 10px 0;
 }
 
 .single-upload__status {
   height: 80px;
-  border-width: 1px;
 
-  border-style: solid;
-  border-color: $color-gray;
+  border: 1px solid $color-gray;
 }
 
 .single-upload__status__icon-container {
@@ -20,49 +20,46 @@
 }
 
 .single-upload__status__icon {
-  height: 2.25em;
   width: 2.25em;
+  height: 2.25em;
   margin-top: 20px;
   margin-bottom: 20px;
-  
+
   color: $color-gray;
 }
 
 .single-upload__progressbar-container {
-  display:table;
-
-  height: 100%;
+  display: table;
   width: 100%;
-  padding-left: 72px;
+  height: 100%;
   padding-right: 10px;
+  padding-left: 72px;
 }
 
 .single-upload__progressbar {
-  display:table-cell;
+  display: table-cell;
 
   vertical-align: middle;
 }
 
 .single-upload__status__uploaded__actions {
   float: right;
-
   width: 158px;
   margin-top: 25px;
   margin-right: 10px;
 }
 
-
 .single-upload__status__uploaded__title {
   position: absolute;
 
   width: 100%;
-  padding-left: 72px;
   padding-right: 188px;
+  padding-left: 72px;
   margin-top: 28px;
-
   overflow: hidden;
-  white-space: nowrap;
+
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 // Copyright AXA Versicherungen AG 2015

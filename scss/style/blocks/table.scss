@@ -2,15 +2,16 @@
 @import '../mixins/clearfix';
 @import '../mixins/respond';
 
+/** @define table */
+
 @mixin make-ie9-block($display) {
   @include clearfix();
 
   display: block;
-  float: left;
-  clear: left;
-
   box-sizing: border-box;
+  float: left;
   width: 100%;
+  clear: left;
 
   @include respond(medium) {
     display: $display;
@@ -24,17 +25,16 @@
 }
 
 .table--clickable {
-
   .table__row:hover {
-    background: $color-gray--mid;
     cursor: pointer;
+
+    background: $color-gray--mid;
   }
 
   .table__row__item__content__link:hover {
     color: $color-light-blue;
     cursor: pointer;
   }
-
 }
 
 .table {
@@ -46,7 +46,6 @@
   @include respond(medium) {
     display: table;
   }
-
 }
 
 .table__header {
@@ -78,11 +77,11 @@
   @include make-ie9-block(table-row);
 
   padding: 15px 20px 5px;
-  border-top: 1px solid $color-gray--mid;
 
   text-align: left;
 
-  background: white;
+  background: $color-white;
+  border-top: 1px solid $color-gray--mid;
 
   &:nth-of-type(2n) {
     background: $color-gray--lighter;
@@ -100,13 +99,14 @@
 
   @include respond(medium) {
     padding: 15px 20px;
+
     border: none;
   }
 }
 
 .table__row__item {
   display: inline-block;
-  padding: 0 0 10px 0;
+  padding: 0 0 10px;
 
   @include respond(medium) {
     vertical-align: middle;
@@ -131,9 +131,9 @@
   @include respond(medium) {
     display: table-cell !important;
     padding: 12px 10px;
+
     border-top: 1px solid $color-gray--mid;
   }
-
 }
 
 .table__row__item--multirow {
@@ -142,23 +142,25 @@
 
 .table__row__item__content {
   display: inline-block;
+
   font-size: 14px;
 
   &::after {
     content: ',\00a0';
 
     @include respond(medium) {
-      content: '' !important;
       display: none;
+
+      content: '' !important;
     }
   }
+}
 
-  &__label {
-    display: inline-block;
+.table__row__item__content__label {
+  display: inline-block;
 
-    @include respond(medium) {
-      display: none;
-    }
+  @include respond(medium) {
+    display: none;
   }
 }
 
@@ -173,6 +175,7 @@
 
 .table__row__item--headline {
   @include make-ie9-block(table-cell);
+
   @include respond(medium) {
     width: auto;
   }

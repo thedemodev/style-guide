@@ -1,9 +1,13 @@
 @import '../variables';
 @import '../mixins/unstyle-list';
 
+/** @define multi-upload */
+
 .multi-upload__remarks {
   margin: 10px 0;
 }
+
+/** @define file-list */
 
 .file-list {
   @include unstyle-list();
@@ -13,34 +17,36 @@
 
 .file-list__file {
   padding: 15px 10px;
-  border-width: 1px;
+
+  border: 1px solid $color-gray;
   border-bottom-width: 0;
-
-
-  border-color: $color-gray;
-  border-style: solid;
 
   &:last-of-type {
     border-bottom-width: 1px;
   }
 }
 
+/** @define file-error */
+
 .file-error__message {
-  margin: 10px 10px 0 10px;
-  color: red;
+  margin: 10px 10px 0;
+
+  color: $color-red-error;
 }
+
+/** @define file-uploaded */
 
 .file-uploaded {
 }
 
 .file-uploaded__title {
-  margin-left: 10px;
-  margin-right: 158px;
   margin-top: -1px;
-
+  margin-right: 158px;
+  margin-left: 10px;
   overflow: hidden;
-  white-space: nowrap;
+
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .file-uploaded__actions {
@@ -49,7 +55,7 @@
 }
 
 .file-uploaded__actions__action {
-  margin: 0px 10px;
+  margin: 0 10px;
 
   font-variant: small-caps;
   font-size: 17px;

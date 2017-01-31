@@ -3,14 +3,15 @@
 @import '../mixins/respond';
 @import '../mixins/unstyle-list';
 
+/** @define footer-social */
+
 .footer-social {
 }
 
 .footer-social__headline {
   @include make-font-heading-tertiary();
 
-  padding: 48px 0;
-  padding-bottom: 24px;
+  padding: 48px 0 24px;
   margin: 0;
 
   @include respond(large) {
@@ -19,7 +20,7 @@
 }
 
 .footer-social__items {
-  @include unstyle-list;
+  @include unstyle-list();
 
   display: flex;
   margin: -16px -10px;

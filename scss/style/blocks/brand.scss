@@ -2,19 +2,22 @@
 @import '../mixins/respond';
 @import '../mixins/invisible-font';
 
+/** @define brand */
+
 .brand {
   display: flex;
-  padding: 20px $grid-gutter-width/2;
+  padding: 20px ($grid-gutter-width / 2);
+
   text-decoration: none;
 }
 
 .brand__image {
-  height: 37px;
   width: 158px;
+  height: 37px;
 
   @include respond(large) {
-    height: 54px;
     width: 230px;
+    height: 54px;
   }
 }
 

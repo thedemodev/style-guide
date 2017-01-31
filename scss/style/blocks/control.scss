@@ -1,23 +1,25 @@
 @import '../variables';
 
+/** @define control */
+
 @mixin control {
   display: block;
-
   width: 100%;
   height: 40px;
-  border: none;
-  padding-left: 13px;
   padding-right: 13px;
+  padding-left: 13px;
 
   line-height: 36px;
+  color: $color-black;
 
   background: $color-gray--lighter;
-  color: black;
+
+  border: none;
   border-radius: 0;
 }
 
 .control {
-  @include control;
+  @include control();
 }
 
 @mixin control--input {
@@ -35,7 +37,7 @@
 }
 
 .control--input {
-  @include control--input;
+  @include control--input();
 }
 
 @mixin control--short {
@@ -43,28 +45,30 @@
 }
 
 .control--short {
-  @include control--short;
+  @include control--short();
 }
 
 @mixin control--condensed {
   height: $control-height-condensed;
+
+  font-size: $control-font-size-condensed;
   line-height: $control-height-condensed;
-  font-size: 14px;
 }
 
 .control--condensed {
-  @include control--condensed;
+  @include control--condensed();
 }
 
 .control--textarea {
   @include control--input();
 
   height: auto; // Reset height for textareas
-  min-height: 90px; // approx. 3 lines of text
+  max-width: 100%;
   max-height: 232px; // 10x line-height + padding + border (needed to prevent
   //                    autogrow textareas from growing indefinitely)
   min-width: 100%;
-  max-width: 100%;
+  min-height: 90px; // approx. 3 lines of text
+
   // TODO: May use border instead of padding because the padding is ignored when
   //       the textarea scrolls vertically in chrome.
   //       Con: The resive handle looks ugly when using borders.

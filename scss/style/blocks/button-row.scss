@@ -2,20 +2,22 @@
 @import '../mixins/clearfix';
 @import '../mixins/respond';
 
+/** @define button-row */
+
 .button-row {
   @include clearfix();
+
   margin-bottom: 80px;
 
   @include respond(medium) {
     padding-top: 8px;
-    margin-left: -$grid-gutter-width;
     margin-right: -$grid-gutter-width;
+    margin-left: -$grid-gutter-width;
   }
 }
 
 .button-row__button {
   display: block;
-
   margin-top: 20px;
 
   // prevent style collision

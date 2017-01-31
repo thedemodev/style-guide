@@ -2,11 +2,13 @@
 @mixin ellipsis($textOverflow: 'ellipsis') {
   @if $textOverflow == 'none' {
     overflow: visible;
-    white-space: normal;
+
     text-overflow: clip;
+    white-space: normal;
   } @else {
     overflow: hidden;
-    white-space: nowrap;
+
     text-overflow: unquote($textOverflow);
+    white-space: nowrap;
   }
 }

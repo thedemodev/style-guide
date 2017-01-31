@@ -3,6 +3,8 @@
 @import '../mixins/make-column-offset';
 @import '../mixins/respond';
 
+/** @define column */
+
 $grid-columns-length: 12 !default;
 
 .column {

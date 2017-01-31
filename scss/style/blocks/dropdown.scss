@@ -4,10 +4,12 @@
 @import '../mixins/make-link';
 @import '../mixins/ellipsis';
 
+/** @define dropdown */
+
 $dropdown-arrow-width: 40px;
 
 .dropdown {
-  @include make-link;
+  @include make-link();
 
   position: relative;
 }
@@ -16,10 +18,13 @@ $dropdown-arrow-width: 40px;
   display: none;
 
   .js & {
-    @include control;
-    color: inherit; // reset color set in .control
+    @include control();
+
     display: flex;
+
     align-items: center;
+
+    color: inherit; // reset color set in .control
 
     border: 1px solid $color-gray--light;
   }
@@ -32,17 +37,19 @@ $dropdown-arrow-width: 40px;
 
 .dropdown__label__text {
   @include ellipsis();
+
+  max-width: 100%;
+
   order: 1;
   flex-grow: 1;
-  max-width: 100%;
 }
 
 .dropdown__label__icon {
-  order: 2;
-  flex-shrink: 0;
-
   width: 1.25rem;
   height: 1.25rem;
+
+  order: 2;
+  flex-shrink: 0;
 }
 
 .dropdown__select {
@@ -51,21 +58,21 @@ $dropdown-arrow-width: 40px;
   .js & {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    z-index: $z-index-dropdown-select;
+
+    display: block;
     height: 100%;
     padding-top: 0;
     padding-bottom: 0;
 
-    display: block;
-
     line-height: 3.5rem;
 
+    border: none;
     opacity: 0;
     filter: alpha(opacity=0);
-    border: none;
-    z-index: $z-index-dropdown-select;
   }
 }
 
@@ -75,7 +82,7 @@ $dropdown-arrow-width: 40px;
 
 .js .dropdown__label--large {
   height: 3rem;
-  padding: 0 $grid-gutter-width/2 - 0.25rem;
+  padding: 0 ($grid-gutter-width / 2) - 0.25rem;
 }
 
 .dropdown__label__icon--large {
@@ -84,7 +91,7 @@ $dropdown-arrow-width: 40px;
 }
 
 .js .dropdown__label--condensed {
-  @include control--condensed;
+  @include control--condensed();
 }
 
 .dropdown__label__icon--condensed {

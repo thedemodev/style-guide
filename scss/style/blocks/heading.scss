@@ -1,6 +1,8 @@
 @import '../mixins/font';
 @import '../variables';
 
+/** @define heading */
+
 .heading {
   font-weight: normal;
 }
@@ -8,7 +10,7 @@
 .heading--page {
   @include make-font-heading-primary();
 
-  margin: 0 0 40px 0;
+  margin: 0 0 40px;
 
   color: $color-blue;
 }
@@ -31,29 +33,29 @@
 .heading--tertiary {
   @include make-font-heading-tertiary();
 
-  margin: 50px 0 20px 0;
+  margin: 50px 0 20px;
 
   color: $color-black;
 }
 
 .heading--modal {
   margin: 0;
+
   font-size: 18px;
-  color: white;
+  color: $color-white;
 
   @include respond(medium) {
-    padding: 0 $grid-gutter-width/2 18px;
+    padding: 0 ($grid-gutter-width / 2) 18px;
     margin-top: 54px;
 
-    line-height: 1.15;
     font-size: 2rem;
     font-weight: 700;
-
+    line-height: 1.15;
     color: $color-black;
-    background: white;
+
+    background: $color-white;
   }
 }
-
 
 .heading--fieldset {
   margin-top: 0; // TODO
@@ -61,24 +63,24 @@
 
   font-size: 19px;
   line-height: 1.15;
-
   color: $color-blue;
 
   @include respond(medium) {
     margin-top: -5px;
+
     font-size: 24px;
   }
 }
 
 .heading--summary {
-  margin: 21px 0 6px 0;
+  margin: 21px 0 6px;
 
   font-size: 1em;
-  line-height: 1.5;
   font-weight: bold;
+  line-height: 1.5;
 
   @include respond(medium) {
-    margin: 22px 0 1px 0;
+    margin: 22px 0 1px;
   }
 }
 

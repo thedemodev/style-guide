@@ -71,12 +71,12 @@ $font-heading-tertiary--line-height--medium: 1.6 !default;
  * Desktop: 24px (1.5rem), bold, 1.4
  */
 @mixin make-font-heading-tertiary() {
-  font-size: $font-heading-tertiary--size; //22px
+  font-size: $font-heading-tertiary--size; // 22px
   font-weight: $font-heading-tertiary--weight;
   line-height: $font-heading-tertiary--line-height;
 
   @include respond(medium) {
-    font-size: $font-heading-tertiary--size--medium; //24px
+    font-size: $font-heading-tertiary--size--medium; // 24px
     line-height: $font-heading-tertiary--line-height--medium;
   }
 }
@@ -154,12 +154,12 @@ $font-medium--size--medium: 1rem !default; // 16px
  * Desktop: 16px (1rem), normal, 1.6
  */
 @mixin make-font-medium() {
-  font-size: $font-medium--size; //14px
+  font-size: $font-medium--size; // 14px
   font-weight: $font-medium--weight;
   line-height: $font-medium--line-height;
 
   @include respond(medium) {
-    font-size: $font-medium--size--medium; //16px
+    font-size: $font-medium--size--medium; // 16px
   }
 }
 
@@ -167,11 +167,11 @@ $font-medium--size--medium: 1rem !default; // 16px
   @include make-font-medium();
 }
 
-$font-medium-semibold--size: 0.875rem !default; //14px
+$font-medium-semibold--size: 0.875rem !default; // 14px
 $font-medium-semibold--weight: $font-weight-medium !default;
 $font-medium-semibold--line-height: 1.6 !default;
 
-$font-medium-semibold--size--medium: 1rem !default; //16px
+$font-medium-semibold--size--medium: 1rem !default; // 16px
 
 /**
  * Medium Semibold Font (H7 in PDF)
@@ -180,12 +180,12 @@ $font-medium-semibold--size--medium: 1rem !default; //16px
  * Desktop: 16px (1rem), semibold (600), 1.6
  */
 @mixin make-font-medium-semibold() {
-  font-size: $font-medium-semibold--size; //14px
+  font-size: $font-medium-semibold--size; // 14px
   font-weight: $font-medium-semibold--weight;
   line-height: $font-medium-semibold--line-height;
 
   @include respond(medium) {
-    font-size: $font-medium-semibold--size--medium; //16px
+    font-size: $font-medium-semibold--size--medium; // 16px
   }
 }
 
@@ -193,7 +193,7 @@ $font-medium-semibold--size--medium: 1rem !default; //16px
   @include make-font-medium-semibold();
 }
 
-$font-small-semibold--size: 0.875rem !default; //14px
+$font-small-semibold--size: 0.875rem !default; // 14px
 $font-small-semibold--weight: $font-weight-medium !default;
 $font-small-semibold--line-height: 1.6 !default;
 
@@ -204,7 +204,7 @@ $font-small-semibold--line-height: 1.6 !default;
  * Desktop: 14px (0.875rem), semibold (600), 1.6
  */
 @mixin make-font-small-semibold() {
-  font-size: $font-small-semibold--size; //14px;
+  font-size: $font-small-semibold--size; // 14px;
   font-weight: $font-small-semibold--weight;
   line-height: $font-small-semibold--line-height;
 }

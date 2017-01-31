@@ -5,6 +5,8 @@
 @import '../blocks/checkbox';
 @import '../variables';
 
+/** @define segmented-control */
+
 .segmented-control {
   @extend .checkbox-group;
 
@@ -39,11 +41,13 @@
       }
 
       .segmented-control__item {
-        border: 1px solid $color-gray !important;
         color: $color-gray;
 
+        border: 1px solid $color-gray !important;
+
         &.is-active {
-          color: white;
+          color: $color-white;
+
           background-color: $color-gray;
         }
       }
@@ -58,16 +62,15 @@
     @include undo-invisible-font();
 
     display: inline-block;
-
     height: 40px;
-    padding-left: 25px;
     padding-right: 8px;
-    border: 1px solid $color-gray;
-    border-right-width: 0;
+    padding-left: 25px;
 
     line-height: 40px;
-
     cursor: pointer;
+
+    border: 1px solid $color-gray;
+    border-right-width: 0;
 
     &:last-of-type {
       border-right-width: 1px;
@@ -75,12 +78,10 @@
   }
 
   &.is-active {
+    color: $color-white;
+
     background: $color-light-blue;
-    color: white;
-    border-top-color: $color-light-blue;
-    border-bottom-color: $color-light-blue;
-    border-left-color: $color-light-blue;
-    border-right-color: $color-light-blue;
+    border-color: $color-light-blue;
 
     + .segmented-control__item {
       border-left-color: $color-light-blue;
@@ -101,14 +102,13 @@
 }
 
 .segmented-control__item__label {
-  .js &:after {
-    content: '';
-
+  .js &::after {
     display: inline-block;
-
     width: 14px;
     min-height: 1px;
     margin-left: 5px;
+
+    content: '';
   }
 }
 
@@ -116,26 +116,23 @@
   .segmented-control__item {
     @include ellipsis();
     display: block;
-
     width: 100%;
-    border-right-width: 1px;
     margin-bottom: -1px;
+
+    border-right-width: 1px;
 
     &.is-active {
       border-top-color: $color-light-blue !important;
 
       + .segmented-control__item {
-        border-left-color: $color-gray;
         border-top-color: $color-light-blue !important;
+        border-left-color: $color-gray;
       }
     }
   }
 
   &:focus .segmented-control__item {
-    border-top-color: $color-gray !important;
-    border-bottom-color: $color-gray !important;
-    border-right-color: $color-light-blue;
-    border-left-color: $color-light-blue;
+    border-color: $color-gray $color-light-blue !important;
 
     &:first-of-type {
       border-top-color: $color-light-blue !important;

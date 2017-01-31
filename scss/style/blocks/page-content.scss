@@ -1,8 +1,10 @@
 @import '../variables';
 @import '../mixins/make-container';
 
+/** @define page-content */
+
 .page-content {
-  @include make-container;
+  @include make-container();
 
   max-width: $grid-breakpoint-lg;
   min-height: 32rem;

@@ -1,5 +1,7 @@
 @import '../mixins/make-row';
 
+/** @define row */
+
 .row {
   @include make-row();
 }

@@ -2,6 +2,8 @@
 @import '../mixins/make-container';
 @import '../mixins/respond';
 
+/** @define container */
+
 .container {
   @include make-container();
 
@@ -9,5 +11,5 @@
 }
 
 .container--fluid {
-  max-width: auto;
+  max-width: none;
 }

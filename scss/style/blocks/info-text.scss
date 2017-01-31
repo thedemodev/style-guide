@@ -1,9 +1,13 @@
 @import '../variables';
 
+/** @define info-text */
+
 .info-text {
   padding: 1px 10px;
+
+  color: $color-white;
+
   background: $color-gray--darker;
-  color: white;
 }
 
 // Copyright AXA Versicherungen AG 2015

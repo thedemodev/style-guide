@@ -3,11 +3,14 @@
 @import '../mixins/respond';
 @import '../mixins/invisible-input';
 
+/** @define checkbox */
+
 .checkbox {
   @include clearfix();
 
   display: block;
   margin-bottom: 15px;
+
   cursor: pointer;
 
   &:last-of-type {
@@ -17,7 +20,8 @@
 
 .checkbox__checkbox {
   float: left;
-  margin: 4px 0 0 0;
+  margin: 4px 0 0;
+
   vertical-align: middle;
 
   .js & {
@@ -45,15 +49,18 @@
   }
 
   .js & {
-    display: block;
     position: absolute;
-    padding: 3px;
+
+    display: block;
     width: 30px;
     height: 30px;
-    border: 1px solid $color-gray;
+    padding: 3px;
+
     fill-opacity: 0;
     fill: $color-light-blue;
-    background: white;
+
+    background: $color-white;
+    border: 1px solid $color-gray;
 
     @include respond(medium) {
       width: 25px;
@@ -74,6 +81,7 @@
   .js & {
     padding-top: 5px;
     margin-left: 40px;
+
     line-height: 1.5; // TODO: use more global definition
 
     @include respond(medium) {
@@ -86,17 +94,22 @@
 // Changes on the button variant:
 
 .checkbox--button {
-  display: inline-block;
-  cursor: pointer;
   position: relative;
-  box-shadow: rgba($color-gray--darkest, 0.1) 0px 1px 2px 1px;
-  font-weight: 700;
-  font-size: 18px;
-  border-bottom-style: solid;
-  border-bottom-width: 0px;
-  border-color: $color-blue;
+
+  display: inline-block;
+  padding: 6px 20px;
   margin: 2px 10px 14px 2px;
-  padding: 6px 20px 6px;
+
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+
+  border-color: $color-blue;
+  border-bottom-style: solid;
+  border-bottom-width: 0;
+
+  box-shadow: rgba($color-gray--darkest, 0.1) 0 1px 2px 1px;
+
   transition: padding-bottom 0.15s, border-bottom 0.15s;
   user-select: none;
 
@@ -112,14 +125,15 @@
 
   &.is-active {
     color: $color-white;
+
     background-color: $color-blue;
   }
 
   &:not(.is-active):hover {
     padding-bottom: 3px;
+
     border-bottom-width: 3px;
   }
 }
-
 
 // Copyright AXA Versicherungen AG 2015

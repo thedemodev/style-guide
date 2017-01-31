@@ -3,15 +3,17 @@
 @import '../mixins/make-link';
 @import '../mixins/unstyle-list';
 
+/** @define mobile-languages */
+
 .mobile-languages {
-  @include unstyle-list;
+  @include unstyle-list();
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-
   padding-top: 0;
   padding-bottom: 0;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .mobile-languages__item {
@@ -19,14 +21,14 @@
 
 .mobile-languages__link {
   @include make-font-large();
-  @include make-link;
+  @include make-link();
 
   display: flex;
   width: 4rem;
   height: 2.5rem;
 
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .mobile-languages__link.is-active {

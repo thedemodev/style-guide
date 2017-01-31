@@ -4,11 +4,13 @@
 @import '../mixins/make-row';
 @import '../blocks/info-icon';
 
+/** @define form */
+
 .form {
 }
 
 .form__group {
-  @include make-row;
+  @include make-row();
 
   margin-bottom: 15px;
 
@@ -17,26 +19,9 @@
   }
 }
 
-.form__group--condensed {
-  margin-bottom: 14px;
-
-  .form__group__label {
-    margin-bottom: 0;
-
-    font-size: 0.9285em;
-
-    color: $color-gray--darker;
-
-    @include respond(medium) {
-      font-size: 1em;
-    }
-  }
-}
-
 .form__group__label {
-  @include make-column;
+  @include make-column();
   @include make-column-span(12);
-
   @include clearfix();
 
   margin-bottom: 6px;
@@ -49,38 +34,55 @@
   @include respond(large) {
     @include make-column-span(5);
   }
+}
 
-  .form__group__label__text {
-    display: inline-block;
-    line-height: 1.5; // reset
-    vertical-align: middle;
+.form__group__label__text {
+  display: inline-block;
+
+  line-height: 1.5; // reset
+  vertical-align: middle;
+}
+
+.form__group__label__info-icon {
+  float: right;
+
+  width: $info-icon-diameter;
+
+  @include respond(medium) {
+    width: $info-icon-diameter--medium;
+    margin-top: 5px;
   }
+}
 
-  .form__group__label__info-icon {
-    float: right;
+.form__group__label__info-icon-text-wrapper {
+  display: block;
 
-    width: $info-icon-diameter;
+  margin-right: $info-icon-diameter + 10px;
+
+  @include respond(medium) {
+    margin-right: $info-icon-diameter--medium + 20px;
+
+    line-height: 40px;
+  }
+}
+
+.form__group--condensed {
+  margin-bottom: 14px;
+
+  .form__group__label {
+    margin-bottom: 0;
+
+    font-size: 0.9285em;
+    color: $color-gray--darker;
 
     @include respond(medium) {
-      width: $info-icon-diameter--medium;
-      margin-top: 5px;
-    }
-  }
-
-  .form__group__label__info-icon-text-wrapper {
-    display: block;
-
-    margin-right: $info-icon-diameter + 10px;
-
-    @include respond(medium) {
-      line-height: 40px;
-      margin-right: $info-icon-diameter--medium + 20px;
+      font-size: 1em;
     }
   }
 }
 
 .form__group__control {
-  @include make-column;
+  @include make-column();
   @include make-column-span(12);
 
   @include respond(medium) {
@@ -90,16 +92,14 @@
   @include respond(large) {
     @include make-column-span(6);
   }
-
 }
 
 .form__group__control--fullwidth {
-  @include make-column;
+  @include make-column();
 
   @include respond(medium) {
     @include make-column-span(12);
   }
-
 }
 
 .form__info-text {
@@ -107,12 +107,13 @@
 }
 
 .form__error-message {
-  margin: 5px 0 0 0;
+  margin: 5px 0 0;
+
   color: $color-red-error;
 }
 
 .form__footnote {
-  margin: 50px 0 50px 0;
+  margin: 50px 0;
 }
 
 // Copyright AXA Versicherungen AG 2015

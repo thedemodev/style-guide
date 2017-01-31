@@ -1,17 +1,20 @@
 @import '../mixins/respond';
 @import '../variables';
 
+/** @define info-icon */
+
 $info-icon-diameter: 20px !default;
 $info-icon-diameter--medium: 28px !default;
 
 .info-icon {
-
   display: block;
+
   line-height: 0;
 
   &:hover,
   &:focus {
     cursor: pointer;
+
     outline: none;
 
     .info-icon__svg {
@@ -43,7 +46,6 @@ $info-icon-diameter--medium: 28px !default;
   height: $info-icon-diameter;
 
   fill: $color-gray--darker;
-
 
   @include respond(medium) {
     width: $info-icon-diameter--medium;

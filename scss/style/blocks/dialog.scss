@@ -1,14 +1,16 @@
 @import './modal2';
 @import '../mixins/word-break';
 
+/** @define dialog */
+
 $dialog-padding: 15px;
 
 .dialog {
   display: none;
+  height: 100%;
+
   flex-direction: column;
   align-items: stretch;
-
-  height: 100%;
 
   background: transparent;
 
@@ -18,35 +20,39 @@ $dialog-padding: 15px;
 }
 
 .dialog__header {
-  color: white;
-  background: $color-blue;
-  margin-top: 0;
   padding: 0 15px;
+  margin-top: 0;
+
+  color: $color-white;
+
+  background: $color-blue;
 
   @include respond(medium) {
-    background: $color-white;
     margin-top: auto;
+
+    background: $color-white;
   }
 }
 
 .dialog__heading {
   @include word-break();
 
+  padding: 10px 0;
   margin: 0;
+
   font-size: 18px;
   font-weight: normal;
   line-height: 1.2;
-  padding: 10px 0;
 
   @include respond(medium) {
-    padding: 0 $grid-gutter-width/2 18px;
+    padding: 0 ($grid-gutter-width / 2) 18px;
     margin-top: 54px;
 
-    line-height: 1.15;
     font-size: 2rem;
     font-weight: 700;
-
+    line-height: 1.15;
     color: $color-black;
+
     background: $color-white;
   }
 }
@@ -54,15 +60,14 @@ $dialog-padding: 15px;
 .dialog__close {
   display: block;
   float: right;
-
-  height: 40px;
   width: 40px;
+  height: 40px;
 
   font-size: 14px;
-  text-align: center;
   line-height: 40px;
-
   color: $color-white;
+  text-align: center;
+
   cursor: pointer;
 
   background: transparent;
@@ -78,7 +83,6 @@ $dialog-padding: 15px;
     margin-top: 20px;
 
     font-size: 21px;
-
     color: $color-gray--darker;
 
     &:hover,
@@ -93,16 +97,16 @@ $dialog-padding: 15px;
 }
 
 .dialog__content {
-  background: $color-white;
   height: 100%;
   max-height: 100%;
+  padding: $dialog-padding;
   margin-top: 0;
   margin-bottom: 0;
-  padding: $dialog-padding;
-
+  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+
+  background: $color-white;
 
   @include respond(medium) {
     height: auto;
@@ -111,14 +115,18 @@ $dialog-padding: 15px;
 }
 
 .dialog__footer {
-  background: $color-gray--lighter;
   margin-bottom: 0;
+
   text-align: center;
 
+  background: $color-gray--lighter;
+
   @include respond(medium) {
-    background: $color-white;
     margin-bottom: auto;
+
     text-align: right;
+
+    background: $color-white;
   }
 }
 

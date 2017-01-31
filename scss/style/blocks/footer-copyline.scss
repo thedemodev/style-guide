@@ -2,6 +2,8 @@
 @import '../mixins/make-container';
 @import '../mixins/unstyle-list';
 
+/** @define footer-copyline */
+
 .footer-copyline {
   background-color: $color-gray--lighter;
 }
@@ -10,19 +12,19 @@
   @include make-container();
 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   max-width: $grid-breakpoint-lg;
-
   padding-top: 8px;
   padding-bottom: 8px;
 
-  @include respond(large) {
-    flex-direction: row;
-    flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
 
+  @include respond(large) {
     padding-top: 0;
     padding-bottom: 0;
+
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -37,11 +39,11 @@
   align-items: center;
 
   order: 2;
+
   color: $color-gray--darker;
 
   @include respond(large) {
     height: 56px;
-
     padding: 0 18px;
     margin: 0 -18px;
 
@@ -56,14 +58,15 @@
 }
 
 .footer-copyline__entries {
-  @include unstyle-list;
+  @include unstyle-list();
 
   display: flex;
+  padding: 0;
   margin: 0 -10px;
-  padding: 0 0;
+
+  flex-wrap: wrap;
 
   order: 1;
-  flex-wrap: wrap;
 
   @include respond(large) {
     margin: 0 -18px;
@@ -83,8 +86,8 @@
 
   align-items: center;
 
-  text-decoration: none;
   color: $color-gray--darker;
+  text-decoration: none;
 
   @include respond(large) {
     height: 56px;

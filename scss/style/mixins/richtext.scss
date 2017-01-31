@@ -1,13 +1,16 @@
 @mixin richtext-styled-list($left: 1.1em, $style: "–") {
   ul {
-    list-style-type: none;
     padding-left: $left;
+
+    list-style-type: none;
 
     li {
       &::before {
-        content: $style; /* en dash */
         position: absolute;
+
         margin-left: -$left;
+
+        content: $style; /* en dash */
       }
     }
   }

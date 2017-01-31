@@ -1,5 +1,7 @@
 @import '../mixins/word-break';
 
+/** @define word-break */
+
 .word-break {
   @include word-break();
 }

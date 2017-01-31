@@ -1,19 +1,21 @@
 @import '../variables';
 
+/** @define tag */
+
 .tag {
   display: inline;
 
-  padding: .2em .6em .3em;
+  padding: 0.2em 0.6em 0.3em;
 
   font-size: 85%;
   line-height: 1;
+  color: $color-white;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
 
-  color: $color-white;
-  border-radius: .25em;
   background-color: $color-blue-gray;
+  border-radius: 0.25em;
 }
 
 .tag--primary {

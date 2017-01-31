@@ -2,19 +2,21 @@
 @import '../mixins/font';
 @import '../mixins/make-link';
 
+/** @define meta-language */
+
 .meta-language {
 }
 
 .meta-language__button {
   @include make-font-small-semibold();
-  @include make-link;
+  @include make-link();
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-
   height: 100%;
-  padding: 0 $grid-gutter-width/2;
+  padding: 0 ($grid-gutter-width / 2);
+
+  justify-content: center;
+  align-items: center;
 }
 
 // Copyright AXA Versicherungen AG 2015

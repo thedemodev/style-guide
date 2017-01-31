@@ -4,8 +4,10 @@
 @import '../mixins/respond';
 @import '../mixins/unstyle-list';
 
+/** @define meta-menu */
+
 .meta-menu {
-  @include unstyle-list;
+  @include unstyle-list();
 
   display: flex;
   height: 100%;
@@ -15,27 +17,28 @@
   @include make-font-small-semibold();
 
   height: 100%;
+
   border-right: 1px solid $color-gray--mid;
 }
 
 .meta-menu__item.is-active {
   background: $color-white;
   box-shadow:
-    -4px 0px 3px -3px $color-gray--mid,
-    3px 0px 3px -3px $color-gray--mid,
-    0 0px 0px 0 $color-white,
-    0 0px 0px 0 $color-white;
+    -4px 0 3px -3px $color-gray--mid,
+    3px 0 3px -3px $color-gray--mid,
+    0 0 0 0 $color-white,
+    0 0 0 0 $color-white;
 }
 
 .meta-menu__link {
-  @include make-link;
+  @include make-link();
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-
   height: 100%;
-  padding: 0 $grid-gutter-width/2;
+  padding: 0 ($grid-gutter-width / 2);
+
+  justify-content: center;
+  align-items: center;
 }
 
 .meta-menu__link.is-active {

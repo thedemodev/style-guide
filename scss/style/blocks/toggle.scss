@@ -1,17 +1,20 @@
 @import '../variables';
 
+/** @define toggle */
+
 .toggle {
   margin: 20px 0;
 }
 
 .toggle__button {
   display: block;
-  margin: 20px 0 0 0;
-  text-transform: uppercase;
+  margin: 20px 0 0;
+
+  font-weight: $font-weight-medium;
   line-height: 30px;
   color: $color-light-blue;
+  text-transform: uppercase;
   cursor: pointer;
-  font-weight: $font-weight-medium;
 
   &:hover,
   &.is-active {
@@ -23,13 +26,13 @@
 }
 
 .toggle__icon {
-  height: 2em;
   width: 2em;
+  height: 2em;
+
   margin-right: 10px;
 
-  vertical-align: middle;
-
   color: $color-light-blue;
+  vertical-align: middle;
 }
 
 // Copyright AXA Versicherungen AG 2015

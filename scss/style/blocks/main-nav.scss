@@ -1,6 +1,8 @@
 @import '../variables';
 @import '../mixins/respond';
 
+/** @define main-nav */
+
 .main-nav {
   @include respond(medium) {
     border-bottom: 5px solid $color-blue;

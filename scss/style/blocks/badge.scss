@@ -1,5 +1,7 @@
 @import '../variables';
 
+/** @define badge */
+
 .badge {
   display: inline-block;
 
@@ -10,11 +12,11 @@
   font-size: $font-size-small;
   font-style: normal;
   line-height: 1;
+  color: $color-white;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
 
-  color: white;
   background-color: $color-red;
   border-radius: 10px;
 }

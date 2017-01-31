@@ -1,33 +1,37 @@
 @import '../variables';
 
+/** @define downloads */
+
 .downloads {
   display: block;
+  padding: -5px 0 0;
   margin: 30px 0;
-  padding: -5px 0 0 0;
 
   text-transform: uppercase;
 }
 
 .downloads__icon {
-  float: left;
   position: relative;
   top: -5px;
 
-  height: 32px;
+  float: left;
   width: 32px;
+  height: 32px;
 
   color: $color-light-blue;
 }
 
 .downloads__item {
-  margin-left: 43px;
   margin-bottom: 10px;
+  margin-left: 43px;
 }
 
 .downloads__link {
   display: inline-block;
-  color: $color-light-blue;
+
   font-weight: 600;
+  color: $color-light-blue;
+
   text-decoration: none;
 
   &:hover {
@@ -36,8 +40,8 @@
 }
 
 .downloads__link--inactive {
-  cursor: default;
   color: $color-gray;
+  cursor: default;
 
   &:hover {
     color: $color-gray;
