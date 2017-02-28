@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
+import cacheClosure from '../cache-closure'
+
 const LanguageSwitch = ({
   invert,
   current,
@@ -17,7 +19,7 @@ const LanguageSwitch = ({
     })}>
     <a
       className="meta-language2__button"
-      onClick={() => onMenuToggle(!isMenuOpen)}>
+      onClick={cacheClosure(onMenuToggle, !isMenuOpen)}>
       <span
         className="meta-language2__text">
         {current}
@@ -48,7 +50,7 @@ const LanguageSwitch = ({
               'is-active': lang === current,
             })}
             key={lang}
-            onClick={() => onLanguageSelect(lang)}>
+            onClick={cacheClosure(onLanguageSelect, lang)}>
             {lang}
           </a>
         ))}
