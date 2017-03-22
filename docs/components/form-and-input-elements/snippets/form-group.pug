@@ -23,7 +23,7 @@ include ../../../mixins.pug
         a.info-icon(data-info, area-describedby='#target', data-target='#target', href='#', role='button')
           +svg('info', 'info-icon__svg')
           +svg('close', ['info-icon__svg', 'info-icon__svg--close'])
-      .form__group__label__info-icon-text-wrapper Form group with info
+      .form__group__label__text.form__group__label__text--info Form group with info
     .form__group__control
       input(type='text').control.control--input
       .form__info-text(style='display: none;', role='tooltip')#target

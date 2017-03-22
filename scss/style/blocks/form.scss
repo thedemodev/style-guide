@@ -43,18 +43,7 @@
   vertical-align: middle;
 }
 
-.form__group__label__info-icon {
-  float: right;
-
-  width: $info-icon-diameter;
-
-  @include respond(medium) {
-    width: $info-icon-diameter--medium;
-    margin-top: 5px;
-  }
-}
-
-.form__group__label__info-icon-text-wrapper {
+.form__group__label__text--info {
   display: block;
 
   margin-right: $info-icon-diameter + 10px;
@@ -63,6 +52,18 @@
     margin-right: $info-icon-diameter--medium + 20px;
 
     line-height: 40px;
+  }
+
+}
+
+.form__group__label__info-icon {
+  float: right;
+
+  width: $info-icon-diameter;
+
+  @include respond(medium) {
+    width: $info-icon-diameter--medium;
+    margin-top: 5px;
   }
 }
 
