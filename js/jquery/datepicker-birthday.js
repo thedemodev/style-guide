@@ -34,6 +34,7 @@ class BirthdayDatepicker {
 
   generateOptions() {
     // Days:
+    // eslint-disable-next-line no-plusplus
     for (let x = 1; x <= 31; x++) {
       $('<option />').text(x).appendTo(this.$day)
     }
@@ -46,7 +47,13 @@ class BirthdayDatepicker {
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
   daysInMonth(month, year) {
+    // if year is unspecified expect leap year
+    if (year === '' || year == null) {
+      // eslint-disable-next-line no-param-reassign
+      year = 4
+    }
     return new Date(year, month, 0).getDate()
   }
 
@@ -60,26 +67,24 @@ class BirthdayDatepicker {
     }
 
     if ((type === 'month' || type === 'year') && this.month !== '') {
-      let days = 30
-      let x
-
-      if (this.year !== '') {
-        days = this.daysInMonth(this.month, this.year)
-      } else {
-        if (this.month % 2 === 1) days = 31
-        if (this.month === 2) days = 29
-      }
+      const days = this.daysInMonth(this.month, this.year)
 
       this.$day.html('')
 
-      for (x = 1; x <= days; x++) {
+      // eslint-disable-next-line no-plusplus
+      for (let x = 1; x <= days; x++) {
         $('<option />').text(x).appendTo(this.$day)
       }
 
-      this.$day.val(this.day)
+      this.day = Math.min(this.day, days)
+
+      this.$day
+        .val(this.day)
+        .change() // important, in case select has no focus, change needs to be triggered manually
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
   addLeadingZero(num) {
     return (num < 10) ? `0${num}` : num
   }
