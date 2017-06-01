@@ -1,6 +1,13 @@
+@import './target';
+
 @mixin make-column-span($size, $columns: 12) {
-  width: percentage($size / $columns);
+  $width: percentage($size / $columns);
+  width: $width;
 
   -ms-flex: 0 0 auto;
-  flex: 0 0 percentage($size / $columns);
+  flex: 0 0 $width;
+
+  @include target(ie) {
+    max-width: $width;
+  }
 }
