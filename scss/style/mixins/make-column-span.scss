@@ -8,6 +8,6 @@
   flex: 0 0 $width;
 
   @include target(ie) {
-    max-width: $width !important;
+    max-width: $width;
   }
 }
