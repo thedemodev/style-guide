@@ -12,10 +12,18 @@
 .form__group {
   @include make-row();
 
-  margin-bottom: 15px;
+  margin-top: 15px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   @include respond(medium) {
-    margin-bottom: 20px;
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 
@@ -23,8 +31,6 @@
   @include make-column();
   @include make-column-span(12);
   @include clearfix();
-
-  margin-bottom: 6px;
 
   @include respond(medium) {
     @include make-column-span(6);
@@ -66,31 +72,20 @@
   }
 }
 
-.form__group--condensed {
-  margin-bottom: 14px;
-
-  .form__group__label {
-    margin-bottom: 0;
-
-    font-size: 0.9285em;
-    color: $color-gray--darker;
-
-    @include respond(medium) {
-      font-size: 1em;
-    }
-  }
-}
-
 .form__group__control {
   @include make-column();
   @include make-column-span(12);
 
-  @include respond(medium) {
-    @include make-column-span(6);
+  .form__group__label + & {
+    margin-top: 6px;
   }
 
-  @include respond(large) {
+  @include respond(medium) {
     @include make-column-span(6);
+
+    .form__group__label + & {
+      margin-top: 0;
+    }
   }
 }
 
@@ -99,6 +94,27 @@
 
   @include respond(medium) {
     @include make-column-span(12);
+  }
+}
+
+.form__group--condensed {
+  margin-top: 14px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .form__group__label {
+    font-size: 0.9285em;
+    color: $color-gray--darker;
+
+    @include respond(medium) {
+      font-size: 1em;
+    }
+  }
+
+  .form__group__control {
+    margin-top: 0;
   }
 }
 
