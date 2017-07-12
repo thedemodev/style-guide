@@ -57,31 +57,4 @@
   }
 }
 
-.heading--fieldset {
-  margin-top: 0; // TODO
-  margin-bottom: 25px;
-
-  font-size: 19px;
-  line-height: 1.15;
-  color: $color-blue;
-
-  @include respond(medium) {
-    margin-top: -5px;
-
-    font-size: 24px;
-  }
-}
-
-.heading--summary {
-  margin: 21px 0 6px;
-
-  font-size: 1em;
-  font-weight: bold;
-  line-height: 1.5;
-
-  @include respond(medium) {
-    margin: 22px 0 1px;
-  }
-}
-
 // Copyright AXA Versicherungen AG 2015
