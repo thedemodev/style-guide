@@ -72,12 +72,6 @@
   border-bottom: 5px solid $color-blue;
   box-shadow: 25px 0 34px -12px rgba($color-black, 0.25), -25px 0 34px -12px rgba($color-black, 0.25), 0 25px 34px -12px rgba($color-black, 0.25);
 
-  /* stylelint-disable plugin/selector-bem-pattern */
-  h3 {
-    margin-bottom: 6px;
-  }
-  /* stylelint-enable */
-
   .menu-main__item:hover &,
   &.is-open {
     display: block;
