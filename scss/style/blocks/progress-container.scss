@@ -20,12 +20,12 @@
   position: relative;
   top: -10px;
 
-  margin-bottom: 12px;
+  padding-bottom: 12px;
 
   @include respond(medium) {
     top: -20px;
 
-    margin-bottom: 5px;
+    padding-bottom: 5px;
   }
 }
 
