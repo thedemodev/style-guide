@@ -73,7 +73,7 @@
   color: $color-blue;
 }
 
-.icon-teaser__item__title {
+.icon-teaser__item__text {
   @include make-font-medium-semibold();
 
   margin: 1.5rem 0 0;
@@ -81,7 +81,7 @@
   color: $color-blue-gray;
 }
 
-.icon-teaser__item__text {
+.icon-teaser__item__title {
   @include make-font-heading-tertiary();
 
   max-width: 300px;
