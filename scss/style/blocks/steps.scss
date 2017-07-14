@@ -17,12 +17,11 @@ $steps-bullet-diameter: 32px !default;
   @include make-font-large();
 
   margin: 0;
-  margin-bottom: 1rem;
 }
 
 .steps__flow {
   padding: 0;
-  margin: 0;
+  margin: 1rem 0 0;
 
   list-style: none;
 

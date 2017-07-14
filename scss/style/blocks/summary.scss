@@ -16,27 +16,25 @@
 .summary__label {
   @include make-font-large();
 
-  margin: 1rem 0 0;
+  margin: 0;
 }
 
 .summary__content {
   @include make-font-large-semibold();
 
-  margin: 0 0 0.5rem;
+  margin: 0;
 }
 
 .summary__items {
-  padding: 0;
+  padding: 0 0 20px;
   margin: 0;
-  margin-bottom: 20px;
 
   list-style: none;
 }
 
 .summary__item {
   padding: 0;
-  margin: 0;
-  margin-bottom: 2px;
+  margin: 1.5rem 0 0;
 }
 
 .summary__edit {
