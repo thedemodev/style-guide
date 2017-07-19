@@ -78,4 +78,10 @@
   }
 }
 
+.menu-main__category {
+  @include make-font-heading-secondary();
+
+  padding: 1.5rem 0;
+}
+
 // Copyright AXA Versicherungen AG 2015
