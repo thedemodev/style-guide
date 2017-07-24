@@ -5,7 +5,7 @@ layout: demo.pug
 
 include ../../mixins.pug
 
-.icon-teaser(data-icon-teaser)    
+.icon-teaser(data-icon-teaser, role="toolbar")
   ul.icon-teaser__items(data-icon-teaser-container)
     - var items = []
     - items.push({ icon: 'teaserMyAxa', text: 'myAXA', title: 'Verwalten Sie Ihre AXA Versicherungen zentral', action: 'Anmelden', link: '/pages/home.html' })
