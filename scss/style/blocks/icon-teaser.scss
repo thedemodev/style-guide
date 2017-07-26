@@ -24,6 +24,10 @@
 
   padding-top: 4rem;
 
+  .js & {
+    display: block;
+  }
+
   @include respond(large) {
     padding-top: 0;
   }
