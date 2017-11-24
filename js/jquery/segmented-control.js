@@ -121,7 +121,7 @@ class SegmentedControl {
         if ($checked.length === 0) {
           const $first = $(this.$radios[1])
 
-          if (($first != null) & $first.length !== 0) {
+          if (($first != null) && $first.length !== 0) {
             $first.prop('checked', true)
             $first.change()
           }
