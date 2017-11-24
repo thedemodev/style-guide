@@ -258,10 +258,10 @@ class Datepicker {
     if (isMobile) {
       this.$triggerMobile.val(this.$input.val())
     } else {
-      const dat = this.moment(this.$input.val(), this.format)
+      const date = this.moment(this.$input.val(), this.format)
 
-      if (dat.isValid()) {
-        this.picker.setSelectedDate(dat)
+      if (date.isValid()) {
+        this.picker.setSelectedDate(date)
       }
     }
   }
