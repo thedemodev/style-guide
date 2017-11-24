@@ -77,8 +77,19 @@ ul.checklist
 
 h2.heading.heading--secondary#stacked Stacked Segmented Control
 
-p.paragraph.
-  A stacked segmented control is used when text gets to long to be presented next to each other. If you are using the Segmented Control jQuery Plugin, this will be automatically handled for you.
+p.paragraph
+  :markdown-it
+    A stacked segmented control is used when text gets to long to be presented next to each other. If you are using the Segmented Control jQuery Plugin, this will be automatically handled for you.
+
+    **Important:** The automatic adaption does only work for browsers `resize` and `orientation` events!
+    In case you change some dimension by Javascript or make some crucial DOM operations, make sure to trigger a custom `axa.segment-control:restack` event at the `document`, like so:
+
+    ```js
+      $(document).trigger('axa.segment-control:restack')
+    ```
+
+    **Note:** To disable automatic addition and removal of `--stacked` modifer add `data-no-restack` attribute.
+
 
 +example('/components/form-and-input-elements/demos/segmented-control-stacked.html')
 
