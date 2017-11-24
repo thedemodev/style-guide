@@ -4,7 +4,24 @@ layout: demo.pug
 ---
 
 div
-  .segmented-control(data-segmented-control)
+  h2 Automatic stacked mode switching
+  .segmented-control.segmented-control--stacked(data-segmented-control)
+    label.segmented-control__item
+      input.segmented-control__item__radio(type='radio', name='bar')
+      span.segmented-control__item__label Foo bar
+    label.segmented-control__item
+      input.segmented-control__item__radio(type='radio', name='bar')
+      span.segmented-control__item__label long text
+    label.segmented-control__item
+      input.segmented-control__item__radio(type='radio', name='bar')
+      span.segmented-control__item__label and some
+    label.segmented-control__item
+      input.segmented-control__item__radio(type='radio', name='bar')
+      span.segmented-control__item__label more controls
+
+div
+  h2 Force stacked mode
+  .segmented-control.segmented-control--stacked(data-segmented-control, data-no-restack)
     label.segmented-control__item
       input.segmented-control__item__radio(type='radio', name='bar')
       span.segmented-control__item__label Foo bar
