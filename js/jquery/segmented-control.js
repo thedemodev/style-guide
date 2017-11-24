@@ -11,7 +11,9 @@ const restackStream = Bacon.$.asEventStream.call($(document), 'axa.segment-contr
 
 // Public class definition
 class SegmentedControl {
-  static DEFAULTS
+  static DEFAULTS = {
+    noRestack: false,
+  }
 
   constructor(element, options) {
     this.$element = $(element)
@@ -45,12 +47,14 @@ class SegmentedControl {
     this.$element.on('keyup', this.handleKeyUp)
       .on('keydown', this.handleKeyDown)
 
-    this.stackControlsIfNeeded()
+    if (!this.options.noRestack) {
+      this.stackControlsIfNeeded()
 
-    const reorientStream = resizeStream.merge(orientationchangeStream).merge(restackStream)
+      const reorientStream = resizeStream.merge(orientationchangeStream).merge(restackStream)
 
-    this.disposeReorient = reorientStream.debounce(100)
-      .onValue(this.stackControlsIfNeeded)
+      this.disposeReorient = reorientStream.debounce(100)
+        .onValue(this.stackControlsIfNeeded)
+    }
   }
 
   @autobind
