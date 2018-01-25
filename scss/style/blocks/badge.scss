@@ -5,9 +5,9 @@
 .badge {
   display: inline-block;
 
-  min-width: 20px;
-  min-height: 20px;
-  padding: 3px 7px;
+  min-width: 1.5em;
+  min-height: 1em;
+  padding: 3px 0.4em;
 
   font-size: $font-size-small;
   font-style: normal;
@@ -18,7 +18,7 @@
   vertical-align: baseline;
 
   background-color: $color-red;
-  border-radius: 10px;
+  border-radius: 1em;
 }
 
 // Copyright AXA Versicherungen AG 2015
