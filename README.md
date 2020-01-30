@@ -1,3 +1,8 @@
+
+###**_IMPORTANT NOTE_**
+**This repository is to be considered _DEPRECATED_ and all efforts are going towards developing the next version of the style-guide in [axa-ch/patterns-library](https://github.com/axa-ch/patterns-library).**
+
+
 [![Build Status](https://travis-ci.org/axa-ch/style-guide.svg?branch=develop)](https://travis-ci.org/axa-ch/style-guide)
 [![Thinking](https://badge.waffle.io/axa-ch/style-guide.svg?label=thinking&title=Thinking)](http://waffle.io/axa-ch/style-guide)
 [![Adding Sparkles](https://badge.waffle.io/axa-ch/style-guide.svg?label=adding%20sparkles&title=Adding%20Sparkles)](http://waffle.io/axa-ch/style-guide)
