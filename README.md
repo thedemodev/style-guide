@@ -1,5 +1,5 @@
 
-###**_IMPORTANT NOTE_**
+### **_IMPORTANT NOTE_**
 **This repository is to be considered _DEPRECATED_ and all efforts are going towards developing the next version of the style-guide in [axa-ch/patterns-library](https://github.com/axa-ch/patterns-library).**
 
 
